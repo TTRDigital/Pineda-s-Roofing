@@ -1,8 +1,6 @@
 import "server-only";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production";
-const apiVersion = "2025-02-19";
+import { apiVersion, dataset, projectId } from "@/sanity/env";
 
 /** Default ISR window for all CMS content, in seconds. */
 export const REVALIDATE_SECONDS = 300;

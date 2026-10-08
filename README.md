@@ -25,15 +25,15 @@ The URLs match the old WordPress site, so existing Google rankings carry over. A
 
 ## Setup
 
-1. **Sanity project:** at [sanity.io/manage](https://www.sanity.io/manage), create a project "Pineda's Roofing" with a `production` dataset. Copy the **Project ID**.
-2. **CORS:** in the project, go to API > CORS origins and add `http://localhost:3000`, the Vercel preview URL and `https://www.pinedasroofing.com`, all **with credentials allowed** (needed for the Studio at `/cms`).
-3. **Local env:** copy `.env.example` to `.env.local` and fill in `NEXT_PUBLIC_SANITY_PROJECT_ID`.
-4. **Load the content into Sanity (once):** create an Editor token (API > Tokens), put it in `.env.local` as `SANITY_WRITE_TOKEN`, then:
+1. **Sanity project:** `5emjihiz`, dataset `production` (already created; it is the default in `sanity/env.ts`, so no env var is needed).
+2. **CORS (done):** `http://localhost:3000`, `https://www.pinedasroofing.com` and `https://pinedasroofing.com` are allowed with credentials. Once the Vercel project exists, add its preview URL too (sanity.io/manage > API > CORS origins).
+3. **Local env:** copy `.env.example` to `.env.local` (the defaults already point at `5emjihiz`).
+4. **Load the content into Sanity (once):** create an Editor token (sanity.io/manage > API > Tokens) and put it in `.env.local` as `SANITY_WRITE_TOKEN`, then:
    ```bash
    npm install
    npm run seed            # creates every page, service, area, review, FAQ and uploads the photos
    ```
-   Running it again only adds missing documents. `npm run seed -- --force` overwrites the CMS with the built-in content.
+   Running it again only adds missing documents. `npm run seed -- --force` overwrites the CMS with the built-in content, and `npm run seed -- --dry-run` checks everything without writing.
 5. **Run:** `npm run dev`, then open http://localhost:3000 and http://localhost:3000/cms.
 6. **Vercel:** import the repo, add the env vars from `.env.example` (not `SANITY_WRITE_TOKEN`), deploy, add the domain.
 7. **Publish webhook:** in Sanity, go to API > Webhooks and add `https://www.pinedasroofing.com/api/revalidate`, triggers create/update/delete, projection `{_type, slug}`, and the same secret as `SANITY_REVALIDATE_SECRET`. Published changes then show on the site within seconds (otherwise within 5 minutes).

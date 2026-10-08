@@ -6,8 +6,8 @@
  *   SANITY_WRITE_TOKEN=... npm run seed -- --force # overwrite everything with the built-in content
  *   npm run seed -- --dry-run                      # build every document without uploading or writing
  *
- * Reads NEXT_PUBLIC_SANITY_PROJECT_ID / NEXT_PUBLIC_SANITY_DATASET from the
- * environment or .env.local. The token needs Editor rights (sanity.io/manage
+ * Writes to project 5emjihiz / production unless NEXT_PUBLIC_SANITY_PROJECT_ID /
+ * NEXT_PUBLIC_SANITY_DATASET say otherwise (environment or .env.local). The token needs Editor rights (sanity.io/manage
  * > API > Tokens). Without --force, anything an editor already changed is kept.
  */
 import { createReadStream, existsSync, readFileSync } from "node:fs";
@@ -30,8 +30,8 @@ if (existsSync(join(root, ".env.local"))) {
   }
 }
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+// Imported after .env.local is loaded so its values apply.
+const { dataset, projectId } = await import("../sanity/env.ts");
 const token = process.env.SANITY_WRITE_TOKEN;
 const force = process.argv.includes("--force");
 const dryRun = process.argv.includes("--dry-run");
