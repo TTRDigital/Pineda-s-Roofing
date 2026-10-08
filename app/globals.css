@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Pineda's Roofing design tokens
+   Palette: black, white and light grey with cyan accents. No navy.
+   Cyan sits on black, white or light grey only. Small cyan text on white
+   uses --color-cyan-deep so it stays readable (WCAG AA).
+   ========================================================================== */
+
+@theme {
+  --color-ink: #0b0d10;
+  --color-ink-2: #14171c;
+  --color-ink-3: #1e2229;
+  --color-ink-line: #2a2f37;
+
+  --color-cyan: #00b4f0;
+  --color-cyan-hi: #3cc8f6;
+  --color-cyan-deep: #00769f;
+  --color-cyan-50: #effaff;
+  --color-cyan-100: #d3f1fd;
+
+  --color-mist: #f4f6f8;
+  --color-mist-2: #e9edf1;
+  --color-line: #dfe4e9;
+
+  --color-body: #4a5361;
+  --color-meta: #6b7380;
+  --color-on-dark: #c3c9d1;
+  --color-on-dark-meta: #8f98a3;
+
+  --font-display: var(--font-oswald), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --text-eyebrow: 0.8125rem;
+  --text-eyebrow--letter-spacing: 0.2em;
+  --text-lead: clamp(1.125rem, 1rem + 0.45vw, 1.3125rem);
+  --text-lead--line-height: 1.6;
+  --text-h1: clamp(2.5rem, 1.6rem + 3.6vw, 4.75rem);
+  --text-h1--line-height: 1.02;
+  --text-h2: clamp(2rem, 1.45rem + 2.1vw, 3.25rem);
+  --text-h2--line-height: 1.06;
+  --text-h3: clamp(1.5rem, 1.25rem + 0.9vw, 2rem);
+  --text-h3--line-height: 1.15;
+
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(11 13 16 / 0.05), 0 12px 32px -14px rgb(11 13 16 / 0.18);
+  --shadow-photo: 0 24px 60px -24px rgb(11 13 16 / 0.45);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 7rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    background: #fff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: var(--color-cyan);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 2rem;
+    }
+  }
+
+  .section {
+    padding-block: clamp(4rem, 3rem + 4vw, 7rem);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: var(--text-eyebrow);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-cyan-deep);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 2rem;
+    height: 2px;
+    background: currentColor;
+  }
+  .on-dark .eyebrow,
+  .eyebrow.on-dark {
+    color: var(--color-cyan);
+  }
+  .eyebrow.plain::before {
+    display: none;
+  }
+
+  .accent-rule {
+    display: block;
+    width: 4rem;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--color-cyan);
+  }
+
+  /* Highlight box: the short, scannable replacement for bullet lists. */
+  .hl-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    padding: 1.125rem 1.25rem;
+    border: 1px solid var(--color-cyan-100);
+    background: var(--color-cyan-50);
+    border-radius: var(--radius-card);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-ink);
+    transition:
+      border-color 0.2s,
+      transform 0.3s var(--ease-out-expo),
+      box-shadow 0.3s;
+  }
+  .hl-box:hover {
+    border-color: var(--color-cyan);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+  }
+  .on-dark .hl-box {
+    background: var(--color-ink-2);
+    border-color: var(--color-ink-line);
+    color: #fff;
+  }
+  .on-dark .hl-box:hover {
+    border-color: var(--color-cyan);
+  }
+
+  .prose-short p + p {
+    margin-top: 1rem;
+  }
+
+  /* Logo tile used for brands and insurance companies. */
+  .logo-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 6rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    background: #fff;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.3s;
+  }
+  .logo-tile:hover {
+    border-color: var(--color-cyan);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* ---------- Scroll reveal (progressive: content shows if JS never runs) ---------- */
+html[data-reveal-ready] [data-reveal]:not([data-in]) {
+  opacity: 0;
+  transform: translateY(18px);
+}
+[data-reveal] {
+  transition:
+    opacity 0.7s var(--ease-out-expo),
+    transform 0.7s var(--ease-out-expo);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+
+/* ---------- Header scroll progress ---------- */
+.scroll-progress {
+  transform-origin: 0 50%;
+  transform: scaleX(var(--progress, 0));
+}
+
+/* ---------- Before / after slider ---------- */
+.ba-range {
+  appearance: none;
+  background: transparent;
+  cursor: ew-resize;
+}
+.ba-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 44px;
+  height: 100vh;
+  background: transparent;
+}
+.ba-range::-moz-range-thumb {
+  width: 44px;
+  height: 100vh;
+  border: 0;
+  background: transparent;
+}
+
+/* ---------- Marquee for logo strips ---------- */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ---------- Roof diagram pulse ---------- */
+@keyframes ping-soft {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.hotspot-ping {
+  animation: ping-soft 2s var(--ease-out-expo) infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
