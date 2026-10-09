@@ -5,6 +5,7 @@ import { images } from "@/lib/data/images";
 import { Hero } from "@/components/home/Hero";
 import { LogoGrid, LogoMarquee } from "@/components/sections/LogoStrip";
 import { FeatureSection } from "@/components/sections/FeatureSection";
+import { FaithSection } from "@/components/sections/FaithSection";
 import { CardGrid } from "@/components/sections/CardGrid";
 import { SplitTiles } from "@/components/sections/SplitTiles";
 import { RoofDiagram } from "@/components/sections/RoofDiagram";
@@ -42,10 +43,12 @@ export default async function HomePage() {
       {home.sections.map((b, i) => (
         <FeatureSection key={b.title} block={b} index={i} />
       ))}
+      <FaithSection faith={home.faith} />
 
-      <CardGrid intro={home.servicesIntro} cards={home.serviceCards} tone="mist" />
+      <CardGrid intro={home.servicesIntro} cards={home.serviceCards} />
 
       <SplitTiles
+        tone="mist"
         intro={{ eyebrow: "Roofing", heading: "For homes and businesses", text: "One family-owned team for residential and commercial roofs across Maryland and the DMV." }}
         tiles={[
           {

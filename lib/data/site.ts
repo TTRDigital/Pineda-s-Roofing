@@ -10,10 +10,8 @@ export const fallbackSettings: SiteSettings = {
   phoneHref: "tel:+13019216333",
   email: "info@pinedasroofing.com",
   license: "MHIC# 142024",
-  street: "13624 North Gate Drive",
   city: "Silver Spring",
   region: "MD",
-  postalCode: "20906",
   hours: [
     { label: "Monday to Friday", value: "8:00 AM to 6:00 PM" },
     { label: "Saturday", value: "9:00 AM to 4:00 PM" },
@@ -25,13 +23,13 @@ export const fallbackSettings: SiteSettings = {
   googleRating: "5.0",
   reviewCount: "22",
   reviewsUrl: "https://g.co/kgs/FDvaBcB",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Pineda%27s+Roofing%2C+13624+North+Gate+Drive%2C+Silver+Spring%2C+MD+20906",
   social: [
     { network: "facebook", href: "https://www.facebook.com/pinedasroofing" },
     { network: "instagram", href: "https://www.instagram.com/pinedasroofing/" },
     { network: "google", href: "https://g.co/kgs/WMp9yQk" },
   ],
   headerCta: { label: "Free Estimate", href: "/contact-us" },
+  verse: { text: "Serve wholeheartedly, as if you were serving the Lord, not people.", reference: "Ephesians 6:7" },
 };
 
 /* Logos live in /public/images/logos. A brand without a file shows its name as text. */
@@ -104,7 +102,7 @@ export const fallbackFaqs: Faq[] = [
     answer:
       "Most residential replacements take two to three days. Repairs are usually a single visit. You get a specific timeline with your quote, and we tell you right away if anything changes.",
   },
-  { category: "General", question: "What warranty do I get?", answer: "50+ years on both materials and workmanship. Not just the shingles: the installation too." },
+  { category: "General", question: "What warranty do I get?", answer: "A 10 year labor warranty from Pineda's on the installation, plus the lifetime manufacturer warranty on the shingles. You get both in writing." },
   { category: "General", question: "Are you licensed and insured?", answer: "Yes. Fully licensed, insured and bonded in Maryland, MHIC# 142024." },
   {
     category: "Cost & financing",

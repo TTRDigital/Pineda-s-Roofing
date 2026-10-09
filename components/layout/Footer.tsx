@@ -16,9 +16,16 @@ const company = [
 
 export function Footer({ settings, services }: { settings: SiteSettings; services: Service[] }) {
   const year = new Date().getFullYear();
-  const address = [settings.street, `${settings.city}, ${settings.region} ${settings.postalCode}`].filter(Boolean);
   return (
     <footer className="on-dark bg-ink text-on-dark">
+      {settings.verse ? (
+        <figure className="border-b border-ink-line">
+          <div className="container-x flex flex-col items-center gap-2 py-10 text-center">
+            <blockquote className="max-w-3xl font-display text-[clamp(1.35rem,1.1rem+1vw,1.9rem)] uppercase leading-snug text-white">“{settings.verse.text}”</blockquote>
+            <figcaption className="text-sm font-bold uppercase tracking-[0.18em] text-cyan">{settings.verse.reference}</figcaption>
+          </div>
+        </figure>
+      ) : null}
       <div className="container-x grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,0.8fr)_minmax(0,1.1fr)] lg:py-20">
         <div>
           <Logo className="h-14 w-auto" dark />
@@ -82,20 +89,12 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
                 {settings.email}
               </a>
             </li>
-            {address.length ? (
-              <li>
-                <a href={settings.mapsUrl} target="_blank" rel="noopener" className="flex items-start gap-3 hover:text-cyan">
-                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-cyan" strokeWidth={2} aria-hidden="true" />
-                  <span>
-                    {address.map((l) => (
-                      <span key={l} className="block">
-                        {l}
-                      </span>
-                    ))}
-                  </span>
-                </a>
-              </li>
-            ) : null}
+            <li>
+              <Link href="/service-area" className="flex items-start gap-3 hover:text-cyan">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-cyan" strokeWidth={2} aria-hidden="true" />
+                Serving Maryland, Washington D.C. &amp; Northern Virginia
+              </Link>
+            </li>
             {settings.hours.length ? (
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-5 w-5 shrink-0 text-cyan" strokeWidth={2} aria-hidden="true" />

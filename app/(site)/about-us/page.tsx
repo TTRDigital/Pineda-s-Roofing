@@ -42,8 +42,8 @@ export default async function AboutPage() {
         <figure className="container-x flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
           <Image src={images.eagleDoubleThumbs.src} alt="" width={images.eagleDoubleThumbs.width} height={images.eagleDoubleThumbs.height} sizes="120px" className="h-36 w-auto" />
           <div>
-            <blockquote className="font-display text-h3 uppercase text-ink">“Serve wholeheartedly, as if you were serving the Lord, not people.”</blockquote>
-            <figcaption className="mt-2 font-bold uppercase tracking-[0.16em] text-cyan-deep">Ephesians 6:7</figcaption>
+            <blockquote className="font-display text-h3 uppercase text-ink">“Everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock.”</blockquote>
+            <figcaption className="mt-2 font-bold uppercase tracking-[0.16em] text-cyan-deep">Matthew 7:24</figcaption>
           </div>
         </figure>
       </section>

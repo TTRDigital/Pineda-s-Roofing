@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import type { SiteSettings } from "@/lib/types";
 import type { serviceOptions } from "@/lib/lead-options";
@@ -43,11 +44,13 @@ export function ContactSection({
                 {settings.email}
               </a>
             </li>
-            <li className="flex items-center gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ink-3 text-cyan">
-                <MapPin className="h-5 w-5" strokeWidth={2} aria-hidden="true" />
-              </span>
-              {settings.street}, {settings.city}, {settings.region} {settings.postalCode}
+            <li>
+              <Link href="/service-area" className="flex items-center gap-4 hover:text-cyan">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ink-3 text-cyan">
+                  <MapPin className="h-5 w-5" strokeWidth={2} aria-hidden="true" />
+                </span>
+                Serving Maryland, D.C. &amp; Northern Virginia
+              </Link>
             </li>
             <li className="flex items-start gap-4">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ink-3 text-cyan">

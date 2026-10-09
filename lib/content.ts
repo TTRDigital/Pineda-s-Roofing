@@ -46,7 +46,7 @@ const FEATURE = `{ "anchor": anchor.current, icon, eyebrow, title, lead, paragra
 
 export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
   const cms = await sanityFetch<Partial<SiteSettings>>(
-    `*[_id == "siteSettings"][0]{ name, legalName, phone, email, license, street, city, region, postalCode, hours[]{ label, value }, emergencyText, foundedYear, googleRating, reviewCount, reviewsUrl, mapsUrl, social[]{ network, href }, headerCta{ label, href }, "logo": logo${LOGO} }`,
+    `*[_id == "siteSettings"][0]{ name, legalName, phone, email, license, city, region, hours[]{ label, value }, emergencyText, foundedYear, googleRating, reviewCount, reviewsUrl, social[]{ network, href }, headerCta{ label, href }, verse{ text, reference }, "logo": logo${LOGO} }`,
     {},
     ["siteSettings"],
   );
@@ -132,10 +132,11 @@ export const getFaqs = cache(async (): Promise<(Faq & { onHome?: boolean })[]> =
 export const getHome = cache(async (): Promise<HomeContent> => {
   const cms = await sanityFetch<Partial<HomeContent>>(
     `*[_id == "homePage"][0]{
-      hero{ eyebrow, heading, text, badges, "image": image${IMG} },
+      hero{ eyebrow, heading, text, badges, verse{ text, reference }, "image": image${IMG} },
       stats[]{ value, label },
       servicesIntro${HEADING}, serviceCards[]${CARD},
       sections[]${FEATURE},
+      faith{ icon, eyebrow, title, lead, paragraphs, highlightsLabel, highlights, verses[]{ text, reference } },
       anatomyIntro${HEADING}, anatomy[]${CARD},
       whyIntro${HEADING}, why[]${CARD},
       processIntro${HEADING}, process[]${CARD},

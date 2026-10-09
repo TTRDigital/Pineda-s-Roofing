@@ -38,7 +38,7 @@ export const fallbackServices: Service[] = [
           "Licensed, insured & bonded, MHIC# 142024",
           "Free inspections, no-obligation estimates",
           "Photo documentation of every finding",
-          "50+ year materials and workmanship warranty",
+          "10 year labor warranty",
         ],
         image: images.crew,
       },
@@ -61,7 +61,7 @@ export const fallbackServices: Service[] = [
           "Pre-stripped ridge cap at the peak",
           "Wide range of colors and styles",
         ],
-        image: images.shingleInstall,
+        image: images.pinnaclePristineBundles,
       },
       {
         anchor: "replacement",
@@ -80,7 +80,7 @@ export const fallbackServices: Service[] = [
           "Final walkthrough together",
           "Workmanship warranty from day one",
         ],
-        image: images.roofReplacementColonial,
+        image: images.aerialNewShingleRoof,
       },
       {
         anchor: "repairs",
@@ -115,7 +115,7 @@ export const fallbackServices: Service[] = [
           "Extends the life of your shingles",
           "Seamless gutters and gutter guards",
         ],
-        image: images.completedRoofAerial,
+        image: images.gutterDownspout,
         ctas: estimateCta,
       },
     ],
@@ -138,7 +138,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "What warranty do I get?",
-        answer: "Our roofs come with a 50+ year warranty on both materials and workmanship. That covers the installation, not just the shingles.",
+        answer: "Every new roof comes with a 10 year labor warranty from Pineda's and a lifetime manufacturer warranty on the shingles. You get both in writing.",
       },
       {
         question: "Are you licensed and insured?",
@@ -226,7 +226,7 @@ export const fallbackServices: Service[] = [
           "Built to code and industry standards",
           "Clean, organized job sites",
         ],
-        image: images.newConstruction,
+        image: images.flatRoofSkylight,
       },
       {
         anchor: "repairs-maintenance",
@@ -290,7 +290,7 @@ export const fallbackServices: Service[] = [
       eyebrow: "Roof Replacement",
       heading: "Roof replacement done right the first time",
       text: "A new roof from Maryland's family-owned roofers. Premium materials, our own crews, and most homes finished in two to three days.",
-      image: images.roofReplacementColonial,
+      image: images.aerialNewShingleRoof,
     },
     sections: [
       {
@@ -351,9 +351,9 @@ export const fallbackServices: Service[] = [
           "Synthetic underlayment",
           "Ice & water shield in valleys and eaves",
           "Pre-stripped ridge cap for a tight seal",
-          "50+ year materials and workmanship warranty",
+          "10 year labor warranty",
         ],
-        image: images.shingleInstall,
+        image: images.pinnaclePristineBundles,
       },
       {
         anchor: "commercial-flat",
@@ -387,7 +387,7 @@ export const fallbackServices: Service[] = [
           "Built to code and industry standards",
           "The same materials we trust on every roof",
         ],
-        image: images.newConstruction,
+        image: images.shingleNailing,
         ctas: estimateCta,
       },
     ],
@@ -410,12 +410,12 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "What warranties do you offer?",
-        answer: "We offer a 50+ year warranty on both materials and workmanship, including the Atlas Pinnacle Pristine shingles we install. Your workmanship warranty starts the day we finish.",
+        answer: "You get a 10 year labor warranty from Pineda's and a lifetime manufacturer warranty on the Atlas Pinnacle Pristine shingles. Your labor warranty starts the day we finish.",
       },
     ],
     seo: {
       title: "Roof Replacement in Maryland | Pineda's Roofing",
-      description: "Roof replacement in Maryland with Atlas Pinnacle Pristine shingles, our own crews and a 50+ year warranty. Most homes done in 2 to 3 days. Free estimates.",
+      description: "Roof replacement in Maryland with Atlas Pinnacle Pristine shingles, our own crews and a 10 year labor warranty. Most homes done in 2 to 3 days. Free estimates.",
     },
   },
 
@@ -575,7 +575,7 @@ export const fallbackServices: Service[] = [
           "Help with your insurance claim",
           "Permanent repairs with quality materials",
         ],
-        image: images.underlaymentInstall,
+        image: images.roofRepairCrew,
       },
       {
         anchor: "signs",
@@ -629,7 +629,7 @@ export const fallbackServices: Service[] = [
           "Written report and repair plan",
           "Permanent repair and final inspection",
         ],
-        image: images.roofRepairCrew,
+        image: images.underlaymentInstall,
         ctas: estimateCta,
       },
     ],
@@ -730,7 +730,7 @@ export const fallbackServices: Service[] = [
           "Gutter and downspout cleaning",
           "Gutter guard installation",
         ],
-        image: images.gutterCleaning,
+        image: images.roofCleaning,
       },
       {
         anchor: "repairs",
@@ -815,7 +815,7 @@ export const fallbackServices: Service[] = [
           "Roof and siding assessed together",
           "Final inspection and walkthrough",
         ],
-        image: images.stormHome,
+        image: images.completedRoofAerial,
       },
       {
         anchor: "hail",
@@ -910,7 +910,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Do you offer warranties on storm repairs?",
-        answer: "Yes. Our work is covered by warranties on both materials and workmanship, and we use quality products like Atlas Pinnacle Pristine shingles.",
+        answer: "Yes. Our labor is covered by a 10 year warranty, and Atlas Pinnacle Pristine shingles carry a lifetime manufacturer warranty.",
       },
     ],
     seo: {
@@ -1099,7 +1099,6 @@ export const fallbackServices: Service[] = [
           "Repair and blending of damaged areas",
           "Honest advice on repair or replace",
         ],
-        image: images.hailDamage,
       },
       {
         anchor: "trim-soffit-fascia",
@@ -1116,7 +1115,7 @@ export const fallbackServices: Service[] = [
           "Trim around windows and doors",
           "Gutters rehung on solid fascia",
         ],
-        image: images.gutterDownspout,
+        image: images.sidingTrim,
         ctas: estimateCta,
       },
     ],
@@ -1215,7 +1214,7 @@ export const fallbackServices: Service[] = [
           "Lower cost than full-frame",
           "Less disruption inside your home",
         ],
-        image: images.sidingLap,
+        image: images.newWindow,
       },
       {
         anchor: "new-construction",
@@ -1232,7 +1231,6 @@ export const fallbackServices: Service[] = [
           "Tempered glass where code requires",
           "Energy code requirements met",
         ],
-        image: images.newConstruction,
         ctas: estimateCta,
       },
     ],
@@ -1347,7 +1345,7 @@ export const fallbackServices: Service[] = [
           "Damper installation",
           "Follow-up after the next heavy rain",
         ],
-        image: images.rooferInspecting,
+        image: images.chimneyCap,
         ctas: estimateCta,
       },
     ],
@@ -1416,7 +1414,7 @@ export const fallbackServices: Service[] = [
           "Structural repair",
           "Written scope with photos",
         ],
-        image: images.crew,
+        image: images.masonWall,
       },
       {
         anchor: "signs",
@@ -1469,7 +1467,7 @@ export const fallbackServices: Service[] = [
           "CHAP review work in Baltimore City",
           "Foundation and load-bearing repair",
         ],
-        image: images.chimneyFlashing2,
+        image: images.masonHistoric,
         ctas: estimateCta,
       },
     ],
@@ -1537,7 +1535,7 @@ export const fallbackServices: Service[] = [
           "Licensed, insured & bonded, MHIC# 142024",
           "Family owned for over 30 years",
         ],
-        image: images.crew,
+        image: images.paverInstall,
       },
       {
         anchor: "patios-walkways",
@@ -1574,7 +1572,7 @@ export const fallbackServices: Service[] = [
           "Correct rise and run on steps",
           "Permits managed with your county",
         ],
-        image: images.patioPavers,
+        image: images.retainingWall,
         ctas: estimateCta,
       },
     ],

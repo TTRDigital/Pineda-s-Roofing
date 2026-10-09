@@ -30,6 +30,9 @@ export const iconOptions = [
   { title: "Leaf", value: "leaf" },
   { title: "Thermometer", value: "thermometer" },
   { title: "Factory / warehouse", value: "warehouse" },
+  { title: "Cross (faith)", value: "cross" },
+  { title: "Bible", value: "book" },
+  { title: "Hand and heart", value: "hand-heart" },
 ] as const;
 
 export type IconName = (typeof iconOptions)[number]["value"];

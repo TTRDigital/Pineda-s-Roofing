@@ -8,9 +8,9 @@ import { IconTile } from "@/components/ui/Icon";
 type Tile = { href: string; eyebrow: string; title: string; text: string; image: Img; icon: string };
 
 /** Two large photo tiles: residential and commercial roofing. */
-export function SplitTiles({ intro, tiles }: { intro?: Heading; tiles: Tile[] }) {
+export function SplitTiles({ intro, tiles, tone = "white" }: { intro?: Heading; tiles: Tile[]; tone?: "white" | "mist" }) {
   return (
-    <section className="section bg-white">
+    <section className={`section ${tone === "mist" ? "bg-mist" : "bg-white"}`}>
       {intro ? (
         <div className="container-x mb-12">
           <SectionHeading {...intro} />

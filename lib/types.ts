@@ -27,6 +27,8 @@ export type FeatureBlock = {
   ctas?: Cta[];
 };
 
+export type Verse = { text: string; reference: string };
+
 export type Partner = { name: string; logo?: Img; url?: string };
 
 export type SiteSettings = {
@@ -36,20 +38,18 @@ export type SiteSettings = {
   phoneHref: string;
   email: string;
   license: string;
-  street: string;
   city: string;
   region: string;
-  postalCode: string;
   hours: Fact[];
   emergencyText: string;
   foundedYear: number;
   googleRating?: string;
   reviewCount?: string;
   reviewsUrl?: string;
-  mapsUrl: string;
   social: { network: string; href: string }[];
   headerCta: Cta;
   logo?: Img;
+  verse?: Verse;
 };
 
 export type Partners = {
@@ -105,11 +105,12 @@ export type Testimonial = { quote: string; name: string; location?: string; rati
 
 export type HomeContent = {
   seo: Seo;
-  hero: { eyebrow: string; heading: string; text: string; image: Img; badges: string[] };
+  hero: { eyebrow: string; heading: string; text: string; image: Img; badges: string[]; verse?: Verse };
   stats: Stat[];
   servicesIntro: Heading;
   serviceCards: Card[];
   sections: FeatureBlock[];
+  faith: FeatureBlock & { verses: Verse[] };
   anatomyIntro: Heading;
   anatomy: Card[];
   whyIntro: Heading;

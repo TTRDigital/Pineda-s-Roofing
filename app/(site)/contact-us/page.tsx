@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { getSiteSettings } from "@/lib/content";
+import { counties, getLocations, getSiteSettings } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { images } from "@/lib/data/images";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { ServiceAreas } from "@/components/sections/ServiceAreas";
 
 export const revalidate = 300;
 
@@ -15,8 +16,7 @@ const seo = {
 export const metadata: Metadata = pageMetadata(seo, "/contact-us", images.crew);
 
 export default async function ContactPage() {
-  const settings = await getSiteSettings();
-  const mapQuery = encodeURIComponent(`${settings.street}, ${settings.city}, ${settings.region} ${settings.postalCode}`);
+  const [settings, locations] = await Promise.all([getSiteSettings(), getLocations()]);
   return (
     <>
       <PageHero
@@ -24,15 +24,7 @@ export default async function ContactPage() {
         crumbs={[{ label: "Contact", href: "/contact-us" }]}
       />
       <ContactSection settings={settings} heading="Talk to a Pineda" />
-      <section aria-label="Map" className="h-[420px] bg-mist">
-        <iframe
-          title={`Map to ${settings.name}`}
-          src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
-          className="h-full w-full border-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </section>
+      <ServiceAreas counties={counties} locations={locations} phone={settings.phone} />
     </>
   );
 }

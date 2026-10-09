@@ -38,8 +38,8 @@ export function businessSchema(s: SiteSettings, testimonials: Testimonial[] = []
     image: absoluteUrl(images.aerialNewShingleRoof.src),
     foundingDate: String(s.foundedYear),
     founder: { "@type": "Person", name: "German Pineda" },
-    address: { "@type": "PostalAddress", streetAddress: s.street, addressLocality: s.city, addressRegion: s.region, postalCode: s.postalCode, addressCountry: "US" },
-    hasMap: s.mapsUrl,
+    // Service-area business: city and state only, never the street address.
+    address: { "@type": "PostalAddress", addressLocality: s.city, addressRegion: s.region, addressCountry: "US" },
     openingHoursSpecification: hours,
     areaServed: areas.map((name) => ({ "@type": "Place", name })),
     sameAs: s.social.map((x) => x.href),

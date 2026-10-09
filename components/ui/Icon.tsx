@@ -5,6 +5,8 @@ import {
   Camera,
   ClipboardCheck,
   Clock,
+  BookOpen,
+  HandHeart,
   CloudLightning,
   CloudRain,
   DollarSign,
@@ -32,6 +34,15 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { IconName } from "@/lib/icons";
+
+/** Christian (Latin) cross; lucide's "Cross" is a medical plus. */
+function LatinCross({ className, strokeWidth = 1.75 }: { className?: string; strokeWidth?: number }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M12 2.5v19M6 8h12" />
+    </svg>
+  );
+}
 
 const icons: Record<IconName, LucideIcon> = {
   house: House,
@@ -64,6 +75,9 @@ const icons: Record<IconName, LucideIcon> = {
   leaf: Leaf,
   thermometer: Thermometer,
   warehouse: Warehouse,
+  cross: LatinCross as unknown as LucideIcon,
+  book: BookOpen,
+  "hand-heart": HandHeart,
 };
 
 export function Icon({ name, className = "h-6 w-6", strokeWidth = 1.75 }: { name?: IconName | string; className?: string; strokeWidth?: number }) {

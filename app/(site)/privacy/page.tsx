@@ -26,7 +26,7 @@ export default async function PrivacyPage() {
       </p>
       <h2>Contact</h2>
       <p>
-        {s.legalName}, {s.street}, {s.city}, {s.region} {s.postalCode}. {s.phone}.
+        {s.legalName}, {s.city}, {s.region}. {s.phone}.
       </p>
     </LegalPage>
   );

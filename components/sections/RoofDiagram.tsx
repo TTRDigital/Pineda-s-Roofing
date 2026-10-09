@@ -36,12 +36,12 @@ export function RoofDiagram({ intro, layers }: { intro: Heading; layers: Card[] 
       <div className="container-x">
         <SectionHeading {...intro} />
         <div className="mt-14 grid items-center gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,8fr)_minmax(0,3fr)] lg:gap-6">
-          <ul className="order-2 grid gap-8 sm:grid-cols-2 lg:order-1 lg:grid-cols-1">
+          <ul className="hidden gap-8 lg:order-1 lg:grid lg:grid-cols-1">
             {left.map(({ c, n }) => (
               <Label key={c.title} card={c} n={n} align="left" />
             ))}
           </ul>
-          <figure className="order-1 lg:order-2" data-reveal>
+          <figure className="lg:order-2" data-reveal>
             <svg viewBox="0 0 800 520" role="img" aria-label="Cutaway of a roof showing each layer from the rafters up to the shingles and ridge vent" className="h-auto w-full">
               <defs>
                 <clipPath id="roof-clip">
@@ -121,11 +121,17 @@ export function RoofDiagram({ intro, layers }: { intro: Heading; layers: Card[] 
               ))}
             </svg>
           </figure>
-          <ul className="order-3 grid gap-8 sm:grid-cols-2 lg:grid-cols-1">
+          <ul className="hidden gap-8 lg:order-3 lg:grid lg:grid-cols-1">
             {right.map(({ c, n }) => (
               <Label key={c.title} card={c} n={n} align="right" />
             ))}
           </ul>
+          {/* Phones and tablets: one list in order 1 to 6, under the diagram. */}
+          <ol className="grid gap-7 sm:grid-cols-2 lg:hidden">
+            {layers.map((c, i) => (
+              <Label key={c.title} card={c} n={i + 1} align="right" />
+            ))}
+          </ol>
         </div>
       </div>
     </section>

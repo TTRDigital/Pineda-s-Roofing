@@ -42,6 +42,12 @@ export function Hero({ hero, stats, settings }: { hero: HomeContent["hero"]; sta
               </li>
             ))}
           </ul>
+          {hero.verse ? (
+            <figure className="mt-8 max-w-xl border-l-[3px] border-cyan pl-4">
+              <blockquote className="italic text-white">“{hero.verse.text}”</blockquote>
+              <figcaption className="mt-1 text-xs font-bold uppercase tracking-[0.16em] text-cyan">{hero.verse.reference}</figcaption>
+            </figure>
+          ) : null}
         </div>
         <div className="relative mx-auto hidden w-full max-w-[330px] self-end lg:block">
           <Image src={images.eagleArmsCrossed.src} alt={images.eagleArmsCrossed.alt} width={images.eagleArmsCrossed.width} height={images.eagleArmsCrossed.height} priority sizes="330px" className="h-auto w-full drop-shadow-[0_30px_40px_rgb(0_0_0/0.6)]" />

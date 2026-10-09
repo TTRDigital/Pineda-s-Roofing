@@ -17,20 +17,21 @@ export const fallbackHome: HomeContent = {
   hero: {
     eyebrow: "Silver Spring · Maryland & the DMV",
     heading: "Maryland's family-owned roofing contractor",
-    text: "Residential and commercial roofing, repairs and storm restoration. One family, our own crews and a 50+ year warranty on materials and workmanship.",
+    text: "Residential and commercial roofing, repairs and storm restoration. One family, our own crews, a 10 year labor warranty and a lifetime manufacturer warranty.",
     image: images.aerialNewShingleRoof,
     badges: ["Family owned since 1992", "Licensed, insured & bonded", "MHIC# 142024", "24/7 emergency service"],
+    verse: { text: "Unless the Lord builds the house, the builders labor in vain.", reference: "Psalm 127:1" },
   },
   stats: [
     { value: "30+", label: "Years in business" },
-    { value: "50+", label: "Year warranty" },
-    { value: "100%", label: "Family owned" },
+    { value: "10 Year", label: "Labor warranty" },
+    { value: "Lifetime", label: "Manufacturer warranty" },
     { value: "24/7", label: "Emergency service" },
   ],
   servicesIntro: {
     eyebrow: "What we do",
     heading: "The exterior, handled",
-    text: "Every roof we install uses Atlas Pinnacle Pristine shingles and carries a 50+ year warranty on materials and workmanship.",
+    text: "Every roof we install uses Atlas Pinnacle Pristine shingles and comes with a 10 year labor warranty and a lifetime manufacturer warranty.",
   },
   serviceCards: [
     { icon: "house", title: "Residential roofing", text: "New roofs, replacements and repairs for Maryland homes.", href: "/services/residential-roofing" },
@@ -52,11 +53,29 @@ export const fallbackHome: HomeContent = {
         "The person who inspects your roof, the crew who installs it and the owner who stands behind the warranty are one family business.",
       ],
       highlightsLabel: "The Pineda's difference",
-      highlights: ["Family owned since 1992", "Our own crews, never subcontractors", "Free inspections with photo reports", "50+ year materials & workmanship warranty"],
+      highlights: ["Family owned since 1992", "Our own crews, never subcontractors", "Free inspections with photo reports", "10 year labor warranty"],
       image: images.crew,
       ctas: [{ label: "More about Pineda's", href: "/about-us" }],
     },
   ],
+  faith: {
+    anchor: "faith",
+    icon: "cross",
+    eyebrow: "Our foundation",
+    title: "Built on faith, family and honest work",
+    lead: "Pineda's is a family business built on faith. It shapes how we treat your home, your time and your budget.",
+    paragraphs: [
+      "Our company verse, Ephesians 6:7, asks us to serve wholeheartedly, as if serving the Lord, not people. To us that means doing the job right, even in the places no one will ever look.",
+      "Faith keeps us honest. You get straight answers, fair prices and the same care we would give our own family's home.",
+    ],
+    highlightsLabel: "What that means on your roof",
+    highlights: ["Honest advice, even when a repair will do", "Fair, written pricing with no pressure", "Work done right where no one will look", "Your home treated like our own family's"],
+    verses: [
+      { text: "Serve wholeheartedly, as if you were serving the Lord, not people.", reference: "Ephesians 6:7" },
+      { text: "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.", reference: "Colossians 3:23" },
+      { text: "Unless the Lord builds the house, the builders labor in vain.", reference: "Psalm 127:1" },
+    ],
+  },
   anatomyIntro: {
     eyebrow: "Modern roofing systems",
     heading: "What's under your shingles",
@@ -72,9 +91,9 @@ export const fallbackHome: HomeContent = {
   ],
   whyIntro: { eyebrow: "Why Pineda's", heading: "Why Maryland homeowners choose us" },
   why: [
-    { icon: "users", title: "Family owned for 30+ years", text: "Same family, same standards. That matters when your warranty runs 50 years." },
+    { icon: "users", title: "Family owned for 30+ years", text: "Same family, same standards and the same phone number when you need us." },
     { icon: "award", title: "Premium materials as standard", text: "Atlas Pinnacle Pristine shingles on every installation, not an upsell." },
-    { icon: "shield-check", title: "50+ year warranty", text: "Materials and workmanship covered, starting the day we finish." },
+    { icon: "shield-check", title: "10 year labor warranty", text: "Our workmanship is covered for 10 years, plus a lifetime manufacturer warranty on the shingles." },
     { icon: "file-check", title: "Insurance expertise", text: "We meet your adjuster and provide the documentation carriers need." },
     { icon: "badge-check", title: "Licensed, insured & bonded", text: "MHIC# 142024. Fully covered on every job we take." },
     { icon: "clipboard", title: "Free, no-obligation estimates", text: "Written scope and transparent pricing before you commit." },
@@ -124,7 +143,7 @@ export const fallbackRoofing: RoofingContent = {
         "Atlas Pinnacle Pristine shingles",
         "Ventilation and attic airflow fixes",
         "Gutters and gutter guards",
-        "50+ year warranty",
+        "10 year labor warranty",
       ],
       image: images.homeNewRoofAerial,
       ctas: [
@@ -164,7 +183,7 @@ export const fallbackRoofing: RoofingContent = {
       paragraphs: ["Missing shingles, flashing failures, valley leaks and small punctures are often fixed in a single visit. If a repair will do, that's what we recommend."],
       highlightsLabel: "What we offer",
       highlights: ["Free, no-obligation roof inspections", "Leak tracing and emergency repair", "Seasonal maintenance plans", "Written condition reports with photos"],
-      image: images.roofRepairCrew,
+      image: images.rooferInspecting,
       ctas: [{ label: "Request a quote", href: "/contact-us" }],
     },
     {
@@ -199,7 +218,7 @@ export const fallbackAtlas: AtlasContent = {
     eyebrow: "Atlas Roofing",
     heading: "Atlas shingles on every roof we install",
     text: "Every shingle roof we build uses Atlas Pinnacle Pristine, a shingle made to stand up to Maryland storms and stay clean in our humid summers.",
-    image: images.aerialNewShingleRoof,
+    image: images.shingleInstall,
   },
   sections: [
     {
@@ -219,7 +238,7 @@ export const fallbackAtlas: AtlasContent = {
         "Built for high winds and heavy storms",
         "Wide range of colors",
         "Matching starter and ridge cap",
-        "Manufacturer-backed warranty",
+        "Lifetime manufacturer warranty",
       ],
       image: images.pinnaclePristineBundles,
     },
@@ -253,14 +272,12 @@ export const fallbackAtlas: AtlasContent = {
       tagline: "Impact-resistant designer shingles",
       text: "The look of cedar shake or slate with impact resistance for homes that see hail.",
       highlights: ["Impact-resistant design", "Shake and slate profiles", "Designer look without the upkeep"],
-      image: images.completedRoofAerial,
     },
     {
       name: "ProLAM",
       tagline: "Value architectural shingle",
       text: "A dependable laminated shingle for rentals, additions and budget-conscious projects.",
       highlights: ["Laminated two-layer design", "Classic architectural look", "Good fit for rentals and additions"],
-      image: images.rooferInspecting,
     },
   ],
   warrantyIntro: {
@@ -269,8 +286,8 @@ export const fallbackAtlas: AtlasContent = {
     text: "Two layers of protection: the manufacturer covers the materials, and Pineda's covers the installation.",
   },
   warranties: [
-    { icon: "shield-check", title: "Materials warranty", text: "Atlas's limited warranty on the shingles and system components, registered in your name." },
-    { icon: "hammer", title: "Workmanship warranty", text: "Pineda's stands behind the installation itself, starting the day we finish." },
+    { icon: "shield-check", title: "Lifetime manufacturer warranty", text: "Atlas's lifetime limited warranty on the shingles, registered in your name." },
+    { icon: "hammer", title: "10 year labor warranty", text: "Pineda's covers the installation itself for 10 years, starting the day we finish." },
     { icon: "file-check", title: "In writing", text: "You get the warranty paperwork for your exact roof, not a brochure promise." },
   ],
   faqs: [
@@ -284,7 +301,7 @@ export const fallbackAtlas: AtlasContent = {
     },
     {
       question: "Does my new roof come with a warranty?",
-      answer: "Yes. Our warranty covers materials and workmanship for 50+ years: Atlas backs the materials and Pineda's backs the installation. You get the documents for your roof in writing.",
+      answer: "Yes. Atlas backs the shingles with a lifetime manufacturer warranty, and Pineda's backs the installation with a 10 year labor warranty. You get the documents for your roof in writing.",
     },
   ],
 };
@@ -314,7 +331,7 @@ export const fallbackInsurance: InsuranceContent = {
       ],
       highlightsLabel: "What we do for you",
       highlights: ["Free storm damage assessment", "Detailed photo documentation", "We meet your adjuster on site", "Help with supplements and denials"],
-      image: images.hailDamage,
+      image: images.rooferInspecting,
     },
   ],
   stepsIntro: { eyebrow: "Step by step", heading: "How the claim process works" },
@@ -377,7 +394,7 @@ export const fallbackAbout: AboutContent = {
       lead: "Our mission is simple: the highest quality roofing, with real care for our customers and their homes.",
       paragraphs: ["Over 30 years of experience goes into every inspection, every quote and every installation."],
       highlightsLabel: "How we work",
-      highlights: ["Free inspections with photos", "Written scope and pricing", "Clean, on-schedule installs", "50+ year warranty"],
+      highlights: ["Free inspections with photos", "Written scope and pricing", "Clean, on-schedule installs", "10 year labor warranty"],
       image: images.robertoPineda,
       imageSide: "right",
     },

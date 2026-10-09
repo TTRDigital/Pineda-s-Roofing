@@ -36,7 +36,7 @@ export const fallbackLocations: Location[] = [
       "Storm and insurance claim help",
       "24/7 emergency roof repair",
       "Licensed, insured & bonded, MHIC# 142024",
-      "50+ year materials and workmanship warranty",
+      "10 year labor warranty",
     ],
     neighborhoods: [
       "Montgomery County",
@@ -57,14 +57,14 @@ export const fallbackLocations: Location[] = [
     county: "Montgomery County",
     state: "MD",
     featured: true,
-    lead: "Silver Spring is home. Our office is on North Gate Drive in Aspen Hill, so Silver Spring homeowners get a roofer who lives and works nearby.",
+    lead: "Silver Spring is home. We are based right here, so Silver Spring homeowners get a roofer who lives and works nearby.",
     paragraphs: [
       "Many Silver Spring neighborhoods were built from the 1940s through the 1960s, with brick colonials, Cape Cods and ramblers now on their second or third roof. Older decking and flashing need a careful eye.",
       "Mature oaks and tulip poplars shade much of the area. They drop limbs in summer thunderstorms and fill gutters every fall, so we check for storm damage and drainage on every visit.",
     ],
     highlights: [
       "Free roof inspections in Silver Spring",
-      "Local office in Aspen Hill",
+      "Based right here in Silver Spring",
       "Storm and insurance claim help",
       "24/7 emergency roof repair",
       "Atlas Pinnacle Pristine shingles",
@@ -73,7 +73,7 @@ export const fallbackLocations: Location[] = [
     neighborhoods: ["Aspen Hill", "Downtown Silver Spring", "Four Corners", "Woodside", "Kemp Mill", "Colesville"],
     seo: {
       title: "Roofing Contractor in Silver Spring, MD | Pineda's Roofing",
-      description: "Silver Spring roofer based in Aspen Hill. Roof repair and replacement, storm damage and gutters from a family-owned team since 1992. Free inspections.",
+      description: "Family-owned Silver Spring roofer. Roof repair and replacement, storm damage and gutters from a family-owned team since 1992. Free inspections.",
     },
   },
   {
@@ -82,7 +82,7 @@ export const fallbackLocations: Location[] = [
     county: "Montgomery County",
     state: "MD",
     featured: true,
-    lead: "Rockville homeowners call Pineda's Roofing for honest inspections, lasting repairs and full roof replacements, just a short drive from our Aspen Hill office.",
+    lead: "Rockville homeowners call Pineda's Roofing for honest inspections, lasting repairs and full roof replacements, just a short drive from our Silver Spring base.",
     paragraphs: [
       "Rockville mixes mid-century ramblers and split-levels with newer townhomes and single-family communities. Older roofs often need ventilation and decking upgrades, while newer HOA communities have their own rules on materials and colors.",
       "Summer storms and winter ice are the two big threats here. We check for wind-lifted shingles, hail hits and ice dam damage, and document everything with photos.",
@@ -202,14 +202,14 @@ export const fallbackLocations: Location[] = [
     county: "Montgomery County",
     state: "MD",
     featured: true,
-    lead: "Wheaton is right next door to our Aspen Hill office, so help is close by for inspections, repairs and full roof replacements.",
+    lead: "Wheaton is right next door to our Silver Spring base, so help is close by for inspections, repairs and full roof replacements.",
     paragraphs: [
       "Wheaton is full of post-war Cape Cods, ramblers and split-levels. Many have older decking, attic spaces with limited ventilation and dormers that are prone to leaks.",
       "We fix the ventilation along with the roof, which helps prevent ice dams in winter and attic heat in summer.",
     ],
     highlights: [
       "Free roof inspections in Wheaton",
-      "Minutes from our Aspen Hill office",
+      "Minutes from our Silver Spring base",
       "Cape Cod and dormer roof repairs",
       "Ventilation checked on every job",
       "Storm and insurance claim help",
@@ -217,7 +217,7 @@ export const fallbackLocations: Location[] = [
     neighborhoods: ["Wheaton Hills", "Glenmont", "Kemp Mill"],
     seo: {
       title: "Roofing Contractor in Wheaton, MD | Pineda's Roofing",
-      description: "Wheaton roofer minutes from our Aspen Hill office. Roof repair, replacement and ventilation for Cape Cods and ramblers. Free, no-obligation inspections.",
+      description: "Wheaton roofer minutes from our Silver Spring base. Roof repair, replacement and ventilation for Cape Cods and ramblers. Free, no-obligation inspections.",
     },
   },
   {

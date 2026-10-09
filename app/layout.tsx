@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: { default: "Pineda's Roofing | Maryland Roofing Contractor", template: "%s | Pineda's Roofing" },
   description: "Family-owned roofing contractor in Silver Spring, MD since 1992. Roof replacement, repair, storm restoration and commercial roofing.",
   applicationName: "Pineda's Roofing",
-  formatDetection: { telephone: false },
+  formatDetection: { telephone: false, address: false, email: false },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0b0d10" };
