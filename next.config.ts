@@ -6,17 +6,20 @@ const isDev = process.env.NODE_ENV !== "production";
 // Inline scripts are needed for Next's streamed payload and static (ISR)
 // pages, which rule out per-request nonces. Third parties are limited to
 // Google Analytics / Tag Manager, Vercel Analytics, Sanity images, Google
-// Maps and the GoHighLevel (LeadConnector) chat widget. If you add tags in
+// Maps and the GoHighLevel (LeadConnector) chat widget (which loads its
+// font from fonts.bunny.net). If you add tags in
 // GTM that load other scripts, add their domains here.
 const leadConnector = "https://*.leadconnectorhq.com https://*.msgsndr.com";
+// Cloudflare Turnstile: the chat widget's anti-spam check when a visitor opens the chat.
+const turnstile = "https://challenges.cloudflare.com";
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://*.googletagmanager.com https://va.vercel-scripts.com ${leadConnector}`,
-  `style-src 'self' 'unsafe-inline' ${leadConnector} https://fonts.googleapis.com`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://*.googletagmanager.com https://va.vercel-scripts.com ${leadConnector} ${turnstile}`,
+  `style-src 'self' 'unsafe-inline' ${leadConnector} https://fonts.googleapis.com https://fonts.bunny.net`,
   "img-src 'self' data: blob: https:",
-  `font-src 'self' data: ${leadConnector} https://fonts.gstatic.com`,
-  `connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://vitals.vercel-insights.com https://va.vercel-scripts.com ${leadConnector} wss://*.leadconnectorhq.com https://*.googleapis.com`,
-  `frame-src 'self' https://www.googletagmanager.com https://www.google.com https://maps.google.com ${leadConnector}`,
+  `font-src 'self' data: ${leadConnector} https://fonts.gstatic.com https://fonts.bunny.net`,
+  `connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://vitals.vercel-insights.com https://va.vercel-scripts.com ${leadConnector} wss://*.leadconnectorhq.com https://*.googleapis.com ${turnstile}`,
+  `frame-src 'self' https://www.googletagmanager.com https://www.google.com https://maps.google.com ${leadConnector} ${turnstile}`,
   "media-src 'self' blob: https:",
   "worker-src 'self' blob:",
   "object-src 'none'",
