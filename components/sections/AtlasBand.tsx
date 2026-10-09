@@ -23,7 +23,7 @@ export function AtlasBand() {
           </div>
         </div>
         <div className="relative hidden aspect-square overflow-hidden rounded-[var(--radius-card)] lg:block">
-          <Image src={images.shingleInstall.src} alt={images.shingleInstall.alt} fill sizes="40vw" className="object-cover" />
+          <Image src={images.pinnaclePristineBundles.src} alt={images.pinnaclePristineBundles.alt} fill sizes="40vw" className="object-cover" />
         </div>
       </div>
     </section>

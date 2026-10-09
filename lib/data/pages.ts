@@ -218,7 +218,7 @@ export const fallbackAtlas: AtlasContent = {
     eyebrow: "Atlas Roofing",
     heading: "Atlas shingles on every roof we install",
     text: "Every shingle roof we build uses Atlas Pinnacle Pristine, a shingle made to stand up to Maryland storms and stay clean in our humid summers.",
-    image: images.shingleInstall,
+    image: images.completedRoofAerial,
   },
   sections: [
     {
