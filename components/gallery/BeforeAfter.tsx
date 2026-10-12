@@ -9,8 +9,9 @@ import type { Img } from "@/lib/types";
 export function BeforeAfter({ before, after, sizes = "(min-width: 1024px) 50vw, 100vw" }: { before: Img; after: Img; sizes?: string }) {
   const [pos, setPos] = useState(50);
   const id = useId();
+  const portrait = !!after.width && !!after.height && after.height > after.width;
   return (
-    <div className="relative aspect-[4/3] select-none overflow-hidden rounded-[var(--radius-card)] bg-mist">
+    <div className={`relative select-none overflow-hidden rounded-[var(--radius-card)] bg-mist ${portrait ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
       <Image src={after.src} alt={after.alt} fill sizes={sizes} className="object-cover" />
       <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
         <Image src={before.src} alt={before.alt} fill sizes={sizes} className="object-cover" />

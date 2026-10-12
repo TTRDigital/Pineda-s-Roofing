@@ -149,6 +149,27 @@ export const fallbackFaqs: Faq[] = [
 
 /* Gallery projects from real job photos. Add before and after pairs in /cms as the client sends them. */
 export const fallbackProjects: Project[] = [
+  {
+    id: "chimney-crown-rebuild",
+    title: "Chimney rebuild and new crown",
+    category: "repair",
+    summary: "Top courses rebuilt, new crown poured and three chimney caps installed.",
+    before: images.chimneyCrownRebuildBefore,
+    after: images.chimneyCrownRebuildAfter,
+    images: [],
+    featured: true,
+  },
+  {
+    id: "chimney-crown-cap",
+    title: "New chimney crown and cap",
+    category: "repair",
+    summary: "Crown formed and poured around the flue, then capped in stainless steel.",
+    before: images.chimneyCrownPour,
+    after: images.chimneyCrownCapAfter,
+    images: [],
+    featured: true,
+  },
+  { id: "chimney-repoint", title: "Chimney repointing and caps", category: "repair", summary: "Fresh mortar joints, a new crown and two flue caps.", images: [images.chimneyRepointCaps], featured: true },
   { id: "aerial-shingle", title: "Roof replacement in progress", category: "residential", summary: "Synthetic underlayment going down before the new shingles.", images: [images.aerialNewShingleRoof], featured: true },
   { id: "two-story", title: "New shingle roof on a two-story home", category: "residential", images: [images.homeNewRoofAerial], featured: true },
   { id: "chimney", title: "Chimney step flashing", category: "repair", summary: "New step and counter flashing to stop a chimney leak.", images: [images.chimneyFlashing, images.chimneyFlashing2], featured: true },

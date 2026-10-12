@@ -64,6 +64,11 @@ export const images = {
   shingleNailing: { src: "/images/stock/shingle-nailing.jpg", alt: "Roofers nailing new architectural shingles", width: 1800, height: 1200 },
   newWindow: { src: "/images/stock/new-window.jpg", alt: "New white double-hung window with a clean interior frame", width: 1400, height: 2097 },
   sidingTrim: { src: "/images/stock/siding-trim.jpg", alt: "White siding, trim and fascia on a home exterior", width: 1800, height: 1200 },
+  chimneyCrownRebuildBefore: { src: "/images/photos/chimney-crown-rebuild-before.jpg", alt: "Pineda's Roofing mason rebuilding the top of a brick chimney before the new crown", width: 900, height: 1200 },
+  chimneyCrownRebuildAfter: { src: "/images/photos/chimney-crown-rebuild-after.jpg", alt: "Rebuilt brick chimney with a new crown, flue liners and chimney caps", width: 900, height: 1200 },
+  chimneyCrownPour: { src: "/images/photos/chimney-crown-pour.jpg", alt: "New concrete chimney crown poured in a wood form around the flue", width: 900, height: 1200 },
+  chimneyCrownCapAfter: { src: "/images/photos/chimney-crown-cap-after.jpg", alt: "Finished chimney crown with a new stainless steel chimney cap", width: 675, height: 1200 },
+  chimneyRepointCaps: { src: "/images/photos/chimney-repoint-caps.jpg", alt: "Repointed brick chimney with a new crown and two chimney caps", width: 900, height: 1200 },
 } satisfies Record<string, Img>;
 
 export type ImageKey = keyof typeof images;

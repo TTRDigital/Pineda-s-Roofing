@@ -1274,7 +1274,7 @@ export const fallbackServices: Service[] = [
       eyebrow: "Chimneys",
       heading: "Chimney repair that stops roof leaks",
       text: "More roof leaks start at the chimney than anywhere else. As roofers first, we fix the flashing and the masonry together.",
-      image: images.chimneyFlashing2,
+      image: images.chimneyRepointCaps,
     },
     sections: [
       {
@@ -1294,7 +1294,7 @@ export const fallbackServices: Service[] = [
           "Rusted or lifting flashing",
           "Stains after wind-driven rain",
         ],
-        image: images.chimney,
+        image: images.chimneyFlashing2,
       },
       {
         anchor: "flashing",
@@ -1328,7 +1328,7 @@ export const fallbackServices: Service[] = [
           "Crown crack sealing",
           "Full crown rebuilds",
         ],
-        image: images.masonryBrick,
+        image: images.chimneyCrownPour,
       },
       {
         anchor: "caps-waterproofing",
@@ -1345,7 +1345,7 @@ export const fallbackServices: Service[] = [
           "Damper installation",
           "Follow-up after the next heavy rain",
         ],
-        image: images.chimneyCap,
+        image: images.chimneyCrownRebuildAfter,
         ctas: estimateCta,
       },
     ],
@@ -1393,7 +1393,7 @@ export const fallbackServices: Service[] = [
       eyebrow: "Masonry",
       heading: "Brick and stone repair done the right way",
       text: "Brick and stone last for generations, but the mortar between them doesn't. We repoint, repair and rebuild with methods that suit your building.",
-      image: images.masonryBrick,
+      image: images.chimneyCrownRebuildBefore,
     },
     sections: [
       {

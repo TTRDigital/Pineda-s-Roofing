@@ -79,7 +79,7 @@ export default async function HomePage() {
           <div className="container-x">
             <SectionHeading eyebrow="Recent work" heading="Maryland roofs we've built" />
             <div className="mt-12">
-              <Gallery projects={featured} filters={false} limit={6} />
+              <Gallery projects={featured} filters={false} limit={5} />
             </div>
             <div className="mt-10 flex justify-center">
               <Button href="/gallery" variant="dark" arrow>

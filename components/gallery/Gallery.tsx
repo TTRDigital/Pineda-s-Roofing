@@ -19,8 +19,10 @@ export function Gallery({ projects, filters = true, limit }: { projects: Project
     return limit ? list.slice(0, limit) : list;
   }, [projects, filter, limit]);
 
+  // Projects with a before/after pair show as a slider; the rest as tiles.
+  const tiles = useMemo(() => shown.filter((p) => !(p.before && p.after)), [shown]);
   // Flatten to one slide per photo for the lightbox.
-  const slides = useMemo(() => shown.flatMap((p) => [...(p.after ? [p.after] : []), ...p.images].map((img) => ({ img, project: p }))), [shown]);
+  const slides = useMemo(() => tiles.flatMap((p) => [...(p.after ? [p.after] : []), ...p.images].map((img) => ({ img, project: p }))), [tiles]);
   const firstSlide = (p: Project) => slides.findIndex((s) => s.project.id === p.id);
 
   const close = useCallback(() => setOpen(null), []);
@@ -76,7 +78,7 @@ export function Gallery({ projects, filters = true, limit }: { projects: Project
       ) : null}
 
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {shown.map((p) => {
+        {tiles.map((p) => {
           const cover = p.after ?? p.images[0];
           if (!cover) return null;
           const count = (p.after ? 1 : 0) + p.images.length;
