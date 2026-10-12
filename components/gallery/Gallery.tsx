@@ -64,7 +64,7 @@ export function Gallery({ projects, filters = true, limit }: { projects: Project
       ) : null}
 
       {withBa.length ? (
-        <div className="mb-10 grid gap-6 md:grid-cols-2">
+        <div className="mb-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {withBa.map((p) => (
             <figure key={`ba-${p.id}`}>
               <BeforeAfter before={p.before!} after={p.after!} />

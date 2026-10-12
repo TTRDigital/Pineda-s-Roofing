@@ -69,6 +69,7 @@ export const images = {
   chimneyCrownPour: { src: "/images/photos/chimney-crown-pour.jpg", alt: "New concrete chimney crown poured in a wood form around the flue", width: 900, height: 1200 },
   chimneyCrownCapAfter: { src: "/images/photos/chimney-crown-cap-after.jpg", alt: "Finished chimney crown with a new stainless steel chimney cap", width: 675, height: 1200 },
   chimneyRepointCaps: { src: "/images/photos/chimney-repoint-caps.jpg", alt: "Repointed brick chimney with a new crown and two chimney caps", width: 900, height: 1200 },
+  chimneyRepointBefore: { src: "/images/photos/chimney-repoint-before.jpg", alt: "Weathered brick chimney with stained, crumbling mortar and an old crown before repair", width: 675, height: 1200 },
 } satisfies Record<string, Img>;
 
 export type ImageKey = keyof typeof images;

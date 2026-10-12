@@ -1294,7 +1294,7 @@ export const fallbackServices: Service[] = [
           "Rusted or lifting flashing",
           "Stains after wind-driven rain",
         ],
-        image: images.chimneyFlashing2,
+        image: images.chimneyRepointBefore,
       },
       {
         anchor: "flashing",
