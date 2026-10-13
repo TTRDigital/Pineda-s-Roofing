@@ -9,7 +9,7 @@ type Field = "name" | "phone" | "email" | "zip" | "address" | "property" | "serv
 type Values = Record<Field, string>;
 type Errors = Partial<Record<Field | "consent", string>>;
 
-/* Light client checks that mirror the server schema in lib/lead.ts. */
+/* Client checks; public/api/lead.php checks the same on the server. */
 const validators: Record<Field, (v: string) => string | undefined> = {
   name: (v) => (v.trim().length < 2 ? "Please enter your name." : undefined),
   phone: (v) => (v.replace(/\D/g, "").length < 10 ? "Please enter a phone number with area code." : undefined),
@@ -96,7 +96,7 @@ export function LeadForm({
     const honeypot = (formRef.current?.elements.namedItem("hp_pr") as HTMLInputElement | null)?.value ?? "";
 
     try {
-      const res = await fetch("/api/lead", {
+      const res = await fetch("/api/lead.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

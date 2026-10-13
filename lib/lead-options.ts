@@ -1,4 +1,4 @@
-/* Zod-free constants shared by the lead form (client) and /api/lead. */
+/* Constants for the lead form. public/api/lead.php repeats the options: keep them in sync. */
 
 export const serviceOptions = [
   "Roof replacement",

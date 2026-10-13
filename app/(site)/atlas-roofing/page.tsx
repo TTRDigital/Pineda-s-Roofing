@@ -11,7 +11,6 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getAtlasPage();

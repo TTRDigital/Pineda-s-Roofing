@@ -2,14 +2,11 @@ import "server-only";
 
 import { apiVersion, dataset, projectId } from "@/sanity/env";
 
-/** Default ISR window for all CMS content, in seconds. */
-export const REVALIDATE_SECONDS = 300;
-
 /**
  * Fetch published content from Sanity's API CDN.
  *
- * - Cached with ISR (revalidate 300) and tagged so /api/revalidate can
- *   refresh content on publish.
+ * - Runs at build time only (static export): publishing in Sanity starts a
+ *   rebuild + upload (.github/workflows/deploy-siteground.yml).
  * - Never throws: returns null on any failure so pages fall back to
  *   lib/content.ts defaults and the site keeps working.
  */
@@ -27,9 +24,7 @@ export async function sanityFetch<T>(
   const url = `https://${projectId}.apicdn.sanity.io/v${apiVersion}/data/query/${dataset}?${search}`;
 
   try {
-    const res = await fetch(url, {
-      next: { revalidate: REVALIDATE_SECONDS, tags: ["sanity", ...tags] },
-    });
+    const res = await fetch(url, { cache: "force-cache" });
     if (!res.ok) {
       console.warn(`[sanity] ${res.status} for query tags=${tags.join(",")}`);
       return null;

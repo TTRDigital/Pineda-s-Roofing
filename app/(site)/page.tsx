@@ -17,7 +17,6 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Gallery } from "@/components/gallery/Gallery";
 
-export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
   const home = await getHome();

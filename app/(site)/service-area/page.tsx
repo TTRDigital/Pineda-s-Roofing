@@ -9,7 +9,6 @@ import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-export const revalidate = 300;
 
 const seo = {
   title: "Service Area: Maryland, D.C. & Northern Virginia | Pineda's Roofing",

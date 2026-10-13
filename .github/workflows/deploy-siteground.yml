@@ -1,0 +1,70 @@
+# Builds the static site and uploads it to SiteGround over FTPS.
+# Runs on every push, when Sanity publishes (webhook -> repository_dispatch),
+# and from Actions > "Deploy to SiteGround" > Run workflow.
+#
+# Repository secrets (Settings > Secrets and variables > Actions):
+#   SG_FTP_SERVER    FTP host from SiteGround Site Tools > Site > FTP Accounts
+#   SG_FTP_USERNAME  FTP account whose folder is the site's public_html
+#   SG_FTP_PASSWORD
+#   GHL_WEBHOOK_URL  GoHighLevel inbound webhook for the estimate form
+name: Deploy to SiteGround
+
+on:
+  push:
+    branches: [claude/youthful-clarke-wb7b1z]
+  repository_dispatch:
+    types: [sanity-publish]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-siteground
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build static site
+        run: npm run build
+
+      # Download from the run page for a manual upload (no form settings inside).
+      - name: Keep a copy of the site
+        uses: actions/upload-artifact@v4
+        with:
+          name: pinedas-roofing-site
+          path: out/
+          include-hidden-files: true
+          retention-days: 14
+
+      - name: Write form settings
+        env:
+          GHL_WEBHOOK_URL: ${{ secrets.GHL_WEBHOOK_URL }}
+        run: |
+          php -r 'file_put_contents("out/api/lead-config.php", "<?php\nreturn " . var_export(["webhook_url" => getenv("GHL_WEBHOOK_URL")], true) . ";\n");'
+
+      - name: Upload to SiteGround
+        # Skipped (build check only) until the FTP secrets are added.
+        if: env.SG_FTP_SERVER != ''
+        env:
+          SG_FTP_SERVER: ${{ secrets.SG_FTP_SERVER }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SG_FTP_SERVER }}
+          username: ${{ secrets.SG_FTP_USERNAME }}
+          password: ${{ secrets.SG_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./out/
+          server-dir: ./

@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "node scripts/optimize-images.mjs && next build",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "seed": "node --experimental-strip-types --no-warnings scripts/seed.ts"
@@ -13,8 +12,6 @@
   "dependencies": {
     "@portabletext/react": "^8.0.1",
     "@sanity/vision": "^6.17.0",
-    "@vercel/analytics": "^2.0.1",
-    "@vercel/speed-insights": "^2.0.0",
     "lucide-react": "^1.52.0",
     "next": "^16.3.8",
     "next-sanity": "^13.3.4",
@@ -22,8 +19,7 @@
     "react-dom": "^19.3.0",
     "sanity": "^6.17.0",
     "server-only": "^0.0.1",
-    "styled-components": "^6.5.3",
-    "zod": "^4.6.5"
+    "styled-components": "^6.5.3"
   },
   "devDependencies": {
     "@sanity/client": "^8.9.0",
@@ -34,6 +30,7 @@
     "@typescript/native": "npm:typescript@^7.0.2",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.8",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "typescript": "npm:@typescript/typescript6@^6.0.2"
   }

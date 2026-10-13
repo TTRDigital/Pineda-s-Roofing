@@ -1,10 +1,10 @@
 # Pineda's Roofing website
 
-Next.js 16 (App Router) + Sanity Studio embedded at `/cms`, Tailwind CSS v4, hosted on Vercel. Built by TTR Digital Marketing.
+Next.js 16 (App Router, static export) + Sanity Studio embedded at `/cms`, Tailwind CSS v4, hosted on **SiteGround** as plain files. Built by TTR Digital Marketing.
 
 - **Design:** black, white and light grey with cyan accents (no navy). Every page is built from "feature sections": photo, heading, a short lead, short paragraphs and highlight boxes, never long paragraphs or bullet lists.
 - **Content:** everything is editable in `/cms`. Until Sanity is connected (or a field is left empty), the site shows the built-in content from `lib/data`, so it never breaks.
-- **Leads:** the estimate form posts to `/api/lead`, which delivers to GoHighLevel (webhook and/or API).
+- **Leads:** the estimate form posts to `/api/lead.php` (PHP on SiteGround), which delivers to the GoHighLevel inbound webhook.
 
 ## Pages
 
@@ -25,19 +25,30 @@ The URLs match the old WordPress site, so existing Google rankings carry over. A
 
 ## Setup
 
-1. **Sanity project:** `5emjihiz`, dataset `production` (already created; it is the default in `sanity/env.ts`, so no env var is needed).
-2. **CORS (done):** `http://localhost:3000`, `https://www.pinedasroofing.com` and `https://pinedasroofing.com` are allowed with credentials. Once the Vercel project exists, add its preview URL too (sanity.io/manage > API > CORS origins).
-3. **Local env:** copy `.env.example` to `.env.local` (the defaults already point at `5emjihiz`).
-4. **Load the content into Sanity (once):** create an Editor token (sanity.io/manage > API > Tokens) and put it in `.env.local` as `SANITY_WRITE_TOKEN`, then:
-   ```bash
-   npm install
-   npm run seed            # creates every page, service, area, review, FAQ and uploads the photos
-   ```
-   Running it again only adds missing documents. `npm run seed -- --force` overwrites the CMS with the built-in content, and `npm run seed -- --dry-run` checks everything without writing.
-5. **Run:** `npm run dev`, then open http://localhost:3000 and http://localhost:3000/cms.
-6. **Vercel:** import the repo, add the env vars from `.env.example` (not `SANITY_WRITE_TOKEN`), deploy, add the domain.
-7. **Publish webhook:** in Sanity, go to API > Webhooks and add `https://www.pinedasroofing.com/api/revalidate`, triggers create/update/delete, projection `{_type, slug}`, and the same secret as `SANITY_REVALIDATE_SECRET`. Published changes then show on the site within seconds (otherwise within 5 minutes).
-8. **GoHighLevel:** set `GHL_WEBHOOK_URL` (and optionally `GHL_LOCATION_ID` + `GHL_API_KEY`). For the website chat, set `NEXT_PUBLIC_GHL_CHAT_WIDGET_ID`.
+1. **Sanity project:** `5emjihiz`, dataset `production` (the default in `sanity/env.ts`, so no env var is needed). CORS already allows `http://localhost:3000`, `https://www.pinedasroofing.com` and `https://pinedasroofing.com`.
+2. **Local env:** copy `.env.example` to `.env.local`.
+3. **Load the content into Sanity (once):** create an Editor token (sanity.io/manage > API > Tokens), put it in `.env.local` as `SANITY_WRITE_TOKEN`, then `npm install && npm run seed`. Running it again only adds missing documents; `-- --force` overwrites the CMS with the built-in content, `-- --dry-run` checks without writing.
+4. **Run:** `npm run dev`, then open http://localhost:3000 and http://localhost:3000/cms.
+
+## Hosting on SiteGround
+
+`npm run build` writes the whole site to `out/` as plain files: HTML pages, `_next/` scripts, `_img/` WebP photos, `api/lead.php` (the form) and `.htaccess` (redirects, security headers, caching). Upload the **contents** of `out/` into the site's `public_html`.
+
+Automatic deploys (`.github/workflows/deploy-siteground.yml`) build and upload over FTPS on every push, when Sanity publishes, and from Actions > "Deploy to SiteGround" > Run workflow. Only changed files are uploaded. Repository secrets:
+
+| Secret | Value |
+|---|---|
+| `SG_FTP_SERVER` | FTP host (Site Tools > Site > FTP Accounts > Manage > FTP credentials) |
+| `SG_FTP_USERNAME` / `SG_FTP_PASSWORD` | an FTP account whose folder is `pinedasroofing.com/public_html` |
+| `GHL_WEBHOOK_URL` | GoHighLevel inbound webhook for the estimate form |
+
+The workflow writes `api/lead-config.php` (the webhook URL; never served, see `.htaccess`). For a manual upload, create it yourself: `<?php return ['webhook_url' => 'https://services.leadconnectorhq.com/hooks/...'];`.
+
+**Publish → live:** in sanity.io/manage > API > Webhooks, add a webhook: URL `https://api.github.com/repos/TTRDigital/pineda-s-roofing/dispatches`, method POST, triggers create/update/delete, filter none, projection `{"event_type": "sanity-publish"}`, HTTP headers `Authorization: Bearer <GitHub fine-grained token with Contents: read and write on this repo>` and `Accept: application/vnd.github+json`. Each publish then rebuilds and uploads the site (about 3 minutes).
+
+In SiteGround, also turn on Site Tools > Security > SSL Manager (Let's Encrypt) and HTTPS Enforce. `.htaccess` sends `pinedasroofing.com` to `https://www.pinedasroofing.com`.
+
+GoHighLevel chat: the widget ID is in `lib/chat.ts` (`NEXT_PUBLIC_GHL_CHAT_WIDGET_ID` overrides it at build time; `off` hides the chat). Google Analytics / Tag Manager: `NEXT_PUBLIC_GA_ID` / `NEXT_PUBLIC_GTM_ID` at build time.
 
 ## Editing in /cms
 
@@ -58,6 +69,7 @@ npm run build      # production build
 ```
 
 - `lib/data/*`: built-in content (fallbacks and seed source). `lib/data/images.ts` lists every local photo with its alt text.
-- `lib/content.ts`: GROQ queries plus the merge over fallbacks.
+- `lib/content.ts`: GROQ queries plus the merge over fallbacks (fetched at build time).
+- `public/.htaccess`, `public/api/lead.php`: the SiteGround side (redirects, headers, form).
 - `components/sections/FeatureSection.tsx`: the main building block.
 - `sanity/schemaTypes`: CMS schema.

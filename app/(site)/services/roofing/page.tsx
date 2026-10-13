@@ -10,7 +10,6 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { JumpChips } from "@/components/ui/JumpChips";
 
-export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getRoofingPage();

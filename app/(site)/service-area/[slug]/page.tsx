@@ -11,7 +11,6 @@ import { CardGrid } from "@/components/sections/CardGrid";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { ContactSection } from "@/components/sections/ContactSection";
 
-export const revalidate = 300;
 
 export async function generateStaticParams() {
   return fallbackLocations.filter((l) => l.featured).map((l) => ({ slug: l.slug }));

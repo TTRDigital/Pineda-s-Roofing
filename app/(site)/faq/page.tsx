@@ -7,7 +7,6 @@ import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { JsonLd, faqPageSchema } from "@/components/ui/JsonLd";
 import { CtaBand } from "@/components/sections/CtaBand";
 
-export const revalidate = 300;
 
 const seo = {
   title: "Roofing FAQ | Pineda's Roofing",

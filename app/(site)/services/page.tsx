@@ -7,7 +7,6 @@ import { CardGrid } from "@/components/sections/CardGrid";
 import { AtlasBand } from "@/components/sections/AtlasBand";
 import { ContactSection } from "@/components/sections/ContactSection";
 
-export const revalidate = 300;
 
 const seo = {
   title: "Roofing & Exterior Services in Maryland | Pineda's Roofing",

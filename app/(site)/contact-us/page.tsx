@@ -6,7 +6,6 @@ import { PageHero } from "@/components/sections/PageHero";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { ServiceAreas } from "@/components/sections/ServiceAreas";
 
-export const revalidate = 300;
 
 const seo = {
   title: "Contact Pineda's Roofing | Free Roof Estimate",

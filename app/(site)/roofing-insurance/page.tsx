@@ -9,7 +9,6 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
-export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getInsurancePage();

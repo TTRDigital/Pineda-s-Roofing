@@ -1,0 +1,74 @@
+# Pineda's Roofing: static Next.js export on SiteGround (Apache).
+# Replaces what next.config.ts did on Vercel: redirects, headers, caching.
+
+Options -Indexes
+DirectoryIndex index.html index.php
+# The trailing slash is added by a rewrite below (on https), not by Apache.
+DirectorySlash Off
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # One address: https://www.pinedasroofing.com
+  # (turn on "HTTPS Enforce" in SiteGround Site Tools > Security > SSL Manager too)
+  RewriteCond %{HTTP_HOST} ^pinedasroofing\.com$ [NC]
+  RewriteRule ^(.*)$ https://www.pinedasroofing.com/$1 [R=301,L]
+
+  # Old WordPress paths that changed. Targets are absolute https so visitors
+  # behind SiteGround's proxy are not bounced through http first.
+  RewriteRule ^emergency-roof-repair/?$ https://%{HTTP_HOST}/services/emergency-roof-repair/ [R=301,L]
+  RewriteRule ^home-v2/?$ https://%{HTTP_HOST}/ [R=301,L]
+  RewriteRule ^atlas/?$ https://%{HTTP_HOST}/atlas-roofing/ [R=301,L]
+  RewriteRule ^insurance-claims/?$ https://%{HTTP_HOST}/roofing-insurance/ [R=301,L]
+  RewriteRule ^about/?$ https://%{HTTP_HOST}/about-us/ [R=301,L]
+  RewriteRule ^contact/?$ https://%{HTTP_HOST}/contact-us/ [R=301,L]
+  RewriteRule ^roofing/?$ https://%{HTTP_HOST}/services/roofing/ [R=301,L]
+  RewriteRule ^services/gutters/?$ https://%{HTTP_HOST}/services/gutter-installation-replacement/ [R=301,L]
+
+  # Pages live at /page/ (page/index.html): add the missing slash, on https.
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.*[^/])$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
+  # The Sanity Studio is one page; its inner URLs (/cms/structure/...) load it.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^cms/. /cms/index.html [L]
+</IfModule>
+
+# The form's settings file and the upload tool's file list are never served.
+<FilesMatch "^(lead-config\.php|\.ftp-deploy-sync-state\.json)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), geolocation=(), browsing-topics=()"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+  # Strict CSP for the site. Third parties: Google Analytics / Tag Manager,
+  # Sanity images, Google Maps, the GoHighLevel (LeadConnector) chat widget
+  # (font from fonts.bunny.net, Cloudflare Turnstile anti-spam). If you add
+  # tags in GTM that load other scripts, add their domains here.
+  # The studio at /cms talks to many Sanity hosts and is protected by Sanity login instead.
+  <If "%{REQUEST_URI} !~ m#^/cms(/|$)#">
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://*.leadconnectorhq.com https://*.msgsndr.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://*.leadconnectorhq.com https://*.msgsndr.com https://fonts.googleapis.com https://fonts.bunny.net; img-src 'self' data: blob: https:; font-src 'self' data: https://*.leadconnectorhq.com https://*.msgsndr.com https://fonts.gstatic.com https://fonts.bunny.net; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.leadconnectorhq.com https://*.msgsndr.com wss://*.leadconnectorhq.com https://*.googleapis.com https://challenges.cloudflare.com; frame-src 'self' https://www.googletagmanager.com https://www.google.com https://maps.google.com https://*.leadconnectorhq.com https://*.msgsndr.com https://challenges.cloudflare.com; media-src 'self' blob: https:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+  </If>
+
+  # Caching: hashed build files forever, photos for a month, pages always fresh.
+  <FilesMatch "\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(webp|avif|jpe?g|png|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(html|txt|xml)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+</IfModule>

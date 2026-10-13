@@ -10,7 +10,6 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { CtaBand } from "@/components/sections/CtaBand";
 
-export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getAboutPage();

@@ -14,7 +14,6 @@ import { RelatedServices } from "@/components/sections/RelatedServices";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { JsonLd } from "@/components/ui/JsonLd";
 
-export const revalidate = 300;
 
 export async function generateStaticParams() {
   return fallbackServices.map((s) => ({ slug: s.slug }));

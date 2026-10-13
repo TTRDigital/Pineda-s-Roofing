@@ -6,7 +6,6 @@ import { PageHero } from "@/components/sections/PageHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Gallery } from "@/components/gallery/Gallery";
 
-export const revalidate = 300;
 
 const seo = {
   title: "Roofing Project Gallery | Pineda's Roofing",

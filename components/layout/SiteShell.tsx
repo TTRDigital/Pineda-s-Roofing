@@ -1,6 +1,4 @@
 import type { ReactNode } from "react";
-import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getLocations, getServices, getSiteSettings, getTestimonials } from "@/lib/content";
 import { businessSchema } from "@/lib/schema";
 import { revealScript } from "@/lib/reveal-script";
@@ -14,8 +12,6 @@ import { Analytics } from "@/components/layout/Analytics";
 import { HydrationSignal } from "@/components/layout/HydrationSignal";
 import { MobileCallBar } from "@/components/layout/MobileCallBar";
 import { AttributionCapture } from "@/components/forms/AttributionCapture";
-
-const onVercel = !!process.env.VERCEL;
 
 function buildNav(services: Service[]): NavItem[] {
   const roofing = services.filter((s) => s.category !== "exterior");
@@ -68,12 +64,6 @@ export async function SiteShell({ children }: { children: ReactNode }) {
       <AttributionCapture />
       <HydrationSignal />
       <Analytics />
-      {onVercel ? (
-        <>
-          <VercelAnalytics />
-          <SpeedInsights />
-        </>
-      ) : null}
       <script dangerouslySetInnerHTML={{ __html: revealScript }} />
     </>
   );
