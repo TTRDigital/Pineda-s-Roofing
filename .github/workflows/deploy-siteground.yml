@@ -6,7 +6,8 @@
 #   SG_FTP_SERVER    FTP host from SiteGround Site Tools > Site > FTP Accounts
 #   SG_FTP_USERNAME  FTP account whose folder is the site's public_html
 #   SG_FTP_PASSWORD
-#   GHL_WEBHOOK_URL  GoHighLevel inbound webhook for the estimate form
+#   GHL_WEBHOOK_URL  optional: a different GoHighLevel webhook for the form
+#                    (public/api/lead.php has the default built in)
 name: Deploy to SiteGround
 
 on:
@@ -27,6 +28,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    # At job level so the steps' `if:` checks can see them.
+    env:
+      SG_FTP_SERVER: ${{ secrets.SG_FTP_SERVER }}
+      GHL_WEBHOOK_URL: ${{ secrets.GHL_WEBHOOK_URL }}
     steps:
       - uses: actions/checkout@v4
 
@@ -49,17 +54,15 @@ jobs:
           include-hidden-files: true
           retention-days: 14
 
+      # Optional override; without the secret, lead.php uses its built-in webhook.
       - name: Write form settings
-        env:
-          GHL_WEBHOOK_URL: ${{ secrets.GHL_WEBHOOK_URL }}
+        if: env.GHL_WEBHOOK_URL != ''
         run: |
           php -r 'file_put_contents("out/api/lead-config.php", "<?php\nreturn " . var_export(["webhook_url" => getenv("GHL_WEBHOOK_URL")], true) . ";\n");'
 
       - name: Upload to SiteGround
         # Skipped (build check only) until the FTP secrets are added.
         if: env.SG_FTP_SERVER != ''
-        env:
-          SG_FTP_SERVER: ${{ secrets.SG_FTP_SERVER }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.SG_FTP_SERVER }}

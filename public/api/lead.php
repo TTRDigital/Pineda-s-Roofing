@@ -1,14 +1,17 @@
 <?php
 /*
  * Estimate form handler for SiteGround (the static site has no Node server).
- * Validates the lead like lib/lead.ts, filters spam and posts it to the
- * GoHighLevel inbound webhook.
+ * Validates the lead like the form does, filters spam and posts it to the
+ * GoHighLevel inbound webhook below.
  *
- * The webhook URL is not in the repo. It is read from lead-config.php, next to
- * public_html (preferred) or in this folder (blocked from the web by
- * .htaccess), which returns: ['webhook_url' => 'https://services.leadconnectorhq.com/hooks/...'].
- * The deploy workflow writes it from the GHL_WEBHOOK_URL secret.
+ * To use a different webhook without a code change, add lead-config.php next
+ * to public_html or in this folder (blocked from the web by .htaccess)
+ * returning ['webhook_url' => 'https://...']. The deploy workflow writes it
+ * when the GHL_WEBHOOK_URL secret is set.
  */
+
+// Pineda's Roofing GoHighLevel workflow: "Inbound Webhook" trigger.
+const DEFAULT_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/SuOTFAexav5kBEKVFFst/webhook-trigger/IuYTKRe2MHqpU3qHc2v8';
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
@@ -108,8 +111,9 @@ foreach ([dirname(__DIR__, 2) . '/lead-config.php', __DIR__ . '/lead-config.php'
     }
 }
 $webhook = trim((string) ($config['webhook_url'] ?? ''), " \t\n\r\0\x0B\"'");
+if ($webhook === '') $webhook = DEFAULT_WEBHOOK;
 if (!preg_match('#^https://#', $webhook)) {
-    error_log('[lead] No GHL webhook configured: lead accepted but NOT sent. Add lead-config.php.');
+    error_log('[lead] GHL webhook URL is not https: lead accepted but NOT sent. Check lead-config.php.');
     reply(200, ['ok' => true, 'delivered' => false]);
 }
 

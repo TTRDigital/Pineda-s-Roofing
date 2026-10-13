@@ -21,7 +21,7 @@ Next.js 16 (App Router, static export) + Sanity Studio embedded at `/cms`, Tailw
 | `/service-area`, `/service-area/[slug]` | Counties and city pages |
 | `/cms` | Sanity Studio |
 
-The URLs match the old WordPress site, so existing Google rankings carry over. A few changed paths redirect in `redirects.ts`.
+The URLs match the old WordPress site, so existing Google rankings carry over. A few changed paths redirect in `public/.htaccess`.
 
 ## Setup
 
@@ -40,9 +40,9 @@ Automatic deploys (`.github/workflows/deploy-siteground.yml`) build and upload o
 |---|---|
 | `SG_FTP_SERVER` | FTP host (Site Tools > Site > FTP Accounts > Manage > FTP credentials) |
 | `SG_FTP_USERNAME` / `SG_FTP_PASSWORD` | an FTP account whose folder is `pinedasroofing.com/public_html` |
-| `GHL_WEBHOOK_URL` | GoHighLevel inbound webhook for the estimate form |
+| `GHL_WEBHOOK_URL` | optional: a different GoHighLevel webhook (the default is built into `public/api/lead.php`) |
 
-The workflow writes `api/lead-config.php` (the webhook URL; never served, see `.htaccess`). For a manual upload, create it yourself: `<?php return ['webhook_url' => 'https://services.leadconnectorhq.com/hooks/...'];`.
+The estimate form sends every lead to Pineda's GoHighLevel inbound webhook (`DEFAULT_WEBHOOK` in `public/api/lead.php`). To switch webhooks without a code change, set the `GHL_WEBHOOK_URL` secret; the workflow then writes `api/lead-config.php` (never served, see `.htaccess`).
 
 **Publish → live:** in sanity.io/manage > API > Webhooks, add a webhook: URL `https://api.github.com/repos/TTRDigital/pineda-s-roofing/dispatches`, method POST, triggers create/update/delete, filter none, projection `{"event_type": "sanity-publish"}`, HTTP headers `Authorization: Bearer <GitHub fine-grained token with Contents: read and write on this repo>` and `Accept: application/vnd.github+json`. Each publish then rebuilds and uploads the site (about 3 minutes).
 
