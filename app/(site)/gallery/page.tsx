@@ -19,7 +19,7 @@ export default async function GalleryPage() {
   return (
     <>
       <PageHero
-        hero={{ eyebrow: "Gallery", heading: "Our work", text: "Real Maryland jobs by our own crews. Tap a project to see every photo.", image: images.completedRoofAerial }}
+        hero={{ eyebrow: "Gallery", heading: "Our work", text: "Real Maryland jobs by our own crews. Tap a project to see every photo.", image: images.homeNewRoofAerial }}
         crumbs={[{ label: "Gallery", href: "/gallery" }]}
       />
       <section className="section bg-white">

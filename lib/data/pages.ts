@@ -168,7 +168,7 @@ export const fallbackRoofing: RoofingContent = {
         "Repairs, coatings and maintenance plans",
         "Licensed and fully insured crews",
       ],
-      image: images.flatRoofSkylight,
+      image: images.flatRoofMembrane,
       ctas: [
         { label: "Explore commercial roofing", href: "/services/commercial-roofing" },
         { label: "Request a quote", href: "/contact-us" },
@@ -198,7 +198,7 @@ export const fallbackRoofing: RoofingContent = {
       ],
       highlightsLabel: "What we handle",
       highlights: ["24/7 emergency tarping", "Hail and wind damage", "Fallen trees and debris", "Insurance claims and adjuster meetings"],
-      image: images.treeOnRoof,
+      image: images.fallenTreeHouse,
       ctas: [
         { label: "Emergency roof repair", href: "/services/emergency-roof-repair" },
         { label: "Insurance claims", href: "/roofing-insurance" },
@@ -209,6 +209,7 @@ export const fallbackRoofing: RoofingContent = {
 };
 
 export const fallbackAtlas: AtlasContent = {
+  badge: { src: "/images/logos/atlas.svg", alt: "Atlas Roofing", width: 600, height: 412 },
   seo: {
     title: "Atlas Roofing Shingles in Maryland | Pineda's Roofing",
     description:
@@ -218,7 +219,7 @@ export const fallbackAtlas: AtlasContent = {
     eyebrow: "Atlas Roofing",
     heading: "Atlas shingles on every roof we install",
     text: "Every shingle roof we build uses Atlas Pinnacle Pristine, a shingle made to stand up to Maryland storms and stay clean in our humid summers.",
-    image: images.completedRoofAerial,
+    image: images.aerialNewShingleRoof,
   },
   sections: [
     {
@@ -254,6 +255,49 @@ export const fallbackAtlas: AtlasContent = {
       image: images.underlaymentInstall,
     },
   ],
+  qualitiesIntro: {
+    eyebrow: "The Atlas difference",
+    heading: "What makes an Atlas roof",
+    text: "These are the Atlas technologies and components behind the roofs we install.",
+  },
+  qualities: [
+    {
+      icon: "leaf",
+      title: "3M Scotchgard Protector",
+      text: "Algae-resistant granules from 3M fight the black streaks that grow on roofs in humid Maryland summers.",
+    },
+    {
+      icon: "storm",
+      title: "Core4 impact resistance",
+      text: "Atlas StormMaster Shake and Slate are built with Core4 technology for a Class 4 impact rating, the highest there is.",
+    },
+    {
+      icon: "layers",
+      title: "Summit 60 underlayment",
+      text: "Atlas's synthetic underlayment goes on before the shingles. It's the blue and white layer you see in our job photos.",
+    },
+    {
+      icon: "shield-check",
+      title: "Signature Select system",
+      text: "Atlas starter, hip and ridge, underlayment and ice & water shield installed together as one system, which unlocks Atlas's stronger system warranty.",
+    },
+    {
+      icon: "wind",
+      title: "Built for wind and storms",
+      text: "Pinnacle Pristine is engineered for high winds and heavy rain when installed to Atlas's specifications.",
+    },
+    {
+      icon: "award",
+      title: "Lifetime limited warranty",
+      text: "Atlas backs its architectural shingles with a lifetime limited warranty, registered in your name.",
+    },
+  ],
+  jobPhotosIntro: {
+    eyebrow: "On our job sites",
+    heading: "Atlas on our roofs",
+    text: "Real Pineda's Roofing jobs: Atlas Pinnacle Pristine shingles staged on the roof and Atlas Summit 60 underlayment going down.",
+  },
+  jobPhotos: [images.pinnaclePristineBundles, images.aerialNewShingleRoof, images.underlaymentInstall, images.deckingUnderlayment],
   productsIntro: {
     eyebrow: "Shingle lines",
     heading: "Atlas shingles we install",
@@ -265,7 +309,6 @@ export const fallbackAtlas: AtlasContent = {
       tagline: "Our standard architectural shingle",
       text: "Dimensional look, rich color blends and Scotchgard Protector to keep the roof clean.",
       highlights: ["3M Scotchgard algae resistance", "High wind performance", "Lifetime limited warranty"],
-      image: images.homeNewRoofAerial,
     },
     {
       name: "StormMaster Shake & Slate",
@@ -384,7 +427,7 @@ export const fallbackAbout: AboutContent = {
       ],
       highlightsLabel: "What hasn't changed",
       highlights: ["Same family, same standards", "Our own crews on every job", "Best materials, latest techniques", "Honest advice, even when it's a repair"],
-      image: images.freddyPineda,
+      image: images.crew,
     },
     {
       anchor: "mission",

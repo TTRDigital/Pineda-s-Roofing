@@ -27,6 +27,9 @@ export async function generateMetadata(props: PageProps<"/service-area/[slug]">)
   return pageMetadata(seo, `/service-area/${slug}`);
 }
 
+/* Real job photos, rotated so neighbouring city pages don't all show the same house. */
+const heroPhotos = [images.homeNewRoofAerial, images.aerialNewShingleRoof, images.rooferOnRidge, images.crew, images.underlaymentInstall, images.shingleRepairPatch];
+
 export default async function LocationPage(props: PageProps<"/service-area/[slug]">) {
   const { slug } = await props.params;
   const [loc, locations, services, settings, testimonials] = await Promise.all([getLocation(slug), getLocations(), getServices(), getSiteSettings(), getTestimonials()]);
@@ -36,7 +39,7 @@ export default async function LocationPage(props: PageProps<"/service-area/[slug
   return (
     <>
       <PageHero
-        hero={{ eyebrow: loc.county ?? "Service area", heading: `Roofing in ${loc.name}`, text: loc.lead, image: images.homeNewRoofAerial }}
+        hero={{ eyebrow: loc.county ?? "Service area", heading: `Roofing in ${loc.name}`, text: loc.lead, image: heroPhotos[locations.findIndex((l) => l.slug === slug) % heroPhotos.length] }}
         crumbs={[
           { label: "Service area", href: "/service-area" },
           { label: loc.name, href: `/service-area/${slug}` },

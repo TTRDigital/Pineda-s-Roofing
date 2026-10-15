@@ -2,22 +2,42 @@ import type { Location } from "../types";
 
 /* Service area. `counties` drives the full area list; `fallbackLocations` are the city pages (array order = display order). */
 
-export const counties: { name: string; state: string; cities: string[] }[] = [
+export type County = { name: string; state: string; /** Census FIPS codes of the areas shaded on the map. */ fips: string[]; cities: string[] };
+
+export const counties: County[] = [
   {
     name: "Montgomery County",
     state: "MD",
+    fips: ["24031"],
     cities: ["Silver Spring", "Aspen Hill", "Wheaton", "Takoma Park", "Olney", "Rockville", "Bethesda", "Gaithersburg", "Germantown", "Potomac"],
   },
-  { name: "Prince George's County", state: "MD", cities: ["Bowie", "College Park", "Hyattsville", "Greenbelt", "Laurel"] },
-  { name: "Howard County", state: "MD", cities: ["Columbia", "Ellicott City", "Clarksville", "Elkridge"] },
-  { name: "Frederick County", state: "MD", cities: ["Frederick", "Urbana", "Middletown", "New Market"] },
-  { name: "Anne Arundel County", state: "MD", cities: ["Annapolis", "Glen Burnie", "Crofton", "Severna Park", "Odenton"] },
-  { name: "Baltimore County", state: "MD", cities: ["Towson", "Owings Mills", "Pikesville", "Catonsville"] },
-  { name: "Baltimore City", state: "MD", cities: ["Baltimore"] },
-  { name: "Carroll County", state: "MD", cities: ["Westminster", "Eldersburg", "Sykesville"] },
-  { name: "Northern Virginia", state: "VA", cities: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"] },
-  { name: "Washington, D.C.", state: "DC", cities: ["Capitol Hill", "Georgetown", "Petworth", "Brookland", "Cleveland Park"] },
+  { name: "Prince George's County", state: "MD", fips: ["24033"], cities: ["Bowie", "College Park", "Hyattsville", "Greenbelt", "Laurel"] },
+  { name: "Howard County", state: "MD", fips: ["24027"], cities: ["Columbia", "Ellicott City", "Clarksville", "Elkridge"] },
+  { name: "Frederick County", state: "MD", fips: ["24021"], cities: ["Frederick", "Urbana", "Middletown", "New Market"] },
+  { name: "Anne Arundel County", state: "MD", fips: ["24003"], cities: ["Annapolis", "Glen Burnie", "Crofton", "Severna Park", "Odenton"] },
+  { name: "Baltimore County", state: "MD", fips: ["24005"], cities: ["Towson", "Owings Mills", "Pikesville", "Catonsville"] },
+  { name: "Baltimore City", state: "MD", fips: ["24510"], cities: ["Baltimore"] },
+  { name: "Carroll County", state: "MD", fips: ["24013"], cities: ["Westminster", "Eldersburg", "Sykesville"] },
+  // Arlington, Fairfax County, and the cities of Alexandria, Falls Church and Fairfax.
+  { name: "Northern Virginia", state: "VA", fips: ["51013", "51059", "51510", "51610", "51600"], cities: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"] },
+  { name: "Washington, D.C.", state: "DC", fips: ["11001"], cities: ["Capitol Hill", "Georgetown", "Petworth", "Brookland", "Cleveland Park"] },
 ];
+
+/** [longitude, latitude] of every city in `counties`, for the service area map (from OpenStreetMap). */
+export const cityCoords: Record<string, [number, number]> = {
+  "Silver Spring": [-77.024, 38.9998], "Aspen Hill": [-77.0866, 39.0903], Wheaton: [-77.0523, 39.0498], "Takoma Park": [-77.0075, 38.9779],
+  Olney: [-77.0722, 39.147], Rockville: [-77.1517, 39.0818], Bethesda: [-77.1234, 38.9813], Gaithersburg: [-77.1929, 39.1399],
+  Germantown: [-77.2656, 39.1712], Potomac: [-77.1956, 39.0181], Bowie: [-76.7798, 39.0081], "College Park": [-76.9369, 38.9807],
+  Hyattsville: [-76.9409, 38.9529], Greenbelt: [-76.8757, 39.0046], Laurel: [-76.8485, 39.0984], Columbia: [-76.8646, 39.1938],
+  "Ellicott City": [-76.8317, 39.2757], Clarksville: [-76.9429, 39.2065], Elkridge: [-76.7421, 39.1939], Frederick: [-77.4128, 39.4158],
+  Urbana: [-77.3416, 39.3206], Middletown: [-77.5454, 39.4438], "New Market": [-77.2726, 39.3828], Annapolis: [-76.4928, 38.9786],
+  "Glen Burnie": [-76.6152, 39.1595], Crofton: [-76.6842, 39.016], "Severna Park": [-76.572, 39.0826], Odenton: [-76.6876, 39.0658],
+  Towson: [-76.6148, 39.3965], "Owings Mills": [-76.7957, 39.4042], Pikesville: [-76.708, 39.3852], Catonsville: [-76.7455, 39.261],
+  Baltimore: [-76.6108, 39.2909], Westminster: [-76.9959, 39.5752], Eldersburg: [-76.9474, 39.4137], Sykesville: [-76.9689, 39.366],
+  Alexandria: [-77.047, 38.8051], Arlington: [-77.0893, 38.8769], Fairfax: [-77.3064, 38.8462], "Falls Church": [-77.1711, 38.8823],
+  McLean: [-77.1858, 38.9367], "Capitol Hill": [-77.0003, 38.889], Georgetown: [-77.0628, 38.9052], Petworth: [-77.025, 38.9459],
+  Brookland: [-76.9842, 38.9328], "Cleveland Park": [-77.0587, 38.9352],
+};
 
 export const fallbackLocations: Location[] = [
   {

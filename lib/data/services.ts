@@ -97,7 +97,7 @@ export const fallbackServices: Service[] = [
           "Chimney, vent and skylight flashing",
           "Worn shingles and granule loss",
         ],
-        image: images.roofRepairCrew,
+        image: images.rooferInspecting,
       },
       {
         anchor: "ventilation-gutters",
@@ -115,7 +115,7 @@ export const fallbackServices: Service[] = [
           "Extends the life of your shingles",
           "Seamless gutters and gutter guards",
         ],
-        image: images.gutterDownspout,
+        image: images.rooferOnRidge,
         ctas: estimateCta,
       },
     ],
@@ -163,7 +163,7 @@ export const fallbackServices: Service[] = [
       eyebrow: "Commercial Roofing",
       heading: "Commercial roofs built around your business",
       text: "Every commercial building has its own challenges. Our commercial roofing service is built around your schedule, your tenants and your budget.",
-      image: images.commercialMetalRoof,
+      image: images.flatRoofMembrane,
     },
     sections: [
       {
@@ -226,7 +226,6 @@ export const fallbackServices: Service[] = [
           "Built to code and industry standards",
           "Clean, organized job sites",
         ],
-        image: images.flatRoofSkylight,
       },
       {
         anchor: "repairs-maintenance",
@@ -246,7 +245,7 @@ export const fallbackServices: Service[] = [
           "24/7 emergency service",
           "Storm damage insurance help",
         ],
-        image: images.roofCleaning,
+        image: images.flatRoofSkylight,
         ctas: estimateCta,
       },
     ],
@@ -431,7 +430,7 @@ export const fallbackServices: Service[] = [
       eyebrow: "Roof Repair",
       heading: "Roof repairs that stop leaks for good",
       text: "Shingle roofs, flat roofs and more. We find the real cause, fix it right and tell you honestly when a repair is all you need.",
-      image: images.roofRepairCrew,
+      image: images.shingleRepairPatch,
     },
     sections: [
       {
@@ -505,7 +504,7 @@ export const fallbackServices: Service[] = [
           "Attic ventilation and insulation",
           "Gutters and downspouts",
         ],
-        image: images.granuleLoss,
+        image: images.deckRot,
         ctas: estimateCta,
       },
     ],
@@ -553,7 +552,7 @@ export const fallbackServices: Service[] = [
       eyebrow: "24/7 Emergency Roof Repair",
       heading: "Roof emergency? We answer 24/7",
       text: "Leaks, storm damage or a tree on the roof. Our team is available around the clock to secure your home and stop further damage.",
-      image: images.treeOnRoof,
+      image: images.fallenTreeHouse,
     },
     sections: [
       {
@@ -575,7 +574,6 @@ export const fallbackServices: Service[] = [
           "Help with your insurance claim",
           "Permanent repairs with quality materials",
         ],
-        image: images.roofRepairCrew,
       },
       {
         anchor: "signs",
@@ -629,7 +627,6 @@ export const fallbackServices: Service[] = [
           "Written report and repair plan",
           "Permanent repair and final inspection",
         ],
-        image: images.underlaymentInstall,
         ctas: estimateCta,
       },
     ],
@@ -730,7 +727,7 @@ export const fallbackServices: Service[] = [
           "Gutter and downspout cleaning",
           "Gutter guard installation",
         ],
-        image: images.roofCleaning,
+        image: images.gutterCleaning,
       },
       {
         anchor: "repairs",
@@ -749,7 +746,7 @@ export const fallbackServices: Service[] = [
           "Routine check-up visits",
           "Seasonal roof preparation",
         ],
-        image: images.shingleRepairPatch,
+        image: images.rooferInspecting,
         ctas: estimateCta,
       },
     ],
@@ -793,7 +790,7 @@ export const fallbackServices: Service[] = [
       eyebrow: "Storm Restoration",
       heading: "Storm damage restoration for Maryland homes",
       text: "Hail, wind, rain, ice and fallen trees. We inspect, document the damage for your insurer and restore your roof with quality materials.",
-      image: images.treeOnRoof,
+      image: images.hailDamage,
     },
     sections: [
       {
@@ -815,7 +812,7 @@ export const fallbackServices: Service[] = [
           "Roof and siding assessed together",
           "Final inspection and walkthrough",
         ],
-        image: images.completedRoofAerial,
+        image: images.homeNewRoofAerial,
       },
       {
         anchor: "hail",
@@ -951,7 +948,7 @@ export const fallbackServices: Service[] = [
           "Maintenance plans",
           "Fascia and downspout work",
         ],
-        image: images.gutterDownspout,
+        image: images.gutterCleaning,
       },
       {
         anchor: "installation",
@@ -968,7 +965,7 @@ export const fallbackServices: Service[] = [
           "Vinyl gutters",
           "Gutter guards to block debris",
         ],
-        image: images.gutterInstall,
+        image: images.gutterRepair,
       },
       {
         anchor: "repair",
@@ -985,7 +982,7 @@ export const fallbackServices: Service[] = [
           "Leaking seams and corners",
           "Cracks, holes or rust spots",
         ],
-        image: images.gutterRepair,
+        image: images.gutterInstall,
       },
       {
         anchor: "cleaning-maintenance",
@@ -1082,7 +1079,7 @@ export const fallbackServices: Service[] = [
           "Flashing at windows and doors",
           "Vinyl, fiber cement or wood options",
         ],
-        image: images.sidingLap,
+        image: images.stormHome,
       },
       {
         anchor: "storm-damage",
@@ -1159,7 +1156,6 @@ export const fallbackServices: Service[] = [
       eyebrow: "Windows",
       heading: "Replacement windows that pay you back",
       text: "Single-pane glass, failed seals and rotted frames raise your energy bills every month. New windows cut that loss and add value at resale.",
-      image: images.windowInstall,
     },
     sections: [
       {
@@ -1180,7 +1176,6 @@ export const fallbackServices: Service[] = [
           "In-home measurement",
           "Manufacturer and workmanship warranties",
         ],
-        image: images.sidingHome,
       },
       {
         anchor: "full-frame",
@@ -1197,7 +1192,6 @@ export const fallbackServices: Service[] = [
           "Proper flashing and sealing",
           "Best choice when rot is suspected",
         ],
-        image: images.windowInstall2,
       },
       {
         anchor: "insert",
@@ -1214,7 +1208,6 @@ export const fallbackServices: Service[] = [
           "Lower cost than full-frame",
           "Less disruption inside your home",
         ],
-        image: images.newWindow,
       },
       {
         anchor: "new-construction",
@@ -1311,7 +1304,6 @@ export const fallbackServices: Service[] = [
           "Water path traced to the source",
           "Tied into the surrounding shingles",
         ],
-        image: images.chimneyFlashing,
       },
       {
         anchor: "repointing-crown",
@@ -1414,7 +1406,7 @@ export const fallbackServices: Service[] = [
           "Structural repair",
           "Written scope with photos",
         ],
-        image: images.masonWall,
+        image: images.chimneyRepointCaps,
       },
       {
         anchor: "signs",
@@ -1433,7 +1425,7 @@ export const fallbackServices: Service[] = [
           "Bulging or leaning sections",
           "Missing mortar in sections",
         ],
-        image: images.chimney,
+        image: images.chimneyRepointBefore,
       },
       {
         anchor: "freeze-thaw",
@@ -1450,7 +1442,7 @@ export const fallbackServices: Service[] = [
           "Repointing stops the cycle",
           "Protects the brick itself",
         ],
-        image: images.iceDamage,
+        image: images.chimneyCrownRebuildBefore,
       },
       {
         anchor: "historic-structural",
@@ -1467,7 +1459,6 @@ export const fallbackServices: Service[] = [
           "CHAP review work in Baltimore City",
           "Foundation and load-bearing repair",
         ],
-        image: images.masonHistoric,
         ctas: estimateCta,
       },
     ],

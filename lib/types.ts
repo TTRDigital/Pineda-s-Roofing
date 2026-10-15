@@ -128,6 +128,10 @@ export type AtlasContent = {
   hero: PageHero;
   badge?: Img;
   sections: FeatureBlock[];
+  qualitiesIntro: Heading;
+  qualities: Card[];
+  jobPhotosIntro: Heading;
+  jobPhotos: Img[];
   productsIntro: Heading;
   products: { name: string; tagline?: string; text?: string; highlights?: string[]; image?: Img }[];
   warrantyIntro: Heading;

@@ -33,21 +33,43 @@ export default async function AtlasPage() {
         ]}
       >
         {page.badge ? (
-          <div className="mt-10 inline-flex items-center gap-5 rounded-[var(--radius-card)] bg-white p-4 pr-6">
-            <span className="relative block h-20 w-20">
-              <Image src={page.badge.src} alt={page.badge.alt} fill sizes="80px" className="object-contain" />
+          <div className="mt-10 inline-flex items-center gap-5 rounded-[var(--radius-card)] bg-white py-4 pl-5 pr-7 shadow-[0_20px_50px_-20px_rgb(0_0_0/0.6)]">
+            <Image src={page.badge.src} alt={page.badge.alt} width={page.badge.width} height={page.badge.height} sizes="128px" className="h-20 w-auto" />
+            <span className="border-l border-line pl-5">
+              <span className="block text-[0.8125rem] font-bold uppercase tracking-[0.12em] text-cyan-deep">Shingles we install</span>
+              <span className="mt-1 block font-display text-2xl uppercase leading-none text-ink">Atlas Roofing</span>
             </span>
-            <span className="font-bold text-ink">{page.badge.alt}</span>
           </div>
         ) : null}
       </PageHero>
 
-      {page.sections.map((b, i) => (
-        <FeatureSection key={b.title} block={b} index={i} tone={i % 2 ? "mist" : "white"} />
+      {page.sections.slice(0, 1).map((b, i) => (
+        <FeatureSection key={b.title} block={b} index={i} tone="white" />
       ))}
 
-      {page.products.length ? (
+      {page.qualities.length ? <CardGrid intro={page.qualitiesIntro} cards={page.qualities} tone="dark" /> : null}
+
+      {page.sections.slice(1).map((b, i) => (
+        <FeatureSection key={b.title} block={b} index={i + 1} tone={i % 2 ? "white" : "mist"} />
+      ))}
+
+      {page.jobPhotos.length ? (
         <section className={`section ${page.sections.length % 2 ? "bg-mist" : "bg-white"}`}>
+          <div className="container-x">
+            <SectionHeading {...page.jobPhotosIntro} />
+            <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {page.jobPhotos.map((img, i) => (
+                <li key={img.src} className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)]" data-reveal style={{ "--i": i } as React.CSSProperties}>
+                  <Image src={img.src} alt={img.alt} fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
+
+      {page.products.length ? (
+        <section className={`section ${page.jobPhotos.length ? (page.sections.length % 2 ? "bg-white" : "bg-mist") : page.sections.length % 2 ? "bg-mist" : "bg-white"}`}>
           <div className="container-x">
             <SectionHeading {...page.productsIntro} />
             <ul className="mt-12 grid gap-6 md:grid-cols-3">

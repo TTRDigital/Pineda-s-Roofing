@@ -160,7 +160,7 @@ export const getRoofingPage = cache(async (): Promise<RoofingContent> => {
 
 export const getAtlasPage = cache(async (): Promise<AtlasContent> => {
   const cms = await sanityFetch<Partial<AtlasContent>>(
-    `*[_id == "atlasPage"][0]{ ${HERO}, "badge": badge${IMG}, sections[]${FEATURE}, productsIntro${HEADING}, products[]{ name, tagline, text, highlights, "image": image${IMG} }, warrantyIntro${HEADING}, warranties[]${CARD}, faqs[]${FAQ}, ${SEO} }`,
+    `*[_id == "atlasPage"][0]{ ${HERO}, "badge": badge${IMG}, sections[]${FEATURE}, qualitiesIntro${HEADING}, qualities[]${CARD}, jobPhotosIntro${HEADING}, "jobPhotos": jobPhotos[]${IMG}, productsIntro${HEADING}, products[]{ name, tagline, text, highlights, "image": image${IMG} }, warrantyIntro${HEADING}, warranties[]${CARD}, faqs[]${FAQ}, ${SEO} }`,
     {},
     ["atlasPage"],
   );

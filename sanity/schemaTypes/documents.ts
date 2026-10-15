@@ -183,8 +183,12 @@ export const atlasPage = defineType({
   groups,
   fields: [
     hero,
-    defineField({ name: "badge", title: "Atlas badge / certificate", type: "altImage", group: "content" }),
+    defineField({ name: "badge", title: "Atlas logo (shown in the hero)", type: "altImage", group: "content" }),
     sections(),
+    heading("qualitiesIntro", "Atlas qualities heading"),
+    defineField({ name: "qualities", title: "Atlas qualities", type: "array", of: [defineArrayMember({ type: "card" })], group: "content" }),
+    heading("jobPhotosIntro", "Job photos heading"),
+    defineField({ name: "jobPhotos", title: "Atlas job photos", type: "array", of: [defineArrayMember({ type: "altImage" })], group: "content" }),
     heading("productsIntro", "Shingle lines heading"),
     defineField({
       name: "products",

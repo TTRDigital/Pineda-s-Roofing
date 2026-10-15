@@ -63,7 +63,7 @@ export default async function HomePage() {
             eyebrow: "Commercial",
             title: "Commercial roofing",
             text: "TPO, EPDM and modified bitumen systems, scheduled around your business hours and your tenants.",
-            image: images.flatRoofSkylight,
+            image: images.flatRoofMembrane,
             icon: "building",
           },
         ]}
