@@ -150,11 +150,16 @@ export type InsuranceContent = {
   faqs: Faq[];
 };
 
+export type Person = { name: string; role: string; text?: string; image?: Img };
+
 export type AboutContent = {
   seo: Seo;
   hero: PageHero;
   facts: Fact[];
   sections: FeatureBlock[];
+  teamIntro: Heading;
+  team: Person[];
+  mascot: { eyebrow?: string; heading: string; lead?: string; paragraphs: string[]; image?: Img; verse?: Verse };
   valuesIntro: Heading;
   values: Card[];
 };

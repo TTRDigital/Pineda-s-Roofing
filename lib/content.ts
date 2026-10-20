@@ -180,7 +180,7 @@ export const getInsurancePage = cache(async (): Promise<InsuranceContent> => {
 
 export const getAboutPage = cache(async (): Promise<AboutContent> => {
   const cms = await sanityFetch<Partial<AboutContent>>(
-    `*[_id == "aboutPage"][0]{ ${HERO}, facts[]{ label, value }, sections[]${FEATURE}, valuesIntro${HEADING}, values[]${CARD}, ${SEO} }`,
+    `*[_id == "aboutPage"][0]{ ${HERO}, facts[]{ label, value }, sections[]${FEATURE}, teamIntro${HEADING}, team[]{ name, role, text, "image": image${IMG} }, mascot{ eyebrow, heading, lead, paragraphs, "image": image${IMG}, verse{ text, reference } }, valuesIntro${HEADING}, values[]${CARD}, ${SEO} }`,
     {},
     ["aboutPage"],
   );

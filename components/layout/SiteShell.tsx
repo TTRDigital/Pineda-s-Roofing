@@ -36,6 +36,8 @@ function buildNav(services: Service[]): NavItem[] {
       href: "/about-us",
       children: [
         { label: "About us", href: "/about-us" },
+        { label: "Meet the Pinedas", href: "/about-us#team", note: "Freddy and Roberto Pineda" },
+        { label: "Meet Don Eagle", href: "/about-us#don-eagle", note: "Our mascot and what he stands for" },
         { label: "FAQ", href: "/faq" },
         { label: "Service areas", href: "/service-area" },
       ],

@@ -438,11 +438,44 @@ export const fallbackAbout: AboutContent = {
       paragraphs: ["Over 30 years of experience goes into every inspection, every quote and every installation."],
       highlightsLabel: "How we work",
       highlights: ["Free inspections with photos", "Written scope and pricing", "Clean, on-schedule installs", "10 year labor warranty"],
-      image: images.robertoPineda,
+      image: images.rooferOnRidge,
       imageSide: "right",
     },
   ],
-  valuesIntro: { eyebrow: "How we operate", heading: "What Pineda's is built on" },
+  teamIntro: {
+    eyebrow: "Meet the family",
+    heading: "The Pinedas behind every roof",
+    text: "Pineda's Roofing is still run by the Pineda family. When you call us, you talk to the people who own the company.",
+  },
+  team: [
+    {
+      name: "Freddy Pineda",
+      role: "Owner",
+      text: "Freddy owns and leads Pineda's Roofing today, carrying on the family company German Pineda founded more than 30 years ago. He stands behind every estimate, every crew and every warranty.",
+      image: images.freddyPineda,
+    },
+    {
+      name: "Roberto Pineda",
+      role: "Co-owner",
+      text: "Roberto co-owns Pineda's Roofing with Freddy. Together they keep the company what it has always been: family-run, hands-on and honest with every homeowner.",
+      image: images.robertoPineda,
+    },
+  ],
+  mascot: {
+    eyebrow: "Meet our mascot",
+    heading: "Don Eagle",
+    lead: "Don Eagle is the Pineda's Roofing mascot. You'll find him all over our website, and he greets you on our chat button.",
+    paragraphs: [
+      "The eagle stands for the way we work: sharp eyes that catch what others miss, a nest built to last, and the drive to keep going until the job is done right.",
+      "The six values below are Don Eagle's, and they are ours. They guide every inspection, every estimate and every roof we install.",
+    ],
+    image: images.eagleArmsCrossed,
+    verse: {
+      text: "Those who hope in the Lord will renew their strength. They will soar on wings like eagles.",
+      reference: "Isaiah 40:31",
+    },
+  },
+  valuesIntro: { eyebrow: "How we operate", heading: "What Don Eagle stands for" },
   values: [
     { icon: "camera", title: "Eagle vision", text: "We see what others miss. Every detail matters." },
     { icon: "house", title: "Strong foundations", text: "Every project is built to last, just like a well-crafted nest." },
