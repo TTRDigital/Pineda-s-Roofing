@@ -11,6 +11,7 @@ const company = [
   { label: "Gallery", href: "/gallery" },
   { label: "Service areas", href: "/service-area" },
   { label: "FAQ", href: "/faq" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
