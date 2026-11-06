@@ -1,6 +1,7 @@
-import { Quote, Star } from "lucide-react";
+import { ExternalLink, Quote, Star } from "lucide-react";
 import type { SiteSettings, Testimonial } from "@/lib/types";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
 
 function Stars({ n, className = "h-4 w-4" }: { n: number; className?: string }) {
   return (
@@ -12,24 +13,26 @@ function Stars({ n, className = "h-4 w-4" }: { n: number; className?: string }) 
   );
 }
 
-/** Google reviews on black, with the overall rating. */
-export function Testimonials({ items, settings }: { items: Testimonial[]; settings: SiteSettings }) {
+/**
+ * Reviews on black: the Google rating, real customer quotes and a clear button
+ * to the Google Business Profile. Quotes are shown as customers wrote them.
+ */
+export function Testimonials({ items, settings, heading = "Hear it from our customers", id = "reviews" }: { items: Testimonial[]; settings: SiteSettings; heading?: string; id?: string }) {
   if (!items.length) return null;
+  const profile = settings.googleProfileUrl ?? settings.reviewsUrl;
   return (
-    <section className="section on-dark bg-ink">
+    <section id={id} className="section on-dark bg-ink">
       <div className="container-x">
         <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
-          <SectionHeading eyebrow="Reviews" heading="Hear it from our customers" align="left" dark />
+          <SectionHeading eyebrow="Google reviews" heading={heading} text="These are reviews customers left on our Google Business Profile. You can read them all there." align="left" dark />
           {settings.googleRating ? (
-            <a href={settings.reviewsUrl ?? "#"} target="_blank" rel="noopener" className="flex items-center gap-4 rounded-[var(--radius-card)] border border-ink-line bg-ink-2 px-5 py-4 transition-colors hover:border-cyan">
+            <div className="flex items-center gap-4 rounded-[var(--radius-card)] border border-ink-line bg-ink-2 px-5 py-4">
               <span className="font-display text-5xl font-bold text-white">{settings.googleRating}</span>
               <span>
                 <Stars n={Math.round(Number(settings.googleRating))} className="h-5 w-5" />
-                <span className="mt-1 block text-sm text-on-dark">
-                  {settings.reviewCount ? `${settings.reviewCount} Google reviews` : "Google reviews"}
-                </span>
+                <span className="mt-1 block text-sm text-on-dark">{settings.reviewCount ? `${settings.reviewCount} Google reviews` : "Google reviews"}</span>
               </span>
-            </a>
+            </div>
           ) : null}
         </div>
         <ul className="mt-12 grid gap-5 md:grid-cols-2">
@@ -46,6 +49,15 @@ export function Testimonials({ items, settings }: { items: Testimonial[]; settin
             </li>
           ))}
         </ul>
+        {profile ? (
+          <div className="mt-12 flex flex-col items-start gap-4 border-t border-ink-line pt-10 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-xl text-on-dark">Want to see more? Every review is on our Google Business Profile, along with photos, hours and directions.</p>
+            <Button href={profile} variant="primary" track="google_profile_click">
+              Read all reviews on Google
+              <ExternalLink className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
+            </Button>
+          </div>
+        ) : null}
       </div>
     </section>
   );

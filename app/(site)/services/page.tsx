@@ -10,7 +10,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 const seo = {
   title: "Roofing & Exterior Services in Maryland | Pineda's Roofing",
-  description: "Roof replacement, repair, emergency and storm restoration, plus gutters, siding, windows, chimneys, masonry and hardscaping across Maryland and the DMV.",
+  description: "Roof replacement, repair, emergency and storm restoration, solar, plus gutters, siding, windows, chimneys, masonry and hardscaping across Maryland and Washington, DC.",
 };
 
 export const metadata: Metadata = pageMetadata(seo, "/services", images.rooferOnRidge);
@@ -24,7 +24,7 @@ export default async function ServicesPage() {
         hero={{
           eyebrow: "Services",
           heading: "Maryland exteriors, end to end",
-          text: "Roofing, gutters, siding, windows and masonry, backed by over 30 years of family-owned craftsmanship.",
+          text: "Roofing, solar, gutters, siding, windows and masonry from a family-owned Silver Spring, MD company.",
           image: images.rooferOnRidge,
         }}
         crumbs={[{ label: "Services", href: "/services" }]}
@@ -35,9 +35,14 @@ export default async function ServicesPage() {
       />
       <CardGrid
         intro={{ eyebrow: "Roofing", heading: "Roofing services", text: "Homes and commercial buildings, new roofs and repairs, storms and emergencies." }}
-        cards={[{ icon: "layers", title: "Roofing overview", text: "Residential and commercial roofing, brands we use and how we work.", href: "/services/roofing" }, ...services.filter((s) => s.category !== "exterior").map(card)]}
+        cards={[{ icon: "layers", title: "Roofing overview", text: "Residential and commercial roofing, brands we use and how we work.", href: "/services/roofing" }, ...services.filter((s) => s.category !== "exterior" && s.category !== "solar").map(card)]}
       />
-      <CardGrid intro={{ eyebrow: "Exterior", heading: "Gutters, siding & more", text: "The rest of the outside of your home, done with the same standards." }} cards={services.filter((s) => s.category === "exterior").map(card)} tone="mist" />
+      <CardGrid
+        intro={{ eyebrow: "Solar", heading: "Solar installation", text: "We now offer solar, so one team can look at your roof and your solar plan together." }}
+        cards={services.filter((s) => s.category === "solar").map(card)}
+        tone="mist"
+      />
+      <CardGrid intro={{ eyebrow: "Exterior", heading: "Gutters, siding & more", text: "The rest of the outside of your home, done with the same standards." }} cards={services.filter((s) => s.category === "exterior").map(card)} />
       <AtlasBand />
       <ContactSection settings={settings} />
     </>

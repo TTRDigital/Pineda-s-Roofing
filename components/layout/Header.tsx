@@ -84,7 +84,7 @@ export function Header({
       <div className="bg-ink text-[0.8125rem] text-on-dark">
         <div className="container-x flex min-h-10 items-center justify-between gap-4">
           <p className="hidden sm:block">
-            Licensed, insured &amp; bonded <span className="text-on-dark-meta">·</span> <span className="font-semibold text-white">{license}</span>
+            Licensed &amp; insured <span className="text-on-dark-meta">·</span> <span className="font-semibold text-white">{license}</span>
           </p>
           <div className="flex w-full items-center justify-between gap-5 sm:w-auto sm:justify-end">
             <a href={phoneHref} data-track="click_to_call" className="inline-flex items-center gap-2 font-semibold text-white hover:text-cyan">
@@ -107,7 +107,7 @@ export function Header({
 
           <nav aria-label="Main" className="hidden xl:block">
             <ul className="flex items-center">
-              {nav.map((item) => {
+              {nav.filter((item) => item.href !== "/").map((item) => {
                 const active = isActive(item);
                 if (!item.children?.length) {
                   return (
@@ -115,10 +115,10 @@ export function Header({
                       <Link
                         href={item.href}
                         aria-current={pathname === item.href ? "page" : undefined}
-                        className={`relative inline-flex h-11 items-center whitespace-nowrap px-3 text-[0.875rem] font-bold uppercase tracking-[0.05em] transition-colors hover:text-cyan-deep ${active ? "text-cyan-deep" : "text-ink"}`}
+                        className={`relative inline-flex h-11 items-center whitespace-nowrap px-2 text-[0.8125rem] font-bold uppercase tracking-[0.04em] transition-colors hover:text-cyan-deep ${active ? "text-cyan-deep" : "text-ink"}`}
                       >
                         {item.label}
-                        <span aria-hidden="true" className={`absolute inset-x-3 -bottom-0.5 h-[3px] rounded-full bg-cyan transition-transform duration-300 ${active ? "scale-x-100" : "scale-x-0"}`} />
+                        <span aria-hidden="true" className={`absolute inset-x-2 -bottom-0.5 h-[3px] rounded-full bg-cyan transition-transform duration-300 ${active ? "scale-x-100" : "scale-x-0"}`} />
                       </Link>
                     </li>
                   );
@@ -129,10 +129,10 @@ export function Header({
                     <div className="flex items-center">
                       <Link
                         href={item.href}
-                        className={`relative inline-flex h-11 items-center whitespace-nowrap pl-3 pr-0.5 text-[0.875rem] font-bold uppercase tracking-[0.05em] transition-colors hover:text-cyan-deep ${active ? "text-cyan-deep" : "text-ink"}`}
+                        className={`relative inline-flex h-11 items-center whitespace-nowrap pl-2 pr-0.5 text-[0.8125rem] font-bold uppercase tracking-[0.04em] transition-colors hover:text-cyan-deep ${active ? "text-cyan-deep" : "text-ink"}`}
                       >
                         {item.label}
-                        <span aria-hidden="true" className={`absolute inset-x-3 -bottom-0.5 right-0.5 h-[3px] rounded-full bg-cyan transition-transform duration-300 ${active ? "scale-x-100" : "scale-x-0"}`} />
+                        <span aria-hidden="true" className={`absolute inset-x-2 -bottom-0.5 right-0.5 h-[3px] rounded-full bg-cyan transition-transform duration-300 ${active ? "scale-x-100" : "scale-x-0"}`} />
                       </Link>
                       <button
                         type="button"

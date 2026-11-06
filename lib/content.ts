@@ -46,7 +46,7 @@ const FEATURE = `{ "anchor": anchor.current, icon, eyebrow, title, lead, paragra
 
 export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
   const cms = await sanityFetch<Partial<SiteSettings>>(
-    `*[_id == "siteSettings"][0]{ name, legalName, phone, email, license, city, region, hours[]{ label, value }, emergencyText, foundedYear, googleRating, reviewCount, reviewsUrl, social[]{ network, href }, headerCta{ label, href }, verse{ text, reference }, "logo": logo${LOGO} }`,
+    `*[_id == "siteSettings"][0]{ name, legalName, phone, email, license, city, region, hours[]{ label, value }, emergencyText, foundedYear, googleRating, reviewCount, reviewsUrl, googleProfileUrl, bbbUrl, bbbRating, social[]{ network, href }, headerCta{ label, href }, verse{ text, reference }, "logo": logo${LOGO} }`,
     {},
     ["siteSettings"],
   );

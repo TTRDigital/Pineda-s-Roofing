@@ -23,6 +23,10 @@ export const fallbackSettings: SiteSettings = {
   googleRating: "5.0",
   reviewCount: "22",
   reviewsUrl: "https://g.co/kgs/FDvaBcB",
+  // Both g.co/kgs/FDvaBcB and g.co/kgs/WMp9yQk (social links) resolve to the same Google profile (kgmid /g/11rwmwb5gl).
+  googleProfileUrl: "https://g.co/kgs/FDvaBcB",
+  bbbUrl: "https://www.bbb.org/us/md/silver-spring/profile/roofing-contractors/pinedas-construction-llc-0241-236064536",
+  bbbRating: "A+",
   social: [
     { network: "facebook", href: "https://www.facebook.com/pinedasroofing" },
     { network: "instagram", href: "https://www.instagram.com/pinedasroofing/" },
@@ -47,7 +51,7 @@ export const fallbackPartners: Partners = {
     { name: "Stinger" },
     { name: "Paslode" },
   ],
-  insuranceHeading: "We work with all insurance companies",
+  insuranceHeading: "We work with your insurance company",
   insuranceText: "We meet your adjuster, document the damage with photos and handle the paperwork, whoever your carrier is.",
   insurers: [{ name: "State Farm" }, { name: "Allstate" }, { name: "USAA" }, { name: "Progressive" }, { name: "Farmers Insurance" }],
 };
@@ -102,8 +106,8 @@ export const fallbackFaqs: Faq[] = [
     answer:
       "Most residential replacements take two to three days. Repairs are usually a single visit. You get a specific timeline with your quote, and we tell you right away if anything changes.",
   },
-  { category: "General", question: "What warranty do I get?", answer: "A 10 year labor warranty from Pineda's on the installation, plus the lifetime manufacturer warranty on the shingles. You get both in writing." },
-  { category: "General", question: "Are you licensed and insured?", answer: "Yes. Fully licensed, insured and bonded in Maryland, MHIC# 142024." },
+  { category: "General", question: "What warranty do I get?", answer: "A written workmanship warranty from Pineda's on the installation, plus the manufacturer's warranty on the shingles. Ask us for the exact terms, and you get them in writing." },
+  { category: "General", question: "Are you licensed and insured?", answer: "Yes. Licensed and insured in Maryland, MHIC# 142024." },
   {
     category: "Cost & financing",
     question: "How do I get a quote?",
@@ -113,7 +117,7 @@ export const fallbackFaqs: Faq[] = [
     category: "Insurance",
     question: "Will my insurance cover a new roof?",
     answer:
-      "Storm damage is often covered; age and general wear usually are not. We document the damage and work directly with your carrier so the claim reflects what is actually on the roof. Many customers pay only their deductible.",
+      "Storm damage is often covered; age and general wear usually are not. We document the damage and work directly with your carrier so the claim reflects what is actually on the roof. What you pay depends on your policy and the claim.",
   },
   {
     category: "Insurance",
@@ -143,7 +147,7 @@ export const fallbackFaqs: Faq[] = [
     category: "General",
     question: "What areas do you serve?",
     answer:
-      "Maryland and the DMV: Montgomery, Prince George's, Howard, Frederick, Anne Arundel and Baltimore counties, Baltimore City, Washington D.C. and Northern Virginia.",
+      "Our main focus is Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's counties. We also serve Carroll, Frederick and Montgomery counties, and we offer solar in Washington, DC.",
   },
 ];
 

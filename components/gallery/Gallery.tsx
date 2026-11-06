@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import type { Project, ServiceCategory } from "@/lib/types";
 import { BeforeAfter } from "@/components/gallery/BeforeAfter";
 
-const labels: Record<ServiceCategory, string> = { residential: "Residential", commercial: "Commercial", repair: "Repairs & storm", exterior: "Gutters & exterior" };
+const labels: Record<ServiceCategory, string> = { residential: "Residential", commercial: "Commercial", repair: "Repairs & storm", exterior: "Gutters & exterior", solar: "Solar" };
 
 /** Filterable project grid with a keyboard-friendly lightbox. Projects with before/after photos get a slider. */
 export function Gallery({ projects, filters = true, limit }: { projects: Project[]; filters?: boolean; limit?: number }) {

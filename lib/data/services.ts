@@ -13,11 +13,11 @@ export const fallbackServices: Service[] = [
     category: "residential",
     icon: "house",
     order: 1,
-    summary: "Shingle roof replacement, repair and upkeep for Maryland homes, installed by our own family crews with Atlas Pinnacle Pristine.",
+    summary: "Shingle roof replacement, repair and upkeep for Maryland homes, installed by our team with Atlas Pinnacle Pristine.",
     hero: {
       eyebrow: "Residential Roofing",
       heading: "Roofs built for Maryland homes and families",
-      text: "From a few missing shingles to a full replacement, our own family crews take care of your home's roof the way we'd take care of our own.",
+      text: "From a few missing shingles to a full replacement, our team takes care of your home's roof the way we'd take care of our own.",
       image: images.homeNewRoofAerial,
     },
     sections: [
@@ -28,26 +28,26 @@ export const fallbackServices: Service[] = [
         title: "Your home's roof, handled by one family",
         lead: "For more than 30 years, Maryland homeowners have called Pineda's Roofing when the roof over their head needs attention.",
         paragraphs: [
-          "The person who inspects your roof, the crew who installs it and the owner who stands behind the warranty all belong to the same family business. No rotating cast of subcontractors.",
+          "The person who inspects your roof, the crew who installs it and the owner who stands behind the warranty are part of the same family business.",
           "We inspect the whole roof, photograph what we find and tell you honestly whether you need a repair or a replacement.",
         ],
         highlightsLabel: "Why homeowners choose us",
         highlights: [
           "Family owned and operated since 1992",
-          "Our own crews, not subcontractors",
-          "Licensed, insured & bonded, MHIC# 142024",
+          "Written scope before work starts",
+          "Licensed & insured, MHIC# 142024",
           "Free inspections, no-obligation estimates",
           "Photo documentation of every finding",
-          "10 year labor warranty",
+          "Written workmanship warranty",
         ],
         image: images.crew,
       },
       {
         anchor: "shingle-roofs",
         icon: "layers",
-        eyebrow: "Premium materials as standard",
+        eyebrow: "Quality materials",
         title: "Atlas Pinnacle Pristine on every roof",
-        lead: "Asphalt shingles are the right choice for most Maryland homes. We install Atlas Pinnacle Pristine on every one, as standard, not as an upsell.",
+        lead: "Asphalt shingles are the right choice for most Maryland homes. Atlas Pinnacle Pristine is the shingle we recommend and install most.",
         paragraphs: [
           "These shingles carry 3M Scotchgard Protector, which resists the black algae streaks common in our humid summers. They come in a wide range of colors and styles to suit traditional and modern homes.",
           "Underneath, every roof gets synthetic underlayment and ice and water shield where Maryland roofs leak most.",
@@ -138,11 +138,11 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "What warranty do I get?",
-        answer: "Every new roof comes with a 10 year labor warranty from Pineda's and a lifetime manufacturer warranty on the shingles. You get both in writing.",
+        answer: "Every new roof comes with a Written workmanship warranty from Pineda's and a manufacturer's warranty on the shingles. You get both in writing.",
       },
       {
         question: "Are you licensed and insured?",
-        answer: "Yes. We are fully licensed, insured and bonded in Maryland, MHIC# 142024.",
+        answer: "Yes. We are licensed and insured in Maryland, MHIC# 142024.",
       },
     ],
     seo: {
@@ -174,14 +174,14 @@ export const fallbackServices: Service[] = [
         lead: "Every commercial building has its own unique challenges. Our commercial roofing service is built around your schedule, your tenants and your budget.",
         paragraphs: [
           "We work with property managers, HOAs and business owners across the Baltimore-Washington corridor. Large projects are scheduled around your operating hours to keep downtime to a minimum.",
-          "You deal with the same family-owned company from the first inspection to the final walkthrough, with our own crews on the roof.",
+          "You deal with the same family-owned company from the first inspection to the final walkthrough, with the Pineda's team on the roof.",
         ],
         highlightsLabel: "What you can expect",
         highlights: [
           "Work scheduled around business hours",
           "Minimal disruption to tenants",
-          "Our own crews, not subcontractors",
-          "Licensed, insured & bonded, MHIC# 142024",
+          "Written scope before work starts",
+          "Licensed & insured, MHIC# 142024",
           "Free inspection with photo documentation",
           "Written scope and transparent pricing",
         ],
@@ -284,11 +284,11 @@ export const fallbackServices: Service[] = [
     category: "residential",
     icon: "hammer",
     order: 3,
-    summary: "Full roof replacement for homes and businesses with premium materials, our own crews and most homes finished in two to three days.",
+    summary: "Full roof replacement for homes and businesses with premium materials and most homes finished in two to three days.",
     hero: {
       eyebrow: "Roof Replacement",
       heading: "Roof replacement done right the first time",
-      text: "A new roof from Maryland's family-owned roofers. Premium materials, our own crews, and most homes finished in two to three days.",
+      text: "A new roof from Maryland's family-owned roofers. Premium materials and most homes finished in two to three days.",
       image: images.aerialNewShingleRoof,
     },
     sections: [
@@ -337,7 +337,7 @@ export const fallbackServices: Service[] = [
       {
         anchor: "materials",
         icon: "layers",
-        title: "Premium materials as standard",
+        title: "Quality materials",
         lead: "No upcharge for the right way to build a roof. This is what goes on every job we install.",
         paragraphs: [
           "Atlas Pinnacle Pristine architectural shingles carry 3M Scotchgard Protector, so they resist the black algae streaks you see on older roofs. They come in a wide range of colors and styles.",
@@ -350,7 +350,7 @@ export const fallbackServices: Service[] = [
           "Synthetic underlayment",
           "Ice & water shield in valleys and eaves",
           "Pre-stripped ridge cap for a tight seal",
-          "10 year labor warranty",
+          "Written workmanship warranty",
         ],
         image: images.pinnaclePristineBundles,
       },
@@ -409,12 +409,12 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "What warranties do you offer?",
-        answer: "You get a 10 year labor warranty from Pineda's and a lifetime manufacturer warranty on the Atlas Pinnacle Pristine shingles. Your labor warranty starts the day we finish.",
+        answer: "You get a Written workmanship warranty from Pineda's and a manufacturer's warranty on the Atlas Pinnacle Pristine shingles. Your labor warranty starts the day we finish.",
       },
     ],
     seo: {
       title: "Roof Replacement in Maryland | Pineda's Roofing",
-      description: "Roof replacement in Maryland with Atlas Pinnacle Pristine shingles, our own crews and a 10 year labor warranty. Most homes done in 2 to 3 days. Free estimates.",
+      description: "Roof replacement in Maryland with Atlas Pinnacle Pristine shingles and a written workmanship warranty. Most homes done in 2 to 3 days. Free estimates.",
     },
   },
 
@@ -658,7 +658,7 @@ export const fallbackServices: Service[] = [
     ],
     seo: {
       title: "24/7 Emergency Roof Repair in Maryland | Pineda's Roofing",
-      description: "24/7 emergency roof repair in Maryland and the DMV. We tarp leaks, secure storm and tree damage, and help with your insurance claim. Call (301) 921-6333.",
+      description: "24/7 emergency roof repair in Maryland and Washington, DC. We tarp leaks, secure storm and tree damage, and help with your insurance claim. Call (301) 921-6333.",
     },
   },
 
@@ -769,7 +769,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Are you licensed and insured?",
-        answer: "Yes. We are fully licensed, insured and bonded in Maryland, MHIC# 142024.",
+        answer: "Yes. We are licensed and insured in Maryland, MHIC# 142024.",
       },
     ],
     seo: {
@@ -800,7 +800,7 @@ export const fallbackServices: Service[] = [
         title: "Restoring your home after the storm",
         lead: "Storm damage is time-sensitive and often invisible from the ground. We find it, document it and repair it properly.",
         paragraphs: [
-          "Maryland gets its share of hail, straight-line winds and hurricane remnants. We inspect the full roof, photograph every finding and work directly with your insurance company. Many customers pay only their deductible.",
+          "Maryland gets its share of hail, straight-line winds and hurricane remnants. We inspect the full roof, photograph every finding and work directly with your insurance company. What you pay depends on your policy.",
           "Once the claim is approved, we repair or replace what's needed and walk the finished work with you.",
         ],
         highlightsLabel: "What we do for you",
@@ -895,7 +895,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Will you help with my insurance claim?",
-        answer: "Yes. We document the damage with photos and reports, work directly with your insurance company and meet the adjuster on site. Many customers pay only their deductible.",
+        answer: "Yes. We document the damage with photos and reports, work directly with your insurance company and meet the adjuster on site. What you pay depends on your policy.",
       },
       {
         question: "How long does storm restoration take?",
@@ -907,7 +907,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Do you offer warranties on storm repairs?",
-        answer: "Yes. Our labor is covered by a 10 year warranty, and Atlas Pinnacle Pristine shingles carry a lifetime manufacturer warranty.",
+        answer: "Yes. Our labor is covered by a written warranty, and Atlas Pinnacle Pristine shingles carry a manufacturer's warranty.",
       },
     ],
     seo: {
@@ -1058,7 +1058,7 @@ export const fallbackServices: Service[] = [
         highlights: [
           "Roofing-grade flashing and details",
           "Roof and siding inspected together",
-          "Licensed, insured & bonded, MHIC# 142024",
+          "Licensed & insured, MHIC# 142024",
           "Family owned for over 30 years",
         ],
         image: images.stormHome,
@@ -1246,7 +1246,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Is there a warranty?",
-        answer: "Yes. Manufacturer warranties cover the windows, and our own workmanship warranty covers every installation.",
+        answer: "Yes. Manufacturer warranties cover the windows, and our workmanship warranty covers the installation.",
       },
     ],
     seo: {
@@ -1523,7 +1523,7 @@ export const fallbackServices: Service[] = [
           "Drainage planned before excavation",
           "Design consultation included",
           "Permits handled with your county",
-          "Licensed, insured & bonded, MHIC# 142024",
+          "Licensed & insured, MHIC# 142024",
           "Family owned for over 30 years",
         ],
         image: images.paverInstall,
@@ -1592,6 +1592,119 @@ export const fallbackServices: Service[] = [
     seo: {
       title: "Hardscaping & Paver Patios in Maryland | Pineda's Roofing",
       description: "Paver patios, walkways, retaining walls, driveways and steps in Maryland, built on a proper base with drainage planned first. Design consultation included.",
+    },
+  },
+
+  /* 14 ────────────────────────────────────────────────────────────── */
+  /* SOLAR: new service. Wording is deliberately general. No prices, savings, incentives or equipment brands
+     are stated until Roberto confirms them. Items needing his answer are marked [PLACEHOLDER ...]. */
+  {
+    slug: "solar",
+    title: "Solar Installation",
+    category: "solar",
+    icon: "sun",
+    order: 14,
+    summary: "Solar for Maryland and Washington, DC homes, planned together with your roof by one local company.",
+    hero: {
+      eyebrow: "Solar",
+      heading: "Solar company in Washington, DC and Maryland",
+      text: "Pineda's Roofing now offers solar. Because we are roofers first, we look at your roof and your solar plan together.",
+      image: images.completedRoofAerial,
+    },
+    sections: [
+      {
+        anchor: "overview",
+        icon: "sun",
+        eyebrow: "Now offering solar",
+        title: "A solar company that starts with your roof",
+        lead: "Solar panels sit on your roof for many years, so the roof underneath matters. We are a roofing contractor first, and we bring that to every solar conversation.",
+        paragraphs: [
+          "If you are thinking about solar in Washington, DC or Maryland, we can look at your roof, talk through your options and explain the steps in plain language.",
+          "[PLACEHOLDER for Roberto: how Pineda's delivers solar (installed by our own team or with a partner), equipment brands, and any financing. Not stated until confirmed.]",
+        ],
+        highlightsLabel: "Why start with a roofer",
+        highlights: ["Roof condition checked first", "One company to talk to about roof and solar", "Free, no-obligation conversation", "Plain answers, no pressure"],
+        image: images.completedRoofAerial,
+        ctas: [{ label: "Ask about solar", href: "#estimate" }],
+      },
+      {
+        anchor: "roof-first",
+        icon: "house",
+        title: "Check the roof before the panels go on",
+        lead: "A roof that needs replacing soon can be a reason to plan the roof and the solar together.",
+        paragraphs: [
+          "Taking panels off and putting them back later to replace a roof adds work. That is why we like to look at the age and condition of the roof at the start.",
+          "We tell you honestly whether the roof looks ready for solar, needs repair first, or should be replaced as part of the plan.",
+        ],
+        highlightsLabel: "What we look at",
+        highlights: ["Age and condition of the roof", "Shingle, flashing and decking condition", "Roof shape and which sides get sun", "Shade from trees and nearby buildings"],
+        image: images.rooferInspecting,
+      },
+      {
+        anchor: "how-it-works",
+        icon: "clipboard",
+        title: "How going solar usually works",
+        lead: "Every home is different, but most solar projects follow the same general steps.",
+        paragraphs: ["We walk you through each step, and we explain what is needed from you. Timelines depend on your home, your utility and local permitting, so we do not promise dates up front."],
+        highlightsLabel: "The general steps",
+        highlights: ["1. Talk about your goals and your bills", "2. Roof and site assessment", "3. System design and written proposal", "4. Permits and utility paperwork", "5. Installation", "6. Inspection and turning the system on"],
+        image: images.rooferOnRidge,
+        imageSide: "right",
+      },
+      {
+        anchor: "incentives",
+        icon: "dollar",
+        title: "Costs, incentives and savings",
+        lead: "We will not guess at your savings. Your results depend on your home, your usage, your utility and the rules in place when you install.",
+        paragraphs: [
+          "Federal, state, DC and utility programs for solar exist, and they change over time. We can point you to where to check current details, and we suggest confirming tax questions with your own tax professional.",
+          "[PLACEHOLDER for Roberto: any financing options, available programs Pineda's helps with, and typical timelines. Add only what can be stated accurately.]",
+        ],
+        highlightsLabel: "What to expect from us",
+        highlights: ["A written proposal before you decide", "No promises about savings", "Honest answers about what solar may or may not fit your home", "Help understanding the paperwork"],
+        image: images.homeNewRoofAerial,
+      },
+      {
+        anchor: "where",
+        icon: "map-pin",
+        title: "Where we offer solar",
+        lead: "Solar is a main focus in Washington, DC, and we are also talking with homeowners across our Maryland service area.",
+        paragraphs: ["[PLACEHOLDER for Roberto: confirm which areas solar is offered in (Washington, DC plus which Maryland counties).]"],
+        highlightsLabel: "Start here",
+        highlights: ["Solar company in Washington, DC", "Baltimore County and Baltimore City", "Howard and Anne Arundel counties", "Prince George's and Montgomery counties"],
+        image: images.aerialNewShingleRoof,
+        imageSide: "right",
+        ctas: [
+          { label: "Solar in Washington, DC", href: "/service-area/washington-dc" },
+          { label: "All service areas", href: "/service-area" },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Does Pineda's Roofing install solar?",
+        answer: "Yes, we now offer solar. We are a roofing company first, so we start by looking at the roof the panels would sit on.",
+      },
+      {
+        question: "Do I need a new roof before solar?",
+        answer: "Not always. It depends on the age and condition of your roof. If the roof is near the end of its life, it often makes sense to plan the roof and the solar together. We will give you an honest opinion after an inspection.",
+      },
+      {
+        question: "How much will I save with solar?",
+        answer: "It depends on your home, how much electricity you use, your utility and the rules at the time. We do not promise specific savings. We can explain what affects the result when we talk.",
+      },
+      {
+        question: "Are there incentives for solar?",
+        answer: "Federal, state, DC and utility programs exist and they change over time. We suggest checking the current details and asking your tax professional about your own situation.",
+      },
+      {
+        question: "Do you offer solar in Washington, DC?",
+        answer: "Yes, Washington, DC is a main focus for our solar work. Call (301) 921-6333 or send the form and we will talk through your home.",
+      },
+    ],
+    seo: {
+      title: "Solar Company in Washington, DC & Maryland | Pineda's Roofing",
+      description: "Pineda's Roofing now offers solar installation in Washington, DC and Maryland. A roofing contractor that checks your roof first. Free consultation.",
     },
   },
 ];

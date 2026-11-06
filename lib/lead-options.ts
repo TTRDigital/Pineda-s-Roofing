@@ -7,6 +7,7 @@ export const serviceOptions = [
   "Storm damage / insurance claim",
   "Free roof inspection",
   "Commercial roofing",
+  "Solar",
   "Gutters",
   "Siding",
   "Other",

@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-int
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Pineda's Roofing | Maryland Roofing Contractor", template: "%s | Pineda's Roofing" },
-  description: "Family-owned roofing contractor in Silver Spring, MD since 1992. Roof replacement, repair, storm restoration and commercial roofing.",
+  description: "Family-owned roofing contractor in Silver Spring, MD serving Maryland. Roof replacement, repair, storm restoration, commercial roofing and solar.",
   applicationName: "Pineda's Roofing",
   formatDetection: { telephone: false, address: false, email: false },
 };

@@ -1,26 +1,43 @@
 import type { Location } from "../types";
+import { images } from "./images.ts";
+import { priorityLocations } from "./locations-priority.ts";
 
 /* Service area. `counties` drives the full area list; `fallbackLocations` are the city pages (array order = display order). */
 
-export type County = { name: string; state: string; /** Census FIPS codes of the areas shaded on the map. */ fips: string[]; cities: string[] };
+export type County = {
+  name: string;
+  state: string;
+  /** Census FIPS codes of the areas shaded on the map. */
+  fips: string[];
+  cities: string[];
+  /** 1 = main focus, 2 = second tier, 3 = also serving. */
+  tier: 1 | 2 | 3;
+  /** Slug of the county page in fallbackLocations. */
+  slug: string;
+};
 
 export const counties: County[] = [
+  // Main focus
+  { name: "Baltimore County", state: "MD", fips: ["24005"], cities: ["Towson", "Owings Mills", "Pikesville", "Catonsville"], tier: 1, slug: "baltimore-county" },
+  { name: "Baltimore City", state: "MD", fips: ["24510"], cities: ["Baltimore"], tier: 1, slug: "baltimore-city" },
+  { name: "Howard County", state: "MD", fips: ["24027"], cities: ["Columbia", "Ellicott City", "Clarksville", "Elkridge"], tier: 1, slug: "howard-county" },
+  { name: "Anne Arundel County", state: "MD", fips: ["24003"], cities: ["Annapolis", "Glen Burnie", "Crofton", "Severna Park", "Odenton"], tier: 1, slug: "anne-arundel-county" },
+  { name: "Prince George's County", state: "MD", fips: ["24033"], cities: ["Bowie", "College Park", "Hyattsville", "Greenbelt", "Laurel"], tier: 1, slug: "prince-georges-county" },
+  // Second tier
+  { name: "Carroll County", state: "MD", fips: ["24013"], cities: ["Westminster", "Eldersburg", "Sykesville"], tier: 2, slug: "carroll-county" },
+  { name: "Frederick County", state: "MD", fips: ["24021"], cities: ["Frederick", "Urbana", "Middletown", "New Market"], tier: 2, slug: "frederick-county" },
   {
     name: "Montgomery County",
     state: "MD",
     fips: ["24031"],
     cities: ["Silver Spring", "Aspen Hill", "Wheaton", "Takoma Park", "Olney", "Rockville", "Bethesda", "Gaithersburg", "Germantown", "Potomac"],
+    tier: 2,
+    slug: "montgomery-county",
   },
-  { name: "Prince George's County", state: "MD", fips: ["24033"], cities: ["Bowie", "College Park", "Hyattsville", "Greenbelt", "Laurel"] },
-  { name: "Howard County", state: "MD", fips: ["24027"], cities: ["Columbia", "Ellicott City", "Clarksville", "Elkridge"] },
-  { name: "Frederick County", state: "MD", fips: ["24021"], cities: ["Frederick", "Urbana", "Middletown", "New Market"] },
-  { name: "Anne Arundel County", state: "MD", fips: ["24003"], cities: ["Annapolis", "Glen Burnie", "Crofton", "Severna Park", "Odenton"] },
-  { name: "Baltimore County", state: "MD", fips: ["24005"], cities: ["Towson", "Owings Mills", "Pikesville", "Catonsville"] },
-  { name: "Baltimore City", state: "MD", fips: ["24510"], cities: ["Baltimore"] },
-  { name: "Carroll County", state: "MD", fips: ["24013"], cities: ["Westminster", "Eldersburg", "Sykesville"] },
+  // Washington, D.C. is mainly for solar; Northern Virginia is kept for existing links.
+  { name: "Washington, D.C.", state: "DC", fips: ["11001"], cities: ["Capitol Hill", "Georgetown", "Petworth", "Brookland", "Cleveland Park"], tier: 3, slug: "washington-dc" },
   // Arlington, Fairfax County, and the cities of Alexandria, Falls Church and Fairfax.
-  { name: "Northern Virginia", state: "VA", fips: ["51013", "51059", "51510", "51610", "51600"], cities: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"] },
-  { name: "Washington, D.C.", state: "DC", fips: ["11001"], cities: ["Capitol Hill", "Georgetown", "Petworth", "Brookland", "Cleveland Park"] },
+  { name: "Northern Virginia", state: "VA", fips: ["51013", "51059", "51510", "51610", "51600"], cities: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"], tier: 3, slug: "northern-virginia" },
 ];
 
 /** [longitude, latitude] of every city in `counties`, for the service area map (from OpenStreetMap). */
@@ -39,7 +56,7 @@ export const cityCoords: Record<string, [number, number]> = {
   Brookland: [-76.9842, 38.9328], "Cleveland Park": [-77.0587, 38.9352],
 };
 
-export const fallbackLocations: Location[] = [
+const baseLocations: Location[] = [
   {
     slug: "roofing-service-maryland",
     name: "Maryland",
@@ -48,15 +65,15 @@ export const fallbackLocations: Location[] = [
     lead: "For over 30 years, Pineda's Roofing has repaired, maintained and replaced roofs and gutters for Maryland homes and businesses.",
     paragraphs: [
       "Maryland's seasons are tough on a roof. Humid summers bring thunderstorms, wind and hail, and winters bring snow, ice dams and freeze-thaw cycles that open up small weaknesses.",
-      "From Montgomery County to Annapolis and Baltimore, our own family crews handle shingle and flat roofs, storm damage and seamless gutters, with free inspections and help with your insurance claim.",
+      "From Montgomery County to Annapolis and Baltimore, our team handles shingle and flat roofs, storm damage and seamless gutters, with free inspections and help with your insurance claim.",
     ],
     highlights: [
       "Free roof inspections across Maryland",
       "Atlas Pinnacle Pristine shingles",
       "Storm and insurance claim help",
       "24/7 emergency roof repair",
-      "Licensed, insured & bonded, MHIC# 142024",
-      "10 year labor warranty",
+      "Licensed & insured, MHIC# 142024",
+      "Written workmanship warranty",
     ],
     neighborhoods: [
       "Montgomery County",
@@ -174,15 +191,15 @@ export const fallbackLocations: Location[] = [
     county: "Montgomery County",
     state: "MD",
     featured: true,
-    lead: "Germantown homeowners get fast, honest roofing help from a family-owned Montgomery County company with over 30 years of experience.",
+    lead: "Germantown homeowners get fast, honest roofing help from a family-owned Montgomery County company with decades of local experience.",
     paragraphs: [
       "Much of Germantown was built in the 1980s and 1990s, so many original roofs are now due for replacement. We help single-family and townhome owners plan the work and meet HOA requirements.",
-      "Summer thunderstorms and winter ice dams are the most common causes of damage here. Ice and water shield along the eaves and in valleys is standard on every roof we install.",
+      "Summer thunderstorms and winter ice dams are the most common causes of damage here. We use ice and water shield along the eaves and in valleys where the roof calls for it.",
     ],
     highlights: [
       "Free roof inspections in Germantown",
       "Townhome and HOA roof replacements",
-      "Ice & water shield on every roof",
+      "Ice & water shield where needed",
       "Storm and insurance claim help",
       "24/7 emergency roof repair",
     ],
@@ -249,12 +266,12 @@ export const fallbackLocations: Location[] = [
     lead: "Olney homeowners rely on Pineda's Roofing for careful inspections and roofs built to handle wind, storms and winter weather.",
     paragraphs: [
       "Olney's colonials and split-levels often sit on larger, more open lots, where wind hits roofs harder. Lifted and creased shingles after a storm are a common sight.",
-      "Winters here can bring snow and ice dams along the eaves. Ice and water shield and good attic ventilation are part of every roof we install.",
+      "Winters here can bring snow and ice dams along the eaves. Ice and water shield and good attic ventilation are part of how we plan a roof.",
     ],
     highlights: [
       "Free roof inspections in Olney",
       "Wind and hail damage repair",
-      "Ice & water shield on every roof",
+      "Ice & water shield where needed",
       "Storm and insurance claim help",
       "Atlas Pinnacle Pristine shingles",
     ],
@@ -345,7 +362,7 @@ export const fallbackLocations: Location[] = [
     lead: "From historic stone homes near Main Street to newer neighborhoods, Ellicott City homeowners trust us with roofs that keep water out.",
     paragraphs: [
       "Ellicott City sits among steep hills and has seen serious flash flooding. Heavy rain tests every roof, so solid flashing, sound underlayment and working gutters matter here.",
-      "Older homes often have chimneys and stone or brick walls that need careful flashing and masonry work, which our crews handle alongside the roof.",
+      "Older homes often have chimneys and stone or brick walls that need careful flashing and masonry work, which we handle alongside the roof.",
     ],
     highlights: [
       "Free roof inspections in Ellicott City",
@@ -436,23 +453,56 @@ export const fallbackLocations: Location[] = [
     slug: "washington-dc",
     name: "Washington, D.C.",
     state: "DC",
+    tier: 3,
     featured: true,
-    lead: "We serve every neighborhood in the District, from Capitol Hill to Georgetown, with roof repairs, flat roof replacements and storm damage help.",
+    lead: "Pineda's Roofing is a solar company in Washington, DC, and a roofing contractor for D.C. rowhouses and homes. We look at your roof and your solar plan together.",
     paragraphs: [
-      "Many D.C. rowhouses have flat or low-slope roofs, where drainage and seam work decide how long the roof lasts. We install modified bitumen and single-ply systems built to shed water.",
-      "Older homes also have chimneys, parapets and decades-old flashing. We find where water actually gets in and fix the source, not just the stain.",
+      "Solar is a main focus for us in the District. Many D.C. homes are rowhouses with flat or low-slope roofs, so roof condition, drainage and layout matter before any panels go on.",
+      "We also repair and replace roofs across D.C., including flat roofs, flashing, chimneys and parapets, and we help with storm damage claims.",
     ],
     highlights: [
-      "Free roof inspections in D.C.",
+      "Solar company in Washington, DC",
+      "Roof checked before solar",
       "Rowhouse flat roof replacement",
       "Chimney and flashing repair",
       "Storm and insurance claim help",
-      "Photo documentation of every finding",
+      "Free roof inspections in D.C.",
     ],
     neighborhoods: ["Capitol Hill", "Georgetown", "Petworth", "Brookland", "Cleveland Park"],
+    sections: [
+      {
+        icon: "sun",
+        eyebrow: "Solar in the District",
+        title: "Solar installation in Washington, DC",
+        lead: "A good solar plan starts with a good roof.",
+        paragraphs: [
+          "We look at the age and condition of your roof, its shape and how much sun it gets, then talk through the steps in plain language. We do not promise savings, and we tell you honestly if the roof should be repaired or replaced first.",
+          "Many D.C. neighborhoods are historic districts, where exterior changes can need review. We can help you understand what may apply to your home. [PLACEHOLDER for Roberto: confirm solar offerings and any D.C. permit or program details to mention.]",
+        ],
+        highlightsLabel: "What solar with Pineda's looks like",
+        highlights: ["Roof and site assessment", "Written proposal before you decide", "Permit and utility paperwork explained", "Roof work and solar planned together"],
+        image: images.completedRoofAerial,
+        imageSide: "right",
+        ctas: [{ label: "Solar installation details", href: "/services/solar" }],
+      },
+      {
+        icon: "building",
+        eyebrow: "Roofing",
+        title: "Roofing contractor in Washington, DC for rowhouses and flat roofs",
+        lead: "Flat and low-slope roofs live or die by their drainage and seams.",
+        paragraphs: ["We install modified bitumen and single-ply systems built to shed water, and we find where water really gets in, whether that is a seam, a parapet, a chimney or old flashing."],
+        highlightsLabel: "Common D.C. roof work",
+        highlights: ["Flat roof repair and replacement", "Parapet and flashing repair", "Chimney repair", "Skylight and hatch leaks"],
+        image: images.flatRoofMembrane,
+      },
+    ],
+    faqs: [
+      { question: "Do you install solar in Washington, DC?", answer: "Washington, DC is a main focus for our solar work. Call (301) 921-6333 or send the form and we will talk through your home and your roof." },
+      { question: "Do you also do roofing in Washington, DC?", answer: "Yes. We repair and replace roofs on D.C. homes and rowhouses, including flat roofs, chimneys and flashing." },
+    ],
     seo: {
-      title: "Roofing Contractor in Washington, D.C. | Pineda's Roofing",
-      description: "Roof repair and flat roof replacement for Washington, D.C. rowhouses and homes, from Capitol Hill to Georgetown. Family owned since 1992.",
+      title: "Solar Company in Washington, DC | Roofing Contractor | Pineda's Roofing",
+      description: "Solar company in Washington, DC and roofing contractor for D.C. rowhouses and homes. We check your roof first. Free consultation. Call (301) 921-6333.",
     },
   },
   {
@@ -463,13 +513,13 @@ export const fallbackLocations: Location[] = [
     lead: "Pineda's Roofing serves Northern Virginia homeowners in Alexandria, Arlington, Fairfax, Falls Church and McLean.",
     paragraphs: [
       "Northern Virginia shares Maryland's weather: summer thunderstorms, occasional hail and winter ice. The same problems show up here, from wind-lifted shingles to ice dams along the eaves.",
-      "Homes range from older brick colonials in Arlington and Alexandria to larger homes in McLean and Fairfax. Our own crews bring the same materials and standards to every one.",
+      "Homes range from older brick colonials in Arlington and Alexandria to larger homes in McLean and Fairfax. We bring the same standards to every one.",
     ],
     highlights: [
       "Free roof inspections in Northern Virginia",
       "Atlas Pinnacle Pristine shingles",
       "Storm and insurance claim help",
-      "Our own crews, not subcontractors",
+      "Written scope before work starts",
       "Photo documentation of every finding",
     ],
     neighborhoods: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"],
@@ -479,3 +529,5 @@ export const fallbackLocations: Location[] = [
     },
   },
 ];
+
+export const fallbackLocations: Location[] = [...baseLocations, ...priorityLocations];

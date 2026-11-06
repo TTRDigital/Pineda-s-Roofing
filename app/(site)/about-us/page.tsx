@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { counties, getAboutPage, getLocations, getSiteSettings, getTestimonials } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { images } from "@/lib/data/images";
 import { PageHero } from "@/components/sections/PageHero";
 import { FeatureSection } from "@/components/sections/FeatureSection";
 import { CardGrid } from "@/components/sections/CardGrid";
+import { BbbBadge } from "@/components/sections/BbbBadge";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { CtaBand } from "@/components/sections/CtaBand";
@@ -37,6 +39,7 @@ export default async function AboutPage() {
       {page.sections.slice(0, 1).map((b, i) => (
         <FeatureSection key={b.title} block={b} index={i} tone="white" />
       ))}
+      <BbbBadge settings={settings} />
 
       {page.team.length ? (
         <section id="team" className="section bg-mist">
@@ -54,6 +57,12 @@ export default async function AboutPage() {
                     <p className="eyebrow plain">{p.role}</p>
                     <h3 className="mt-2 text-h3 uppercase text-ink">{p.name}</h3>
                     {p.text ? <p className="mt-3 text-body">{p.text}</p> : null}
+                    {p.slug ? (
+                      <Link href={`/about-us/${p.slug}`} className="mt-5 inline-flex min-h-11 items-center gap-2 font-bold uppercase tracking-[0.08em] text-cyan-deep hover:underline">
+                        Meet {p.name.split(" ")[0]}
+                        <span aria-hidden="true">→</span>
+                      </Link>
+                    ) : null}
                   </div>
                 </li>
               ))}

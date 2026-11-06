@@ -37,6 +37,7 @@ const formService: Record<string, (typeof serviceOptions)[number]> = {
   "commercial-roofing": "Commercial roofing",
   "gutter-installation-replacement": "Gutters",
   siding: "Siding",
+  solar: "Solar",
 };
 
 export default async function ServicePage(props: PageProps<"/services/[slug]">) {
@@ -44,8 +45,8 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
   const [service, services, settings, partners, testimonials] = await Promise.all([getService(slug), getServices(), getSiteSettings(), getPartners(), getTestimonials()]);
   if (!service) notFound();
 
-  const roofing = service.category !== "exterior";
-  const related = services.filter((s) => s.slug !== slug && (s.category === service.category || (roofing && s.category !== "exterior"))).slice(0, 3);
+  const roofing = service.category !== "exterior" && service.category !== "solar";
+  const related = services.filter((s) => s.slug !== slug && (s.category === service.category || (roofing && s.category !== "exterior" && s.category !== "solar"))).slice(0, 3);
   const path = `/services/${slug}`;
 
   return (

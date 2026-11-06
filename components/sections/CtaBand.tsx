@@ -24,7 +24,7 @@ export function CtaBand({
           <p className="mt-4 text-lead text-ink/80">{text}</p>
         </div>
         <div className="flex flex-wrap gap-4">
-          <Button href="/contact" variant="dark" arrow>
+          <Button href="/contact-us" variant="dark" arrow>
             Get a free estimate
           </Button>
           <a

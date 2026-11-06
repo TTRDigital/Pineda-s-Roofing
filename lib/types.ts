@@ -46,6 +46,11 @@ export type SiteSettings = {
   googleRating?: string;
   reviewCount?: string;
   reviewsUrl?: string;
+  /** Link to the Google Business Profile. */
+  googleProfileUrl?: string;
+  /** Link to the BBB business profile. */
+  bbbUrl?: string;
+  bbbRating?: string;
   social: { network: string; href: string }[];
   headerCta: Cta;
   logo?: Img;
@@ -61,7 +66,7 @@ export type Partners = {
   insurers: Partner[];
 };
 
-export type ServiceCategory = "residential" | "commercial" | "repair" | "exterior";
+export type ServiceCategory = "residential" | "commercial" | "repair" | "exterior" | "solar";
 
 export type Service = {
   slug: string;
@@ -86,6 +91,13 @@ export type Location = {
   paragraphs?: string[];
   highlights?: string[];
   neighborhoods?: string[];
+  /** "county" pages are hubs that link to their city pages. Default is "city". */
+  kind?: "county" | "city";
+  /** 1 = main focus, 2 = second tier, 3 = also serving. */
+  tier?: 1 | 2 | 3;
+  /** Extra feature sections with place-specific content. */
+  sections?: FeatureBlock[];
+  faqs?: Faq[];
   seo?: Seo;
 };
 
@@ -150,7 +162,7 @@ export type InsuranceContent = {
   faqs: Faq[];
 };
 
-export type Person = { name: string; role: string; text?: string; image?: Img };
+export type Person = { name: string; role: string; text?: string; image?: Img; /** Page under /about-us/. */ slug?: string };
 
 export type AboutContent = {
   seo: Seo;

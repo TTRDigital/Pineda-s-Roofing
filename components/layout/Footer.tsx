@@ -1,17 +1,20 @@
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import type { Service, SiteSettings } from "@/lib/types";
+import { BbbBadge } from "@/components/sections/BbbBadge";
 import { Logo } from "@/components/layout/Logo";
 import { SocialIcon } from "@/components/ui/Icon";
 
 const company = [
-  { label: "About us", href: "/about" },
-  { label: "Atlas roofing", href: "/atlas" },
-  { label: "Insurance claims", href: "/insurance-claims" },
+  { label: "About us", href: "/about-us" },
+  { label: "Atlas roofing", href: "/atlas-roofing" },
+  { label: "Insurance claims", href: "/roofing-insurance" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Project examples", href: "/projects" },
+  { label: "Solar", href: "/services/solar" },
   { label: "Service areas", href: "/service-area" },
   { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 export function Footer({ settings, services }: { settings: SiteSettings; services: Service[] }) {
@@ -33,7 +36,10 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
             Family-owned roofing contractor in {settings.city}, {settings.region}. Residential and commercial roofing, repairs and storm restoration for over three decades.
           </p>
           <p className="mt-5 text-sm font-semibold text-white">
-            Licensed, insured &amp; bonded <span className="text-cyan">·</span> {settings.license}
+            Licensed &amp; insured <span className="text-cyan">·</span> {settings.license}
+          </p>
+          <p className="mt-2">
+            <BbbBadge settings={settings} variant="inline" />
           </p>
           {settings.social.length ? (
             <ul className="mt-6 flex gap-3">
@@ -92,7 +98,7 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
             <li>
               <Link href="/service-area" className="flex items-start gap-3 hover:text-cyan">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-cyan" strokeWidth={2} aria-hidden="true" />
-                Serving Maryland, Washington D.C. &amp; Northern Virginia
+                Serving Baltimore, Howard, Anne Arundel, Prince George&apos;s &amp; more
               </Link>
             </li>
             {settings.hours.length ? (
