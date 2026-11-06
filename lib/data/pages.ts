@@ -10,28 +10,28 @@ const estimate = { label: "Get a free estimate", href: "/contact-us" };
 
 export const fallbackHome: HomeContent = {
   seo: {
-    title: "Pineda's Roofing | Maryland Roofing Contractor Since 1992",
+    title: "Roofing Contractor in Maryland & Solar in Washington, DC | Pineda's Roofing",
     description:
-      "Family-owned roofing contractor in Silver Spring, MD. Roof replacement, repair, storm restoration and commercial roofing. Free inspections. MHIC# 142024.",
+      "Family-owned roofing contractor in Silver Spring, MD serving Baltimore, Howard, Anne Arundel, Prince George's and Montgomery counties. Roof repair, replacement, storm restoration and solar. Free inspections. MHIC# 142024.",
   },
   hero: {
-    eyebrow: "Silver Spring · Maryland & the DMV",
+    eyebrow: "Silver Spring, MD · Baltimore · Howard · Anne Arundel · Prince George's",
     heading: "Maryland's family-owned roofing contractor",
-    text: "Residential and commercial roofing, repairs and storm restoration. One family, our own crews, a 10 year labor warranty and a lifetime manufacturer warranty.",
+    text: "Residential and commercial roofing, repairs, storm restoration and now solar. One family business with written estimates and written warranties.",
     image: images.aerialNewShingleRoof,
-    badges: ["Family owned since 1992", "Licensed, insured & bonded", "MHIC# 142024", "24/7 emergency service"],
+    badges: ["Family owned", "Licensed & insured", "MHIC# 142024", "BBB Accredited, A+"],
     verse: { text: "Unless the Lord builds the house, the builders labor in vain.", reference: "Psalm 127:1" },
   },
   stats: [
     { value: "30+", label: "Years in business" },
-    { value: "10 Year", label: "Labor warranty" },
-    { value: "Lifetime", label: "Manufacturer warranty" },
+    { value: "Written", label: "Workmanship warranty" },
+    { value: "Backed", label: "By manufacturer warranties" },
     { value: "24/7", label: "Emergency service" },
   ],
   servicesIntro: {
     eyebrow: "What we do",
     heading: "The exterior, handled",
-    text: "Every roof we install uses Atlas Pinnacle Pristine shingles and comes with a 10 year labor warranty and a lifetime manufacturer warranty.",
+    text: "Every roof we install uses Atlas Pinnacle Pristine shingles and comes with a written workmanship warranty and the manufacturer's warranty on the products.",
   },
   serviceCards: [
     { icon: "house", title: "Residential roofing", text: "New roofs, replacements and repairs for Maryland homes.", href: "/services/residential-roofing" },
@@ -50,11 +50,11 @@ export const fallbackHome: HomeContent = {
       title: "A roofer that takes your roof seriously",
       lead: "We don't just fix roofs. We protect property, preserve legacies and deliver peace of mind.",
       paragraphs: [
-        "German Pineda started the company over three decades ago. Today Freddy and Roberto Pineda run it with the same standards and the same phone number.",
+        "Pineda's Roofing is run by Roberto Pineda and Fredy Pineda, with the same standards and the same phone number for every customer.",
         "The person who inspects your roof, the crew who installs it and the owner who stands behind the warranty are one family business.",
       ],
       highlightsLabel: "The Pineda's difference",
-      highlights: ["Family owned since 1992", "Our own crews, never subcontractors", "Free inspections with photo reports", "10 year labor warranty"],
+      highlights: ["Family owned since 1992", "Clear written estimates", "Free inspections with photo reports", "Written workmanship warranty"],
       image: images.crew,
       ctas: [{ label: "More about Pineda's", href: "/about-us" }],
     },
@@ -112,10 +112,10 @@ export const fallbackHome: HomeContent = {
   whyIntro: { eyebrow: "Why Pineda's", heading: "Why Maryland homeowners choose us" },
   why: [
     { icon: "users", title: "Family owned for 30+ years", text: "Same family, same standards and the same phone number when you need us." },
-    { icon: "award", title: "Premium materials as standard", text: "Atlas Pinnacle Pristine shingles on every installation, not an upsell." },
-    { icon: "shield-check", title: "10 year labor warranty", text: "Our workmanship is covered for 10 years, plus a lifetime manufacturer warranty on the shingles." },
+    { icon: "award", title: "Quality materials", text: "Atlas Pinnacle Pristine shingles are one of the products we install and recommend." },
+    { icon: "shield-check", title: "Written workmanship warranty", text: "Our workmanship is covered by a written warranty, plus the manufacturer's warranty on the shingles." },
     { icon: "file-check", title: "Insurance expertise", text: "We meet your adjuster and provide the documentation carriers need." },
-    { icon: "badge-check", title: "Licensed, insured & bonded", text: "MHIC# 142024. Fully covered on every job we take." },
+    { icon: "badge-check", title: "Licensed & insured", text: "MHIC# 142024. Fully covered on every job we take." },
     { icon: "clipboard", title: "Free, no-obligation estimates", text: "Written scope and transparent pricing before you commit." },
   ],
   processIntro: {
@@ -163,7 +163,7 @@ export const fallbackRoofing: RoofingContent = {
         "Atlas Pinnacle Pristine shingles",
         "Ventilation and attic airflow fixes",
         "Gutters and gutter guards",
-        "10 year labor warranty",
+        "Written workmanship warranty",
       ],
       image: images.homeNewRoofAerial,
       ctas: [
@@ -214,7 +214,7 @@ export const fallbackRoofing: RoofingContent = {
       lead: "A tree limb through the deck at 9 PM doesn't wait for business hours, and neither do we.",
       paragraphs: [
         "We respond fast, tarp and secure the opening, then return for the permanent repair once conditions allow.",
-        "Storm damage is often invisible from the ground. We document it properly and work with your insurer; many customers pay only their deductible.",
+        "Storm damage is often invisible from the ground. We document it properly and work with your insurer.",
       ],
       highlightsLabel: "What we handle",
       highlights: ["24/7 emergency tarping", "Hail and wind damage", "Fallen trees and debris", "Insurance claims and adjuster meetings"],
@@ -237,7 +237,7 @@ export const fallbackAtlas: AtlasContent = {
   },
   hero: {
     eyebrow: "Atlas Roofing",
-    heading: "Atlas shingles on every roof we install",
+    heading: "Atlas shingles",
     text: "Every shingle roof we build uses Atlas Pinnacle Pristine, a shingle made to stand up to Maryland storms and stay clean in our humid summers.",
     image: images.aerialNewShingleRoof,
   },
@@ -259,7 +259,7 @@ export const fallbackAtlas: AtlasContent = {
         "Built for high winds and heavy storms",
         "Wide range of colors",
         "Matching starter and ridge cap",
-        "Lifetime manufacturer warranty",
+        "Manufacturer warranty",
       ],
       image: images.pinnaclePristineBundles,
     },
@@ -308,8 +308,8 @@ export const fallbackAtlas: AtlasContent = {
     },
     {
       icon: "award",
-      title: "Lifetime limited warranty",
-      text: "Atlas backs its architectural shingles with a lifetime limited warranty, registered in your name.",
+      title: "Manufacturer's limited warranty",
+      text: "Atlas backs its architectural shingles with a limited warranty, registered in your name.",
     },
   ],
   jobPhotosIntro: {
@@ -328,7 +328,7 @@ export const fallbackAtlas: AtlasContent = {
       name: "Pinnacle Pristine",
       tagline: "Our standard architectural shingle",
       text: "Dimensional look, rich color blends and Scotchgard Protector to keep the roof clean.",
-      highlights: ["3M Scotchgard algae resistance", "High wind performance", "Lifetime limited warranty"],
+      highlights: ["3M Scotchgard algae resistance", "High wind performance", "Manufacturer's limited warranty"],
     },
     {
       name: "StormMaster Shake & Slate",
@@ -349,8 +349,8 @@ export const fallbackAtlas: AtlasContent = {
     text: "Two layers of protection: the manufacturer covers the materials, and Pineda's covers the installation.",
   },
   warranties: [
-    { icon: "shield-check", title: "Lifetime manufacturer warranty", text: "Atlas's lifetime limited warranty on the shingles, registered in your name." },
-    { icon: "hammer", title: "10 year labor warranty", text: "Pineda's covers the installation itself for 10 years, starting the day we finish." },
+    { icon: "shield-check", title: "Manufacturer warranty", text: "Atlas's limited warranty on the shingles, registered in your name." },
+    { icon: "hammer", title: "Written workmanship warranty", text: "Pineda's covers the installation itself with a written warranty. Ask us for the exact terms." },
     { icon: "file-check", title: "In writing", text: "You get the warranty paperwork for your exact roof, not a brochure promise." },
   ],
   faqs: [
@@ -364,7 +364,7 @@ export const fallbackAtlas: AtlasContent = {
     },
     {
       question: "Does my new roof come with a warranty?",
-      answer: "Yes. Atlas backs the shingles with a lifetime manufacturer warranty, and Pineda's backs the installation with a 10 year labor warranty. You get the documents for your roof in writing.",
+      answer: "Yes. Atlas backs the shingles with a manufacturer's warranty, and Pineda's backs the installation with a Written workmanship warranty. You get the documents for your roof in writing.",
     },
   ],
 };
@@ -390,7 +390,7 @@ export const fallbackInsurance: InsuranceContent = {
       lead: "We document the damage the way adjusters need it, meet them on your roof and stay with you until the work is done.",
       paragraphs: [
         "Storm damage is often invisible from the ground. Our free assessment tells you whether a claim is worth filing before you call your carrier.",
-        "Storm damage is often covered; age and general wear usually are not. Many customers pay only their deductible.",
+        "Storm damage is often covered; age and general wear usually are not. What you pay depends on your policy.",
       ],
       highlightsLabel: "What we do for you",
       highlights: ["Free storm damage assessment", "Detailed photo documentation", "We meet your adjuster on site", "Help with supplements and denials"],
@@ -504,7 +504,7 @@ export const fallbackAbout: AboutContent = {
     lead: "Don Eagle is the Pineda's Roofing mascot. You'll find him all over our website, and he greets you on our chat button.",
     paragraphs: [
       "The eagle stands for the way we work: sharp eyes that catch what others miss, a nest built to last, and the drive to keep going until the job is done right.",
-      "The six values below are Don Eagle's, and they are ours. They guide every inspection, every estimate and every roof we install.",
+      "The six values below are Don Eagle's, and they are ours. They guide every inspection and every estimate.",
     ],
     image: images.eagleArmsCrossed,
     verse: {

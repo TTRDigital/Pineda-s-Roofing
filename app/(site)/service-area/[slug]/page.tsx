@@ -149,6 +149,14 @@ export default async function LocationPage(props: PageProps<"/service-area/[slug
           </div>
         </section>
       ) : null}
+      <section className="bg-white py-10">
+        <div className="container-x flex flex-wrap items-center justify-between gap-4">
+          <p className="max-w-xl text-body">Want to see how we work? Look at our project examples to see the problem, what we did and photos from real jobs.</p>
+          <Link href="/projects" className="inline-flex min-h-11 items-center rounded-full border-2 border-line px-5 font-semibold text-ink hover:border-cyan hover:bg-cyan-50">
+            Roofing project examples
+          </Link>
+        </div>
+      </section>
       <ContactSection settings={settings} heading={`Free ${isDc ? "solar and roof" : "roof"} estimate in ${shortPlace}`} defaultService={isDc ? "Solar" : undefined} />
     </>
   );

@@ -13,11 +13,11 @@ export const fallbackServices: Service[] = [
     category: "residential",
     icon: "house",
     order: 1,
-    summary: "Shingle roof replacement, repair and upkeep for Maryland homes, installed by our own family crews with Atlas Pinnacle Pristine.",
+    summary: "Shingle roof replacement, repair and upkeep for Maryland homes, installed by our team with Atlas Pinnacle Pristine.",
     hero: {
       eyebrow: "Residential Roofing",
       heading: "Roofs built for Maryland homes and families",
-      text: "From a few missing shingles to a full replacement, our own family crews take care of your home's roof the way we'd take care of our own.",
+      text: "From a few missing shingles to a full replacement, our team takes care of your home's roof the way we'd take care of our own.",
       image: images.homeNewRoofAerial,
     },
     sections: [
@@ -28,26 +28,26 @@ export const fallbackServices: Service[] = [
         title: "Your home's roof, handled by one family",
         lead: "For more than 30 years, Maryland homeowners have called Pineda's Roofing when the roof over their head needs attention.",
         paragraphs: [
-          "The person who inspects your roof, the crew who installs it and the owner who stands behind the warranty all belong to the same family business. No rotating cast of subcontractors.",
+          "The person who inspects your roof, the crew who installs it and the owner who stands behind the warranty are part of the same family business.",
           "We inspect the whole roof, photograph what we find and tell you honestly whether you need a repair or a replacement.",
         ],
         highlightsLabel: "Why homeowners choose us",
         highlights: [
           "Family owned and operated since 1992",
-          "Our own crews, not subcontractors",
-          "Licensed, insured & bonded, MHIC# 142024",
+          "Written scope before work starts",
+          "Licensed & insured, MHIC# 142024",
           "Free inspections, no-obligation estimates",
           "Photo documentation of every finding",
-          "10 year labor warranty",
+          "Written workmanship warranty",
         ],
         image: images.crew,
       },
       {
         anchor: "shingle-roofs",
         icon: "layers",
-        eyebrow: "Premium materials as standard",
+        eyebrow: "Quality materials",
         title: "Atlas Pinnacle Pristine on every roof",
-        lead: "Asphalt shingles are the right choice for most Maryland homes. We install Atlas Pinnacle Pristine on every one, as standard, not as an upsell.",
+        lead: "Asphalt shingles are the right choice for most Maryland homes. Atlas Pinnacle Pristine is the shingle we recommend and install most.",
         paragraphs: [
           "These shingles carry 3M Scotchgard Protector, which resists the black algae streaks common in our humid summers. They come in a wide range of colors and styles to suit traditional and modern homes.",
           "Underneath, every roof gets synthetic underlayment and ice and water shield where Maryland roofs leak most.",
@@ -138,11 +138,11 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "What warranty do I get?",
-        answer: "Every new roof comes with a 10 year labor warranty from Pineda's and a lifetime manufacturer warranty on the shingles. You get both in writing.",
+        answer: "Every new roof comes with a Written workmanship warranty from Pineda's and a manufacturer's warranty on the shingles. You get both in writing.",
       },
       {
         question: "Are you licensed and insured?",
-        answer: "Yes. We are fully licensed, insured and bonded in Maryland, MHIC# 142024.",
+        answer: "Yes. We are licensed and insured in Maryland, MHIC# 142024.",
       },
     ],
     seo: {
@@ -174,14 +174,14 @@ export const fallbackServices: Service[] = [
         lead: "Every commercial building has its own unique challenges. Our commercial roofing service is built around your schedule, your tenants and your budget.",
         paragraphs: [
           "We work with property managers, HOAs and business owners across the Baltimore-Washington corridor. Large projects are scheduled around your operating hours to keep downtime to a minimum.",
-          "You deal with the same family-owned company from the first inspection to the final walkthrough, with our own crews on the roof.",
+          "You deal with the same family-owned company from the first inspection to the final walkthrough, with the Pineda's team on the roof.",
         ],
         highlightsLabel: "What you can expect",
         highlights: [
           "Work scheduled around business hours",
           "Minimal disruption to tenants",
-          "Our own crews, not subcontractors",
-          "Licensed, insured & bonded, MHIC# 142024",
+          "Written scope before work starts",
+          "Licensed & insured, MHIC# 142024",
           "Free inspection with photo documentation",
           "Written scope and transparent pricing",
         ],
@@ -284,11 +284,11 @@ export const fallbackServices: Service[] = [
     category: "residential",
     icon: "hammer",
     order: 3,
-    summary: "Full roof replacement for homes and businesses with premium materials, our own crews and most homes finished in two to three days.",
+    summary: "Full roof replacement for homes and businesses with premium materials and most homes finished in two to three days.",
     hero: {
       eyebrow: "Roof Replacement",
       heading: "Roof replacement done right the first time",
-      text: "A new roof from Maryland's family-owned roofers. Premium materials, our own crews, and most homes finished in two to three days.",
+      text: "A new roof from Maryland's family-owned roofers. Premium materials and most homes finished in two to three days.",
       image: images.aerialNewShingleRoof,
     },
     sections: [
@@ -337,7 +337,7 @@ export const fallbackServices: Service[] = [
       {
         anchor: "materials",
         icon: "layers",
-        title: "Premium materials as standard",
+        title: "Quality materials",
         lead: "No upcharge for the right way to build a roof. This is what goes on every job we install.",
         paragraphs: [
           "Atlas Pinnacle Pristine architectural shingles carry 3M Scotchgard Protector, so they resist the black algae streaks you see on older roofs. They come in a wide range of colors and styles.",
@@ -350,7 +350,7 @@ export const fallbackServices: Service[] = [
           "Synthetic underlayment",
           "Ice & water shield in valleys and eaves",
           "Pre-stripped ridge cap for a tight seal",
-          "10 year labor warranty",
+          "Written workmanship warranty",
         ],
         image: images.pinnaclePristineBundles,
       },
@@ -409,12 +409,12 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "What warranties do you offer?",
-        answer: "You get a 10 year labor warranty from Pineda's and a lifetime manufacturer warranty on the Atlas Pinnacle Pristine shingles. Your labor warranty starts the day we finish.",
+        answer: "You get a Written workmanship warranty from Pineda's and a manufacturer's warranty on the Atlas Pinnacle Pristine shingles. Your labor warranty starts the day we finish.",
       },
     ],
     seo: {
       title: "Roof Replacement in Maryland | Pineda's Roofing",
-      description: "Roof replacement in Maryland with Atlas Pinnacle Pristine shingles, our own crews and a 10 year labor warranty. Most homes done in 2 to 3 days. Free estimates.",
+      description: "Roof replacement in Maryland with Atlas Pinnacle Pristine shingles and a written workmanship warranty. Most homes done in 2 to 3 days. Free estimates.",
     },
   },
 
@@ -658,7 +658,7 @@ export const fallbackServices: Service[] = [
     ],
     seo: {
       title: "24/7 Emergency Roof Repair in Maryland | Pineda's Roofing",
-      description: "24/7 emergency roof repair in Maryland and the DMV. We tarp leaks, secure storm and tree damage, and help with your insurance claim. Call (301) 921-6333.",
+      description: "24/7 emergency roof repair in Maryland and Washington, DC. We tarp leaks, secure storm and tree damage, and help with your insurance claim. Call (301) 921-6333.",
     },
   },
 
@@ -769,7 +769,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Are you licensed and insured?",
-        answer: "Yes. We are fully licensed, insured and bonded in Maryland, MHIC# 142024.",
+        answer: "Yes. We are licensed and insured in Maryland, MHIC# 142024.",
       },
     ],
     seo: {
@@ -800,7 +800,7 @@ export const fallbackServices: Service[] = [
         title: "Restoring your home after the storm",
         lead: "Storm damage is time-sensitive and often invisible from the ground. We find it, document it and repair it properly.",
         paragraphs: [
-          "Maryland gets its share of hail, straight-line winds and hurricane remnants. We inspect the full roof, photograph every finding and work directly with your insurance company. Many customers pay only their deductible.",
+          "Maryland gets its share of hail, straight-line winds and hurricane remnants. We inspect the full roof, photograph every finding and work directly with your insurance company. What you pay depends on your policy.",
           "Once the claim is approved, we repair or replace what's needed and walk the finished work with you.",
         ],
         highlightsLabel: "What we do for you",
@@ -895,7 +895,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Will you help with my insurance claim?",
-        answer: "Yes. We document the damage with photos and reports, work directly with your insurance company and meet the adjuster on site. Many customers pay only their deductible.",
+        answer: "Yes. We document the damage with photos and reports, work directly with your insurance company and meet the adjuster on site. What you pay depends on your policy.",
       },
       {
         question: "How long does storm restoration take?",
@@ -907,7 +907,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Do you offer warranties on storm repairs?",
-        answer: "Yes. Our labor is covered by a 10 year warranty, and Atlas Pinnacle Pristine shingles carry a lifetime manufacturer warranty.",
+        answer: "Yes. Our labor is covered by a written warranty, and Atlas Pinnacle Pristine shingles carry a manufacturer's warranty.",
       },
     ],
     seo: {
@@ -1058,7 +1058,7 @@ export const fallbackServices: Service[] = [
         highlights: [
           "Roofing-grade flashing and details",
           "Roof and siding inspected together",
-          "Licensed, insured & bonded, MHIC# 142024",
+          "Licensed & insured, MHIC# 142024",
           "Family owned for over 30 years",
         ],
         image: images.stormHome,
@@ -1246,7 +1246,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Is there a warranty?",
-        answer: "Yes. Manufacturer warranties cover the windows, and our own workmanship warranty covers every installation.",
+        answer: "Yes. Manufacturer warranties cover the windows, and our workmanship warranty covers the installation.",
       },
     ],
     seo: {
@@ -1523,7 +1523,7 @@ export const fallbackServices: Service[] = [
           "Drainage planned before excavation",
           "Design consultation included",
           "Permits handled with your county",
-          "Licensed, insured & bonded, MHIC# 142024",
+          "Licensed & insured, MHIC# 142024",
           "Family owned for over 30 years",
         ],
         image: images.paverInstall,

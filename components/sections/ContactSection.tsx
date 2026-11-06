@@ -49,7 +49,7 @@ export function ContactSection({
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ink-3 text-cyan">
                   <MapPin className="h-5 w-5" strokeWidth={2} aria-hidden="true" />
                 </span>
-                Serving Maryland, D.C. &amp; Northern Virginia
+                Serving Baltimore, Howard, Anne Arundel, Prince George&apos;s &amp; more
               </Link>
             </li>
             <li className="flex items-start gap-4">
@@ -65,7 +65,7 @@ export function ContactSection({
               </span>
             </li>
           </ul>
-          <p className="mt-8 text-sm font-semibold text-white">{settings.license} · Licensed, insured &amp; bonded</p>
+          <p className="mt-8 text-sm font-semibold text-white">{settings.license} · Licensed &amp; insured</p>
           <div className="relative -mb-10 mt-6 hidden h-64 self-end lg:block" aria-hidden="true">
             <Image src={images.eagleThumbsUp.src} alt="" width={images.eagleThumbsUp.width} height={images.eagleThumbsUp.height} sizes="200px" className="h-full w-auto" />
           </div>

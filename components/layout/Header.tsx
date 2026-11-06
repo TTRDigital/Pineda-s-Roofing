@@ -84,7 +84,7 @@ export function Header({
       <div className="bg-ink text-[0.8125rem] text-on-dark">
         <div className="container-x flex min-h-10 items-center justify-between gap-4">
           <p className="hidden sm:block">
-            Licensed, insured &amp; bonded <span className="text-on-dark-meta">·</span> <span className="font-semibold text-white">{license}</span>
+            Licensed &amp; insured <span className="text-on-dark-meta">·</span> <span className="font-semibold text-white">{license}</span>
           </p>
           <div className="flex w-full items-center justify-between gap-5 sm:w-auto sm:justify-end">
             <a href={phoneHref} data-track="click_to_call" className="inline-flex items-center gap-2 font-semibold text-white hover:text-cyan">

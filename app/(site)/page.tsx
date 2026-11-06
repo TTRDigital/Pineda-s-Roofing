@@ -49,13 +49,13 @@ export default async function HomePage() {
 
       <SplitTiles
         tone="mist"
-        intro={{ eyebrow: "Roofing", heading: "For homes and businesses", text: "One family-owned team for residential and commercial roofs across Maryland and the DMV." }}
+        intro={{ eyebrow: "Roofing", heading: "For homes and businesses", text: "One family-owned team for residential and commercial roofs across Maryland and Washington, DC." }}
         tiles={[
           {
             href: "/services/residential-roofing",
             eyebrow: "Residential",
             title: "Residential roofing",
-            text: "Replacements, repairs and new roofs for Maryland homes, with Atlas Pinnacle Pristine shingles as standard.",
+            text: "Replacements, repairs and new roofs for Maryland homes, with Atlas Pinnacle Pristine shingles among the products we install.",
             image: images.homeNewRoofAerial,
             icon: "house",
           },

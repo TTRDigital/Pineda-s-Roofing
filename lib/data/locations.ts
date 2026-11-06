@@ -65,15 +65,15 @@ const baseLocations: Location[] = [
     lead: "For over 30 years, Pineda's Roofing has repaired, maintained and replaced roofs and gutters for Maryland homes and businesses.",
     paragraphs: [
       "Maryland's seasons are tough on a roof. Humid summers bring thunderstorms, wind and hail, and winters bring snow, ice dams and freeze-thaw cycles that open up small weaknesses.",
-      "From Montgomery County to Annapolis and Baltimore, our own family crews handle shingle and flat roofs, storm damage and seamless gutters, with free inspections and help with your insurance claim.",
+      "From Montgomery County to Annapolis and Baltimore, our team handles shingle and flat roofs, storm damage and seamless gutters, with free inspections and help with your insurance claim.",
     ],
     highlights: [
       "Free roof inspections across Maryland",
       "Atlas Pinnacle Pristine shingles",
       "Storm and insurance claim help",
       "24/7 emergency roof repair",
-      "Licensed, insured & bonded, MHIC# 142024",
-      "10 year labor warranty",
+      "Licensed & insured, MHIC# 142024",
+      "Written workmanship warranty",
     ],
     neighborhoods: [
       "Montgomery County",
@@ -191,15 +191,15 @@ const baseLocations: Location[] = [
     county: "Montgomery County",
     state: "MD",
     featured: true,
-    lead: "Germantown homeowners get fast, honest roofing help from a family-owned Montgomery County company with over 30 years of experience.",
+    lead: "Germantown homeowners get fast, honest roofing help from a family-owned Montgomery County company with decades of local experience.",
     paragraphs: [
       "Much of Germantown was built in the 1980s and 1990s, so many original roofs are now due for replacement. We help single-family and townhome owners plan the work and meet HOA requirements.",
-      "Summer thunderstorms and winter ice dams are the most common causes of damage here. Ice and water shield along the eaves and in valleys is standard on every roof we install.",
+      "Summer thunderstorms and winter ice dams are the most common causes of damage here. We use ice and water shield along the eaves and in valleys where the roof calls for it.",
     ],
     highlights: [
       "Free roof inspections in Germantown",
       "Townhome and HOA roof replacements",
-      "Ice & water shield on every roof",
+      "Ice & water shield where needed",
       "Storm and insurance claim help",
       "24/7 emergency roof repair",
     ],
@@ -266,12 +266,12 @@ const baseLocations: Location[] = [
     lead: "Olney homeowners rely on Pineda's Roofing for careful inspections and roofs built to handle wind, storms and winter weather.",
     paragraphs: [
       "Olney's colonials and split-levels often sit on larger, more open lots, where wind hits roofs harder. Lifted and creased shingles after a storm are a common sight.",
-      "Winters here can bring snow and ice dams along the eaves. Ice and water shield and good attic ventilation are part of every roof we install.",
+      "Winters here can bring snow and ice dams along the eaves. Ice and water shield and good attic ventilation are part of how we plan a roof.",
     ],
     highlights: [
       "Free roof inspections in Olney",
       "Wind and hail damage repair",
-      "Ice & water shield on every roof",
+      "Ice & water shield where needed",
       "Storm and insurance claim help",
       "Atlas Pinnacle Pristine shingles",
     ],
@@ -362,7 +362,7 @@ const baseLocations: Location[] = [
     lead: "From historic stone homes near Main Street to newer neighborhoods, Ellicott City homeowners trust us with roofs that keep water out.",
     paragraphs: [
       "Ellicott City sits among steep hills and has seen serious flash flooding. Heavy rain tests every roof, so solid flashing, sound underlayment and working gutters matter here.",
-      "Older homes often have chimneys and stone or brick walls that need careful flashing and masonry work, which our crews handle alongside the roof.",
+      "Older homes often have chimneys and stone or brick walls that need careful flashing and masonry work, which we handle alongside the roof.",
     ],
     highlights: [
       "Free roof inspections in Ellicott City",
@@ -513,13 +513,13 @@ const baseLocations: Location[] = [
     lead: "Pineda's Roofing serves Northern Virginia homeowners in Alexandria, Arlington, Fairfax, Falls Church and McLean.",
     paragraphs: [
       "Northern Virginia shares Maryland's weather: summer thunderstorms, occasional hail and winter ice. The same problems show up here, from wind-lifted shingles to ice dams along the eaves.",
-      "Homes range from older brick colonials in Arlington and Alexandria to larger homes in McLean and Fairfax. Our own crews bring the same materials and standards to every one.",
+      "Homes range from older brick colonials in Arlington and Alexandria to larger homes in McLean and Fairfax. We bring the same standards to every one.",
     ],
     highlights: [
       "Free roof inspections in Northern Virginia",
       "Atlas Pinnacle Pristine shingles",
       "Storm and insurance claim help",
-      "Our own crews, not subcontractors",
+      "Written scope before work starts",
       "Photo documentation of every finding",
     ],
     neighborhoods: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"],

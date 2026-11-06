@@ -37,12 +37,13 @@ export function businessSchema(s: SiteSettings, testimonials: Testimonial[] = []
     logo: absoluteUrl(images.logo.src),
     image: absoluteUrl(images.aerialNewShingleRoof.src),
     foundingDate: String(s.foundedYear),
-    founder: { "@type": "Person", name: "German Pineda" },
+    // TODO: add founder / employee Person entries once Roberto confirms who to list.
+    employee: [{ "@type": "Person", name: "Roberto Pineda", jobTitle: "Owner" }, { "@type": "Person", name: "Fredy Pineda", jobTitle: "Partner" }],
     // Service-area business: city and state only, never the street address.
     address: { "@type": "PostalAddress", addressLocality: s.city, addressRegion: s.region, addressCountry: "US" },
     openingHoursSpecification: hours,
     areaServed: areas.map((name) => ({ "@type": "Place", name })),
-    sameAs: s.social.map((x) => x.href),
+    sameAs: [...s.social.map((x) => x.href), ...(s.bbbUrl ? [s.bbbUrl] : [])],
     ...(s.googleRating && s.reviewCount ? { aggregateRating: { "@type": "AggregateRating", ratingValue: s.googleRating, reviewCount: s.reviewCount, bestRating: "5" } } : {}),
     review: testimonials.slice(0, 4).map((t) => ({
       "@type": "Review",

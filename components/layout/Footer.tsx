@@ -10,6 +10,8 @@ const company = [
   { label: "Atlas roofing", href: "/atlas-roofing" },
   { label: "Insurance claims", href: "/roofing-insurance" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Project examples", href: "/projects" },
+  { label: "Solar", href: "/services/solar" },
   { label: "Service areas", href: "/service-area" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact-us" },
@@ -96,7 +98,7 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
             <li>
               <Link href="/service-area" className="flex items-start gap-3 hover:text-cyan">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-cyan" strokeWidth={2} aria-hidden="true" />
-                Serving Maryland, Washington D.C. &amp; Northern Virginia
+                Serving Baltimore, Howard, Anne Arundel, Prince George&apos;s &amp; more
               </Link>
             </li>
             {settings.hours.length ? (

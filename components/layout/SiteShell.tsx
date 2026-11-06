@@ -32,7 +32,14 @@ function buildNav(services: Service[], locations: Location[]): NavItem[] {
     { label: "Solar", href: "/services/solar" },
     { label: "Atlas", href: "/atlas-roofing" },
     { label: "Insurance", href: "/roofing-insurance" },
-    { label: "Gallery", href: "/gallery" },
+    {
+      label: "Gallery",
+      href: "/gallery",
+      children: [
+        { label: "Photo gallery", href: "/gallery" },
+        { label: "Project examples", href: "/projects", note: "The problem, what we did and photos" },
+      ],
+    },
     {
       label: "About",
       href: "/about-us",

@@ -12,7 +12,7 @@ export function AtlasBand() {
           <p className="eyebrow on-dark">Atlas Roofing</p>
           <h2 className="mt-4 text-h2 uppercase text-white">Atlas Pinnacle Pristine on every roof</h2>
           <span className="accent-rule mt-5" aria-hidden="true" />
-          <p className="mt-6 max-w-xl text-lead text-on-dark">Premium shingles are our standard, not an upsell. 3M Scotchgard Protector keeps Maryland roofs free of algae streaks.</p>
+          <p className="mt-6 max-w-xl text-lead text-on-dark">Atlas shingles are one of the products we install. 3M Scotchgard Protector keeps Maryland roofs free of algae streaks.</p>
           <div className="mt-8 max-w-xl">
             <HighlightBoxes items={["3M Scotchgard algae protection", "Built for high winds", "Wide range of colors", "Manufacturer-backed warranty"]} />
           </div>
