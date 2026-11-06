@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import type { Service, SiteSettings } from "@/lib/types";
+import { BbbBadge } from "@/components/sections/BbbBadge";
 import { Logo } from "@/components/layout/Logo";
 import { SocialIcon } from "@/components/ui/Icon";
 
@@ -33,7 +34,10 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
             Family-owned roofing contractor in {settings.city}, {settings.region}. Residential and commercial roofing, repairs and storm restoration for over three decades.
           </p>
           <p className="mt-5 text-sm font-semibold text-white">
-            Licensed, insured &amp; bonded <span className="text-cyan">·</span> {settings.license}
+            Licensed &amp; insured <span className="text-cyan">·</span> {settings.license}
+          </p>
+          <p className="mt-2">
+            <BbbBadge settings={settings} variant="inline" />
           </p>
           {settings.social.length ? (
             <ul className="mt-6 flex gap-3">

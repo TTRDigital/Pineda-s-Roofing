@@ -162,7 +162,7 @@ export type InsuranceContent = {
   faqs: Faq[];
 };
 
-export type Person = { name: string; role: string; text?: string; image?: Img };
+export type Person = { name: string; role: string; text?: string; image?: Img; /** Page under /about-us/. */ slug?: string };
 
 export type AboutContent = {
   seo: Seo;
