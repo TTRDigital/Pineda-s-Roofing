@@ -48,6 +48,9 @@ export const siteSettings = defineType({
     defineField({ name: "googleRating", title: "Google rating", type: "string", description: "e.g. 4.9. Leave empty to hide." }),
     defineField({ name: "reviewCount", title: "Google review count", type: "string" }),
     defineField({ name: "reviewsUrl", title: "Google reviews link", type: "url" }),
+    defineField({ name: "googleProfileUrl", title: "Google Business Profile link", type: "url" }),
+    defineField({ name: "bbbUrl", title: "BBB profile link", type: "url" }),
+    defineField({ name: "bbbRating", title: "BBB rating", type: "string", description: "e.g. A+" }),
     defineField({
       name: "social",
       type: "array",
@@ -299,7 +302,7 @@ export const service = defineType({
     defineField({
       name: "category",
       type: "string",
-      options: { list: [{ title: "Residential", value: "residential" }, { title: "Commercial", value: "commercial" }, { title: "Repairs & storm", value: "repair" }, { title: "Exterior", value: "exterior" }], layout: "radio" },
+      options: { list: [{ title: "Residential", value: "residential" }, { title: "Commercial", value: "commercial" }, { title: "Repairs & storm", value: "repair" }, { title: "Exterior", value: "exterior" }, { title: "Solar", value: "solar" }], layout: "radio" },
       group: "content",
     }),
     defineField({ name: "icon", type: "icon", group: "content" }),

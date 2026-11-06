@@ -39,6 +39,7 @@ export const fallbackHome: HomeContent = {
     { icon: "wrench", title: "Roof repair", text: "Leaks, missing shingles and flashing, usually fixed in one visit.", href: "/services/roof-repair" },
     { icon: "storm", title: "Storm restoration", text: "Hail, wind and fallen trees, with your insurance claim handled.", href: "/services/storm-restoration" },
     { icon: "siren", title: "Emergency repair", text: "24/7 response to tarp, secure and stop the water.", href: "/services/emergency-roof-repair" },
+    { icon: "sun", title: "Solar", text: "Now offering solar, with your roof checked first. Washington, DC and Maryland.", href: "/services/solar" },
     { icon: "rain", title: "Gutters & siding", text: "Gutters, guards, siding, windows, chimneys and masonry.", href: "/services" },
   ],
   sections: [
@@ -56,6 +57,25 @@ export const fallbackHome: HomeContent = {
       highlights: ["Family owned since 1992", "Our own crews, never subcontractors", "Free inspections with photo reports", "10 year labor warranty"],
       image: images.crew,
       ctas: [{ label: "More about Pineda's", href: "/about-us" }],
+    },
+    {
+      anchor: "solar",
+      icon: "sun",
+      eyebrow: "New: solar",
+      title: "Solar from a roofing company",
+      lead: "Pineda's Roofing now offers solar. We start with your roof, because that is where the panels will live.",
+      paragraphs: [
+        "We can look at your roof, explain the steps and answer your questions in plain language. We do not promise savings, and we tell you honestly if your roof needs work first.",
+        "Washington, DC is a main focus for our solar work, and we are also helping homeowners across Maryland.",
+      ],
+      highlightsLabel: "Solar with Pineda's",
+      highlights: ["Roof checked before panels", "One team for roof and solar", "Washington, DC and Maryland", "Free, no-obligation conversation"],
+      image: images.completedRoofAerial,
+      imageSide: "right",
+      ctas: [
+        { label: "Solar installation", href: "/services/solar" },
+        { label: "Solar company in Washington, DC", href: "/service-area/washington-dc" },
+      ],
     },
   ],
   faith: {

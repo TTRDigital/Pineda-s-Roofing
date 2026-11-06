@@ -14,7 +14,7 @@ import { MobileCallBar } from "@/components/layout/MobileCallBar";
 import { AttributionCapture } from "@/components/forms/AttributionCapture";
 
 function buildNav(services: Service[]): NavItem[] {
-  const roofing = services.filter((s) => s.category !== "exterior");
+  const roofing = services.filter((s) => s.category !== "exterior" && s.category !== "solar");
   const exterior = services.filter((s) => s.category === "exterior");
   return [
     { label: "Home", href: "/" },
@@ -28,6 +28,7 @@ function buildNav(services: Service[]): NavItem[] {
       href: "/services",
       children: [...exterior.map((s) => ({ label: s.title, href: `/services/${s.slug}` })), { label: "All services", href: "/services" }],
     },
+    { label: "Solar", href: "/services/solar" },
     { label: "Atlas", href: "/atlas-roofing" },
     { label: "Insurance Claims", href: "/roofing-insurance" },
     { label: "Gallery", href: "/gallery" },
@@ -59,7 +60,7 @@ export async function SiteShell({ children }: { children: ReactNode }) {
       <main id="main" tabIndex={-1} className="outline-none">
         {children}
       </main>
-      <Footer settings={settings} services={services.filter((s) => s.category !== "exterior")} />
+      <Footer settings={settings} services={services.filter((s) => s.category !== "exterior" && s.category !== "solar")} />
       <BackToTop />
       <MobileCallBar phoneHref={settings.phoneHref} cta={settings.headerCta} />
       <ChatWidget />

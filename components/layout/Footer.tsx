@@ -5,13 +5,13 @@ import { Logo } from "@/components/layout/Logo";
 import { SocialIcon } from "@/components/ui/Icon";
 
 const company = [
-  { label: "About us", href: "/about" },
-  { label: "Atlas roofing", href: "/atlas" },
-  { label: "Insurance claims", href: "/insurance-claims" },
+  { label: "About us", href: "/about-us" },
+  { label: "Atlas roofing", href: "/atlas-roofing" },
+  { label: "Insurance claims", href: "/roofing-insurance" },
   { label: "Gallery", href: "/gallery" },
   { label: "Service areas", href: "/service-area" },
   { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 export function Footer({ settings, services }: { settings: SiteSettings; services: Service[] }) {

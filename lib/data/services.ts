@@ -1594,4 +1594,117 @@ export const fallbackServices: Service[] = [
       description: "Paver patios, walkways, retaining walls, driveways and steps in Maryland, built on a proper base with drainage planned first. Design consultation included.",
     },
   },
+
+  /* 14 ────────────────────────────────────────────────────────────── */
+  /* SOLAR: new service. Wording is deliberately general. No prices, savings, incentives or equipment brands
+     are stated until Roberto confirms them. Items needing his answer are marked [PLACEHOLDER ...]. */
+  {
+    slug: "solar",
+    title: "Solar Installation",
+    category: "solar",
+    icon: "sun",
+    order: 14,
+    summary: "Solar for Maryland and Washington, DC homes, planned together with your roof by one local company.",
+    hero: {
+      eyebrow: "Solar",
+      heading: "Solar company in Washington, DC and Maryland",
+      text: "Pineda's Roofing now offers solar. Because we are roofers first, we look at your roof and your solar plan together.",
+      image: images.completedRoofAerial,
+    },
+    sections: [
+      {
+        anchor: "overview",
+        icon: "sun",
+        eyebrow: "Now offering solar",
+        title: "A solar company that starts with your roof",
+        lead: "Solar panels sit on your roof for many years, so the roof underneath matters. We are a roofing contractor first, and we bring that to every solar conversation.",
+        paragraphs: [
+          "If you are thinking about solar in Washington, DC or Maryland, we can look at your roof, talk through your options and explain the steps in plain language.",
+          "[PLACEHOLDER for Roberto: how Pineda's delivers solar (installed by our own team or with a partner), equipment brands, and any financing. Not stated until confirmed.]",
+        ],
+        highlightsLabel: "Why start with a roofer",
+        highlights: ["Roof condition checked first", "One company to talk to about roof and solar", "Free, no-obligation conversation", "Plain answers, no pressure"],
+        image: images.completedRoofAerial,
+        ctas: [{ label: "Ask about solar", href: "#estimate" }],
+      },
+      {
+        anchor: "roof-first",
+        icon: "house",
+        title: "Check the roof before the panels go on",
+        lead: "A roof that needs replacing soon can be a reason to plan the roof and the solar together.",
+        paragraphs: [
+          "Taking panels off and putting them back later to replace a roof adds work. That is why we like to look at the age and condition of the roof at the start.",
+          "We tell you honestly whether the roof looks ready for solar, needs repair first, or should be replaced as part of the plan.",
+        ],
+        highlightsLabel: "What we look at",
+        highlights: ["Age and condition of the roof", "Shingle, flashing and decking condition", "Roof shape and which sides get sun", "Shade from trees and nearby buildings"],
+        image: images.rooferInspecting,
+      },
+      {
+        anchor: "how-it-works",
+        icon: "clipboard",
+        title: "How going solar usually works",
+        lead: "Every home is different, but most solar projects follow the same general steps.",
+        paragraphs: ["We walk you through each step, and we explain what is needed from you. Timelines depend on your home, your utility and local permitting, so we do not promise dates up front."],
+        highlightsLabel: "The general steps",
+        highlights: ["1. Talk about your goals and your bills", "2. Roof and site assessment", "3. System design and written proposal", "4. Permits and utility paperwork", "5. Installation", "6. Inspection and turning the system on"],
+        image: images.rooferOnRidge,
+        imageSide: "right",
+      },
+      {
+        anchor: "incentives",
+        icon: "dollar",
+        title: "Costs, incentives and savings",
+        lead: "We will not guess at your savings. Your results depend on your home, your usage, your utility and the rules in place when you install.",
+        paragraphs: [
+          "Federal, state, DC and utility programs for solar exist, and they change over time. We can point you to where to check current details, and we suggest confirming tax questions with your own tax professional.",
+          "[PLACEHOLDER for Roberto: any financing options, available programs Pineda's helps with, and typical timelines. Add only what can be stated accurately.]",
+        ],
+        highlightsLabel: "What to expect from us",
+        highlights: ["A written proposal before you decide", "No promises about savings", "Honest answers about what solar may or may not fit your home", "Help understanding the paperwork"],
+        image: images.homeNewRoofAerial,
+      },
+      {
+        anchor: "where",
+        icon: "map-pin",
+        title: "Where we offer solar",
+        lead: "Solar is a main focus in Washington, DC, and we are also talking with homeowners across our Maryland service area.",
+        paragraphs: ["[PLACEHOLDER for Roberto: confirm which areas solar is offered in (Washington, DC plus which Maryland counties).]"],
+        highlightsLabel: "Start here",
+        highlights: ["Solar company in Washington, DC", "Baltimore County and Baltimore City", "Howard and Anne Arundel counties", "Prince George's and Montgomery counties"],
+        image: images.aerialNewShingleRoof,
+        imageSide: "right",
+        ctas: [
+          { label: "Solar in Washington, DC", href: "/service-area/washington-dc" },
+          { label: "All service areas", href: "/service-area" },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Does Pineda's Roofing install solar?",
+        answer: "Yes, we now offer solar. We are a roofing company first, so we start by looking at the roof the panels would sit on.",
+      },
+      {
+        question: "Do I need a new roof before solar?",
+        answer: "Not always. It depends on the age and condition of your roof. If the roof is near the end of its life, it often makes sense to plan the roof and the solar together. We will give you an honest opinion after an inspection.",
+      },
+      {
+        question: "How much will I save with solar?",
+        answer: "It depends on your home, how much electricity you use, your utility and the rules at the time. We do not promise specific savings. We can explain what affects the result when we talk.",
+      },
+      {
+        question: "Are there incentives for solar?",
+        answer: "Federal, state, DC and utility programs exist and they change over time. We suggest checking the current details and asking your tax professional about your own situation.",
+      },
+      {
+        question: "Do you offer solar in Washington, DC?",
+        answer: "Yes, Washington, DC is a main focus for our solar work. Call (301) 921-6333 or send the form and we will talk through your home.",
+      },
+    ],
+    seo: {
+      title: "Solar Company in Washington, DC & Maryland | Pineda's Roofing",
+      description: "Pineda's Roofing now offers solar installation in Washington, DC and Maryland. A roofing contractor that checks your roof first. Free consultation.",
+    },
+  },
 ];

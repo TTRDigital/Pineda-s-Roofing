@@ -23,6 +23,10 @@ export const fallbackSettings: SiteSettings = {
   googleRating: "5.0",
   reviewCount: "22",
   reviewsUrl: "https://g.co/kgs/FDvaBcB",
+  // Both g.co/kgs/FDvaBcB and g.co/kgs/WMp9yQk (social links) resolve to the same Google profile (kgmid /g/11rwmwb5gl).
+  googleProfileUrl: "https://g.co/kgs/FDvaBcB",
+  bbbUrl: "https://www.bbb.org/us/md/silver-spring/profile/roofing-contractors/pinedas-construction-llc-0241-236064536",
+  bbbRating: "A+",
   social: [
     { network: "facebook", href: "https://www.facebook.com/pinedasroofing" },
     { network: "instagram", href: "https://www.instagram.com/pinedasroofing/" },

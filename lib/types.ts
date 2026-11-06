@@ -46,6 +46,11 @@ export type SiteSettings = {
   googleRating?: string;
   reviewCount?: string;
   reviewsUrl?: string;
+  /** Link to the Google Business Profile. */
+  googleProfileUrl?: string;
+  /** Link to the BBB business profile. */
+  bbbUrl?: string;
+  bbbRating?: string;
   social: { network: string; href: string }[];
   headerCta: Cta;
   logo?: Img;
@@ -61,7 +66,7 @@ export type Partners = {
   insurers: Partner[];
 };
 
-export type ServiceCategory = "residential" | "commercial" | "repair" | "exterior";
+export type ServiceCategory = "residential" | "commercial" | "repair" | "exterior" | "solar";
 
 export type Service = {
   slug: string;

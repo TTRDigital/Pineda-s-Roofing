@@ -15,6 +15,7 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { BbbBadge } from "@/components/sections/BbbBadge";
 import { Gallery } from "@/components/gallery/Gallery";
 
 
@@ -44,7 +45,7 @@ export default async function HomePage() {
       ))}
       <FaithSection faith={home.faith} />
 
-      <CardGrid intro={home.servicesIntro} cards={home.serviceCards} />
+      <CardGrid intro={home.servicesIntro} cards={home.serviceCards} columns={4} />
 
       <SplitTiles
         tone="mist"
@@ -90,6 +91,7 @@ export default async function HomePage() {
       ) : null}
 
       <Testimonials items={testimonials} settings={settings} />
+      <BbbBadge settings={settings} />
       <LogoGrid eyebrow="Insurance claims" heading={partners.insuranceHeading} text={partners.insuranceText} items={partners.insurers} />
       <ServiceAreas counties={counties} locations={locations} tone="mist" phone={settings.phone} />
       <FaqSection intro={home.faqIntro} items={home.faqs} tone="white" />
