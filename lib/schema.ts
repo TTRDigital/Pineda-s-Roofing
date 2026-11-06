@@ -1,4 +1,4 @@
-import type { Service, SiteSettings, Testimonial } from "@/lib/types";
+import type { Location, Service, SiteSettings, Testimonial } from "@/lib/types";
 import { absoluteUrl, siteUrl } from "@/lib/site";
 import { images } from "@/lib/data/images";
 
@@ -63,5 +63,19 @@ export function serviceSchema(service: Service, path: string) {
     url: absoluteUrl(path),
     provider: { "@id": `${siteUrl}/#business` },
     areaServed: { "@type": "State", name: "Maryland" },
+  };
+}
+
+/** Roofing (and solar where it applies) service for one place, tied to the business by @id. */
+export function locationSchema(loc: Location, path: string) {
+  const dc = loc.state === "DC";
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: dc ? `Solar installation and roofing in ${loc.name}` : `Roofing services in ${loc.name}`,
+    serviceType: dc ? ["Solar installation", "Roofing"] : "Roofing",
+    url: absoluteUrl(path),
+    provider: { "@id": `${siteUrl}/#business` },
+    areaServed: { "@type": loc.kind === "county" ? "AdministrativeArea" : "Place", name: `${loc.name}${loc.state === "DC" ? "" : `, ${loc.state}`}` },
   };
 }

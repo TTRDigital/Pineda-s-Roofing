@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { getLocations, getServices, getSiteSettings, getTestimonials } from "@/lib/content";
 import { businessSchema } from "@/lib/schema";
 import { revealScript } from "@/lib/reveal-script";
-import type { Service } from "@/lib/types";
+import type { Location, Service } from "@/lib/types";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Header, type NavItem } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -13,7 +13,8 @@ import { HydrationSignal } from "@/components/layout/HydrationSignal";
 import { MobileCallBar } from "@/components/layout/MobileCallBar";
 import { AttributionCapture } from "@/components/forms/AttributionCapture";
 
-function buildNav(services: Service[]): NavItem[] {
+function buildNav(services: Service[], locations: Location[]): NavItem[] {
+  const areas = locations.filter((l) => l.featured && l.kind === "county" && l.tier && l.tier <= 2).sort((a, b) => (a.tier ?? 9) - (b.tier ?? 9));
   const roofing = services.filter((s) => s.category !== "exterior" && s.category !== "solar");
   const exterior = services.filter((s) => s.category === "exterior");
   return [
@@ -30,7 +31,7 @@ function buildNav(services: Service[]): NavItem[] {
     },
     { label: "Solar", href: "/services/solar" },
     { label: "Atlas", href: "/atlas-roofing" },
-    { label: "Insurance Claims", href: "/roofing-insurance" },
+    { label: "Insurance", href: "/roofing-insurance" },
     { label: "Gallery", href: "/gallery" },
     {
       label: "About",
@@ -40,7 +41,15 @@ function buildNav(services: Service[]): NavItem[] {
         { label: "Meet the Pinedas", href: "/about-us#team", note: "Freddy and Roberto Pineda" },
         { label: "Meet Don Eagle", href: "/about-us#don-eagle", note: "Our mascot and what he stands for" },
         { label: "FAQ", href: "/faq" },
-        { label: "Service areas", href: "/service-area" },
+      ],
+    },
+    {
+      label: "Service Areas",
+      href: "/service-area",
+      children: [
+        ...areas.map((l) => ({ label: l.name, href: `/service-area/${l.slug}` })),
+        { label: "Solar in Washington, DC", href: "/service-area/washington-dc" },
+        { label: "All service areas", href: "/service-area" },
       ],
     },
     { label: "Contact", href: "/contact-us" },
@@ -56,7 +65,7 @@ export async function SiteShell({ children }: { children: ReactNode }) {
       <a href="#main" className="sr-only z-[100] rounded-lg bg-cyan px-5 py-3 font-bold text-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
         Skip to content
       </a>
-      <Header nav={buildNav(services)} cta={settings.headerCta} phone={settings.phone} phoneHref={settings.phoneHref} license={settings.license} emergencyText={settings.emergencyText} />
+      <Header nav={buildNav(services, locations)} cta={settings.headerCta} phone={settings.phone} phoneHref={settings.phoneHref} license={settings.license} emergencyText={settings.emergencyText} />
       <main id="main" tabIndex={-1} className="outline-none">
         {children}
       </main>

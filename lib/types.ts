@@ -91,6 +91,13 @@ export type Location = {
   paragraphs?: string[];
   highlights?: string[];
   neighborhoods?: string[];
+  /** "county" pages are hubs that link to their city pages. Default is "city". */
+  kind?: "county" | "city";
+  /** 1 = main focus, 2 = second tier, 3 = also serving. */
+  tier?: 1 | 2 | 3;
+  /** Extra feature sections with place-specific content. */
+  sections?: FeatureBlock[];
+  faqs?: Faq[];
   seo?: Seo;
 };
 
