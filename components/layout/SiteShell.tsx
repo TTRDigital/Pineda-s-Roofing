@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { ChatWidget } from "@/components/layout/ChatWidget";
 import { Analytics } from "@/components/layout/Analytics";
+import { TtrTracker } from "@/components/layout/TtrTracker";
 import { HydrationSignal } from "@/components/layout/HydrationSignal";
 import { MobileCallBar } from "@/components/layout/MobileCallBar";
 import { AttributionCapture } from "@/components/forms/AttributionCapture";
@@ -66,6 +67,7 @@ export async function SiteShell({ children }: { children: ReactNode }) {
       <AttributionCapture />
       <HydrationSignal />
       <Analytics />
+      <TtrTracker />
       <script dangerouslySetInnerHTML={{ __html: revealScript }} />
     </>
   );

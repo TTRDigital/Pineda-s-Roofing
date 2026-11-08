@@ -33,7 +33,11 @@ if (existsSync(join(root, ".env.local"))) {
 // Imported after .env.local is loaded so its values apply.
 const { dataset, projectId } = await import("../sanity/env.ts");
 const token = process.env.SANITY_WRITE_TOKEN;
-const force = process.argv.includes("--force");
+if (process.argv.includes("--force")) {
+  console.error("--force is disabled: this script only adds missing documents and never overwrites or deletes.");
+  process.exit(1);
+}
+const force = false;
 const dryRun = process.argv.includes("--dry-run");
 
 if (!dryRun && (!projectId || !token)) {
