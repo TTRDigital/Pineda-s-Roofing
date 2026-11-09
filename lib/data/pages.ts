@@ -12,12 +12,12 @@ export const fallbackHome: HomeContent = {
   seo: {
     title: "Pineda's Roofing | Maryland Roofing Contractor Since 1992",
     description:
-      "Family-owned roofing contractor in Silver Spring, MD. Roof replacement, repair, storm restoration and commercial roofing. Free inspections. MHIC# 142024.",
+      "Family-owned roofing contractor serving Baltimore, Howard, Anne Arundel and Prince George's County, MD. Roof replacement, repair, storm restoration and solar. MHIC# 142024.",
   },
   hero: {
-    eyebrow: "Silver Spring · Maryland & the DMV",
+    eyebrow: "Baltimore · Howard · Anne Arundel · Prince George's",
     heading: "Maryland's family-owned roofing contractor",
-    text: "Residential and commercial roofing, repairs and storm restoration. One family, our own crews, a 10 year labor warranty and a lifetime manufacturer warranty.",
+    text: "Residential and commercial roofing, repairs and storm restoration. One family business, a 10 year labor warranty and a lifetime manufacturer warranty.",
     image: images.aerialNewShingleRoof,
     badges: ["Family owned since 1992", "Licensed, insured & bonded", "MHIC# 142024", "24/7 emergency service"],
     verse: { text: "Unless the Lord builds the house, the builders labor in vain.", reference: "Psalm 127:1" },
@@ -36,9 +36,9 @@ export const fallbackHome: HomeContent = {
   serviceCards: [
     { icon: "house", title: "Residential roofing", text: "New roofs, replacements and repairs for Maryland homes.", href: "/services/residential-roofing" },
     { icon: "building", title: "Commercial roofing", text: "Flat and low-slope systems, scheduled around your business.", href: "/services/commercial-roofing" },
-    { icon: "wrench", title: "Roof repair", text: "Leaks, missing shingles and flashing, usually fixed in one visit.", href: "/services/roof-repair" },
+    { icon: "wrench", title: "Roof & emergency repair", text: "Leaks, missing shingles and flashing, with 24/7 response to tarp and stop the water.", href: "/services/roof-repair" },
     { icon: "storm", title: "Storm restoration", text: "Hail, wind and fallen trees, with your insurance claim handled.", href: "/services/storm-restoration" },
-    { icon: "siren", title: "Emergency repair", text: "24/7 response to tarp, secure and stop the water.", href: "/services/emergency-roof-repair" },
+    { icon: "sun", title: "Solar installation", text: "New: solar for Maryland and Washington, DC homes, planned by roofers.", href: "/services/solar-panel-installation" },
     { icon: "rain", title: "Gutters & siding", text: "Gutters, guards, siding, windows, chimneys and masonry.", href: "/services" },
   ],
   sections: [
@@ -49,11 +49,11 @@ export const fallbackHome: HomeContent = {
       title: "A roofer that takes your roof seriously",
       lead: "We don't just fix roofs. We protect property, preserve legacies and deliver peace of mind.",
       paragraphs: [
-        "German Pineda started the company over three decades ago. Today Freddy and Roberto Pineda run it with the same standards and the same phone number.",
-        "The person who inspects your roof, the crew who installs it and the owner who stands behind the warranty are one family business.",
+        "German Pineda started the company over three decades ago. Today Fredy and Roberto Pineda run it with the same standards and the same phone number.",
+        "From the first inspection to the final walkthrough, your project is managed by one family business, and the owners stand behind the warranty.",
       ],
       highlightsLabel: "The Pineda's difference",
-      highlights: ["Family owned since 1992", "Our own crews, never subcontractors", "Free inspections with photo reports", "10 year labor warranty"],
+      highlights: ["Family owned since 1992", "Managed by the Pineda family", "Free inspections with photo reports", "10 year labor warranty"],
       image: images.crew,
       ctas: [{ label: "More about Pineda's", href: "/about-us" }],
     },
@@ -101,7 +101,7 @@ export const fallbackHome: HomeContent = {
   processIntro: {
     eyebrow: "How it works",
     heading: "Four steps from damage to done",
-    text: "From the first inspection to the final walkthrough, one family-owned crew handles every step, including the insurance paperwork.",
+    text: "From the first inspection to the final walkthrough, the Pineda family manages every step, including the insurance paperwork.",
   },
   process: [
     { title: "Free inspection", text: "We inspect the full roof, photograph what we find and tell you honestly: repair or replace." },
@@ -399,7 +399,7 @@ export const fallbackAbout: AboutContent = {
   seo: {
     title: "About Pineda's Roofing | Family Owned Since 1992",
     description:
-      "Meet Pineda's Roofing: a family-owned Maryland roofing company founded by German Pineda and run by Freddy and Roberto Pineda. MHIC# 142024.",
+      "Meet Pineda's Roofing: a family-owned Maryland roofing company founded by German Pineda and run by Fredy and Roberto Pineda. MHIC# 142024.",
   },
   hero: {
     eyebrow: "About us",
@@ -409,7 +409,7 @@ export const fallbackAbout: AboutContent = {
   },
   facts: [
     { label: "Founder", value: "German Pineda" },
-    { label: "Owner", value: "Freddy Pineda" },
+    { label: "Owner", value: "Fredy Pineda" },
     { label: "Co-owner", value: "Roberto Pineda" },
     { label: "Headquarters", value: "Silver Spring, MD" },
     { label: "License", value: "MHIC# 142024" },
@@ -426,7 +426,7 @@ export const fallbackAbout: AboutContent = {
         "Your home is your sanctuary. We treat every project with the care we'd give our own family's home.",
       ],
       highlightsLabel: "What hasn't changed",
-      highlights: ["Same family, same standards", "Our own crews on every job", "Best materials, latest techniques", "Honest advice, even when it's a repair"],
+      highlights: ["Same family, same standards", "Family-managed from estimate to cleanup", "Best materials, latest techniques", "Honest advice, even when it's a repair"],
       image: images.crew,
     },
     {
@@ -449,15 +449,29 @@ export const fallbackAbout: AboutContent = {
   },
   team: [
     {
-      name: "Freddy Pineda",
+      slug: "fredy-pineda",
+      name: "Fredy Pineda",
       role: "Owner",
-      text: "Freddy owns and leads Pineda's Roofing today, carrying on the family company German Pineda founded more than 30 years ago. He stands behind every estimate, every crew and every warranty.",
+      // Replace with the bio Roberto sends, then remove noIndex.
+      bio: [
+        "Fredy Pineda owns and leads Pineda's Roofing, the family company German Pineda founded more than 30 years ago.",
+        "He stands behind every estimate, every job and every warranty, and he's the person homeowners can call when they want to talk to the owner.",
+      ],
+      noIndex: true,
+      text: "Fredy owns and leads Pineda's Roofing today, carrying on the family company German Pineda founded more than 30 years ago. He stands behind every estimate, every crew and every warranty.",
       image: images.freddyPineda,
     },
     {
+      slug: "roberto-pineda",
       name: "Roberto Pineda",
       role: "Co-owner",
-      text: "Roberto co-owns Pineda's Roofing with Freddy. Together they keep the company what it has always been: family-run, hands-on and honest with every homeowner.",
+      // Replace with the bio Roberto sends, then remove noIndex.
+      bio: [
+        "Roberto Pineda co-owns Pineda's Roofing with Fredy and manages the company day to day.",
+        "He's focused on growing the family business across Maryland's main service areas and on its newest service, solar, while keeping it what it has always been: family-run, hands-on and honest with every homeowner.",
+      ],
+      noIndex: true,
+      text: "Roberto co-owns Pineda's Roofing with Fredy. Together they keep the company what it has always been: family-run, hands-on and honest with every homeowner.",
       image: images.robertoPineda,
     },
   ],

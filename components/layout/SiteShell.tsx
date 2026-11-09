@@ -9,13 +9,15 @@ import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { ChatWidget } from "@/components/layout/ChatWidget";
 import { Analytics } from "@/components/layout/Analytics";
+import { TrackClicks } from "@/components/layout/TrackClicks";
 import { HydrationSignal } from "@/components/layout/HydrationSignal";
 import { MobileCallBar } from "@/components/layout/MobileCallBar";
 import { AttributionCapture } from "@/components/forms/AttributionCapture";
 
 function buildNav(services: Service[]): NavItem[] {
-  const roofing = services.filter((s) => s.category !== "exterior");
+  const roofing = services.filter((s) => s.category !== "exterior" && s.category !== "solar");
   const exterior = services.filter((s) => s.category === "exterior");
+  const solar = services.find((s) => s.category === "solar");
   return [
     { label: "Home", href: "/" },
     {
@@ -26,8 +28,13 @@ function buildNav(services: Service[]): NavItem[] {
     {
       label: "Services",
       href: "/services",
-      children: [...exterior.map((s) => ({ label: s.title, href: `/services/${s.slug}` })), { label: "All services", href: "/services" }],
+      children: [
+        ...(solar ? [{ label: solar.title, href: `/services/${solar.slug}` }] : []),
+        ...exterior.map((s) => ({ label: s.title, href: `/services/${s.slug}` })),
+        { label: "All services", href: "/services" },
+      ],
     },
+    ...(solar ? [{ label: "Solar", href: `/services/${solar.slug}` }] : []),
     { label: "Atlas", href: "/atlas-roofing" },
     { label: "Insurance Claims", href: "/roofing-insurance" },
     { label: "Gallery", href: "/gallery" },
@@ -36,7 +43,7 @@ function buildNav(services: Service[]): NavItem[] {
       href: "/about-us",
       children: [
         { label: "About us", href: "/about-us" },
-        { label: "Meet the Pinedas", href: "/about-us#team", note: "Freddy and Roberto Pineda" },
+        { label: "Meet the Pinedas", href: "/about-us#team", note: "Fredy and Roberto Pineda" },
         { label: "Meet Don Eagle", href: "/about-us#don-eagle", note: "Our mascot and what he stands for" },
         { label: "FAQ", href: "/faq" },
         { label: "Service areas", href: "/service-area" },
@@ -66,6 +73,7 @@ export async function SiteShell({ children }: { children: ReactNode }) {
       <AttributionCapture />
       <HydrationSignal />
       <Analytics />
+      <TrackClicks />
       <script dangerouslySetInnerHTML={{ __html: revealScript }} />
     </>
   );

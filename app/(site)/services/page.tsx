@@ -10,7 +10,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 const seo = {
   title: "Roofing & Exterior Services in Maryland | Pineda's Roofing",
-  description: "Roof replacement, repair, emergency and storm restoration, plus gutters, siding, windows, chimneys, masonry and hardscaping across Maryland and the DMV.",
+  description: "Roof replacement, repair, emergency and storm restoration, solar installation, plus gutters, siding, windows, chimneys, masonry and hardscaping in Maryland and DC.",
 };
 
 export const metadata: Metadata = pageMetadata(seo, "/services", images.rooferOnRidge);
@@ -24,7 +24,7 @@ export default async function ServicesPage() {
         hero={{
           eyebrow: "Services",
           heading: "Maryland exteriors, end to end",
-          text: "Roofing, gutters, siding, windows and masonry, backed by over 30 years of family-owned craftsmanship.",
+          text: "Roofing, solar, gutters, siding, windows and masonry from one family-owned company.",
           image: images.rooferOnRidge,
         }}
         crumbs={[{ label: "Services", href: "/services" }]}
@@ -35,8 +35,16 @@ export default async function ServicesPage() {
       />
       <CardGrid
         intro={{ eyebrow: "Roofing", heading: "Roofing services", text: "Homes and commercial buildings, new roofs and repairs, storms and emergencies." }}
-        cards={[{ icon: "layers", title: "Roofing overview", text: "Residential and commercial roofing, brands we use and how we work.", href: "/services/roofing" }, ...services.filter((s) => s.category !== "exterior").map(card)]}
+        cards={[{ icon: "layers", title: "Roofing overview", text: "Residential and commercial roofing, brands we use and how we work.", href: "/services/roofing" }, ...services.filter((s) => s.category !== "exterior" && s.category !== "solar").map(card)]}
       />
+      {services.some((s) => s.category === "solar") ? (
+        <CardGrid
+          intro={{ eyebrow: "New", heading: "Solar installation", text: "Solar for homes in Maryland and Washington, DC, planned by roofers so the roof under the panels lasts as long as they do." }}
+          cards={services.filter((s) => s.category === "solar").map(card)}
+          tone="dark"
+          columns={2}
+        />
+      ) : null}
       <CardGrid intro={{ eyebrow: "Exterior", heading: "Gutters, siding & more", text: "The rest of the outside of your home, done with the same standards." }} cards={services.filter((s) => s.category === "exterior").map(card)} tone="mist" />
       <AtlasBand />
       <ContactSection settings={settings} />

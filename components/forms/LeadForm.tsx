@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { ArrowRight, Check, CircleAlert, LoaderCircle, Phone } from "lucide-react";
+import { track } from "@/lib/track";
 import { ATTRIBUTION_STORAGE_KEY, attributionKeys, propertyOptions, serviceOptions } from "@/lib/lead-options";
 
 type Field = "name" | "phone" | "email" | "zip" | "address" | "property" | "service" | "message";
@@ -112,9 +113,8 @@ export function LeadForm({
       });
       if (!res.ok) throw new Error(String(res.status));
       setStatus("success");
-      const w = window as unknown as { gtag?: (...args: unknown[]) => void; dataLayer?: unknown[] };
-      w.gtag?.("event", "generate_lead", { service: values.service });
-      w.dataLayer?.push({ event: "generate_lead", service: values.service });
+      // The page's own service/area context comes from the URL; the chosen service goes in form_service.
+      track("generate_lead", { form_service: values.service, zip: values.zip.slice(0, 5) });
       window.setTimeout(() => router.push("/thank-you"), 1200);
     } catch {
       setStatus("error");

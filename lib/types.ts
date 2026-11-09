@@ -46,6 +46,9 @@ export type SiteSettings = {
   googleRating?: string;
   reviewCount?: string;
   reviewsUrl?: string;
+  /** Google "write a review" link from the Business Profile. */
+  writeReviewUrl?: string;
+  bbb?: { url: string; rating: string; accreditedSince?: string };
   social: { network: string; href: string }[];
   headerCta: Cta;
   logo?: Img;
@@ -61,7 +64,7 @@ export type Partners = {
   insurers: Partner[];
 };
 
-export type ServiceCategory = "residential" | "commercial" | "repair" | "exterior";
+export type ServiceCategory = "residential" | "commercial" | "repair" | "exterior" | "solar";
 
 export type Service = {
   slug: string;
@@ -76,23 +79,40 @@ export type Service = {
   seo: Seo;
 };
 
+export type LocationSection = { heading: string; paragraphs: string[] };
+
 export type Location = {
   slug: string;
   name: string;
+  /** "county" pages list their cities; "region" is the state/area overview. */
+  kind?: "region" | "county" | "city";
+  /** 1 = main focus area, 2 = second tier. */
+  tier?: 1 | 2;
   county?: string;
   state: string;
   featured: boolean;
+  /** Page H1; defaults to "Roofing Contractor in <name>, <state>". */
+  heading?: string;
   lead?: string;
   paragraphs?: string[];
   highlights?: string[];
   neighborhoods?: string[];
+  /** Local, page-specific sections. Headings use plain service + place terms ("Roof replacement in Bowie"). */
+  sections?: LocationSection[];
+  faqs?: Faq[];
   seo?: Seo;
 };
 
 export type Project = {
   id: string;
   title: string;
+  /** City, e.g. "Bowie". */
   location?: string;
+  county?: string;
+  /** What was wrong when we arrived. */
+  problem?: string;
+  /** What we did to fix it. */
+  solution?: string;
   category: ServiceCategory;
   summary?: string;
   before?: Img;
@@ -150,7 +170,19 @@ export type InsuranceContent = {
   faqs: Faq[];
 };
 
-export type Person = { name: string; role: string; text?: string; image?: Img };
+export type Person = {
+  /** Page at /about-us/<slug>. */
+  slug: string;
+  name: string;
+  role: string;
+  /** Short intro for the About page card. */
+  text?: string;
+  /** Full bio paragraphs for the person's own page. */
+  bio?: string[];
+  image?: Img;
+  /** Keeps the page out of Google until the full bio is in. */
+  noIndex?: boolean;
+};
 
 export type AboutContent = {
   seo: Seo;

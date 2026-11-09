@@ -46,7 +46,7 @@ const FEATURE = `{ "anchor": anchor.current, icon, eyebrow, title, lead, paragra
 
 export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
   const cms = await sanityFetch<Partial<SiteSettings>>(
-    `*[_id == "siteSettings"][0]{ name, legalName, phone, email, license, city, region, hours[]{ label, value }, emergencyText, foundedYear, googleRating, reviewCount, reviewsUrl, social[]{ network, href }, headerCta{ label, href }, verse{ text, reference }, "logo": logo${LOGO} }`,
+    `*[_id == "siteSettings"][0]{ name, legalName, phone, email, license, city, region, hours[]{ label, value }, emergencyText, foundedYear, googleRating, reviewCount, reviewsUrl, writeReviewUrl, bbb{ url, rating, accreditedSince }, social[]{ network, href }, headerCta{ label, href }, verse{ text, reference }, "logo": logo${LOGO} }`,
     {},
     ["siteSettings"],
   );
@@ -92,7 +92,7 @@ export async function getService(slug: string) {
   return (await getServices()).find((s) => s.slug === slug) ?? null;
 }
 
-const LOCATION = `{ "slug": slug.current, name, county, state, featured, lead, paragraphs, highlights, neighborhoods, order, ${SEO} }`;
+const LOCATION = `{ "slug": slug.current, name, kind, tier, county, state, featured, heading, lead, paragraphs, highlights, neighborhoods, sections[]{ heading, paragraphs }, faqs[]${FAQ}, order, ${SEO} }`;
 
 export const getLocations = cache(async (): Promise<Location[]> => {
   const cms = await sanityFetch<(Partial<Location> & { order?: number })[]>(`*[_type == "location" && defined(slug.current)] | order(order asc) ${LOCATION}`, {}, ["location"]);
@@ -109,7 +109,7 @@ export async function getLocation(slug: string) {
 
 export const getProjects = cache(async (): Promise<Project[]> => {
   const cms = await sanityFetch<Project[]>(
-    `*[_type == "project"] | order(date desc){ "id": _id, title, location, category, summary, featured, "before": before${IMG}, "after": after${IMG}, "images": images[]${IMG} }`,
+    `*[_type == "project"] | order(date desc){ "id": _id, title, location, county, problem, solution, category, summary, featured, "before": before${IMG}, "after": after${IMG}, "images": images[]${IMG} }`,
     {},
     ["project"],
   );
@@ -180,7 +180,7 @@ export const getInsurancePage = cache(async (): Promise<InsuranceContent> => {
 
 export const getAboutPage = cache(async (): Promise<AboutContent> => {
   const cms = await sanityFetch<Partial<AboutContent>>(
-    `*[_id == "aboutPage"][0]{ ${HERO}, facts[]{ label, value }, sections[]${FEATURE}, teamIntro${HEADING}, team[]{ name, role, text, "image": image${IMG} }, mascot{ eyebrow, heading, lead, paragraphs, "image": image${IMG}, verse{ text, reference } }, valuesIntro${HEADING}, values[]${CARD}, ${SEO} }`,
+    `*[_id == "aboutPage"][0]{ ${HERO}, facts[]{ label, value }, sections[]${FEATURE}, teamIntro${HEADING}, team[]{ name, "slug": slug.current, role, text, bio, noIndex, "image": image${IMG} }, mascot{ eyebrow, heading, lead, paragraphs, "image": image${IMG}, verse{ text, reference } }, valuesIntro${HEADING}, values[]${CARD}, ${SEO} }`,
     {},
     ["aboutPage"],
   );

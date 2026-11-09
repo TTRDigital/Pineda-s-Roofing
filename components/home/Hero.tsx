@@ -4,6 +4,7 @@ import type { HomeContent, SiteSettings, Stat } from "@/lib/types";
 import { images } from "@/lib/data/images";
 import { Photo } from "@/components/ui/Photo";
 import { Button } from "@/components/ui/Button";
+import { BbbBadge } from "@/components/ui/BbbBadge";
 
 /** Black hero over a real job photo, with Don Eagle and the trust badges. */
 export function Hero({ hero, stats, settings }: { hero: HomeContent["hero"]; stats: Stat[]; settings: SiteSettings }) {
@@ -42,6 +43,18 @@ export function Hero({ hero, stats, settings }: { hero: HomeContent["hero"]; sta
               </li>
             ))}
           </ul>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <BbbBadge bbb={settings.bbb} tone="dark" />
+            {settings.reviewsUrl && settings.googleRating ? (
+              <a href={settings.reviewsUrl} target="_blank" rel="noopener" data-track="google_reviews" className="inline-flex items-center gap-3 rounded-[var(--radius-card)] border border-ink-line bg-ink-2 px-4 py-3 text-sm font-bold text-white transition-colors hover:border-cyan">
+                <span className="font-display text-2xl leading-none">{settings.googleRating}</span>
+                <span>
+                  Google rating
+                  <span className="block text-[0.8125rem] font-semibold text-cyan">Read our reviews</span>
+                </span>
+              </a>
+            ) : null}
+          </div>
           {hero.verse ? (
             <figure className="mt-8 max-w-xl border-l-[3px] border-cyan pl-4">
               <blockquote className="italic text-white">“{hero.verse.text}”</blockquote>

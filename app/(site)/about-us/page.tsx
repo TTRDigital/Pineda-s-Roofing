@@ -10,6 +10,9 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { BbbBadge } from "@/components/ui/BbbBadge";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -32,6 +35,18 @@ export default async function AboutPage() {
               </div>
             ))}
           </dl>
+          <div className="container-x flex flex-wrap items-center justify-center gap-3 border-t border-line py-6">
+            <BbbBadge bbb={settings.bbb} />
+            {settings.reviewsUrl && settings.googleRating ? (
+              <a href={settings.reviewsUrl} target="_blank" rel="noopener" data-track="google_reviews" className="inline-flex items-center gap-3 rounded-[var(--radius-card)] border border-line bg-white px-4 py-3 text-sm font-bold text-ink transition-colors hover:border-cyan">
+                <span className="font-display text-2xl leading-none">{settings.googleRating}</span>
+                <span>
+                  Google rating{settings.reviewCount ? ` · ${settings.reviewCount} reviews` : ""}
+                  <span className="block text-[0.8125rem] font-semibold text-cyan-deep">Read our reviews on Google</span>
+                </span>
+              </a>
+            ) : null}
+          </div>
         </section>
       ) : null}
       {page.sections.slice(0, 1).map((b, i) => (
@@ -52,8 +67,16 @@ export default async function AboutPage() {
                   ) : null}
                   <div className="p-7">
                     <p className="eyebrow plain">{p.role}</p>
-                    <h3 className="mt-2 text-h3 uppercase text-ink">{p.name}</h3>
+                    <h3 className="mt-2 text-h3 uppercase text-ink">
+                      <Link href={`/about-us/${p.slug}`} className="hover:text-cyan-deep">
+                        {p.name}
+                      </Link>
+                    </h3>
                     {p.text ? <p className="mt-3 text-body">{p.text}</p> : null}
+                    <Link href={`/about-us/${p.slug}`} className="mt-5 inline-flex items-center gap-2 font-bold uppercase tracking-[0.08em] text-cyan-deep hover:underline">
+                      Meet {p.name.split(" ")[0]}
+                      <ArrowRight className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
+                    </Link>
                   </div>
                 </li>
               ))}

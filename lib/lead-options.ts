@@ -9,6 +9,7 @@ export const serviceOptions = [
   "Commercial roofing",
   "Gutters",
   "Siding",
+  "Solar installation",
   "Other",
 ] as const;
 

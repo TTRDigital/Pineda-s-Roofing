@@ -48,6 +48,8 @@ The estimate form sends every lead to Pineda's GoHighLevel inbound webhook (`DEF
 
 In SiteGround, also turn on Site Tools > Security > SSL Manager (Let's Encrypt) and HTTPS Enforce. `.htaccess` sends `pinedasroofing.com` to `https://www.pinedasroofing.com`.
 
+**Analytics and reporting:** set `NEXT_PUBLIC_GA_ID` (GA4) and/or `NEXT_PUBLIC_GTM_ID`, plus `NEXT_PUBLIC_GSC_VERIFICATION` (Search Console HTML tag), as GitHub Actions **variables**, then run the deploy. Every call click (`click_to_call`), form submit (`generate_lead`), Google reviews click and BBB click is sent with `page_type`, `service` (service pages) and `area` (city/county pages), so GA4 can report which services and locations bring inquiries. Brand vs. non-brand searches come from Search Console queries.
+
 GoHighLevel chat: the widget ID is in `lib/chat.ts` (`NEXT_PUBLIC_GHL_CHAT_WIDGET_ID` overrides it at build time; `off` hides the chat). Google Analytics / Tag Manager: `NEXT_PUBLIC_GA_ID` / `NEXT_PUBLIC_GTM_ID` at build time.
 
 ## Editing in /cms

@@ -3,15 +3,16 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import type { Service, SiteSettings } from "@/lib/types";
 import { Logo } from "@/components/layout/Logo";
 import { SocialIcon } from "@/components/ui/Icon";
+import { BbbBadge } from "@/components/ui/BbbBadge";
 
 const company = [
-  { label: "About us", href: "/about" },
-  { label: "Atlas roofing", href: "/atlas" },
-  { label: "Insurance claims", href: "/insurance-claims" },
+  { label: "About us", href: "/about-us" },
+  { label: "Atlas roofing", href: "/atlas-roofing" },
+  { label: "Insurance claims", href: "/roofing-insurance" },
   { label: "Gallery", href: "/gallery" },
   { label: "Service areas", href: "/service-area" },
   { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 export function Footer({ settings, services }: { settings: SiteSettings; services: Service[] }) {
@@ -30,11 +31,12 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
         <div>
           <Logo className="h-14 w-auto" dark />
           <p className="mt-6 max-w-sm text-[0.95rem]">
-            Family-owned roofing contractor in {settings.city}, {settings.region}. Residential and commercial roofing, repairs and storm restoration for over three decades.
+            Family-owned roofing contractor based in {settings.city}, {settings.region}, serving Baltimore, Howard, Anne Arundel and Prince George&apos;s County, plus Carroll, Frederick, Montgomery and Washington, DC. Roofing, repairs, storm restoration and solar for over three decades.
           </p>
           <p className="mt-5 text-sm font-semibold text-white">
             Licensed, insured &amp; bonded <span className="text-cyan">·</span> {settings.license}
           </p>
+          <BbbBadge bbb={settings.bbb} tone="dark" className="mt-5" />
           {settings.social.length ? (
             <ul className="mt-6 flex gap-3">
               {settings.social.map((s) => (

@@ -39,6 +39,12 @@ const LABEL_OFFSET: Record<string, [number, number, "start" | "end" | "middle"]>
   Arlington: [-9, 2, "end"],
   Alexandria: [9, 10, "start"],
   Fairfax: [-9, 4, "end"],
+  Catonsville: [-9, 4, "end"],
+  "Glen Burnie": [9, 4, "start"],
+  "Severna Park": [9, 4, "start"],
+  Elkridge: [9, 6, "start"],
+  "College Park": [9, -2, "start"],
+  "Upper Marlboro": [9, 4, "start"],
 };
 
 /* Where each region's name sits, as [longitude, latitude]. */
@@ -104,7 +110,7 @@ export function ServiceAreaMap({ counties, locations }: { counties: County[]; lo
               {served
                 .filter((f) => c.fips.includes(String(f.id)))
                 .map((f) => (
-                  <path key={String(f.id)} d={path(f) ?? ""} fill="#00b4f0" fillOpacity={c.name === "Washington, D.C." ? 0.75 : 0.42} stroke="#fff" strokeWidth={1.5} />
+                  <path key={String(f.id)} d={path(f) ?? ""} fill={c.tier === 1 ? "#00b4f0" : "#7fd9f7"} fillOpacity={c.tier === 1 ? 0.62 : 0.38} stroke="#fff" strokeWidth={1.5} />
                 ))}
             </g>
           ))}
@@ -164,8 +170,12 @@ export function ServiceAreaMap({ counties, locations }: { counties: County[]; lo
       </svg>
       <figcaption className="flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line bg-white px-5 py-3 text-sm text-body">
         <span className="inline-flex items-center gap-2">
-          <span aria-hidden="true" className="h-3.5 w-3.5 rounded-sm bg-cyan/45 ring-1 ring-cyan" />
-          Counties we serve
+          <span aria-hidden="true" className="h-3.5 w-3.5 rounded-sm bg-cyan/65 ring-1 ring-cyan" />
+          Main service areas
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <span aria-hidden="true" className="h-3.5 w-3.5 rounded-sm bg-[#7fd9f7]/40 ring-1 ring-[#7fd9f7]" />
+          Also serving
         </span>
         <span className="inline-flex items-center gap-2">
           <span aria-hidden="true" className="h-3.5 w-3.5 rounded-full border-[3px] border-cyan bg-ink" />

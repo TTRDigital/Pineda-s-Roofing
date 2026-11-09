@@ -6,7 +6,30 @@ import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import type { Project, ServiceCategory } from "@/lib/types";
 import { BeforeAfter } from "@/components/gallery/BeforeAfter";
 
-const labels: Record<ServiceCategory, string> = { residential: "Residential", commercial: "Commercial", repair: "Repairs & storm", exterior: "Gutters & exterior" };
+const labels: Record<ServiceCategory, string> = { residential: "Residential", commercial: "Commercial", repair: "Repairs & storm", exterior: "Gutters & exterior", solar: "Solar" };
+
+/** "The problem / What we did" write-up shown under a project, when the project has one. */
+function Story({ p }: { p: Project }) {
+  if (!p.problem && !p.solution) return null;
+  return (
+    <dl className="mt-3 grid gap-2 text-[0.95rem]">
+      {p.problem ? (
+        <div>
+          <dt className="text-xs font-bold uppercase tracking-[0.12em] text-cyan-deep">The problem</dt>
+          <dd className="text-body">{p.problem}</dd>
+        </div>
+      ) : null}
+      {p.solution ? (
+        <div>
+          <dt className="text-xs font-bold uppercase tracking-[0.12em] text-cyan-deep">What we did</dt>
+          <dd className="text-body">{p.solution}</dd>
+        </div>
+      ) : null}
+    </dl>
+  );
+}
+
+const place = (p: Project) => [p.location, p.county].filter(Boolean).join(", ");
 
 /** Filterable project grid with a keyboard-friendly lightbox. Projects with before/after photos get a slider. */
 export function Gallery({ projects, filters = true, limit }: { projects: Project[]; filters?: boolean; limit?: number }) {
@@ -68,9 +91,10 @@ export function Gallery({ projects, filters = true, limit }: { projects: Project
           {withBa.map((p) => (
             <figure key={`ba-${p.id}`}>
               <BeforeAfter before={p.before!} after={p.after!} />
-              <figcaption className="mt-3 font-bold text-ink">
-                {p.title}
-                {p.location ? <span className="font-normal text-meta"> · {p.location}</span> : null}
+              <figcaption className="mt-3">
+                <span className="font-bold text-ink">{p.title}</span>
+                {place(p) ? <span className="text-meta"> · {place(p)}</span> : null}
+                <Story p={p} />
               </figcaption>
             </figure>
           ))}
@@ -94,11 +118,12 @@ export function Gallery({ projects, filters = true, limit }: { projects: Project
                 <span className="absolute inset-x-4 bottom-4 text-white">
                   <span className="block font-display text-xl font-bold uppercase">{p.title}</span>
                   <span className="text-sm text-on-dark">
-                    {p.location ? `${p.location} · ` : ""}
+                    {place(p) ? `${place(p)} · ` : ""}
                     {count} {count === 1 ? "photo" : "photos"}
                   </span>
                 </span>
               </button>
+              <Story p={p} />
             </li>
           );
         })}

@@ -13,11 +13,11 @@ export const fallbackServices: Service[] = [
     category: "residential",
     icon: "house",
     order: 1,
-    summary: "Shingle roof replacement, repair and upkeep for Maryland homes, installed by our own family crews with Atlas Pinnacle Pristine.",
+    summary: "Shingle roof replacement, repair and upkeep for Maryland homes, installed with Atlas Pinnacle Pristine.",
     hero: {
       eyebrow: "Residential Roofing",
       heading: "Roofs built for Maryland homes and families",
-      text: "From a few missing shingles to a full replacement, our own family crews take care of your home's roof the way we'd take care of our own.",
+      text: "From a few missing shingles to a full replacement, we take care of your home's roof the way we'd take care of our own.",
       image: images.homeNewRoofAerial,
     },
     sections: [
@@ -28,13 +28,13 @@ export const fallbackServices: Service[] = [
         title: "Your home's roof, handled by one family",
         lead: "For more than 30 years, Maryland homeowners have called Pineda's Roofing when the roof over their head needs attention.",
         paragraphs: [
-          "The person who inspects your roof, the crew who installs it and the owner who stands behind the warranty all belong to the same family business. No rotating cast of subcontractors.",
+          "From the first inspection to the final walkthrough, your roof is managed by the same family business, and the owners stand behind the warranty.",
           "We inspect the whole roof, photograph what we find and tell you honestly whether you need a repair or a replacement.",
         ],
         highlightsLabel: "Why homeowners choose us",
         highlights: [
           "Family owned and operated since 1992",
-          "Our own crews, not subcontractors",
+          "Managed by the Pineda family",
           "Licensed, insured & bonded, MHIC# 142024",
           "Free inspections, no-obligation estimates",
           "Photo documentation of every finding",
@@ -174,13 +174,13 @@ export const fallbackServices: Service[] = [
         lead: "Every commercial building has its own unique challenges. Our commercial roofing service is built around your schedule, your tenants and your budget.",
         paragraphs: [
           "We work with property managers, HOAs and business owners across the Baltimore-Washington corridor. Large projects are scheduled around your operating hours to keep downtime to a minimum.",
-          "You deal with the same family-owned company from the first inspection to the final walkthrough, with our own crews on the roof.",
+          "You deal with the same family-owned company from the first inspection to the final walkthrough.",
         ],
         highlightsLabel: "What you can expect",
         highlights: [
           "Work scheduled around business hours",
           "Minimal disruption to tenants",
-          "Our own crews, not subcontractors",
+          "Managed by the Pineda family",
           "Licensed, insured & bonded, MHIC# 142024",
           "Free inspection with photo documentation",
           "Written scope and transparent pricing",
@@ -284,11 +284,11 @@ export const fallbackServices: Service[] = [
     category: "residential",
     icon: "hammer",
     order: 3,
-    summary: "Full roof replacement for homes and businesses with premium materials, our own crews and most homes finished in two to three days.",
+    summary: "Full roof replacement for homes and businesses with premium materials and most homes finished in two to three days.",
     hero: {
       eyebrow: "Roof Replacement",
       heading: "Roof replacement done right the first time",
-      text: "A new roof from Maryland's family-owned roofers. Premium materials, our own crews, and most homes finished in two to three days.",
+      text: "A new roof from Maryland's family-owned roofers. Premium materials, a family-managed job, and most homes finished in two to three days.",
       image: images.aerialNewShingleRoof,
     },
     sections: [
@@ -414,7 +414,7 @@ export const fallbackServices: Service[] = [
     ],
     seo: {
       title: "Roof Replacement in Maryland | Pineda's Roofing",
-      description: "Roof replacement in Maryland with Atlas Pinnacle Pristine shingles, our own crews and a 10 year labor warranty. Most homes done in 2 to 3 days. Free estimates.",
+      description: "Roof replacement in Maryland with Atlas Pinnacle Pristine shingles and a 10 year labor warranty. Most homes done in 2 to 3 days. Free estimates.",
     },
   },
 
@@ -1592,6 +1592,94 @@ export const fallbackServices: Service[] = [
     seo: {
       title: "Hardscaping & Paver Patios in Maryland | Pineda's Roofing",
       description: "Paver patios, walkways, retaining walls, driveways and steps in Maryland, built on a proper base with drainage planned first. Design consultation included.",
+    },
+  },
+  /* 14 ─────────────────────────────────────────────────────────────── */
+  {
+    slug: "solar-panel-installation",
+    title: "Solar Installation",
+    category: "solar",
+    icon: "sun",
+    order: 14,
+    summary: "Solar panel installation for homes in Maryland and Washington, DC, planned by roofers so the roof under your panels lasts as long as they do.",
+    hero: {
+      eyebrow: "Solar",
+      heading: "Solar installation, planned by roofers",
+      text: "We now offer solar. Because we're roofers first, we check and prepare your roof before a single panel goes on, so the roof and the system work together for decades.",
+    },
+    sections: [
+      {
+        anchor: "overview",
+        icon: "sun",
+        title: "Why go solar with a roofing company",
+        lead: "Solar panels are built to last decades. The roof under them has to last just as long.",
+        paragraphs: [
+          "Most solar problems we hear about aren't with the panels. They're with the roof: panels installed on a roof with a few years left, or mounts that were never sealed properly and leak.",
+          "As roofers, we look at the roof first. If it needs work, we can plan the roof and the solar together, so you don't pay to remove and reinstall panels a few years later.",
+        ],
+        highlightsLabel: "What you get",
+        highlights: [
+          "Free solar assessment",
+          "Roof inspection before every install",
+          "Roof and solar planned together",
+          "Sealed, flashed roof mounts",
+          "Homes in Maryland and Washington, DC",
+          "One family business from start to finish",
+        ],
+      },
+      {
+        anchor: "process",
+        icon: "clipboard",
+        title: "How solar installation works",
+        lead: "From the first visit to the day your system turns on, here's what to expect.",
+        paragraphs: [
+          "First we visit and look at your roof's condition, its direction and shading, and your electric bills. Then we design a system sized to how you use power and lay out the panels around your roof.",
+          "Solar needs permits, an inspection and approval from your utility before it can turn on. We walk you through each step and tell you what to expect at every stage.",
+        ],
+        highlightsLabel: "The steps",
+        highlights: [
+          "Free site and roof assessment",
+          "System design and panel layout",
+          "Permits and utility approval",
+          "Installation",
+          "Inspection and turn-on",
+        ],
+        ctas: [{ label: "Get a free solar assessment", href: "/contact-us" }],
+      },
+      {
+        anchor: "flat-roofs",
+        icon: "building",
+        title: "Solar on flat roofs and rowhouses",
+        lead: "Rowhouses in Washington, DC and Baltimore often have flat roofs with good sun, and they can be strong candidates for solar.",
+        paragraphs: [
+          "On a flat roof we plan the layout around drains, parapets, hatches and roof access, and we make sure the membrane under the panels is in good shape before anything goes on top of it.",
+          "In historic districts, panels visible from the street can need review first. Layouts that sit behind a parapet are often out of view.",
+        ],
+        highlightsLabel: "What we check",
+        highlights: ["Membrane condition", "Drains and slope", "Parapets and flashing", "Shading from trees and buildings"],
+      },
+    ],
+    faqs: [
+      {
+        question: "Should I replace my roof before going solar?",
+        answer: "If your roof has less than about 10 years of life left, usually yes. Replacing it first means you won't pay to remove and reinstall the panels later. We inspect the roof and tell you honestly.",
+      },
+      {
+        question: "Will solar panels make my roof leak?",
+        answer: "Not when the mounts are flashed and sealed correctly. That's roofing work, and it's exactly what we do every day.",
+      },
+      {
+        question: "Is my roof good for solar?",
+        answer: "It depends on the roof's direction, shading, size and condition. Our free assessment looks at all four and tells you whether solar makes sense for your home.",
+      },
+      {
+        question: "Do you install solar in Washington, DC?",
+        answer: "Yes. Washington, DC is one of our main areas for solar, including flat-roof rowhouses.",
+      },
+    ],
+    seo: {
+      title: "Solar Panel Installation in Maryland & Washington, DC | Pineda's Roofing",
+      description: "Solar installation planned by roofers: free solar assessment, roof check before every install and sealed mounts. Maryland and Washington, DC homes.",
     },
   },
 ];

@@ -16,7 +16,7 @@ export function Analytics() {
         <>
           <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
           <Script id="ga" strategy="lazyOnload">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_ID}');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(a)gtag('event',a.getAttribute('data-track'),{link_url:a.href||''})});`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_ID}');`}
           </Script>
         </>
       ) : null}

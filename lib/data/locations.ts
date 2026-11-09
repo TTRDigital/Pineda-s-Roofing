@@ -1,26 +1,40 @@
 import type { Location } from "../types";
+import { countyPages, localDetail, priorityCityPages } from "./locations-priority.ts";
 
 /* Service area. `counties` drives the full area list; `fallbackLocations` are the city pages (array order = display order). */
 
-export type County = { name: string; state: string; /** Census FIPS codes of the areas shaded on the map. */ fips: string[]; cities: string[] };
+export type County = {
+  name: string;
+  state: string;
+  /** 1 = main focus area, 2 = second tier. D.C. is mainly for solar. */
+  tier: 1 | 2;
+  /** Slug of the county's own page, if it has one. */
+  page?: string;
+  /** Census FIPS codes of the areas shaded on the map. */
+  fips: string[];
+  cities: string[];
+};
 
+/* Ordered by priority: main focus areas first, then the second tier, then D.C. and Northern Virginia. */
 export const counties: County[] = [
+  { name: "Baltimore County", state: "MD", tier: 1, page: "baltimore-county", fips: ["24005"], cities: ["Towson", "Catonsville", "Owings Mills", "Pikesville", "Parkville", "Perry Hall", "Dundalk"] },
+  { name: "Baltimore City", state: "MD", tier: 1, page: "baltimore-city", fips: ["24510"], cities: ["Baltimore"] },
+  { name: "Howard County", state: "MD", tier: 1, page: "howard-county", fips: ["24027"], cities: ["Columbia", "Ellicott City", "Elkridge", "Clarksville"] },
+  { name: "Anne Arundel County", state: "MD", tier: 1, page: "anne-arundel-county", fips: ["24003"], cities: ["Annapolis", "Glen Burnie", "Severna Park", "Crofton", "Odenton"] },
+  { name: "Prince George's County", state: "MD", tier: 1, page: "prince-georges-county", fips: ["24033"], cities: ["Bowie", "Laurel", "College Park", "Upper Marlboro", "Hyattsville", "Greenbelt"] },
+  { name: "Carroll County", state: "MD", tier: 2, page: "carroll-county", fips: ["24013"], cities: ["Westminster", "Eldersburg", "Sykesville"] },
+  { name: "Frederick County", state: "MD", tier: 2, page: "frederick-county", fips: ["24021"], cities: ["Frederick", "Urbana", "Middletown", "New Market"] },
   {
     name: "Montgomery County",
     state: "MD",
+    tier: 2,
+    page: "montgomery-county",
     fips: ["24031"],
     cities: ["Silver Spring", "Aspen Hill", "Wheaton", "Takoma Park", "Olney", "Rockville", "Bethesda", "Gaithersburg", "Germantown", "Potomac"],
   },
-  { name: "Prince George's County", state: "MD", fips: ["24033"], cities: ["Bowie", "College Park", "Hyattsville", "Greenbelt", "Laurel"] },
-  { name: "Howard County", state: "MD", fips: ["24027"], cities: ["Columbia", "Ellicott City", "Clarksville", "Elkridge"] },
-  { name: "Frederick County", state: "MD", fips: ["24021"], cities: ["Frederick", "Urbana", "Middletown", "New Market"] },
-  { name: "Anne Arundel County", state: "MD", fips: ["24003"], cities: ["Annapolis", "Glen Burnie", "Crofton", "Severna Park", "Odenton"] },
-  { name: "Baltimore County", state: "MD", fips: ["24005"], cities: ["Towson", "Owings Mills", "Pikesville", "Catonsville"] },
-  { name: "Baltimore City", state: "MD", fips: ["24510"], cities: ["Baltimore"] },
-  { name: "Carroll County", state: "MD", fips: ["24013"], cities: ["Westminster", "Eldersburg", "Sykesville"] },
+  { name: "Washington, D.C.", state: "DC", tier: 2, page: "washington-dc", fips: ["11001"], cities: ["Capitol Hill", "Georgetown", "Petworth", "Brookland", "Cleveland Park"] },
   // Arlington, Fairfax County, and the cities of Alexandria, Falls Church and Fairfax.
-  { name: "Northern Virginia", state: "VA", fips: ["51013", "51059", "51510", "51610", "51600"], cities: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"] },
-  { name: "Washington, D.C.", state: "DC", fips: ["11001"], cities: ["Capitol Hill", "Georgetown", "Petworth", "Brookland", "Cleveland Park"] },
+  { name: "Northern Virginia", state: "VA", tier: 2, page: "northern-virginia", fips: ["51013", "51059", "51510", "51610", "51600"], cities: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"] },
 ];
 
 /** [longitude, latitude] of every city in `counties`, for the service area map (from OpenStreetMap). */
@@ -37,18 +51,20 @@ export const cityCoords: Record<string, [number, number]> = {
   Alexandria: [-77.047, 38.8051], Arlington: [-77.0893, 38.8769], Fairfax: [-77.3064, 38.8462], "Falls Church": [-77.1711, 38.8823],
   McLean: [-77.1858, 38.9367], "Capitol Hill": [-77.0003, 38.889], Georgetown: [-77.0628, 38.9052], Petworth: [-77.025, 38.9459],
   Brookland: [-76.9842, 38.9328], "Cleveland Park": [-77.0587, 38.9352],
+  "Upper Marlboro": [-76.7497, 38.8159], Parkville: [-76.5397, 39.3773], "Perry Hall": [-76.4636, 39.4126], Dundalk: [-76.5205, 39.2507],
 };
 
-export const fallbackLocations: Location[] = [
+const cityPages: Location[] = [
   {
     slug: "roofing-service-maryland",
     name: "Maryland",
+    kind: "region",
     state: "MD",
     featured: true,
     lead: "For over 30 years, Pineda's Roofing has repaired, maintained and replaced roofs and gutters for Maryland homes and businesses.",
     paragraphs: [
       "Maryland's seasons are tough on a roof. Humid summers bring thunderstorms, wind and hail, and winters bring snow, ice dams and freeze-thaw cycles that open up small weaknesses.",
-      "From Montgomery County to Annapolis and Baltimore, our own family crews handle shingle and flat roofs, storm damage and seamless gutters, with free inspections and help with your insurance claim.",
+      "From Baltimore and Annapolis to Montgomery County, our family business handles shingle and flat roofs, storm damage and seamless gutters, with free inspections and help with your insurance claim.",
     ],
     highlights: [
       "Free roof inspections across Maryland",
@@ -59,12 +75,14 @@ export const fallbackLocations: Location[] = [
       "10 year labor warranty",
     ],
     neighborhoods: [
-      "Montgomery County",
-      "Prince George's County",
+      "Baltimore County",
+      "Baltimore City",
       "Howard County",
       "Anne Arundel County",
-      "Baltimore County",
+      "Prince George's County",
+      "Carroll County",
       "Frederick County",
+      "Montgomery County",
     ],
     seo: {
       title: "Roofing Services in Maryland | Pineda's Roofing",
@@ -345,7 +363,7 @@ export const fallbackLocations: Location[] = [
     lead: "From historic stone homes near Main Street to newer neighborhoods, Ellicott City homeowners trust us with roofs that keep water out.",
     paragraphs: [
       "Ellicott City sits among steep hills and has seen serious flash flooding. Heavy rain tests every roof, so solid flashing, sound underlayment and working gutters matter here.",
-      "Older homes often have chimneys and stone or brick walls that need careful flashing and masonry work, which our crews handle alongside the roof.",
+      "Older homes often have chimneys and stone or brick walls that need careful flashing and masonry work, which we handle alongside the roof.",
     ],
     highlights: [
       "Free roof inspections in Ellicott City",
@@ -463,13 +481,13 @@ export const fallbackLocations: Location[] = [
     lead: "Pineda's Roofing serves Northern Virginia homeowners in Alexandria, Arlington, Fairfax, Falls Church and McLean.",
     paragraphs: [
       "Northern Virginia shares Maryland's weather: summer thunderstorms, occasional hail and winter ice. The same problems show up here, from wind-lifted shingles to ice dams along the eaves.",
-      "Homes range from older brick colonials in Arlington and Alexandria to larger homes in McLean and Fairfax. Our own crews bring the same materials and standards to every one.",
+      "Homes range from older brick colonials in Arlington and Alexandria to larger homes in McLean and Fairfax. We bring the same materials and standards to every one.",
     ],
     highlights: [
       "Free roof inspections in Northern Virginia",
       "Atlas Pinnacle Pristine shingles",
       "Storm and insurance claim help",
-      "Our own crews, not subcontractors",
+      "Managed by the Pineda family",
       "Photo documentation of every finding",
     ],
     neighborhoods: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"],
@@ -478,4 +496,26 @@ export const fallbackLocations: Location[] = [
       description: "Roof repair and replacement in Alexandria, Arlington, Fairfax, Falls Church and McLean from a family-owned roofer with 30+ years of experience.",
     },
   },
+];
+
+/* Display and page order: overview, then each priority county followed by its cities. */
+const order = [
+  "roofing-service-maryland",
+  "baltimore-county", "towson", "catonsville",
+  "baltimore-city",
+  "howard-county", "columbia", "ellicott-city", "elkridge",
+  "anne-arundel-county", "annapolis", "glen-burnie", "severna-park",
+  "prince-georges-county", "bowie", "laurel", "college-park", "upper-marlboro",
+  "carroll-county", "westminster",
+  "frederick-county", "frederick",
+  "montgomery-county", "silver-spring", "wheaton", "rockville", "bethesda", "gaithersburg", "germantown", "potomac", "olney",
+  "washington-dc",
+  "northern-virginia",
+];
+
+const all = [...countyPages, ...priorityCityPages, ...cityPages].map((l) => ({ ...l, ...localDetail[l.slug] }));
+
+export const fallbackLocations: Location[] = [
+  ...order.map((slug) => all.find((l) => l.slug === slug)).filter((l): l is Location => !!l),
+  ...all.filter((l) => !order.includes(l.slug)),
 ];

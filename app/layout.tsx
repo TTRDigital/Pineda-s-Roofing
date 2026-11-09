@@ -14,7 +14,9 @@ const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-int
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Pineda's Roofing | Maryland Roofing Contractor", template: "%s | Pineda's Roofing" },
-  description: "Family-owned roofing contractor in Silver Spring, MD since 1992. Roof replacement, repair, storm restoration and commercial roofing.",
+  description: "Family-owned roofing contractor serving Baltimore, Howard, Anne Arundel and Prince George's County, MD. Roof replacement, repair, storm restoration and solar.",
+  // Google Search Console ownership check (Settings > Ownership verification > HTML tag), set at build time.
+  ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION ? { verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } } : {}),
   applicationName: "Pineda's Roofing",
   formatDetection: { telephone: false, address: false, email: false },
 };

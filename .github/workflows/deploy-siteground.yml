@@ -44,6 +44,11 @@ jobs:
 
       - name: Build static site
         run: npm run build
+        env:
+          # Analytics and Search Console IDs (Settings > Secrets and variables > Actions > Variables). Empty = not loaded.
+          NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
+          NEXT_PUBLIC_GTM_ID: ${{ vars.NEXT_PUBLIC_GTM_ID }}
+          NEXT_PUBLIC_GSC_VERIFICATION: ${{ vars.NEXT_PUBLIC_GSC_VERIFICATION }}
 
       # Download from the run page for a manual upload (no form settings inside).
       - name: Keep a copy of the site

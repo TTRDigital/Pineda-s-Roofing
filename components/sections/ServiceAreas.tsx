@@ -24,7 +24,7 @@ export function ServiceAreas({
         <SectionHeading
           eyebrow="Service area"
           heading="Maryland & the DMV, county by county"
-          text={`Local crews and three decades in these communities. Not sure if you're in our area? Call ${phone} and we'll tell you straight away.`}
+          text={`Our main service areas are Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's County. We also serve Carroll, Frederick and Montgomery County, where our Silver Spring home base is, plus Washington, D.C. for solar. Not sure if you're in our area? Call ${phone}.`}
         />
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
           <div className="lg:sticky lg:top-28" data-reveal>
@@ -32,10 +32,17 @@ export function ServiceAreas({
           </div>
           <ul className="grid gap-4 sm:grid-cols-2">
             {counties.map((c, i) => (
-              <li key={c.name} className="rounded-[var(--radius-card)] border border-line bg-white p-5" data-reveal style={{ "--i": Math.min(i, 6) } as React.CSSProperties}>
+              <li key={c.name} className={`rounded-[var(--radius-card)] border bg-white p-5 ${c.tier === 1 ? "border-cyan ring-1 ring-cyan/30" : "border-line"}`} data-reveal style={{ "--i": Math.min(i, 6) } as React.CSSProperties}>
+                {c.tier === 1 ? <p className="mb-2 text-[0.75rem] font-bold uppercase tracking-[0.14em] text-cyan-deep">Main service area</p> : null}
                 <p className="flex items-center gap-2.5 font-display text-xl font-bold uppercase text-ink">
-                  <MapPin className="h-5 w-5 text-cyan-deep" strokeWidth={2.25} aria-hidden="true" />
-                  {c.name}
+                  <MapPin className="h-5 w-5 shrink-0 text-cyan-deep" strokeWidth={2.25} aria-hidden="true" />
+                  {c.page && locations.some((l) => l.slug === c.page && l.featured) ? (
+                    <Link href={`/service-area/${c.page}`} className="underline decoration-cyan decoration-2 underline-offset-4 hover:text-cyan-deep">
+                      {c.name}
+                    </Link>
+                  ) : (
+                    c.name
+                  )}
                 </p>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {c.cities.map((city) => {

@@ -46,6 +46,27 @@ export default async function HomePage() {
 
       <CardGrid intro={home.servicesIntro} cards={home.serviceCards} />
 
+      <section className="on-dark relative overflow-hidden bg-ink py-16 text-white">
+        <span aria-hidden="true" className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-cyan/20 blur-3xl" />
+        <div className="container-x relative grid items-center gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+          <div>
+            <p className="eyebrow">Now offering solar</p>
+            <h2 className="mt-3 text-h2 uppercase">Solar, planned by roofers</h2>
+            <p className="mt-4 max-w-2xl text-lg text-on-dark">
+              We now install solar for homes in Maryland and Washington, DC. Because we&apos;re roofers first, we check and prepare your roof before any panels go on, so the roof lasts as long as the system.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3 lg:justify-end">
+            <Button href="/services/solar-panel-installation" arrow>
+              Learn about solar
+            </Button>
+            <Button href="/service-area/washington-dc" variant="outline-light">
+              Solar in Washington, DC
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <SplitTiles
         tone="mist"
         intro={{ eyebrow: "Roofing", heading: "For homes and businesses", text: "One family-owned team for residential and commercial roofs across Maryland and the DMV." }}

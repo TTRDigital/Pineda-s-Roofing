@@ -23,6 +23,11 @@ export const fallbackSettings: SiteSettings = {
   googleRating: "5.0",
   reviewCount: "22",
   reviewsUrl: "https://g.co/kgs/FDvaBcB",
+  bbb: {
+    url: "https://www.bbb.org/us/md/silver-spring/profile/roofing-contractors/pinedas-construction-llc-0241-236064536",
+    rating: "A+",
+    accreditedSince: "2026",
+  },
   social: [
     { network: "facebook", href: "https://www.facebook.com/pinedasroofing" },
     { network: "instagram", href: "https://www.instagram.com/pinedasroofing/" },
@@ -143,7 +148,7 @@ export const fallbackFaqs: Faq[] = [
     category: "General",
     question: "What areas do you serve?",
     answer:
-      "Maryland and the DMV: Montgomery, Prince George's, Howard, Frederick, Anne Arundel and Baltimore counties, Baltimore City, Washington D.C. and Northern Virginia.",
+      "Our main service areas are Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's County. We also serve Carroll, Frederick and Montgomery County, where our Silver Spring home base is, and Washington, D.C., mainly for solar.",
   },
 ];
 

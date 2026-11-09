@@ -107,7 +107,8 @@ export function Header({
 
           <nav aria-label="Main" className="hidden xl:block">
             <ul className="flex items-center">
-              {nav.map((item) => {
+              {/* The logo links home, so the desktop bar skips "Home" to leave room for every section. */}
+              {nav.filter((item) => item.href !== "/").map((item) => {
                 const active = isActive(item);
                 if (!item.children?.length) {
                   return (

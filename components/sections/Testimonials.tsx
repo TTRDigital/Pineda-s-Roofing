@@ -1,6 +1,7 @@
-import { Quote, Star } from "lucide-react";
+import { ExternalLink, PenLine, Quote, Star } from "lucide-react";
 import type { SiteSettings, Testimonial } from "@/lib/types";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { BbbBadge } from "@/components/ui/BbbBadge";
 
 function Stars({ n, className = "h-4 w-4" }: { n: number; className?: string }) {
   return (
@@ -12,22 +13,36 @@ function Stars({ n, className = "h-4 w-4" }: { n: number; className?: string }) 
   );
 }
 
-/** Google reviews on black, with the overall rating. */
+/** Google reviews on black: the overall rating, a clear link to read every review on Google, and the BBB rating. */
 export function Testimonials({ items, settings }: { items: Testimonial[]; settings: SiteSettings }) {
   if (!items.length) return null;
+  const googleUrl = settings.reviewsUrl;
   return (
-    <section className="section on-dark bg-ink">
+    <section id="reviews" className="section on-dark bg-ink">
       <div className="container-x">
-        <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
-          <SectionHeading eyebrow="Reviews" heading="Hear it from our customers" align="left" dark />
+        <div className="grid items-end gap-8 lg:grid-cols-[minmax(0,1fr)_auto]">
+          <SectionHeading
+            eyebrow="Reviews"
+            heading="Hear it from our customers"
+            text="Real reviews from homeowners and businesses on our Google Business Profile. Read them all on Google, where you can also see our photos and business details."
+            align="left"
+            dark
+          />
           {settings.googleRating ? (
-            <a href={settings.reviewsUrl ?? "#"} target="_blank" rel="noopener" className="flex items-center gap-4 rounded-[var(--radius-card)] border border-ink-line bg-ink-2 px-5 py-4 transition-colors hover:border-cyan">
-              <span className="font-display text-5xl font-bold text-white">{settings.googleRating}</span>
+            <a
+              href={googleUrl ?? "#"}
+              target="_blank"
+              rel="noopener"
+              data-track="google_reviews"
+              className="flex items-center gap-5 rounded-[var(--radius-card)] border border-ink-line bg-ink-2 px-6 py-5 transition-colors hover:border-cyan"
+            >
+              <span className="font-display text-6xl font-bold leading-none text-white">{settings.googleRating}</span>
               <span>
                 <Stars n={Math.round(Number(settings.googleRating))} className="h-5 w-5" />
-                <span className="mt-1 block text-sm text-on-dark">
-                  {settings.reviewCount ? `${settings.reviewCount} Google reviews` : "Google reviews"}
+                <span className="mt-1.5 block text-sm font-semibold text-white">
+                  {settings.reviewCount ? `${settings.reviewCount} reviews on Google` : "Reviews on Google"}
                 </span>
+                <span className="mt-0.5 block text-xs text-on-dark-meta">Google Business Profile</span>
               </span>
             </a>
           ) : null}
@@ -46,6 +61,35 @@ export function Testimonials({ items, settings }: { items: Testimonial[]; settin
             </li>
           ))}
         </ul>
+        <div className="mt-10 flex flex-col gap-5 rounded-[var(--radius-card)] border border-cyan/40 bg-ink-2 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-wrap gap-3">
+            {googleUrl ? (
+              <a
+                href={googleUrl}
+                target="_blank"
+                rel="noopener"
+                data-track="google_reviews"
+                className="inline-flex min-h-13 items-center justify-center gap-2.5 rounded-lg bg-cyan px-7 text-[0.9375rem] font-bold uppercase tracking-[0.08em] text-ink shadow-[0_10px_30px_-12px_rgb(0_180_240/0.7)] transition-colors hover:bg-cyan-hi"
+              >
+                Read all our reviews on Google
+                <ExternalLink className="h-4 w-4" strokeWidth={2.5} aria-hidden="true" />
+              </a>
+            ) : null}
+            {settings.writeReviewUrl ? (
+              <a
+                href={settings.writeReviewUrl}
+                target="_blank"
+                rel="noopener"
+                data-track="google_write_review"
+                className="inline-flex min-h-13 items-center justify-center gap-2.5 rounded-lg border-2 border-white/70 px-7 text-[0.9375rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:border-cyan hover:text-cyan"
+              >
+                <PenLine className="h-4 w-4" strokeWidth={2.5} aria-hidden="true" />
+                Leave us a review
+              </a>
+            ) : null}
+          </div>
+          <BbbBadge bbb={settings.bbb} tone="dark" />
+        </div>
       </div>
     </section>
   );
