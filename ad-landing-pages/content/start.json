@@ -1,0 +1,74 @@
+{
+  "_type": "landingPage",
+  "slug": "start",
+  "seo": {
+    "title": "Pineda's Roofing",
+    "description": "Secure Your Roof with Pineda's Roofing"
+  },
+  "phone": { "display": "(301) 921-6333", "tel": "+13019216333" },
+  "hero": {
+    "headline": "Experience Matters: Setting the Standard in Roofing Excellence",
+    "headlineOriginal": "Experience Matters: Setting the Standard in Roofing Excellence for 30+ Years",
+    "subheadline": "Maryland's Family-Owned Roofing Company",
+    "subheadlineOriginal": "Maryland's Most Trusted Family-Owned Roofing Company",
+    "bullets": [
+      { "text": "We Stand by Our Roofs for a Lifetime", "held": true },
+      { "text": "Gutters Included– Our Gift to You", "held": true },
+      { "text": "Free, No-Obligation Estimate" },
+      { "text": "Unbeatable Prices – We Match Them All!", "held": true }
+    ],
+    "formHint": "Fill Out The Form"
+  },
+  "form": {
+    "title": "Book Your Quote Today!",
+    "serviceLabel": "What Roofing Service Do You Need?",
+    "services": ["Repair", "Replacement", "New Installation", "Inspection", "Not Sure"],
+    "consent": "I agree to the Terms and Conditions with the Privacy Policy provided by Pineda's Roofing LLC. I agree to receive marketing messages from Pineda's Roofing, by providing my phone number.",
+    "submit": "SEND REQUEST",
+    "success": "Thank you! We received your request and will call you shortly."
+  },
+  "stepsTitle": "How We Work",
+  "steps": [
+    { "label": "STEP 1", "title": "Assessment & Planning", "icon": "step-1.png",
+      "text": "Each project begins with a free on-site assessment to understand the scope of work, evaluate the condition of your roof, and provide you with a free estimate. Our friendly experts will walk you through the process and next steps and answer any questions you may have." },
+    { "label": "STEP 2", "title": "Execution & Craftsmanship", "icon": "step-2.png",
+      "text": "Our family-owned and operated team brings your project to life with precision and craftsmanship. We proudly use Atlas Pinnacle® Pristine shingles.",
+      "original": "With over three decades of experience, our family-owned and operated team brings your project to life with precision and craftsmanship. We proudly use Atlas Pinnacle® Pristine shingles – the best in the industry – and leading techniques to ensure your roof is built to withstand the test of time." },
+    { "label": "STEP 3", "title": "Final Inspection", "icon": "step-3.png",
+      "text": "After the project is completed, we conduct a thorough inspection to verify that everything meets our high standards. We take pride in our work.",
+      "original": "Lifetime Warranty & Satisfaction: ... we back our roofing projects with a solid lifetime warranty to protect your investment for forever." }
+  ],
+  "cta": { "call": "Call", "estimate": "Free Estimate" },
+  "servicesTitle": "Our Roofing Services",
+  "services": [
+    { "title": "Roof Installation", "text": "From tear-down to installation, we do it all.", "image": "installation.webp" },
+    { "title": "Roof Repairs", "text": "Whether it's a minor leak or significant damage, we can repair it.", "image": "repairs.webp" },
+    { "title": "Roof Replacement", "text": "If your roof has reached the end of its lifespan, we provide seamless and efficient replacement services to safeguard your home.", "image": "replacement.webp" },
+    { "title": "Roof Inspections", "text": "Our thorough roof inspections identify hidden problems and enable us to address them before they escalate.", "image": "inspections.webp" },
+    { "title": "Roof Maintenance", "text": "Regular maintenance ensures your roof remains in top condition, extending its life and preventing costly repairs.", "image": "maintenance.webp" },
+    { "title": "Gutters & Siding", "text": "Our work doesn't stop at your roof, we'll also install and repair your home's gutters and siding.", "image": "gutters-siding.webp" }
+  ],
+  "whyTitle": "Why Choose Pineda's Roofing?",
+  "why": [
+    { "lead": "Unrivaled Expertise", "text": "With over 30 years of roofing experience and industry knowledge, our expertise can't be matched.", "held": true },
+    { "lead": "Unwavering Commitment", "text": "We're a family of roofing professionals local to Maryland and we love what we do. We bring our passion to life for every project we work on, and our quality workmanship proves our commitment to you." },
+    { "lead": "Lifetime Warranty", "text": "Because we fully believe in the quality of our work and the outcome of our product, we offer lifetime warranties on our roofs and we guarantee your full satisfaction, indefinitely. Your trust is our number one priority.", "held": true }
+  ],
+  "reviewsTitle": "What Our Clients Say",
+  "reviews": [
+    { "name": "Ian W", "text": "Fast, professional and great quality work. Everything I could hope or ask for from a contractor. I will definitely use their services in the future." },
+    { "name": "Katherine Keefe", "text": "They were absolutely amazing! So patient with me as a first time home buyer with a leaky roof. Roberto is super responsive, very reasonable and their team is outstanding!" },
+    { "name": "Allison Hartman", "text": "Roberto and his team are top notch! They came out and assessed my roof leak very quickly and fixed it the next week. They re-sealed my roof and it was beautiful. Thank you!!" }
+  ],
+  "galleryTitle": "We Let Our Work Speak For Itself",
+  "gallery": ["work-1.webp", "work-2.webp", "work-3.webp"],
+  "faqTitle": "Frequently Asked Questions",
+  "faq": [
+    { "q": "How long does a typical roof installation take?", "a": "The duration of a roof installation depends on various factors, such as the size of your roof, materials chosen, and weather conditions. However, on average, a standard roof installation can be completed within a few days to a week. Give us a call today for your free consultation and estimate!" },
+    { "q": "What are the signs that my roof needs repair or replacement?", "a": "Look out for signs like missing or cracked shingles, water leaks, mold growth, granule loss in shingles, or sagging areas on the roof. Additionally, if your roof is more than 20 years old, it might be time to consider a replacement." },
+    { "q": "Are you licensed and insured?", "a": "Yes, we are a licensed and fully insured roofing company. Our team of experienced professionals is trained to handle all types of roofing projects safely and efficiently.", "held": true },
+    { "q": "How much does roof repair typically cost?", "a": "The cost of roof repair can vary depending on the specific requirements of each project. Factors such as the extent of the damage, the type of roofing material, and the size of your roof play a significant role in determining the overall cost. We understand the importance of transparency and providing accurate information to our customers. That's why we offer a free, no-obligation inspection for every project. Our experienced roofing professionals will assess the condition of your roof and provide you with a detailed estimate tailored to your needs. This way, you'll have a clear understanding of the scope of repairs and the associated costs before any work begins." }
+  ],
+  "finalTitle": "Get Your Free Roof Estimate Today!",
+  "footer": { "legal": "Pineda's Roofing LLC. All Rights Reserved.", "privacyUrl": "https://www.pinedasroofing.com/privacy", "termsUrl": "https://www.pinedasroofing.com/terms" }
+}

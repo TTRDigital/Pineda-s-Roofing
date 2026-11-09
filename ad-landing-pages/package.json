@@ -1,0 +1,12 @@
+{
+  "name": "pinedas-ad-landing-pages",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "seed": "node scripts/seed.mjs",
+    "seed:apply": "node scripts/seed.mjs --apply",
+    "test": "node scripts/test.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
