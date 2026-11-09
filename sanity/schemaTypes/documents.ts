@@ -56,7 +56,7 @@ export const siteSettings = defineType({
       fields: [
         defineField({ name: "url", title: "BBB profile link", type: "url" }),
         defineField({ name: "rating", title: "BBB rating", type: "string", description: "e.g. A+" }),
-        defineField({ name: "accreditedSince", title: "Accredited since (year)", type: "string" }),
+        defineField({ name: "accreditedSince", title: "Accredited since", type: "string", description: 'As shown on the BBB profile, e.g. "March 2026".' }),
       ],
     }),
     defineField({
@@ -392,6 +392,7 @@ export const project = defineType({
   fields: [
     defineField({ name: "title", type: "string", validation: (r) => r.required() }),
     defineField({ name: "location", title: "City", type: "string", description: "Where the job was, e.g. Bowie." }),
+    defineField({ name: "area", title: "Service-area page", type: "reference", to: [{ type: "location" }], description: "The city page this project shows on, under Past projects. Leave empty to match by City." }),
     defineField({ name: "county", title: "County", type: "string", description: "e.g. Prince George's County" }),
     defineField({ name: "problem", title: "The problem", type: "text", rows: 3, description: "What was wrong when you arrived." }),
     defineField({ name: "solution", title: "What we did", type: "text", rows: 3, description: "How you fixed it." }),
@@ -421,6 +422,49 @@ export const testimonial = defineType({
   preview: { select: { title: "name", subtitle: "quote" } },
 });
 
+export const post = defineType({
+  name: "post",
+  title: "Blog post",
+  type: "document",
+  groups,
+  fields: [
+    defineField({ name: "title", type: "string", validation: (r) => r.required(), group: "content" }),
+    defineField({ name: "slug", type: "slug", options: { source: "title" }, validation: (r) => r.required(), group: "content", description: "The post lives at /blog/<slug>." }),
+    defineField({ name: "date", type: "date", validation: (r) => r.required(), group: "content" }),
+    defineField({ name: "excerpt", type: "text", rows: 3, validation: (r) => r.required(), group: "content", description: "One or two sentences for the blog list." }),
+    defineField({
+      name: "areas",
+      title: "Service areas",
+      type: "array",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "location" }] })],
+      group: "content",
+      description: "City and county pages this post is about. The post is linked from those pages.",
+    }),
+    defineField({ name: "service", title: "Related service", type: "reference", to: [{ type: "service" }], group: "content" }),
+    defineField({ name: "image", type: "altImage", group: "content" }),
+    defineField({
+      name: "sections",
+      type: "array",
+      group: "content",
+      description: 'Use plain service + place headings where they fit, e.g. "Roof replacement in Bowie".',
+      of: [
+        defineArrayMember({
+          name: "postSection",
+          type: "object",
+          fields: [
+            defineField({ name: "heading", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "paragraphs", type: "array", of: [defineArrayMember({ type: "text", rows: 4 })] }),
+          ],
+          preview: { select: { title: "heading" } },
+        }),
+      ],
+    }),
+    seoField,
+  ],
+  orderings: [{ title: "Newest first", name: "dateDesc", by: [{ field: "date", direction: "desc" }] }],
+  preview: { select: { title: "title", subtitle: "date", media: "image" } },
+});
+
 export const faq = defineType({
   name: "faq",
   title: "FAQ",
@@ -438,4 +482,4 @@ export const faq = defineType({
 
 export const singletonTypes = new Set(["siteSettings", "partners", "homePage", "roofingPage", "atlasPage", "insurancePage", "aboutPage"]);
 
-export const documentTypes = [siteSettings, partners, homePage, roofingPage, atlasPage, insurancePage, aboutPage, service, location, project, testimonial, faq];
+export const documentTypes = [siteSettings, partners, homePage, roofingPage, atlasPage, insurancePage, aboutPage, service, location, project, testimonial, faq, post];

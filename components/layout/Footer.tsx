@@ -11,6 +11,7 @@ const company = [
   { label: "Insurance claims", href: "/roofing-insurance" },
   { label: "Gallery", href: "/gallery" },
   { label: "Service areas", href: "/service-area" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact-us" },
 ];

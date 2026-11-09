@@ -112,7 +112,7 @@ export default async function HomePage() {
 
       <Testimonials items={testimonials} settings={settings} />
       <LogoGrid eyebrow="Insurance claims" heading={partners.insuranceHeading} text={partners.insuranceText} items={partners.insurers} />
-      <ServiceAreas counties={counties} locations={locations} tone="mist" phone={settings.phone} />
+      <ServiceAreas counties={counties} locations={locations} tone="mist" phone={settings.phone} projects={projects} />
       <FaqSection intro={home.faqIntro} items={home.faqs} tone="white" />
       <ContactSection settings={settings} />
     </>

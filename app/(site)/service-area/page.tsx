@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { counties, getLocations, getSiteSettings } from "@/lib/content";
+import { counties, getLocations, getProjects, getSiteSettings } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { images } from "@/lib/data/images";
 import { PageHero } from "@/components/sections/PageHero";
@@ -17,7 +17,7 @@ const seo = {
 export const metadata: Metadata = pageMetadata(seo, "/service-area", images.homeNewRoofAerial);
 
 export default async function ServiceAreaPage() {
-  const [locations, settings] = await Promise.all([getLocations(), getSiteSettings()]);
+  const [locations, settings, projects] = await Promise.all([getLocations(), getSiteSettings(), getProjects()]);
   const pages = locations.filter((l) => l.featured);
   return (
     <>
@@ -83,7 +83,7 @@ export default async function ServiceAreaPage() {
           </p>
         </div>
       </section>
-      <ServiceAreas counties={counties} locations={locations} tone="mist" phone={settings.phone} />
+      <ServiceAreas counties={counties} locations={locations} tone="mist" phone={settings.phone} projects={projects} />
       <ContactSection settings={settings} />
     </>
   );

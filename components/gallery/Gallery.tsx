@@ -10,7 +10,7 @@ const labels: Record<ServiceCategory, string> = { residential: "Residential", co
 
 /** "The problem / What we did" write-up shown under a project, when the project has one. */
 function Story({ p }: { p: Project }) {
-  if (!p.problem && !p.solution) return null;
+  if (!p.problem && !p.solution) return p.summary ? <p className="mt-3 text-[0.95rem] text-body">{p.summary}</p> : null;
   return (
     <dl className="mt-3 grid gap-2 text-[0.95rem]">
       {p.problem ? (

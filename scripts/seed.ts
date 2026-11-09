@@ -19,6 +19,7 @@ import { fallbackAbout, fallbackAtlas, fallbackHome, fallbackInsurance, fallback
 import { fallbackServices } from "../lib/data/services.ts";
 import { fallbackLocations } from "../lib/data/locations.ts";
 import { localLogos } from "../lib/data/logos.ts";
+import { fallbackPosts } from "../lib/data/posts.ts";
 
 const root = new URL("..", import.meta.url).pathname;
 
@@ -262,12 +263,29 @@ async function build() {
     });
   });
 
+  for (const po of fallbackPosts) {
+    docs.push({
+      _id: `post-${po.slug}`,
+      _type: "post",
+      title: po.title,
+      slug: { _type: "slug", current: po.slug },
+      date: po.date,
+      excerpt: po.excerpt,
+      areas: po.areas?.map((a) => ({ _type: "reference", _ref: `location-${a}`, _key: key() })),
+      ...(po.service ? { service: { _type: "reference", _ref: `service-${po.service}` } } : {}),
+      image: await altImage(po.image),
+      sections: po.sections.map((x) => ({ _type: "postSection", _key: key(), ...x })),
+      ...(po.seo ? { seo: seo(po.seo) } : {}),
+    });
+  }
+
   for (const pr of fallbackProjects) {
     docs.push({
       _id: `project-${pr.id}`,
       _type: "project",
       title: pr.title,
       location: pr.location,
+      ...(pr.area ? { area: { _type: "reference", _ref: `location-${pr.area}` } } : {}),
       county: pr.county,
       problem: pr.problem,
       solution: pr.solution,

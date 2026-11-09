@@ -63,7 +63,7 @@ const COUNTY_LABEL: Record<string, [number, number]> = {
 
 type Counties = Topology<{ counties: GeometryCollection; states: GeometryCollection }>;
 
-export function ServiceAreaMap({ counties, locations }: { counties: County[]; locations: Location[] }) {
+export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { counties: County[]; locations: Location[]; projectCounts?: Record<string, number> }) {
   const topo = us as unknown as Counties;
   const all = feature(topo, topo.objects.counties) as FeatureCollection<Geometry, { name: string }>;
   const ours = new Set(counties.flatMap((c) => c.fips));
@@ -133,9 +133,12 @@ export function ServiceAreaMap({ counties, locations }: { counties: County[]; lo
           const page = pageFor(c.name);
           const home = c.name === HOME;
           const label = LABEL_OFFSET[c.name];
+          const jobs = projectCounts[c.name] ?? 0;
           const dot = (
             <g>
-              <title>{`${c.name}, ${c.county}`}</title>
+              <title>{`${c.name}, ${c.county}${jobs ? `: ${jobs} past ${jobs === 1 ? "project" : "projects"}` : ""}`}</title>
+              {/* Cities with past projects to show get a cyan ring. */}
+              {jobs ? <circle cx={x} cy={y} r={home ? 15 : 10} fill="none" stroke="#00b4f0" strokeWidth={3} /> : null}
               {home ? (
                 <>
                   <circle cx={x} cy={y} r={11} fill="#00b4f0" fillOpacity={0.25} />
@@ -160,7 +163,7 @@ export function ServiceAreaMap({ counties, locations }: { counties: County[]; lo
             </g>
           );
           return page ? (
-            <a key={c.name} href={`/service-area/${page.slug}/`} aria-label={`Roofing in ${c.name}`}>
+            <a key={c.name} href={`/service-area/${page.slug}/${jobs ? "#past-projects" : ""}`} aria-label={jobs ? `Past roofing projects in ${c.name}` : `Roofing in ${c.name}`}>
               {dot}
             </a>
           ) : (
@@ -189,6 +192,12 @@ export function ServiceAreaMap({ counties, locations }: { counties: County[]; lo
           <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full border-[1.5px] border-ink bg-white" />
           Also served
         </span>
+        {Object.keys(projectCounts).length ? (
+          <span className="inline-flex items-center gap-2">
+            <span aria-hidden="true" className="h-3.5 w-3.5 rounded-full border-[3px] border-cyan bg-white" />
+            Past projects (tap to see them)
+          </span>
+        ) : null}
       </figcaption>
     </figure>
   );

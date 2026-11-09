@@ -1,10 +1,10 @@
 import type { StructureResolver } from "sanity/structure";
-import { Award, Building2, CircleHelp, Cog, FileCheck, Home, ImageIcon, Images, Info, Layers, MapPin, MessageSquareQuote, Settings2, Wrench } from "lucide-react";
+import { Award, Building2, CircleHelp, Cog, FileCheck, Home, ImageIcon, Images, Info, Layers, MapPin, MessageSquareQuote, Newspaper, Settings2, Wrench } from "lucide-react";
 
 const singleton = (S: Parameters<StructureResolver>[0], type: string, title: string, icon: React.ComponentType) =>
   S.listItem().title(title).id(type).icon(icon).child(S.document().schemaType(type).documentId(type).title(title));
 
-/** Grouped sidebar: Settings, Pages, Services, Service areas, Gallery, Reviews, FAQs. */
+/** Grouped sidebar: Settings, Pages, Services, Service areas, Gallery, Reviews, FAQs, Blog. */
 export const structure: StructureResolver = (S) =>
   S.list()
     .title("Pineda's Roofing")
@@ -33,4 +33,5 @@ export const structure: StructureResolver = (S) =>
       S.listItem().title("Gallery").icon(Images).child(S.documentTypeList("project").title("Gallery projects").defaultOrdering([{ field: "date", direction: "desc" }])),
       S.listItem().title("Reviews").icon(MessageSquareQuote).child(S.documentTypeList("testimonial").title("Reviews")),
       S.listItem().title("FAQs").icon(CircleHelp).child(S.documentTypeList("faq").title("FAQs").defaultOrdering([{ field: "order", direction: "asc" }])),
+      S.listItem().title("Blog posts").icon(Newspaper).child(S.documentTypeList("post").title("Blog posts").defaultOrdering([{ field: "date", direction: "desc" }])),
     ]);

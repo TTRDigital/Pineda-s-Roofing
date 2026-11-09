@@ -26,7 +26,7 @@ export const fallbackSettings: SiteSettings = {
   bbb: {
     url: "https://www.bbb.org/us/md/silver-spring/profile/roofing-contractors/pinedas-construction-llc-0241-236064536",
     rating: "A+",
-    accreditedSince: "2026",
+    accreditedSince: "March 2026",
   },
   social: [
     { network: "facebook", href: "https://www.facebook.com/pinedasroofing" },

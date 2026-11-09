@@ -108,6 +108,8 @@ export type Project = {
   title: string;
   /** City, e.g. "Bowie". */
   location?: string;
+  /** Slug of the service-area page the project shows on (e.g. "towson"); defaults to matching `location`. */
+  area?: string;
   county?: string;
   /** What was wrong when we arrived. */
   problem?: string;
@@ -194,4 +196,22 @@ export type AboutContent = {
   mascot: { eyebrow?: string; heading: string; lead?: string; paragraphs: string[]; image?: Img; verse?: Verse };
   valuesIntro: Heading;
   values: Card[];
+};
+
+export type PostSection = { heading: string; paragraphs: string[] };
+
+export type Post = {
+  slug: string;
+  title: string;
+  /** One or two sentences for the blog list and search results. */
+  excerpt: string;
+  /** ISO date, e.g. "2026-11-09". */
+  date: string;
+  /** Service-area page slugs this post is about; the post is linked from those pages. */
+  areas?: string[];
+  /** Related service page slug. */
+  service?: string;
+  image?: Img;
+  sections: PostSection[];
+  seo?: Seo;
 };

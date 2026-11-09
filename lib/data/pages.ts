@@ -15,7 +15,7 @@ export const fallbackHome: HomeContent = {
       "Family-owned roofing contractor serving Baltimore, Howard, Anne Arundel and Prince George's County, MD. Roof replacement, repair, storm restoration and solar. MHIC# 142024.",
   },
   hero: {
-    eyebrow: "Baltimore · Howard · Anne Arundel · Prince George's",
+    eyebrow: "Baltimore City & County · Howard · Anne Arundel · Prince George's",
     heading: "Maryland's family-owned roofing contractor",
     text: "Residential and commercial roofing, repairs and storm restoration. One family business, a 10 year labor warranty and a lifetime manufacturer warranty.",
     image: images.aerialNewShingleRoof,
@@ -452,12 +452,11 @@ export const fallbackAbout: AboutContent = {
       slug: "fredy-pineda",
       name: "Fredy Pineda",
       role: "Owner",
-      // Replace with the bio Roberto sends, then remove noIndex.
+      // Replace with the bio Roberto sends.
       bio: [
         "Fredy Pineda owns and leads Pineda's Roofing, the family company German Pineda founded more than 30 years ago.",
         "He stands behind every estimate, every job and every warranty, and he's the person homeowners can call when they want to talk to the owner.",
       ],
-      noIndex: true,
       text: "Fredy owns and leads Pineda's Roofing today, carrying on the family company German Pineda founded more than 30 years ago. He stands behind every estimate, every crew and every warranty.",
       image: images.freddyPineda,
     },
@@ -465,12 +464,11 @@ export const fallbackAbout: AboutContent = {
       slug: "roberto-pineda",
       name: "Roberto Pineda",
       role: "Co-owner",
-      // Replace with the bio Roberto sends, then remove noIndex.
+      // Replace with the bio Roberto sends.
       bio: [
         "Roberto Pineda co-owns Pineda's Roofing with Fredy and manages the company day to day.",
         "He's focused on growing the family business across Maryland's main service areas and on its newest service, solar, while keeping it what it has always been: family-run, hands-on and honest with every homeowner.",
       ],
-      noIndex: true,
       text: "Roberto co-owns Pineda's Roofing with Fredy. Together they keep the company what it has always been: family-run, hands-on and honest with every homeowner.",
       image: images.robertoPineda,
     },

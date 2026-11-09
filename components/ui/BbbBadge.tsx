@@ -29,7 +29,7 @@ export function BbbBadge({ bbb, tone = "light", className = "" }: { bbb: SiteSet
           BBB Accredited Business
         </span>
         <span className={`mt-0.5 flex items-center gap-1.5 text-[0.8125rem] ${dark ? "text-on-dark" : "text-meta"}`}>
-          {bbb.rating} rating{bbb.accreditedSince ? ` · since ${bbb.accreditedSince}` : ""}
+          {bbb.rating} rating{bbb.accreditedSince ? ` · Accredited since ${bbb.accreditedSince}` : ""}
           <span className={`inline-flex items-center gap-1 font-semibold group-hover:underline ${dark ? "text-cyan" : "text-cyan-deep"}`}>
             · Verify on BBB
             <ExternalLink className="h-3 w-3" strokeWidth={2.25} aria-hidden="true" />

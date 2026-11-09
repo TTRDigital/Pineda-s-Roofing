@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { counties, getLocations, getSiteSettings } from "@/lib/content";
+import { counties, getLocations, getProjects, getSiteSettings } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { images } from "@/lib/data/images";
 import { PageHero } from "@/components/sections/PageHero";
@@ -15,7 +15,7 @@ const seo = {
 export const metadata: Metadata = pageMetadata(seo, "/contact-us", images.crew);
 
 export default async function ContactPage() {
-  const [settings, locations] = await Promise.all([getSiteSettings(), getLocations()]);
+  const [settings, locations, projects] = await Promise.all([getSiteSettings(), getLocations(), getProjects()]);
   return (
     <>
       <PageHero
@@ -23,7 +23,7 @@ export default async function ContactPage() {
         crumbs={[{ label: "Contact", href: "/contact-us" }]}
       />
       <ContactSection settings={settings} heading="Talk to a Pineda" />
-      <ServiceAreas counties={counties} locations={locations} phone={settings.phone} />
+      <ServiceAreas counties={counties} locations={locations} phone={settings.phone} projects={projects} />
     </>
   );
 }

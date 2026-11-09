@@ -1,12 +1,12 @@
 import type { MetadataRoute } from "next";
-import { getAboutPage, getLocations, getServices } from "@/lib/content";
+import { getAboutPage, getLocations, getPosts, getServices } from "@/lib/content";
 import { absoluteUrl } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [services, locations, about] = await Promise.all([getServices(), getLocations(), getAboutPage()]);
+  const [services, locations, about, posts] = await Promise.all([getServices(), getLocations(), getAboutPage(), getPosts()]);
   const entry = (path: string, priority: number, changeFrequency: "weekly" | "monthly" | "yearly" = "monthly") => ({ url: absoluteUrl(path), changeFrequency, priority });
   return [
     entry("/", 1, "weekly"),
@@ -19,6 +19,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     entry("/about-us", 0.7),
     ...about.team.filter((p) => !p.noIndex).map((p) => entry(`/about-us/${p.slug}`, 0.5)),
     entry("/faq", 0.6),
+    entry("/blog", 0.6, "weekly"),
+    ...posts.map((p) => ({ ...entry(`/blog/${p.slug}`, 0.6), lastModified: p.date })),
     entry("/service-area", 0.7),
     ...locations.filter((l) => l.featured).map((l) => entry(`/service-area/${l.slug}`, 0.7)),
     entry("/contact-us", 0.7),

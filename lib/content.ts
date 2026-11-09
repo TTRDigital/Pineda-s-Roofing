@@ -7,6 +7,7 @@ import { fallbackAbout, fallbackAtlas, fallbackHome, fallbackInsurance, fallback
 import { fallbackServices } from "@/lib/data/services";
 import { counties, fallbackLocations } from "@/lib/data/locations";
 import { localLogos } from "@/lib/data/logos";
+import { fallbackPosts } from "@/lib/data/posts";
 import type {
   AboutContent,
   AtlasContent,
@@ -15,6 +16,7 @@ import type {
   InsuranceContent,
   Location,
   Partners,
+  Post,
   Project,
   RoofingContent,
   Service,
@@ -109,7 +111,7 @@ export async function getLocation(slug: string) {
 
 export const getProjects = cache(async (): Promise<Project[]> => {
   const cms = await sanityFetch<Project[]>(
-    `*[_type == "project"] | order(date desc){ "id": _id, title, location, county, problem, solution, category, summary, featured, "before": before${IMG}, "after": after${IMG}, "images": images[]${IMG} }`,
+    `*[_type == "project"] | order(date desc){ "id": _id, title, location, "area": area->slug.current, county, problem, solution, category, summary, featured, "before": before${IMG}, "after": after${IMG}, "images": images[]${IMG} }`,
     {},
     ["project"],
   );
@@ -186,3 +188,19 @@ export const getAboutPage = cache(async (): Promise<AboutContent> => {
   );
   return merge(fallbackAbout, cms);
 });
+
+/* ---------- Blog ---------- */
+
+const POST = `{ "slug": slug.current, title, excerpt, date, "areas": areas[]->slug.current, "service": service->slug.current, "image": image${IMG}, sections[]{ heading, paragraphs }, ${SEO} }`;
+
+export const getPosts = cache(async (): Promise<Post[]> => {
+  const cms = await sanityFetch<Partial<Post>[]>(`*[_type == "post" && defined(slug.current)] | order(date desc) ${POST}`, {}, ["post"]);
+  const bySlug = new Map(fallbackPosts.map((p) => [p.slug, p]));
+  const fromCms = (cms ?? []).map((c) => merge(bySlug.get(c.slug ?? "") ?? { slug: c.slug ?? "", title: "", excerpt: "", date: "", sections: [] }, c));
+  const missing = fallbackPosts.filter((f) => !fromCms.some((c) => c.slug === f.slug));
+  return [...fromCms, ...missing].filter((p) => p.title).sort((a, b) => b.date.localeCompare(a.date));
+});
+
+export async function getPost(slug: string) {
+  return (await getPosts()).find((p) => p.slug === slug) ?? null;
+}

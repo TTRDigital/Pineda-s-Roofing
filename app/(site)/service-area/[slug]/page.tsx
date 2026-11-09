@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import { counties, getLocation, getLocations, getServices, getSiteSettings, getTestimonials } from "@/lib/content";
+import { counties, getLocation, getLocations, getPosts, getProjects, getServices, getSiteSettings, getTestimonials } from "@/lib/content";
+import { projectsFor } from "@/lib/projects";
 import { pageMetadata } from "@/lib/seo";
 import { images } from "@/lib/data/images";
 import { fallbackLocations } from "@/lib/data/locations";
@@ -14,6 +15,7 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Gallery } from "@/components/gallery/Gallery";
 
 export async function generateStaticParams() {
   return fallbackLocations.filter((l) => l.featured).map((l) => ({ slug: l.slug }));
@@ -42,8 +44,17 @@ const heroPhotos = [images.homeNewRoofAerial, images.aerialNewShingleRoof, image
 
 export default async function LocationPage(props: PageProps<"/service-area/[slug]">) {
   const { slug } = await props.params;
-  const [loc, locations, services, settings, testimonials] = await Promise.all([getLocation(slug), getLocations(), getServices(), getSiteSettings(), getTestimonials()]);
+  const [loc, locations, services, settings, testimonials, projects] = await Promise.all([
+    getLocation(slug),
+    getLocations(),
+    getServices(),
+    getSiteSettings(),
+    getTestimonials(),
+    getProjects(),
+  ]);
   if (!loc) notFound();
+  const posts = (await getPosts()).filter((p) => p.areas?.includes(slug));
+  const pastProjects = projectsFor(loc, projects, locations);
 
   const isCounty = loc.kind === "county";
   const pages = locations.filter((l) => l.featured);
@@ -111,6 +122,21 @@ export default async function LocationPage(props: PageProps<"/service-area/[slug
         </section>
       ) : null}
 
+      {pastProjects.length ? (
+        <section id="past-projects" className="section bg-white">
+          <div className="container-x">
+            <SectionHeading
+              eyebrow="Past projects"
+              heading={`Past roofing projects in ${loc.name}`}
+              text={`Real jobs we've completed in ${loc.name}: what the problem was and what we did. Tap a project to see every photo.`}
+            />
+            <div className="mt-12">
+              <Gallery projects={pastProjects} filters={false} />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {loc.neighborhoods?.length ? (
         <section className="border-y border-line bg-white py-10">
           <div className="container-x flex flex-wrap items-center gap-3">
@@ -157,6 +183,23 @@ export default async function LocationPage(props: PageProps<"/service-area/[slug
         cards={serviceCards}
       />
       {loc.faqs?.length ? <FaqSection intro={{ eyebrow: "FAQ", heading: `${loc.name} roofing questions` }} items={loc.faqs} /> : null}
+      {posts.length ? (
+        <section className="bg-mist py-14">
+          <div className="container-x">
+            <h2 className="text-h3 uppercase text-ink">From our blog: {loc.name}</h2>
+            <ul className="mt-6 grid gap-4 md:grid-cols-2">
+              {posts.map((p) => (
+                <li key={p.slug}>
+                  <Link href={`/blog/${p.slug}`} className="group flex h-full flex-col rounded-[var(--radius-card)] border border-line bg-white p-6 transition-colors hover:border-cyan">
+                    <span className="font-display text-xl font-bold uppercase text-ink group-hover:text-cyan-deep">{p.title}</span>
+                    <span className="mt-2 text-body">{p.excerpt}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
       <Testimonials items={testimonials} settings={settings} />
       {nearby.length || countyPage ? (
         <section className="bg-white py-14">

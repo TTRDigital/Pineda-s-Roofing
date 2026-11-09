@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
-import type { Location } from "@/lib/types";
+import type { Location, Project } from "@/lib/types";
+import { projectCountsByCity } from "@/lib/projects";
 import type { County } from "@/lib/data/locations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceAreaMap } from "@/components/sections/ServiceAreaMap";
@@ -11,13 +12,17 @@ export function ServiceAreas({
   locations,
   tone = "white",
   phone,
+  projects = [],
 }: {
   counties: County[];
   locations: Location[];
+  /** Gallery projects; cities with past projects are marked on the map and in the list. */
+  projects?: Project[];
   tone?: "white" | "mist";
   phone: string;
 }) {
   const pageFor = (city: string) => locations.find((l) => l.featured && l.name.toLowerCase() === city.toLowerCase());
+  const projectCounts = projectCountsByCity(projects, locations);
   return (
     <section className={`section ${tone === "mist" ? "bg-mist" : "bg-white"}`}>
       <div className="container-x">
@@ -28,7 +33,7 @@ export function ServiceAreas({
         />
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
           <div className="lg:sticky lg:top-28" data-reveal>
-            <ServiceAreaMap counties={counties} locations={locations} />
+            <ServiceAreaMap counties={counties} locations={locations} projectCounts={projectCounts} />
           </div>
           <ul className="grid gap-4 sm:grid-cols-2">
             {counties.map((c, i) => (
@@ -50,8 +55,12 @@ export function ServiceAreas({
                     return (
                       <li key={city}>
                         {page ? (
-                          <Link href={`/service-area/${page.slug}`} className="inline-flex min-h-9 items-center rounded-full bg-cyan-50 px-3.5 text-sm font-semibold text-ink ring-1 ring-cyan-100 transition-colors hover:bg-cyan hover:ring-cyan">
+                          <Link
+                            href={`/service-area/${page.slug}${projectCounts[city] ? "#past-projects" : ""}`}
+                            className={`inline-flex min-h-9 items-center gap-1.5 rounded-full bg-cyan-50 px-3.5 text-sm font-semibold text-ink transition-colors hover:bg-cyan hover:ring-cyan ${projectCounts[city] ? "ring-2 ring-cyan" : "ring-1 ring-cyan-100"}`}
+                          >
                             {city}
+                            {projectCounts[city] ? <span className="text-xs font-bold text-cyan-deep">· {projectCounts[city]} {projectCounts[city] === 1 ? "project" : "projects"}</span> : null}
                           </Link>
                         ) : (
                           <span className="inline-flex min-h-9 items-center rounded-full bg-mist px-3.5 text-sm text-body">{city}</span>

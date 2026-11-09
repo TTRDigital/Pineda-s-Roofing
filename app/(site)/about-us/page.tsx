@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { counties, getAboutPage, getLocations, getSiteSettings, getTestimonials } from "@/lib/content";
+import { counties, getAboutPage, getLocations, getProjects, getSiteSettings, getTestimonials } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { images } from "@/lib/data/images";
 import { PageHero } from "@/components/sections/PageHero";
@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const [page, settings, testimonials, locations] = await Promise.all([getAboutPage(), getSiteSettings(), getTestimonials(), getLocations()]);
+  const [page, settings, testimonials, locations, projects] = await Promise.all([getAboutPage(), getSiteSettings(), getTestimonials(), getLocations(), getProjects()]);
   return (
     <>
       <PageHero hero={page.hero} crumbs={[{ label: "About us", href: "/about-us" }]} />
@@ -135,7 +135,7 @@ export default async function AboutPage() {
         </figure>
       </section>
       <Testimonials items={testimonials} settings={settings} />
-      <ServiceAreas counties={counties} locations={locations} phone={settings.phone} />
+      <ServiceAreas counties={counties} locations={locations} phone={settings.phone} projects={projects} />
       <CtaBand heading="Ready to talk?" text="Free inspection, no pressure. We will tell you straight what your roof actually needs." phone={settings.phone} phoneHref={settings.phoneHref} />
     </>
   );
