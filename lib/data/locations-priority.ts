@@ -619,6 +619,62 @@ export const localDetail: Record<string, Partial<Location>> = {
       { heading: "Roof replacement in Silver Spring", paragraphs: ["Silver Spring is our home base. As a roofing contractor in Silver Spring, we've worked on the brick colonials, Cape Cods and ramblers that fill its neighborhoods for years, and we know what usually hides under their old shingles."] },
     ],
   },
+  westminster: {
+    sections: [
+      { heading: "Roof replacement in Westminster", paragraphs: ["Many Westminster homes built in the 1980s and 1990s are now on their original roof. As a roofing contractor in Westminster, we replace them with ice and water shield at the eaves and valleys, better attic ventilation and shingles nailed for high wind."] },
+      { heading: "Roof repair in Westminster", paragraphs: ["Older homes near Main Street often leak at the chimney or along old flashing. We find the source, fix it and show you photos of the repair."] },
+    ],
+  },
+  frederick: {
+    sections: [
+      { heading: "Roof replacement in Frederick", paragraphs: ["In downtown Frederick's historic district, exterior changes can need review by the city's Historic Preservation Commission before work starts. As a roofing contractor in Frederick, we give you the product details you need and plan the timing around the review."] },
+      { heading: "Ice dam roof repair in Frederick", paragraphs: ["Frederick's colder winters make ice dams one of the most common leaks we fix here. We repair the damage, then fix the cause: ventilation, insulation gaps and missing ice and water shield."] },
+    ],
+  },
+  wheaton: {
+    sections: [
+      { heading: "Roof replacement in Wheaton", paragraphs: ["Wheaton's post-war Cape Cods and ramblers often have dormers, low attics and decking that has been re-roofed more than once. As a roofing contractor in Wheaton, we tear off to the deck, repair what's soft and add the ventilation these homes usually lack."] },
+      { heading: "Roof repair in Wheaton", paragraphs: ["Wheaton is minutes from our Silver Spring base, so we can usually inspect a leak quickly. Dormer walls and chimney flashing are where most Wheaton leaks start."] },
+    ],
+  },
+  rockville: {
+    sections: [
+      { heading: "Roof replacement in Rockville", paragraphs: ["Rockville has 1950s ramblers in neighborhoods like Twinbrook and newer HOA communities like King Farm and Fallsgrove. As a roofing contractor in Rockville, we handle both: decking and ventilation upgrades on older homes, and HOA color and product details on newer ones."] },
+      { heading: "Storm damage roof repair in Rockville", paragraphs: ["After summer storms we inspect for wind-lifted shingles, hail hits and limb damage, photograph everything and work with your insurance company."] },
+    ],
+  },
+  bethesda: {
+    sections: [
+      { heading: "Roof replacement in Bethesda", paragraphs: ["Many Bethesda homes are older brick colonials with chimneys, steep slopes and decades-old flashing, next to newer homes with complex rooflines. As a roofing contractor in Bethesda, we rebuild flashing with the roof instead of reusing worn metal."] },
+      { heading: "Chimney flashing and roof repair in Bethesda", paragraphs: ["Where a chimney meets the roof is the most common leak point we find in Bethesda. We repair the flashing and the masonry together so the fix lasts."] },
+    ],
+  },
+  gaithersburg: {
+    sections: [
+      { heading: "Roof replacement in Gaithersburg", paragraphs: ["From Montgomery Village's 1960s and 1970s homes to the Kentlands and Lakelands, Gaithersburg has many communities with HOA or architectural review. As a roofing contractor in Gaithersburg, we provide the shingle and color details for approval and schedule around it."] },
+      { heading: "Townhome roofing in Gaithersburg", paragraphs: ["Townhome rows share roof edges with neighbors. We tie each new roof in cleanly and seal the joints, where townhome leaks usually start."] },
+    ],
+  },
+  germantown: {
+    sections: [
+      { heading: "Roof replacement in Germantown", paragraphs: ["Much of Germantown was built in the 1980s and 1990s, and many of those townhomes and single-family homes are on their original roof. As a roofing contractor in Germantown, we replace them with full tear-off, new underlayment and proper ventilation."] },
+    ],
+  },
+  potomac: {
+    sections: [
+      { heading: "Roof replacement in Potomac", paragraphs: ["Potomac's larger homes often have complex roofs with many valleys, dormers, skylights and chimneys. As a roofing contractor in Potomac, we pay close attention to every flashing detail, because on a big roof that's where leaks begin."] },
+    ],
+  },
+  olney: {
+    sections: [
+      { heading: "Roof replacement in Olney", paragraphs: ["Many Olney homes from the 1970s through the 1990s are due for a new roof. As a roofing contractor in Olney, we install ice and water shield at the eaves and valleys and improve attic ventilation to stop the ice dams Olney winters bring."] },
+    ],
+  },
+  "northern-virginia": {
+    sections: [
+      { heading: "Roof replacement in Northern Virginia", paragraphs: ["From older brick colonials in Arlington and Alexandria to larger homes in McLean and Fairfax, we bring the same materials and inspection process we use across Maryland."] },
+    ],
+  },
   "washington-dc": {
     tier: 2,
     heading: "Solar Company & Roofing Contractor in Washington, DC",
