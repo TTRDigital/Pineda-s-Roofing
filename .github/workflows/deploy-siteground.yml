@@ -1,6 +1,9 @@
 # Builds the static site and uploads it to SiteGround over FTPS.
-# Runs on every push, when Sanity publishes (webhook -> repository_dispatch),
-# and from Actions > "Deploy to SiteGround" > Run workflow.
+# The live site is ALWAYS built from the `live` branch, whatever started the run:
+# a push to `live`, a Sanity publish (repository_dispatch) or Actions >
+# "Deploy to SiteGround" > Run workflow. Work in progress stays on
+# claude/youthful-clarke-wb7b1z, which Vercel shows as the staging site
+# (pineda-s-roofing.vercel.app). To go live: merge it into `live`.
 #
 # Repository secrets (Settings > Secrets and variables > Actions):
 #   SG_FTP_SERVER    FTP host from SiteGround Site Tools > Site > FTP Accounts
@@ -12,7 +15,7 @@ name: Deploy to SiteGround
 
 on:
   push:
-    branches: [claude/youthful-clarke-wb7b1z]
+    branches: [live]
   repository_dispatch:
     types: [sanity-publish]
   workflow_dispatch:
@@ -34,6 +37,8 @@ jobs:
       GHL_WEBHOOK_URL: ${{ secrets.GHL_WEBHOOK_URL }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: live
 
       - uses: actions/setup-node@v4
         with:
