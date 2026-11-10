@@ -670,11 +670,6 @@ export const localDetail: Record<string, Partial<Location>> = {
       { heading: "Roof replacement in Olney", paragraphs: ["Many Olney homes from the 1970s through the 1990s are due for a new roof. As a roofing contractor in Olney, we install ice and water shield at the eaves and valleys and improve attic ventilation to stop the ice dams Olney winters bring."] },
     ],
   },
-  "northern-virginia": {
-    sections: [
-      { heading: "Roof replacement in Northern Virginia", paragraphs: ["From older brick colonials in Arlington and Alexandria to larger homes in McLean and Fairfax, we bring the same materials and inspection process we use across Maryland."] },
-    ],
-  },
   "washington-dc": {
     tier: 2,
     heading: "Solar Company & Roofing Contractor in Washington, DC",

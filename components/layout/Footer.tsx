@@ -95,7 +95,7 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
             <li>
               <Link href="/service-area" className="flex items-start gap-3 hover:text-cyan">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-cyan" strokeWidth={2} aria-hidden="true" />
-                Serving Maryland, Washington D.C. &amp; Northern Virginia
+                Serving Maryland &amp; Washington, D.C.
               </Link>
             </li>
             {settings.hours.length ? (

@@ -36,10 +36,7 @@ const LABEL_OFFSET: Record<string, [number, number, "start" | "end" | "middle"]>
   Towson: [9, -4, "start"],
   Baltimore: [9, 6, "start"],
   Westminster: [9, 4, "start"],
-  Arlington: [-9, 2, "end"],
-  Alexandria: [9, 10, "start"],
-  Fairfax: [-9, 4, "end"],
-  Catonsville: [-9, 4, "end"],
+  Catonsville: [9, 14, "start"],
   "Glen Burnie": [9, 4, "start"],
   "Severna Park": [9, 4, "start"],
   Elkridge: [9, 6, "start"],
@@ -57,7 +54,6 @@ const COUNTY_LABEL: Record<string, [number, number]> = {
   "Baltimore County": [-76.62, 39.5],
   "Baltimore City": [-76.44, 39.25],
   "Carroll County": [-77.03, 39.66],
-  "Northern Virginia": [-77.3, 38.77],
   "Washington, D.C.": [-76.99, 38.85],
 };
 

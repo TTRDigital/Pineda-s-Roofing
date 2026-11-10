@@ -3,8 +3,30 @@
   "headers": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "has": [
+        {
+          "type": "host",
+          "value": ".*\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/service-area/northern-virginia/",
+      "destination": "/service-area/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/northern-virginia",
+      "destination": "/service-area/",
+      "permanent": true
     }
   ]
 }

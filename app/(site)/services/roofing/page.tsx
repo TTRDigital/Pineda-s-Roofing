@@ -40,7 +40,7 @@ export default async function RoofingPage() {
       <LogoGrid id="brands" eyebrow="Materials" heading={partners.brandsHeading} text={partners.brandsText} items={partners.brands} tone={page.sections.length % 2 ? "mist" : "white"} />
       <AtlasBand />
       <LogoGrid id="insurance" eyebrow="Insurance claims" heading={partners.insuranceHeading} text={partners.insuranceText} items={partners.insurers} tone="mist" />
-      <Testimonials items={testimonials} settings={settings} />
+      <Testimonials items={testimonials} settings={settings} page="roofing" />
       <FaqSection intro={{ eyebrow: "FAQ", heading: "Roofing questions" }} items={page.faqs} tone="white" />
       <ContactSection settings={settings} />
     </>

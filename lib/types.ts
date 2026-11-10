@@ -48,6 +48,8 @@ export type SiteSettings = {
   reviewsUrl?: string;
   /** Google "write a review" link from the Business Profile. */
   writeReviewUrl?: string;
+  /** Embed code for a live Google reviews widget (e.g. from GoHighLevel Reputation). Replaces the static review cards. */
+  reviewsWidget?: string;
   bbb?: { url: string; rating: string; accreditedSince?: string };
   social: { network: string; href: string }[];
   headerCta: Cta;
@@ -149,6 +151,8 @@ export type AtlasContent = {
   seo: Seo;
   hero: PageHero;
   badge?: Img;
+  /** Atlas Pro snippet code from the Atlas Pro portal (Snippets), shown below the hero. */
+  embed?: string;
   sections: FeatureBlock[];
   qualitiesIntro: Heading;
   qualities: Card[];

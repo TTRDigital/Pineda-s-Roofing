@@ -48,7 +48,7 @@ const FEATURE = `{ "anchor": anchor.current, icon, eyebrow, title, lead, paragra
 
 export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
   const cms = await sanityFetch<Partial<SiteSettings>>(
-    `*[_id == "siteSettings"][0]{ name, legalName, phone, email, license, city, region, hours[]{ label, value }, emergencyText, foundedYear, googleRating, reviewCount, reviewsUrl, writeReviewUrl, bbb{ url, rating, accreditedSince }, social[]{ network, href }, headerCta{ label, href }, verse{ text, reference }, "logo": logo${LOGO} }`,
+    `*[_id == "siteSettings"][0]{ name, legalName, phone, email, license, city, region, hours[]{ label, value }, emergencyText, foundedYear, googleRating, reviewCount, reviewsUrl, writeReviewUrl, reviewsWidget, bbb{ url, rating, accreditedSince }, social[]{ network, href }, headerCta{ label, href }, verse{ text, reference }, "logo": logo${LOGO} }`,
     {},
     ["siteSettings"],
   );
@@ -162,7 +162,7 @@ export const getRoofingPage = cache(async (): Promise<RoofingContent> => {
 
 export const getAtlasPage = cache(async (): Promise<AtlasContent> => {
   const cms = await sanityFetch<Partial<AtlasContent>>(
-    `*[_id == "atlasPage"][0]{ ${HERO}, "badge": badge${IMG}, sections[]${FEATURE}, qualitiesIntro${HEADING}, qualities[]${CARD}, jobPhotosIntro${HEADING}, "jobPhotos": jobPhotos[]${IMG}, productsIntro${HEADING}, products[]{ name, tagline, text, highlights, "image": image${IMG} }, warrantyIntro${HEADING}, warranties[]${CARD}, faqs[]${FAQ}, ${SEO} }`,
+    `*[_id == "atlasPage"][0]{ ${HERO}, "badge": badge${IMG}, embed, sections[]${FEATURE}, qualitiesIntro${HEADING}, qualities[]${CARD}, jobPhotosIntro${HEADING}, "jobPhotos": jobPhotos[]${IMG}, productsIntro${HEADING}, products[]{ name, tagline, text, highlights, "image": image${IMG} }, warrantyIntro${HEADING}, warranties[]${CARD}, faqs[]${FAQ}, ${SEO} }`,
     {},
     ["atlasPage"],
   );

@@ -15,7 +15,7 @@ export type County = {
   cities: string[];
 };
 
-/* Ordered by priority: main focus areas first, then the second tier, then D.C. and Northern Virginia. */
+/* Ordered by priority: main focus areas first, then the second tier, then D.C. */
 export const counties: County[] = [
   { name: "Baltimore County", state: "MD", tier: 1, page: "baltimore-county", fips: ["24005"], cities: ["Towson", "Catonsville", "Owings Mills", "Pikesville", "Parkville", "Perry Hall", "Dundalk"] },
   { name: "Baltimore City", state: "MD", tier: 1, page: "baltimore-city", fips: ["24510"], cities: ["Baltimore"] },
@@ -33,8 +33,6 @@ export const counties: County[] = [
     cities: ["Silver Spring", "Aspen Hill", "Wheaton", "Takoma Park", "Olney", "Rockville", "Bethesda", "Gaithersburg", "Germantown", "Potomac"],
   },
   { name: "Washington, D.C.", state: "DC", tier: 2, page: "washington-dc", fips: ["11001"], cities: ["Capitol Hill", "Georgetown", "Petworth", "Brookland", "Cleveland Park"] },
-  // Arlington, Fairfax County, and the cities of Alexandria, Falls Church and Fairfax.
-  { name: "Northern Virginia", state: "VA", tier: 2, page: "northern-virginia", fips: ["51013", "51059", "51510", "51610", "51600"], cities: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"] },
 ];
 
 /** [longitude, latitude] of every city in `counties`, for the service area map (from OpenStreetMap). */
@@ -48,8 +46,7 @@ export const cityCoords: Record<string, [number, number]> = {
   "Glen Burnie": [-76.6152, 39.1595], Crofton: [-76.6842, 39.016], "Severna Park": [-76.572, 39.0826], Odenton: [-76.6876, 39.0658],
   Towson: [-76.6148, 39.3965], "Owings Mills": [-76.7957, 39.4042], Pikesville: [-76.708, 39.3852], Catonsville: [-76.7455, 39.261],
   Baltimore: [-76.6108, 39.2909], Westminster: [-76.9959, 39.5752], Eldersburg: [-76.9474, 39.4137], Sykesville: [-76.9689, 39.366],
-  Alexandria: [-77.047, 38.8051], Arlington: [-77.0893, 38.8769], Fairfax: [-77.3064, 38.8462], "Falls Church": [-77.1711, 38.8823],
-  McLean: [-77.1858, 38.9367], "Capitol Hill": [-77.0003, 38.889], Georgetown: [-77.0628, 38.9052], Petworth: [-77.025, 38.9459],
+  "Capitol Hill": [-77.0003, 38.889], Georgetown: [-77.0628, 38.9052], Petworth: [-77.025, 38.9459],
   Brookland: [-76.9842, 38.9328], "Cleveland Park": [-77.0587, 38.9352],
   "Upper Marlboro": [-76.7497, 38.8159], Parkville: [-76.5397, 39.3773], "Perry Hall": [-76.4636, 39.4126], Dundalk: [-76.5205, 39.2507],
 };
@@ -473,29 +470,6 @@ const cityPages: Location[] = [
       description: "Roof repair and flat roof replacement for Washington, D.C. rowhouses and homes, from Capitol Hill to Georgetown. Family owned since 1992.",
     },
   },
-  {
-    slug: "northern-virginia",
-    name: "Northern Virginia",
-    state: "VA",
-    featured: true,
-    lead: "Pineda's Roofing serves Northern Virginia homeowners in Alexandria, Arlington, Fairfax, Falls Church and McLean.",
-    paragraphs: [
-      "Northern Virginia shares Maryland's weather: summer thunderstorms, occasional hail and winter ice. The same problems show up here, from wind-lifted shingles to ice dams along the eaves.",
-      "Homes range from older brick colonials in Arlington and Alexandria to larger homes in McLean and Fairfax. We bring the same materials and standards to every one.",
-    ],
-    highlights: [
-      "Free roof inspections in Northern Virginia",
-      "Atlas Pinnacle Pristine shingles",
-      "Storm and insurance claim help",
-      "Managed by the Pineda family",
-      "Photo documentation of every finding",
-    ],
-    neighborhoods: ["Alexandria", "Arlington", "Fairfax", "Falls Church", "McLean"],
-    seo: {
-      title: "Roofing Contractor in Northern Virginia | Pineda's Roofing",
-      description: "Roof repair and replacement in Alexandria, Arlington, Fairfax, Falls Church and McLean from a family-owned roofer with 30+ years of experience.",
-    },
-  },
 ];
 
 /* Display and page order: overview, then each priority county followed by its cities. */
@@ -510,7 +484,6 @@ const order = [
   "frederick-county", "frederick",
   "montgomery-county", "silver-spring", "wheaton", "rockville", "bethesda", "gaithersburg", "germantown", "potomac", "olney",
   "washington-dc",
-  "northern-virginia",
 ];
 
 const all = [...countyPages, ...priorityCityPages, ...cityPages].map((l) => ({ ...l, ...localDetail[l.slug] }));

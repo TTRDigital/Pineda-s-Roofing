@@ -33,7 +33,7 @@ export default async function InsurancePage() {
       <LogoGrid eyebrow="Every carrier" heading={partners.insuranceHeading} text={partners.insuranceText} items={partners.insurers} tone="mist" />
       <CardGrid intro={page.stepsIntro} cards={page.steps} numbered columns={3} />
       <CardGrid intro={page.signsIntro} cards={page.signs} tone="dark" columns={4} />
-      <Testimonials items={testimonials} settings={settings} />
+      <Testimonials items={testimonials} settings={settings} page="roofing-insurance" />
       <FaqSection intro={{ eyebrow: "FAQ", heading: "Insurance claim questions" }} items={page.faqs} />
       <ContactSection settings={settings} heading="Think you have storm damage?" defaultService="Storm damage / insurance claim" />
     </>

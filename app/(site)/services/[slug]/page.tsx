@@ -70,7 +70,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
         <FeatureSection key={b.title} block={b} index={i} tone={i % 2 ? "mist" : "white"} />
       ))}
       {roofing ? <LogoMarquee label="Brands we install" items={partners.brands} /> : null}
-      <Testimonials items={testimonials} settings={settings} />
+      <Testimonials items={testimonials} settings={settings} page={slug} />
       <FaqSection intro={{ eyebrow: "FAQ", heading: `${service.title} questions` }} items={service.faqs} tone="mist" />
       <RelatedServices services={related} />
       <ContactSection settings={settings} defaultService={formService[slug] ?? (service.category === "exterior" ? "Other" : undefined)} />

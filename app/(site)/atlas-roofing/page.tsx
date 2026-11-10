@@ -10,6 +10,7 @@ import { RoofDiagram } from "@/components/sections/RoofDiagram";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { EmbedHtml } from "@/components/ui/EmbedHtml";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -42,6 +43,14 @@ export default async function AtlasPage() {
           </div>
         ) : null}
       </PageHero>
+
+      {page.embed ? (
+        <section className="bg-white py-12">
+          <div className="container-x">
+            <EmbedHtml html={page.embed} className="atlas-embed mx-auto max-w-5xl" />
+          </div>
+        </section>
+      ) : null}
 
       {page.sections.slice(0, 1).map((b, i) => (
         <FeatureSection key={b.title} block={b} index={i} tone="white" />

@@ -200,7 +200,7 @@ export default async function LocationPage(props: PageProps<"/service-area/[slug
           </div>
         </section>
       ) : null}
-      <Testimonials items={testimonials} settings={settings} />
+      <Testimonials items={testimonials} settings={settings} page={slug} />
       {nearby.length || countyPage ? (
         <section className="bg-white py-14">
           <div className="container-x">

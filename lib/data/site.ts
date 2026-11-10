@@ -21,7 +21,8 @@ export const fallbackSettings: SiteSettings = {
   emergencyText: "24/7 Emergency Roof Repair",
   foundedYear: 1992,
   googleRating: "5.0",
-  reviewCount: "22",
+  // Leave empty unless kept current: Roberto says "22" is out of date. With no count, the site says "Reviews on Google".
+  reviewCount: undefined,
   reviewsUrl: "https://g.co/kgs/FDvaBcB",
   bbb: {
     url: "https://www.bbb.org/us/md/silver-spring/profile/roofing-contractors/pinedas-construction-llc-0241-236064536",

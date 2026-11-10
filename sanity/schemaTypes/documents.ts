@@ -48,6 +48,13 @@ export const siteSettings = defineType({
     defineField({ name: "googleRating", title: "Google rating", type: "string", description: "e.g. 4.9. Leave empty to hide." }),
     defineField({ name: "reviewCount", title: "Google review count", type: "string" }),
     defineField({ name: "reviewsUrl", title: "Google reviews link", type: "url", description: "Opens your Google Business Profile so visitors can read every review." }),
+    defineField({
+      name: "reviewsWidget",
+      title: "Live Google reviews widget (embed code)",
+      type: "text",
+      rows: 5,
+      description: "Paste the widget code (e.g. GoHighLevel > Reputation > Widgets). It shows your current Google reviews and count in place of the review cards.",
+    }),
     defineField({ name: "writeReviewUrl", title: "Google \"write a review\" link", type: "url", description: "From Google Business Profile > Ask for reviews. Leave empty to hide the button." }),
     defineField({
       name: "bbb",
@@ -195,6 +202,14 @@ export const atlasPage = defineType({
   fields: [
     hero,
     defineField({ name: "badge", title: "Atlas logo (shown in the hero)", type: "altImage", group: "content" }),
+    defineField({
+      name: "embed",
+      title: "Atlas Pro snippet (embed code)",
+      type: "text",
+      rows: 6,
+      group: "content",
+      description: "Atlas Pro portal > Snippets > copy the code and paste it here. It shows right below the page header.",
+    }),
     sections(),
     heading("qualitiesIntro", "Atlas qualities heading"),
     defineField({ name: "qualities", title: "Atlas qualities", type: "array", of: [defineArrayMember({ type: "card" })], group: "content" }),

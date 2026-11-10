@@ -10,7 +10,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const seo = {
-  title: "Service Area: Maryland, D.C. & Northern Virginia | Pineda's Roofing",
+  title: "Service Area: Maryland & Washington, D.C. | Pineda's Roofing",
   description: "Roofing contractor serving Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's County, plus Carroll, Frederick, Montgomery and Washington, D.C. solar.",
 };
 

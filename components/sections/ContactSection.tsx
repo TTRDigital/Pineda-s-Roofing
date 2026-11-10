@@ -49,7 +49,7 @@ export function ContactSection({
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ink-3 text-cyan">
                   <MapPin className="h-5 w-5" strokeWidth={2} aria-hidden="true" />
                 </span>
-                Serving Maryland, D.C. &amp; Northern Virginia
+                Serving Maryland &amp; Washington, D.C.
               </Link>
             </li>
             <li className="flex items-start gap-4">
