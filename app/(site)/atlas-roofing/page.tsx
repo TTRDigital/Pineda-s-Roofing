@@ -45,9 +45,14 @@ export default async function AtlasPage() {
       </PageHero>
 
       {page.embed ? (
-        <section className="bg-white py-12">
+        <section id="atlas-shingles" className="section bg-white">
           <div className="container-x">
-            <EmbedHtml html={page.embed} className="atlas-embed mx-auto max-w-5xl" />
+            <SectionHeading
+              eyebrow="Atlas shingle colors"
+              heading="Choose your Atlas shingles"
+              text="Browse Atlas shingle lines and colors. Enter your ZIP code to see the colors available in our area, then ask us to bring samples to your free estimate."
+            />
+            <EmbedHtml html={page.embed} className="mx-auto mt-10 max-w-6xl overflow-hidden rounded-[var(--radius-card)] border border-line" />
           </div>
         </section>
       ) : null}

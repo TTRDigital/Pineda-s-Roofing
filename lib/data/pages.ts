@@ -210,6 +210,9 @@ export const fallbackRoofing: RoofingContent = {
 
 export const fallbackAtlas: AtlasContent = {
   badge: { src: "/images/logos/atlas.svg", alt: "Atlas Roofing", width: 600, height: 412 },
+  // Atlas Pro "web injector" snippet from Roberto's Atlas Pro account: Atlas's shingle and color selector.
+  embed:
+    "<iframe style='width: 100%; height: 100%; min-height:1200px;' frameborder=\"0\" id='atlas-web-injector' title='Atlas Roofing shingle and color selector' loading='lazy' src='https://www.atlasroofing.com/1.0/AWI/all/42231d7cfdc699a3c9e8e2ca56597cf9'></iframe>",
   seo: {
     title: "Atlas Roofing Shingles in Maryland | Pineda's Roofing",
     description:

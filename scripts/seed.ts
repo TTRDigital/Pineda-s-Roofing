@@ -179,6 +179,7 @@ async function build() {
     _type: "atlasPage",
     hero: await hero(a.hero),
     badge: a.badge ? await altImage(a.badge) : undefined,
+    embed: a.embed,
     sections: await features(a.sections),
     qualitiesIntro: a.qualitiesIntro,
     qualities: cards(a.qualities),
