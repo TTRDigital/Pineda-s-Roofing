@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { ArrowRight, Check, CircleAlert, LoaderCircle, Phone } from "lucide-react";
 import { track } from "@/lib/track";
-import { ATTRIBUTION_STORAGE_KEY, attributionKeys, propertyOptions, serviceOptions } from "@/lib/lead-options";
+import { ATTRIBUTION_STORAGE_KEY, SOLAR_SERVICE, attributionKeys, propertyOptions, roofingNeedOptions, serviceOptions, solarMarkets } from "@/lib/lead-options";
 
-type Field = "name" | "phone" | "email" | "zip" | "address" | "property" | "service" | "message";
+type Field = "name" | "phone" | "email" | "zip" | "address" | "property" | "service" | "message" | "market" | "roofing";
 type Values = Record<Field, string>;
 type Errors = Partial<Record<Field | "consent", string>>;
 
@@ -18,11 +18,13 @@ const validators: Record<Field, (v: string) => string | undefined> = {
   zip: (v) => (/^\d{5}(-\d{4})?$/.test(v.trim()) ? undefined : "Please enter a 5-digit ZIP code."),
   address: () => undefined,
   property: () => undefined,
+  market: () => undefined,
+  roofing: () => undefined,
   service: (v) => (v ? undefined : "Please choose a service."),
   message: (v) => (v.length > 3000 ? "Please keep your message under 3,000 characters." : undefined),
 };
 
-const empty: Values = { name: "", phone: "", email: "", zip: "", address: "", property: "", service: "", message: "" };
+const empty: Values = { name: "", phone: "", email: "", zip: "", address: "", property: "", service: "", message: "", market: "", roofing: "" };
 
 const chevron =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b0d10' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\")";
@@ -32,6 +34,7 @@ export function LeadForm({
   phoneHref,
   businessName,
   defaultService,
+  defaultMarket,
   compact = false,
   dark = false,
 }: {
@@ -39,6 +42,8 @@ export function LeadForm({
   phoneHref: string;
   businessName: string;
   defaultService?: (typeof serviceOptions)[number];
+  /** Solar pages preselect their market (Maryland or Washington, DC). */
+  defaultMarket?: (typeof solarMarkets)[number];
   compact?: boolean;
   dark?: boolean;
 }) {
@@ -46,7 +51,7 @@ export function LeadForm({
   const uid = useId();
   const formRef = useRef<HTMLFormElement>(null);
   const startedAt = useRef<number>(0);
-  const [values, setValues] = useState<Values>({ ...empty, service: defaultService ?? "" });
+  const [values, setValues] = useState<Values>({ ...empty, service: defaultService ?? "", market: defaultMarket ?? "" });
   const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
   const [touched, setTouched] = useState<Partial<Record<Field, boolean>>>({});
@@ -57,7 +62,11 @@ export function LeadForm({
     startedAt.current = Date.now();
   }, []);
 
-  const fields: Field[] = compact ? ["name", "phone", "email", "zip", "service"] : ["name", "phone", "email", "zip", "address", "property", "service", "message"];
+  const solar = values.service === SOLAR_SERVICE;
+  const fields: Field[] = [
+    ...(compact ? (["name", "phone", "email", "zip", "service"] as Field[]) : (["name", "phone", "email", "zip", "address", "property", "service", "message"] as Field[])),
+    ...(solar ? (["market", "roofing"] as Field[]) : []),
+  ];
 
   const setField = (f: Field, v: string) => {
     setValues((s) => ({ ...s, [f]: v }));
@@ -76,6 +85,7 @@ export function LeadForm({
       const msg = validators[f](values[f]);
       if (msg) next[f] = msg;
     }
+    if (solar && !values.market) next.market = "Please choose Maryland or Washington, DC.";
     if (!consent) next.consent = "Please agree so we can contact you.";
     setErrors(next);
     setTouched(Object.fromEntries(fields.map((f) => [f, true])));
@@ -165,7 +175,7 @@ export function LeadForm({
     onBlur: () => blur(f),
   });
 
-  const select = (f: "service" | "property", options: readonly string[], placeholder: string) => (
+  const select = (f: "service" | "property" | "market" | "roofing", options: readonly string[], placeholder: string) => (
     <select
       {...aria(f)}
       value={values[f]}
@@ -228,6 +238,19 @@ export function LeadForm({
           {select("service", serviceOptions, "Choose a service")}
           {err("service")}
         </div>
+        {solar ? (
+          <>
+            <div>
+              {label("market", "Where is the home?")}
+              {select("market", solarMarkets, "Maryland or Washington, DC")}
+              {err("market")}
+            </div>
+            <div>
+              {label("roofing", "Do you also need roofing work?", true)}
+              {select("roofing", roofingNeedOptions, "Choose one")}
+            </div>
+          </>
+        ) : null}
         {!compact ? (
           <div className="sm:col-span-2">
             {label("message", "Tell us about your roof", true)}

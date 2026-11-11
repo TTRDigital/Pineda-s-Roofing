@@ -67,6 +67,9 @@ $services = [
     'Free roof inspection', 'Commercial roofing', 'Gutters', 'Siding', 'Solar installation', 'Other',
 ];
 $properties = ['Home', 'Commercial building', 'Rental / multifamily'];
+// Solar assessments (keep in sync with lib/lead-options.ts).
+$solarMarkets = ['Maryland', 'Washington, DC'];
+$roofingNeeds = ['Yes', 'No', 'Not sure'];
 
 $lead = [
     'name' => text($in, 'name', 120),
@@ -75,6 +78,8 @@ $lead = [
     'zip' => text($in, 'zip', 10),
     'address' => text($in, 'address', 240),
     'property' => text($in, 'property', 40),
+    'market' => text($in, 'market', 40),
+    'roofing' => text($in, 'roofing', 20),
     'service' => text($in, 'service', 80),
     'message' => text($in, 'message', 3000),
 ];
@@ -86,6 +91,10 @@ if (!filter_var($lead['email'], FILTER_VALIDATE_EMAIL)) $errors['email'] = 'Plea
 if (!preg_match('/^\d{5}(-\d{4})?$/', $lead['zip'])) $errors['zip'] = 'Please enter a 5-digit ZIP code.';
 if (!in_array($lead['service'], $services, true)) $errors['service'] = 'Please choose a service.';
 if ($lead['property'] !== '' && !in_array($lead['property'], $properties, true)) $lead['property'] = '';
+$isSolar = $lead['service'] === 'Solar installation';
+if ($isSolar && !in_array($lead['market'], $solarMarkets, true)) $errors['market'] = 'Please choose Maryland or Washington, DC.';
+if (!$isSolar) $lead['market'] = '';
+if (!in_array($lead['roofing'], $roofingNeeds, true)) $lead['roofing'] = '';
 if (($in['consent'] ?? false) !== true) $errors['consent'] = 'Please agree so we can contact you.';
 if ($errors) {
     reply(422, ['ok' => false, 'error' => 'Please check the form.', 'fields' => $errors]);
@@ -126,6 +135,8 @@ else $phone = (str_starts_with($lead['phone'], '+') ? '+' : '') . $digits;
 $parts = preg_split('/\s+/', $lead['name']);
 $slug = trim(preg_replace('/[^a-z0-9]+/', '-', strtolower($lead['service'])), '-');
 $tags = ['website-lead', "service-{$slug}"];
+if ($isSolar && $lead['market'] !== '') $tags[] = 'solar-' . trim(preg_replace('/[^a-z0-9]+/', '-', strtolower($lead['market'])), '-');
+if ($lead['roofing'] === 'Yes') $tags[] = 'needs-roofing';
 if ($spamCheck !== 'ok') $tags[] = 'suspected-spam';
 
 $payload = [
@@ -141,6 +152,8 @@ $payload = [
     'postal_code' => $lead['zip'],
     'property_type' => $lead['property'],
     'service_needed' => $lead['service'],
+    'solar_market' => $lead['market'],
+    'needs_roofing_work' => $lead['roofing'],
     'consent' => true,
     'message' => $lead['message'],
     'tags' => $tags,

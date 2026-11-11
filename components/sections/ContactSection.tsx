@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import type { SiteSettings } from "@/lib/types";
-import type { serviceOptions } from "@/lib/lead-options";
+import type { serviceOptions, solarMarkets } from "@/lib/lead-options";
 import { images } from "@/lib/data/images";
 import { LeadForm } from "@/components/forms/LeadForm";
 
@@ -12,12 +12,14 @@ export function ContactSection({
   heading = "Request your free estimate",
   text = "Tell us where you are and what's going on with your roof. We'll call you back, come out, and give you a straight answer.",
   defaultService,
+  defaultMarket,
   id = "estimate",
 }: {
   settings: SiteSettings;
   heading?: string;
   text?: string;
   defaultService?: (typeof serviceOptions)[number];
+  defaultMarket?: (typeof solarMarkets)[number];
   id?: string;
 }) {
   return (
@@ -74,7 +76,7 @@ export function ContactSection({
           <h3 className="font-display text-h3 uppercase text-ink">Free inspection request</h3>
           <p className="mt-2 text-body">We will call you within 24 hours.</p>
           <div className="mt-8">
-            <LeadForm phone={settings.phone} phoneHref={settings.phoneHref} businessName={settings.legalName} defaultService={defaultService} />
+            <LeadForm phone={settings.phone} phoneHref={settings.phoneHref} businessName={settings.name} defaultService={defaultService} defaultMarket={defaultMarket} />
           </div>
         </div>
       </div>

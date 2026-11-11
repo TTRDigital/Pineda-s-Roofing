@@ -272,6 +272,7 @@ export const aboutPage = defineType({
     defineField({ name: "facts", title: "Company facts", type: "array", of: [defineArrayMember({ type: "fact" })], group: "content", description: "Owner, headquarters, license..." }),
     sections(),
     heading("teamIntro", "Team heading"),
+    defineField({ name: "teamPhoto", title: "Team group photo", type: "altImage", group: "content" }),
     defineField({
       name: "team",
       title: "Team (owners)",

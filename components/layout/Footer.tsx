@@ -117,7 +117,7 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
       <div className="border-t border-ink-line">
         <div className="container-x flex flex-col gap-3 py-6 text-sm text-on-dark-meta sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {settings.legalName}. All rights reserved.
+            © {year} {settings.name}. All rights reserved.
           </p>
           <ul className="flex gap-6">
             <li>

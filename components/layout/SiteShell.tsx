@@ -13,6 +13,7 @@ import { TrackClicks } from "@/components/layout/TrackClicks";
 import { HydrationSignal } from "@/components/layout/HydrationSignal";
 import { MobileCallBar } from "@/components/layout/MobileCallBar";
 import { AttributionCapture } from "@/components/forms/AttributionCapture";
+import { solarMarkets } from "@/lib/data/solar";
 
 function buildNav(services: Service[]): NavItem[] {
   const roofing = services.filter((s) => s.category !== "exterior" && s.category !== "solar");
@@ -34,7 +35,18 @@ function buildNav(services: Service[]): NavItem[] {
         { label: "All services", href: "/services" },
       ],
     },
-    ...(solar ? [{ label: "Solar", href: `/services/${solar.slug}` }] : []),
+    ...(solar
+      ? [
+          {
+            label: "Solar",
+            href: `/services/${solar.slug}`,
+            children: [
+              ...solarMarkets.map((m) => ({ label: `${m.name} solar`, href: `/solar/${m.slug}`, note: m.hero.heading })),
+              { label: "How our solar works", href: `/services/${solar.slug}`, note: "Roof first, then panels" },
+            ],
+          },
+        ]
+      : []),
     { label: "Atlas", href: "/atlas-roofing" },
     { label: "Insurance Claims", href: "/roofing-insurance" },
     { label: "Gallery", href: "/gallery" },

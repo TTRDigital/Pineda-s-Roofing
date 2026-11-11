@@ -196,6 +196,8 @@ export type AboutContent = {
   facts: Fact[];
   sections: FeatureBlock[];
   teamIntro: Heading;
+  /** Group photo shown with the team cards. */
+  teamPhoto?: Img;
   team: Person[];
   mascot: { eyebrow?: string; heading: string; lead?: string; paragraphs: string[]; image?: Img; verse?: Verse };
   valuesIntro: Heading;

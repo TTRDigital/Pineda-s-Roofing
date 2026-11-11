@@ -15,6 +15,11 @@ export const serviceOptions = [
 
 export const propertyOptions = ["Home", "Commercial building", "Rental / multifamily"] as const;
 
+/* Solar assessments: which market the home is in, and whether roofing work is needed too. Keep in sync with lead.php. */
+export const solarMarkets = ["Maryland", "Washington, DC"] as const;
+export const roofingNeedOptions = ["Yes", "No", "Not sure"] as const;
+export const SOLAR_SERVICE = "Solar installation";
+
 export const attributionKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"] as const;
 
 export const ATTRIBUTION_STORAGE_KEY = "pr_attribution";

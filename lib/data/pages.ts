@@ -450,6 +450,7 @@ export const fallbackAbout: AboutContent = {
     heading: "The Pinedas behind every roof",
     text: "Pineda's Roofing is still run by the Pineda family. When you call us, you talk to the people who own the company.",
   },
+  teamPhoto: images.fredyRobertoTruck,
   team: [
     {
       slug: "fredy-pineda",

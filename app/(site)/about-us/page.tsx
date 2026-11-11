@@ -57,6 +57,12 @@ export default async function AboutPage() {
         <section id="team" className="section bg-mist">
           <div className="container-x">
             <SectionHeading {...page.teamIntro} />
+            {page.teamPhoto ? (
+              <figure className="mx-auto mt-12 max-w-md overflow-hidden rounded-[var(--radius-card)] border border-line bg-white" data-reveal>
+                <Image src={page.teamPhoto.src} alt={page.teamPhoto.alt} width={page.teamPhoto.width} height={page.teamPhoto.height} sizes="(min-width: 768px) 28rem, 100vw" className="h-auto w-full" />
+                <figcaption className="px-5 py-3 text-center text-sm font-semibold text-ink">Roberto and Fredy Pineda</figcaption>
+              </figure>
+            ) : null}
             <ul className="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-2">
               {page.team.map((p, i) => (
                 <li key={p.name} className="overflow-hidden rounded-[var(--radius-card)] border border-line bg-white" data-reveal style={{ "--i": i } as React.CSSProperties}>

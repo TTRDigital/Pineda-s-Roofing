@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 import { getPartners, getService, getServices, getSiteSettings, getTestimonials } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
 import { serviceOptions } from "@/lib/lead-options";
 import { fallbackServices } from "@/lib/data/services";
+import { solarMarkets } from "@/lib/data/solar";
 import { PageHero } from "@/components/sections/PageHero";
 import { FeatureSection } from "@/components/sections/FeatureSection";
 import { LogoMarquee } from "@/components/sections/LogoStrip";
@@ -62,10 +65,33 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
           { label: service.title, href: path },
         ]}
         ctas={[
-          { label: "Get a free estimate", href: "#estimate" },
+          { label: service.category === "solar" ? "Request a Solar Assessment" : "Get a free estimate", href: "#estimate" },
           { label: settings.phone, href: settings.phoneHref },
         ]}
       />
+      {service.category === "solar" ? (
+        <section className="section bg-white">
+          <div className="container-x">
+            <p className="eyebrow">Choose your area</p>
+            <h2 className="mt-3 text-h2 uppercase text-ink">Where is your home?</h2>
+            <ul className="mt-10 grid gap-6 md:grid-cols-2">
+              {solarMarkets.map((m) => (
+                <li key={m.slug}>
+                  <Link href={`/solar/${m.slug}`} className="group flex h-full flex-col rounded-[var(--radius-card)] border-2 border-line bg-white p-8 transition-colors hover:border-cyan hover:bg-cyan-50">
+                    <span className="font-display text-h3 uppercase text-ink">{m.name}</span>
+                    <span className="mt-2 font-semibold text-cyan-deep">{m.hero.heading}</span>
+                    <span className="mt-3 flex-1 text-body">{m.chooserText}</span>
+                    <span className="mt-6 inline-flex items-center gap-2 font-bold uppercase tracking-[0.08em] text-ink">
+                      Solar in {m.name}
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2.5} aria-hidden="true" />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
       {service.sections.map((b, i) => (
         <FeatureSection key={b.title} block={b} index={i} tone={i % 2 ? "mist" : "white"} />
       ))}

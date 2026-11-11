@@ -215,6 +215,7 @@ async function build() {
     facts: ab.facts.map((f) => ({ _type: "fact", _key: key(), ...f })),
     sections: await features(ab.sections),
     teamIntro: ab.teamIntro,
+    teamPhoto: await altImage(ab.teamPhoto),
     team: await Promise.all(
       ab.team.map(async (p) => ({ _type: "person", _key: key(), name: p.name, slug: { _type: "slug", current: p.slug }, role: p.role, text: p.text, bio: p.bio, noIndex: p.noIndex, image: await altImage(p.image) })),
     ),

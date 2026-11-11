@@ -14,6 +14,7 @@ export const images = {
   eagleSign: { src: "/images/mascot/eagle-sign.png", alt: "Don Eagle, the Pineda's Roofing mascot, holding a sign", width: 873, height: 1100 },
   freddyPineda: { src: "/images/team/freddy-pineda.jpg", alt: "Fredy Pineda, owner of Pineda's Roofing, in front of a company van", width: 872, height: 816 },
   robertoPineda: { src: "/images/team/roberto-pineda.jpg", alt: "Roberto Pineda, co-owner of Pineda's Roofing, in front of a company van", width: 872, height: 816 },
+  fredyRobertoTruck: { src: "/images/team/fredy-roberto-truck.jpg", alt: "Roberto Pineda and Fredy Pineda standing beside a Pineda's Roofing truck", width: 1200, height: 1598 },
   crew: { src: "/images/team/crew.jpg", alt: "The Pineda's Roofing crew in front of a finished home in Maryland", width: 1360, height: 791 },
   aerialNewShingleRoof: { src: "/images/photos/aerial-new-shingle-roof.jpg", alt: "Aerial view of a Pineda's Roofing crew installing Atlas Summit 60 synthetic underlayment on a home", width: 2000, height: 1500 },
   homeNewRoofAerial: { src: "/images/photos/home-new-roof-aerial.jpg", alt: "New dark shingle roof on a Maryland home, seen from above", width: 1096, height: 870 },

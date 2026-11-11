@@ -182,7 +182,7 @@ export const getInsurancePage = cache(async (): Promise<InsuranceContent> => {
 
 export const getAboutPage = cache(async (): Promise<AboutContent> => {
   const cms = await sanityFetch<Partial<AboutContent>>(
-    `*[_id == "aboutPage"][0]{ ${HERO}, facts[]{ label, value }, sections[]${FEATURE}, teamIntro${HEADING}, team[]{ name, "slug": slug.current, role, text, bio, noIndex, "image": image${IMG} }, mascot{ eyebrow, heading, lead, paragraphs, "image": image${IMG}, verse{ text, reference } }, valuesIntro${HEADING}, values[]${CARD}, ${SEO} }`,
+    `*[_id == "aboutPage"][0]{ ${HERO}, facts[]{ label, value }, sections[]${FEATURE}, teamIntro${HEADING}, "teamPhoto": teamPhoto${IMG}, team[]{ name, "slug": slug.current, role, text, bio, noIndex, "image": image${IMG} }, mascot{ eyebrow, heading, lead, paragraphs, "image": image${IMG}, verse{ text, reference } }, valuesIntro${HEADING}, values[]${CARD}, ${SEO} }`,
     {},
     ["aboutPage"],
   );

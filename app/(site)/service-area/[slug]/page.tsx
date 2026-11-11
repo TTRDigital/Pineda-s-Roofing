@@ -88,7 +88,7 @@ export default async function LocationPage(props: PageProps<"/service-area/[slug
           { label: loc.name, href: `/service-area/${slug}` },
         ]}
         ctas={[
-          { label: solarFirst ? "Get a free solar assessment" : "Get a free estimate", href: "#estimate" },
+          ...(solarFirst ? [{ label: "Solar in Washington, DC", href: "/solar/washington-dc" }] : [{ label: "Get a free estimate", href: "#estimate" }]),
           { label: settings.phone, href: settings.phoneHref },
         ]}
       />
@@ -224,7 +224,11 @@ export default async function LocationPage(props: PageProps<"/service-area/[slug
           </div>
         </section>
       ) : null}
-      <ContactSection settings={settings} heading={solarFirst ? `Free solar assessment in ${loc.name}` : `Free roof estimate in ${loc.name}`} />
+      <ContactSection
+        settings={settings}
+        heading={solarFirst ? `Request a Solar Assessment in ${loc.name}` : `Free roof estimate in ${loc.name}`}
+        {...(solarFirst ? { defaultService: "Solar installation" as const, defaultMarket: "Washington, DC" as const } : {})}
+      />
     </>
   );
 }

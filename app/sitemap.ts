@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAboutPage, getLocations, getPosts, getServices } from "@/lib/content";
 import { absoluteUrl } from "@/lib/site";
+import { solarMarkets } from "@/lib/data/solar";
 
 export const dynamic = "force-static";
 
@@ -13,6 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     entry("/services/roofing", 0.95),
     entry("/services", 0.8),
     ...services.map((s) => entry(`/services/${s.slug}`, 0.9)),
+    ...solarMarkets.map((m) => entry(`/solar/${m.slug}`, 0.85)),
     entry("/atlas-roofing", 0.8),
     entry("/roofing-insurance", 0.85),
     entry("/gallery", 0.7, "weekly"),
