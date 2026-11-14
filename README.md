@@ -30,7 +30,22 @@ The URLs match the old WordPress site, so existing Google rankings carry over. A
 3. **Load the content into Sanity (once):** create an Editor token (sanity.io/manage > API > Tokens), put it in `.env.local` as `SANITY_WRITE_TOKEN`, then `npm install && npm run seed`. Running it again only adds missing documents; `-- --force` overwrites the CMS with the built-in content, `-- --dry-run` checks without writing.
 4. **Run:** `npm run dev`, then open http://localhost:3000 and http://localhost:3000/cms.
 
-## Hosting on SiteGround
+## Staging copy on Vercel (branch `ttr-staging-copy`, TTR-1987)
+
+This branch runs as a normal Next.js app on Vercel (not a static export), with content from Sanity and the editing bar on previews. Live is still the static site on SiteGround, built from `live`; nothing here goes live until Kia approves the preview.
+
+| Where | What |
+|---|---|
+| `next.config.ts`, `lib/csp.ts` | security headers; the live CSP text is identical to the old `.htaccess`, previews add the TTR portal hosts |
+| `vercel.json` | 301 redirects for old addresses (apex to www, old WordPress paths) |
+| `app/api/lead.php/route.ts` | estimate form to GoHighLevel. Env `LEAD_WEBHOOK_URL`, **Production scope only**; previews never send leads |
+| `app/api/revalidate/route.ts` | Sanity webhook target `https://<site>/api/revalidate/`, env `SANITY_REVALIDATE_SECRET`; a publish refreshes the pages |
+| env `SANITY_WRITE_TOKEN` | Editor token, only for `npm run seed` (never needed by the site) |
+| env `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_GTM_ID` | analytics |
+
+The SiteGround files (`.htaccess`, `api/lead.php`, deploy workflow) stay on `live` until cutover.
+
+## Hosting on SiteGround (live today)
 
 `npm run build` writes the whole site to `out/` as plain files: HTML pages, `_next/` scripts, `_img/` WebP photos, `api/lead.php` (the form) and `.htaccess` (redirects, security headers, caching). Upload the **contents** of `out/` into the site's `public_html`.
 
