@@ -24,7 +24,11 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-US" className={`${oswald.variable} ${inter.variable}`} suppressHydrationWarning>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* TTR Feedback Studio edit bar: staging previews only (VERCEL_ENV is set at build time; the live build on GitHub Actions has none). */}
+        {process.env.VERCEL_ENV === "preview" && <script async src="https://ttr-portal.vercel.app/api/site/notes/bar" />}
+      </body>
     </html>
   );
 }

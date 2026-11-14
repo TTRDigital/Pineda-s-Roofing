@@ -5,8 +5,8 @@ import { apiVersion, dataset, projectId } from "@/sanity/env";
 /**
  * Fetch published content from Sanity's API CDN.
  *
- * - Runs at build time only (static export): publishing in Sanity starts a
- *   rebuild + upload (.github/workflows/deploy-siteground.yml).
+ * - Cached by tag (the document type). Publishing in Sanity calls the
+ *   webhook at /api/revalidate, which refreshes the tags and the pages.
  * - Never throws: returns null on any failure so pages fall back to
  *   lib/content.ts defaults and the site keeps working.
  */
@@ -24,7 +24,7 @@ export async function sanityFetch<T>(
   const url = `https://${projectId}.apicdn.sanity.io/v${apiVersion}/data/query/${dataset}?${search}`;
 
   try {
-    const res = await fetch(url, { cache: "force-cache" });
+    const res = await fetch(url, { cache: "force-cache", next: { tags } });
     if (!res.ok) {
       console.warn(`[sanity] ${res.status} for query tags=${tags.join(",")}`);
       return null;

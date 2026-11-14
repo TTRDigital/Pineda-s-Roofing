@@ -1,0 +1,96 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "pinedasroofing.com"
+        }
+      ],
+      "destination": "https://www.pinedasroofing.com/$1",
+      "statusCode": 301
+    },
+    {
+      "source": "/emergency-roof-repair",
+      "destination": "/services/emergency-roof-repair/",
+      "statusCode": 301
+    },
+    {
+      "source": "/emergency-roof-repair/",
+      "destination": "/services/emergency-roof-repair/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home-v2",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home-v2/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/atlas",
+      "destination": "/atlas-roofing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/atlas/",
+      "destination": "/atlas-roofing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/insurance-claims",
+      "destination": "/roofing-insurance/",
+      "statusCode": 301
+    },
+    {
+      "source": "/insurance-claims/",
+      "destination": "/roofing-insurance/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about",
+      "destination": "/about-us/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about/",
+      "destination": "/about-us/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact-us/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact-us/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing",
+      "destination": "/services/roofing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing/",
+      "destination": "/services/roofing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/gutters",
+      "destination": "/services/gutter-installation-replacement/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/gutters/",
+      "destination": "/services/gutter-installation-replacement/",
+      "statusCode": 301
+    }
+  ]
+}

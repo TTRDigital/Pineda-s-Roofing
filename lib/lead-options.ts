@@ -1,4 +1,4 @@
-/* Constants for the lead form. public/api/lead.php repeats the options: keep them in sync. */
+/* Constants for the lead form. app/api/lead.php/route.ts uses these options. */
 
 export const serviceOptions = [
   "Roof replacement",

@@ -9,7 +9,7 @@ type Field = "name" | "phone" | "email" | "zip" | "address" | "property" | "serv
 type Values = Record<Field, string>;
 type Errors = Partial<Record<Field | "consent", string>>;
 
-/* Client checks; public/api/lead.php checks the same on the server. */
+/* Client checks; app/api/lead.php/route.ts checks the same on the server. */
 const validators: Record<Field, (v: string) => string | undefined> = {
   name: (v) => (v.trim().length < 2 ? "Please enter your name." : undefined),
   phone: (v) => (v.replace(/\D/g, "").length < 10 ? "Please enter a phone number with area code." : undefined),
