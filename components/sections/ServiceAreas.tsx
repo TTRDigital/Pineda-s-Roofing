@@ -28,7 +28,7 @@ export function ServiceAreas({
       <div className="container-x">
         <SectionHeading
           eyebrow="Service area"
-          heading="Maryland & the DMV, county by county"
+          heading="Maryland & Washington, DC, county by county"
           text={`Our main service areas are Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's County. We also serve Carroll, Frederick and Montgomery County, where our Silver Spring home base is, plus Washington, D.C. for solar. Not sure if you're in our area? Call ${phone}.`}
         />
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
@@ -52,11 +52,13 @@ export function ServiceAreas({
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {c.cities.map((city) => {
                     const page = pageFor(city);
+                    // No page of its own but past projects here: link to them on the county page.
+                    const href = page ? `/service-area/${page.slug}/${projectCounts[city] ? "#past-projects" : ""}` : projectCounts[city] && c.page ? `/service-area/${c.page}/#past-projects` : undefined;
                     return (
                       <li key={city}>
-                        {page ? (
+                        {href ? (
                           <Link
-                            href={`/service-area/${page.slug}${projectCounts[city] ? "#past-projects" : ""}`}
+                            href={href}
                             className={`inline-flex min-h-9 items-center gap-1.5 rounded-full bg-cyan-50 px-3.5 text-sm font-semibold text-ink transition-colors hover:bg-cyan hover:ring-cyan ${projectCounts[city] ? "ring-2 ring-cyan" : "ring-1 ring-cyan-100"}`}
                           >
                             {city}

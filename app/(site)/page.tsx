@@ -69,7 +69,7 @@ export default async function HomePage() {
 
       <SplitTiles
         tone="mist"
-        intro={{ eyebrow: "Roofing", heading: "For homes and businesses", text: "One family-owned team for residential and commercial roofs across Maryland and the DMV." }}
+        intro={{ eyebrow: "Roofing", heading: "For homes and businesses", text: "One family-owned team for residential and commercial roofs across Maryland and Washington, DC." }}
         tiles={[
           {
             href: "/services/residential-roofing",

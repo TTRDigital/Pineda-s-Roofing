@@ -19,7 +19,7 @@ const HOME = "Silver Spring";
 
 /* Label placement: [dx, dy, text-anchor] from the dot, tuned so labels don't collide. */
 const LABEL_OFFSET: Record<string, [number, number, "start" | "end" | "middle"]> = {
-  "Silver Spring": [12, -8, "start"],
+  "Silver Spring": [0, -20, "middle"],
   Wheaton: [-9, -5, "end"],
   Olney: [9, 4, "start"],
   Potomac: [-9, -3, "end"],
@@ -90,7 +90,7 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
 
   return (
     <figure className="overflow-hidden rounded-[var(--radius-card)] border border-line bg-[#e8f6fd]">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="sa-map-title" className="block h-auto w-full">
+      <svg viewBox={`0 0 ${W} ${H}`} role="group" aria-labelledby="sa-map-title" className="block h-auto w-full">
         <title id="sa-map-title">
           {`Map of the Pineda's Roofing service area: ${counties.map((c) => c.name).join(", ")}`}
         </title>
@@ -127,6 +127,9 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
         {cities.map((c) => {
           const [x, y] = xy(c.at);
           const page = pageFor(c.name);
+          const jobsHere = projectCounts[c.name] ?? 0;
+          // A city without its own page still links to its county page when it has past projects there.
+          const countyPage = !page && jobsHere ? counties.find((k) => k.name === c.county)?.page : undefined;
           const home = c.name === HOME;
           const label = LABEL_OFFSET[c.name];
           const jobs = projectCounts[c.name] ?? 0;
@@ -134,7 +137,12 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
             <g>
               <title>{`${c.name}, ${c.county}${jobs ? `: ${jobs} past ${jobs === 1 ? "project" : "projects"}` : ""}`}</title>
               {/* Cities with past projects to show get a cyan ring. */}
-              {jobs ? <circle cx={x} cy={y} r={home ? 15 : 10} fill="none" stroke="#00b4f0" strokeWidth={3} /> : null}
+              {jobs ? (
+                <>
+                  <circle cx={x} cy={y} r={home ? 15 : 10} fill="none" stroke="#fff" strokeWidth={6} />
+                  <circle cx={x} cy={y} r={home ? 15 : 10} fill="none" stroke="#0b7fa8" strokeWidth={3} />
+                </>
+              ) : null}
               {home ? (
                 <>
                   <circle cx={x} cy={y} r={11} fill="#00b4f0" fillOpacity={0.25} />
@@ -145,7 +153,7 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
               )}
               {label ? (
                 <text
-                  x={x + label[0]}
+                  x={x + label[0] + (jobs && label[2] !== "middle" ? (label[2] === "start" ? 6 : -6) : 0)}
                   y={y + label[1]}
                   textAnchor={label[2]}
                   fontSize={home ? 15 : 13}
@@ -158,8 +166,9 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
               ) : null}
             </g>
           );
-          return page ? (
-            <a key={c.name} href={`/service-area/${page.slug}/${jobs ? "#past-projects" : ""}`} aria-label={jobs ? `Past roofing projects in ${c.name}` : `Roofing in ${c.name}`}>
+          const href = page ? `/service-area/${page.slug}/${jobs ? "#past-projects" : ""}` : countyPage ? `/service-area/${countyPage}/#past-projects` : undefined;
+          return href ? (
+            <a key={c.name} href={href} aria-label={jobs ? `Past roofing projects in ${c.name}` : `Roofing in ${c.name}`}>
               {dot}
             </a>
           ) : (
@@ -190,7 +199,7 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
         </span>
         {Object.keys(projectCounts).length ? (
           <span className="inline-flex items-center gap-2">
-            <span aria-hidden="true" className="h-3.5 w-3.5 rounded-full border-[3px] border-cyan bg-white" />
+            <span aria-hidden="true" className="h-3.5 w-3.5 rounded-full border-[3px] border-[#0b7fa8] bg-white ring-2 ring-white" />
             Past projects (tap to see them)
           </span>
         ) : null}

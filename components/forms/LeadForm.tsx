@@ -14,7 +14,11 @@ type Errors = Partial<Record<Field | "consent", string>>;
 const validators: Record<Field, (v: string) => string | undefined> = {
   name: (v) => (v.trim().length < 2 ? "Please enter your name." : undefined),
   phone: (v) => (v.replace(/\D/g, "").length < 10 ? "Please enter a phone number with area code." : undefined),
-  email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? undefined : "Please enter a valid email address."),
+  // Same rules the server's FILTER_VALIDATE_EMAIL applies: plain ASCII, no "..", no dot next to "@", no trailing dot.
+  email: (v) =>
+    /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/.test(v.trim())
+      ? undefined
+      : "Please enter a valid email address.",
   zip: (v) => (/^\d{5}(-\d{4})?$/.test(v.trim()) ? undefined : "Please enter a 5-digit ZIP code."),
   address: () => undefined,
   property: () => undefined,
@@ -112,6 +116,8 @@ export function LeadForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...values,
+          // Market and the roofing question are only asked for solar.
+          ...(solar ? {} : { market: "", roofing: "" }),
           consent: true,
           hp_pr: honeypot,
           elapsed_ms: Date.now() - startedAt.current,
@@ -121,6 +127,19 @@ export function LeadForm({
           ...Object.fromEntries(attributionKeys.map((k) => [k, attribution[k] ?? ""])),
         }),
       });
+      if (res.status === 422) {
+        // The server found a field the browser check let through: show it on that field.
+        const body = (await res.json().catch(() => ({}))) as { fields?: Errors };
+        const fieldErrors = body.fields ?? {};
+        const keys = Object.keys(fieldErrors);
+        if (keys.length) {
+          setErrors(fieldErrors);
+          setSummary(`Please fix ${keys.length === 1 ? "1 field" : `${keys.length} fields`} below.`);
+          setStatus("idle");
+          formRef.current?.querySelector<HTMLElement>(`#${CSS.escape(`${uid}-${keys[0]}`)}`)?.focus();
+          return;
+        }
+      }
       if (!res.ok) throw new Error(String(res.status));
       setStatus("success");
       // The page's own service/area context comes from the URL; the chosen service goes in form_service.
@@ -283,11 +302,11 @@ export function LeadForm({
           />
           <span>
             I agree to the{" "}
-            <a href="/terms" className="font-semibold underline">
+            <a href="/terms/" className="font-semibold underline">
               Terms
             </a>{" "}
             and{" "}
-            <a href="/privacy" className="font-semibold underline">
+            <a href="/privacy/" className="font-semibold underline">
               Privacy Policy
             </a>{" "}
             of {businessName}, and to receive calls, texts and emails about my request at the number and address I provided. Message and data rates may apply. Reply STOP to opt out.

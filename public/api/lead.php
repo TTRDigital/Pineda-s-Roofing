@@ -93,7 +93,11 @@ if (!in_array($lead['service'], $services, true)) $errors['service'] = 'Please c
 if ($lead['property'] !== '' && !in_array($lead['property'], $properties, true)) $lead['property'] = '';
 $isSolar = $lead['service'] === 'Solar installation';
 if ($isSolar && !in_array($lead['market'], $solarMarkets, true)) $errors['market'] = 'Please choose Maryland or Washington, DC.';
-if (!$isSolar) $lead['market'] = '';
+if (!$isSolar) {
+    // Market and the roofing question only apply to solar requests.
+    $lead['market'] = '';
+    $lead['roofing'] = '';
+}
 if (!in_array($lead['roofing'], $roofingNeeds, true)) $lead['roofing'] = '';
 if (($in['consent'] ?? false) !== true) $errors['consent'] = 'Please agree so we can contact you.';
 if ($errors) {

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Phone } from "lucide-react";
 import { getAboutPage, getSiteSettings } from "@/lib/content";
-import { fallbackAbout } from "@/lib/data/pages";
 import { pageMetadata } from "@/lib/seo";
 import { absoluteUrl, siteUrl } from "@/lib/site";
 import { PageHero } from "@/components/sections/PageHero";
@@ -13,7 +12,8 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { BbbBadge } from "@/components/ui/BbbBadge";
 
 export async function generateStaticParams() {
-  return fallbackAbout.team.map((p) => ({ person: p.slug }));
+  // Every team member the About page links to, CMS ones included.
+  return (await getAboutPage()).team.map((p) => ({ person: p.slug }));
 }
 
 async function getPerson(slug: string) {

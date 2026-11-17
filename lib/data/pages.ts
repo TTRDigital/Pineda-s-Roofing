@@ -17,7 +17,7 @@ export const fallbackHome: HomeContent = {
   hero: {
     eyebrow: "Baltimore City & County · Howard · Anne Arundel · Prince George's",
     heading: "Maryland's family-owned roofing contractor",
-    text: "Residential and commercial roofing, repairs and storm restoration. One family business, a 10 year labor warranty and a lifetime manufacturer warranty.",
+    text: "Residential and commercial roofing, repairs and storm restoration. One family business, a 10 year labor warranty and a limited lifetime manufacturer warranty.",
     image: images.aerialNewShingleRoof,
     badges: ["Family owned since 1992", "Licensed, insured & bonded", "MHIC# 142024", "24/7 emergency service"],
     verse: { text: "Unless the Lord builds the house, the builders labor in vain.", reference: "Psalm 127:1" },
@@ -25,13 +25,13 @@ export const fallbackHome: HomeContent = {
   stats: [
     { value: "30+", label: "Years in business" },
     { value: "10 Year", label: "Labor warranty" },
-    { value: "Lifetime", label: "Manufacturer warranty" },
+    { value: "Lifetime", label: "Limited manufacturer warranty" },
     { value: "24/7", label: "Emergency service" },
   ],
   servicesIntro: {
     eyebrow: "What we do",
     heading: "The exterior, handled",
-    text: "Every roof we install uses Atlas Pinnacle Pristine shingles and comes with a 10 year labor warranty and a lifetime manufacturer warranty.",
+    text: "Every roof we install uses Atlas Pinnacle Pristine shingles and comes with a 10 year labor warranty and a limited lifetime manufacturer warranty.",
   },
   serviceCards: [
     { icon: "house", title: "Residential roofing", text: "New roofs, replacements and repairs for Maryland homes.", href: "/services/residential-roofing" },
@@ -93,7 +93,7 @@ export const fallbackHome: HomeContent = {
   why: [
     { icon: "users", title: "Family owned for 30+ years", text: "Same family, same standards and the same phone number when you need us." },
     { icon: "award", title: "Premium materials as standard", text: "Atlas Pinnacle Pristine shingles on every installation, not an upsell." },
-    { icon: "shield-check", title: "10 year labor warranty", text: "Our workmanship is covered for 10 years, plus a lifetime manufacturer warranty on the shingles." },
+    { icon: "shield-check", title: "10 year labor warranty", text: "Our workmanship is covered for 10 years, plus a limited lifetime manufacturer warranty on the shingles." },
     { icon: "file-check", title: "Insurance expertise", text: "We meet your adjuster and provide the documentation carriers need." },
     { icon: "badge-check", title: "Licensed, insured & bonded", text: "MHIC# 142024. Fully covered on every job we take." },
     { icon: "clipboard", title: "Free, no-obligation estimates", text: "Written scope and transparent pricing before you commit." },
@@ -242,7 +242,7 @@ export const fallbackAtlas: AtlasContent = {
         "Built for high winds and heavy storms",
         "Wide range of colors",
         "Matching starter and ridge cap",
-        "Lifetime manufacturer warranty",
+        "Limited lifetime manufacturer warranty",
       ],
       image: images.pinnaclePristineBundles,
     },
@@ -332,7 +332,7 @@ export const fallbackAtlas: AtlasContent = {
     text: "Two layers of protection: the manufacturer covers the materials, and Pineda's covers the installation.",
   },
   warranties: [
-    { icon: "shield-check", title: "Lifetime manufacturer warranty", text: "Atlas's lifetime limited warranty on the shingles, registered in your name." },
+    { icon: "shield-check", title: "Limited lifetime manufacturer warranty", text: "Atlas's lifetime limited warranty on the shingles, registered in your name." },
     { icon: "hammer", title: "10 year labor warranty", text: "Pineda's covers the installation itself for 10 years, starting the day we finish." },
     { icon: "file-check", title: "In writing", text: "You get the warranty paperwork for your exact roof, not a brochure promise." },
   ],
@@ -347,7 +347,7 @@ export const fallbackAtlas: AtlasContent = {
     },
     {
       question: "Does my new roof come with a warranty?",
-      answer: "Yes. Atlas backs the shingles with a lifetime manufacturer warranty, and Pineda's backs the installation with a 10 year labor warranty. You get the documents for your roof in writing.",
+      answer: "Yes. Atlas backs the shingles with a limited lifetime manufacturer warranty, and Pineda's backs the installation with a 10 year labor warranty. You get the documents for your roof in writing.",
     },
   ],
 };
@@ -407,7 +407,7 @@ export const fallbackAbout: AboutContent = {
   hero: {
     eyebrow: "About us",
     heading: "Built on family and craftsmanship",
-    text: "Family owned since 1992. Serving Maryland and the DMV for over 30 years.",
+    text: "Family owned since 1992. Serving Maryland and Washington, DC for over 30 years.",
     image: images.crew,
   },
   facts: [

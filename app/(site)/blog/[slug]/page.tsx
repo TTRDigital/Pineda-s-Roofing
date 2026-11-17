@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getLocations, getPost, getPosts, getServices, getSiteSettings } from "@/lib/content";
-import { fallbackPosts } from "@/lib/data/posts";
 import { pageMetadata } from "@/lib/seo";
 import { absoluteUrl, siteUrl } from "@/lib/site";
 import { PageHero } from "@/components/sections/PageHero";
@@ -13,7 +12,8 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { formatDate } from "@/lib/text";
 
 export async function generateStaticParams() {
-  return fallbackPosts.map((p) => ({ slug: p.slug }));
+  // Every post the blog index lists, CMS ones included, gets a page.
+  return (await getPosts()).map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promise<Metadata> {

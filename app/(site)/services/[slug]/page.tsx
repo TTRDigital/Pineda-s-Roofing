@@ -6,7 +6,6 @@ import { getPartners, getService, getServices, getSiteSettings, getTestimonials 
 import { pageMetadata } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
 import { serviceOptions } from "@/lib/lead-options";
-import { fallbackServices } from "@/lib/data/services";
 import { solarMarkets } from "@/lib/data/solar";
 import { PageHero } from "@/components/sections/PageHero";
 import { FeatureSection } from "@/components/sections/FeatureSection";
@@ -19,7 +18,8 @@ import { JsonLd } from "@/components/ui/JsonLd";
 
 
 export async function generateStaticParams() {
-  return fallbackServices.map((s) => ({ slug: s.slug }));
+  // Every service the menus and sitemap link to, CMS ones included.
+  return (await getServices()).map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata(props: PageProps<"/services/[slug]">): Promise<Metadata> {

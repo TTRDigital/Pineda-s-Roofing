@@ -138,7 +138,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "What warranty do I get?",
-        answer: "Every new roof comes with a 10 year labor warranty from Pineda's and a lifetime manufacturer warranty on the shingles. You get both in writing.",
+        answer: "Every new roof comes with a 10 year labor warranty from Pineda's and a limited lifetime manufacturer warranty on the shingles. You get both in writing.",
       },
       {
         question: "Are you licensed and insured?",
@@ -409,7 +409,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "What warranties do you offer?",
-        answer: "You get a 10 year labor warranty from Pineda's and a lifetime manufacturer warranty on the Atlas Pinnacle Pristine shingles. Your labor warranty starts the day we finish.",
+        answer: "You get a 10 year labor warranty from Pineda's and a limited lifetime manufacturer warranty on the Atlas Pinnacle Pristine shingles. Your labor warranty starts the day we finish.",
       },
     ],
     seo: {
@@ -658,7 +658,7 @@ export const fallbackServices: Service[] = [
     ],
     seo: {
       title: "24/7 Emergency Roof Repair in Maryland | Pineda's Roofing",
-      description: "24/7 emergency roof repair in Maryland and the DMV. We tarp leaks, secure storm and tree damage, and help with your insurance claim. Call (301) 921-6333.",
+      description: "24/7 emergency roof repair in Maryland and Washington, DC. We tarp leaks, secure storm and tree damage, and help with your insurance claim. Call (301) 921-6333.",
     },
   },
 
@@ -907,7 +907,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Do you offer warranties on storm repairs?",
-        answer: "Yes. Our labor is covered by a 10 year warranty, and Atlas Pinnacle Pristine shingles carry a lifetime manufacturer warranty.",
+        answer: "Yes. Our labor is covered by a 10 year warranty, and Atlas Pinnacle Pristine shingles carry a limited lifetime manufacturer warranty.",
       },
     ],
     seo: {

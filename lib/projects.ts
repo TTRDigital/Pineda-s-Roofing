@@ -25,7 +25,9 @@ export function projectsFor(loc: Location, projects: Project[], locations: Locat
 export function projectCountsByCity(projects: Project[], locations: Location[]) {
   const counts: Record<string, number> = {};
   for (const p of projects) {
-    const name = pageOf(p, locations)?.name ?? p.location;
+    const page = pageOf(p, locations);
+    // City pages count under their name; county pages (e.g. Baltimore City) under the project's city.
+    const name = page && page.kind !== "county" ? page.name : (p.location ?? page?.name);
     if (name) counts[name] = (counts[name] ?? 0) + 1;
   }
   return counts;

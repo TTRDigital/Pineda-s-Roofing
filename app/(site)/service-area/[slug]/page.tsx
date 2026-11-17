@@ -6,7 +6,6 @@ import { counties, getLocation, getLocations, getPosts, getProjects, getServices
 import { projectsFor } from "@/lib/projects";
 import { pageMetadata } from "@/lib/seo";
 import { images } from "@/lib/data/images";
-import { fallbackLocations } from "@/lib/data/locations";
 import type { Location } from "@/lib/types";
 import { PageHero } from "@/components/sections/PageHero";
 import { FeatureSection } from "@/components/sections/FeatureSection";
@@ -18,7 +17,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Gallery } from "@/components/gallery/Gallery";
 
 export async function generateStaticParams() {
-  return fallbackLocations.filter((l) => l.featured).map((l) => ({ slug: l.slug }));
+  // Every area page the menus and sitemap link to, CMS ones included.
+  return (await getLocations()).filter((l) => l.featured).map((l) => ({ slug: l.slug }));
 }
 
 /* "Roofing Contractor in Bowie, MD": the plain service + place term people search for. */

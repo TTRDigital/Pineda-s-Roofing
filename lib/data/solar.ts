@@ -39,7 +39,7 @@ export const solarMarkets: SolarMarket[] = [
     slug: "maryland",
     name: "Maryland",
     formMarket: "Maryland",
-    chooserText: "A Power Purchase Agreement (PPA), plus the Maryland Solar Access Program rebate of $750 per kW, up to $7,500, for qualifying homeowners.",
+    chooserText: "A Power Purchase Agreement (PPA), plus the Maryland Solar Access Program rebate of $750 per kW DC, up to $7,500, for qualifying homeowners.",
     hero: {
       eyebrow: "Solar · Maryland",
       heading: "Maryland solar with $0 down",
@@ -99,7 +99,7 @@ export const solarMarkets: SolarMarket[] = [
     seo: {
       title: "Maryland Solar with $0 Down | PPA & MSAP Rebate | Pineda's Roofing",
       description:
-        "Explore $0-down solar in Maryland with a Power Purchase Agreement, and the Maryland Solar Access Program rebate of $750 per kW, up to $7,500, for qualifying homeowners.",
+        "Explore $0-down solar in Maryland with a Power Purchase Agreement, and the Maryland Solar Access Program rebate of $750 per kW DC, up to $7,500, for qualifying homeowners.",
     },
   },
   {

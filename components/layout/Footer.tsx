@@ -32,7 +32,7 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
         <div>
           <Logo className="h-14 w-auto" dark />
           <p className="mt-6 max-w-sm text-[0.95rem]">
-            Family-owned roofing contractor based in {settings.city}, {settings.region}, serving Baltimore, Howard, Anne Arundel and Prince George&apos;s County, plus Carroll, Frederick, Montgomery and Washington, DC. Roofing, repairs, storm restoration and solar for over three decades.
+            Family-owned roofing contractor based in {settings.city}, {settings.region}, serving Baltimore, Howard, Anne Arundel and Prince George&apos;s County, plus Carroll, Frederick, Montgomery and Washington, DC. Roofing, repairs and storm restoration for over three decades, and now solar.
           </p>
           <p className="mt-5 text-sm font-semibold text-white">
             Licensed, insured &amp; bonded <span className="text-cyan">·</span> {settings.license}
@@ -121,12 +121,12 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
           </p>
           <ul className="flex gap-6">
             <li>
-              <Link href="/privacy" className="hover:text-white">
+              <Link href="/privacy/" className="hover:text-white">
                 Privacy policy
               </Link>
             </li>
             <li>
-              <Link href="/terms" className="hover:text-white">
+              <Link href="/terms/" className="hover:text-white">
                 Terms
               </Link>
             </li>

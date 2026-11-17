@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import type { Project, ServiceCategory } from "@/lib/types";
 import { BeforeAfter } from "@/components/gallery/BeforeAfter";
@@ -10,26 +10,34 @@ const labels: Record<ServiceCategory, string> = { residential: "Residential", co
 
 /** "The problem / What we did" write-up shown under a project, when the project has one. */
 function Story({ p }: { p: Project }) {
-  if (!p.problem && !p.solution) return p.summary ? <p className="mt-3 text-[0.95rem] text-body">{p.summary}</p> : null;
+  if (!p.summary && !p.problem && !p.solution) return null;
   return (
-    <dl className="mt-3 grid gap-2 text-[0.95rem]">
-      {p.problem ? (
-        <div>
-          <dt className="text-xs font-bold uppercase tracking-[0.12em] text-cyan-deep">The problem</dt>
-          <dd className="text-body">{p.problem}</dd>
-        </div>
+    <div className="mt-3 grid gap-2 text-[0.95rem]">
+      {p.summary ? <p className="text-body">{p.summary}</p> : null}
+      {p.problem || p.solution ? (
+        <dl className="grid gap-2">
+          {p.problem ? (
+            <div>
+              <dt className="text-xs font-bold uppercase tracking-[0.12em] text-cyan-deep">The problem</dt>
+              <dd className="text-body">{p.problem}</dd>
+            </div>
+          ) : null}
+          {p.solution ? (
+            <div>
+              <dt className="text-xs font-bold uppercase tracking-[0.12em] text-cyan-deep">What we did</dt>
+              <dd className="text-body">{p.solution}</dd>
+            </div>
+          ) : null}
+        </dl>
       ) : null}
-      {p.solution ? (
-        <div>
-          <dt className="text-xs font-bold uppercase tracking-[0.12em] text-cyan-deep">What we did</dt>
-          <dd className="text-body">{p.solution}</dd>
-        </div>
-      ) : null}
-    </dl>
+    </div>
   );
 }
 
-const place = (p: Project) => [p.location, p.county].filter(Boolean).join(", ");
+// "Washington, DC" with county "Washington, D.C." would read twice: show the county only when it adds something.
+const norm = (t?: string) => (t ?? "").toLowerCase().replace(/[^a-z]/g, "");
+const photosOf = (p: Project) => [...(p.after ? [p.after] : []), ...(p.before ? [p.before] : []), ...p.images];
+const place = (p: Project) => [p.location, norm(p.county) === norm(p.location) ? undefined : p.county].filter(Boolean).join(", ");
 
 /** Filterable project grid with a keyboard-friendly lightbox. Projects with before/after photos get a slider. */
 export function Gallery({ projects, filters = true, limit }: { projects: Project[]; filters?: boolean; limit?: number }) {
@@ -44,11 +52,20 @@ export function Gallery({ projects, filters = true, limit }: { projects: Project
 
   // Projects with a before/after pair show as a slider; the rest as tiles.
   const tiles = useMemo(() => shown.filter((p) => !(p.before && p.after)), [shown]);
-  // Flatten to one slide per photo for the lightbox.
-  const slides = useMemo(() => tiles.flatMap((p) => [...(p.after ? [p.after] : []), ...p.images].map((img) => ({ img, project: p }))), [tiles]);
+  // Flatten to one slide per photo for the lightbox (before/after projects too, so every photo can be opened).
+  const slides = useMemo(() => shown.flatMap((p) => photosOf(p).map((img) => ({ img, project: p }))), [shown]);
   const firstSlide = (p: Project) => slides.findIndex((s) => s.project.id === p.id);
 
-  const close = useCallback(() => setOpen(null), []);
+  // Return focus to the photo that opened the viewer.
+  const opener = useRef<HTMLElement | null>(null);
+  const show = (i: number) => {
+    opener.current = document.activeElement as HTMLElement | null;
+    setOpen(i);
+  };
+  const close = useCallback(() => {
+    setOpen(null);
+    window.setTimeout(() => opener.current?.focus(), 0);
+  }, []);
   const step = useCallback((d: number) => setOpen((i) => (i === null ? null : (i + d + slides.length) % slides.length)), [slides.length]);
 
   useEffect(() => {
@@ -94,6 +111,12 @@ export function Gallery({ projects, filters = true, limit }: { projects: Project
               <figcaption className="mt-3">
                 <span className="font-bold text-ink">{p.title}</span>
                 {place(p) ? <span className="text-meta"> · {place(p)}</span> : null}
+                {p.images.length ? (
+                  <button type="button" onClick={() => show(firstSlide(p))} className="mt-2 flex min-h-11 items-center gap-2 text-sm font-bold text-cyan-deep underline-offset-4 hover:underline">
+                    <Expand className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
+                    See all {photosOf(p).length} photos
+                  </button>
+                ) : null}
                 <Story p={p} />
               </figcaption>
             </figure>
@@ -108,7 +131,7 @@ export function Gallery({ projects, filters = true, limit }: { projects: Project
           const count = (p.after ? 1 : 0) + p.images.length;
           return (
             <li key={p.id}>
-              <button type="button" onClick={() => setOpen(firstSlide(p))} className="group relative block aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-card)] bg-mist text-left">
+              <button type="button" onClick={() => show(firstSlide(p))} className="group relative block aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-card)] bg-mist text-left">
                 <Image src={cover.src} alt={cover.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
                 <span className="absolute left-4 top-4 rounded-md bg-cyan px-2.5 py-1 text-xs font-bold uppercase tracking-[0.1em] text-ink">{labels[p.category]}</span>

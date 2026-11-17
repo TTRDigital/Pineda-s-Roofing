@@ -69,7 +69,7 @@ export const fallbackPosts: Post[] = [
       {
         heading: "Why the roof comes first",
         paragraphs: [
-          "Solar panels are built to last decades. If the roof under them only has a few years left, you'll pay to remove the panels, replace the roof and put the panels back, long before the system has paid for itself.",
+          "Solar panels are built to last decades. If the roof under them only has a few years left, you'll pay to remove the panels, replace the roof and put the panels back, years before the panels are due to come off.",
           "That's why, as roofers, we inspect the roof before we design any solar system, and we tell you honestly whether it's ready.",
         ],
       },

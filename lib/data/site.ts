@@ -1,5 +1,6 @@
 import type { Faq, Partners, Project, SiteSettings, Testimonial } from "../types";
 import { images } from "./images.ts";
+import { driveProjects } from "./projects.ts";
 
 /* Site-wide fallback content. Sanity values replace these field by field. */
 
@@ -108,7 +109,7 @@ export const fallbackFaqs: Faq[] = [
     answer:
       "Most residential replacements take two to three days. Repairs are usually a single visit. You get a specific timeline with your quote, and we tell you right away if anything changes.",
   },
-  { category: "General", question: "What warranty do I get?", answer: "A 10 year labor warranty from Pineda's on the installation, plus the lifetime manufacturer warranty on the shingles. You get both in writing." },
+  { category: "General", question: "What warranty do I get?", answer: "A 10 year labor warranty from Pineda's on the installation, plus the limited lifetime manufacturer warranty on the shingles. You get both in writing." },
   { category: "General", question: "Are you licensed and insured?", answer: "Yes. Fully licensed, insured and bonded in Maryland, MHIC# 142024." },
   {
     category: "Cost & financing",
@@ -153,8 +154,8 @@ export const fallbackFaqs: Faq[] = [
   },
 ];
 
-/* Gallery projects from real job photos. Add before and after pairs in /cms as the client sends them. */
-export const fallbackProjects: Project[] = [
+/* Gallery projects from real job photos. The Drive jobs (by city) are in projects.ts and show on their city/county pages. */
+const earlierProjects: Project[] = [
   {
     id: "chimney-crown-rebuild",
     title: "Chimney rebuild and new crown",
@@ -198,3 +199,5 @@ export const fallbackProjects: Project[] = [
   { id: "repair-patch", title: "Shingle repair", category: "repair", images: [images.shingleRepairPatch] },
   { id: "vents", title: "New shingles going on", category: "residential", images: [images.roofReplacementColonial] },
 ];
+
+export const fallbackProjects: Project[] = [...earlierProjects, ...driveProjects];

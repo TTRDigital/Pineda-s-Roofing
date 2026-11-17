@@ -24,7 +24,7 @@ export default async function ServiceAreaPage() {
       <PageHero
         hero={{
           eyebrow: "Service area",
-          heading: "Roofing across Maryland & the DMV",
+          heading: "Roofing across Maryland & Washington, DC",
           text: "Family-owned roofing contractor serving Baltimore, Howard, Anne Arundel and Prince George's County, plus Carroll, Frederick and Montgomery County, from our Silver Spring home base. Solar in Washington, D.C. too.",
           image: images.homeNewRoofAerial,
         }}
