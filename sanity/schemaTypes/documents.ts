@@ -418,6 +418,7 @@ export const project = defineType({
     defineField({ name: "after", title: "After photo", type: "altImage" }),
     defineField({ name: "images", title: "More photos", type: "array", of: [defineArrayMember({ type: "altImage" })] }),
     defineField({ name: "featured", title: "Show on home page", type: "boolean", initialValue: false }),
+    defineField({ name: "service", title: "Also show on service page", type: "string", description: 'Service page slug, e.g. "skylights" shows it on /services/skylights.' }),
     defineField({ name: "date", type: "date" }),
   ],
   orderings: [{ title: "Newest", name: "date", by: [{ field: "date", direction: "desc" }] }],

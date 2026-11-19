@@ -111,7 +111,7 @@ export async function getLocation(slug: string) {
 
 export const getProjects = cache(async (): Promise<Project[]> => {
   const cms = await sanityFetch<Project[]>(
-    `*[_type == "project"] | order(date desc){ "id": _id, title, location, "area": area->slug.current, county, problem, solution, category, summary, featured, "before": before${IMG}, "after": after${IMG}, "images": images[]${IMG} }`,
+    `*[_type == "project"] | order(date desc){ "id": _id, title, location, "area": area->slug.current, county, problem, solution, category, summary, featured, service, "before": before${IMG}, "after": after${IMG}, "images": images[]${IMG} }`,
     {},
     ["project"],
   );

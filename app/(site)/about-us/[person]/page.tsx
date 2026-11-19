@@ -27,8 +27,9 @@ export async function generateMetadata(props: PageProps<"/about-us/[person]">): 
   if (!p) return {};
   return pageMetadata(
     {
-      title: `${p.name}, ${p.role} | Pineda's Roofing`,
-      description: `Meet ${p.name}, ${p.role.toLowerCase()} of Pineda's Roofing, the family-owned Maryland roofing contractor.`,
+      // Role reads "Co-owner · Project Supervisor": the title keeps the first part, the description the rest.
+      title: `${p.name}, ${p.role.split(" · ")[0]} | Pineda's Roofing`,
+      description: `Meet ${p.name}, ${p.role.replace(" · ", ", ").toLowerCase()} at Pineda's Roofing, the family-owned Maryland roofing contractor.`,
       image: p.image,
       noIndex: p.noIndex,
     },

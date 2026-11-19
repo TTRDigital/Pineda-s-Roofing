@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import { getPartners, getService, getServices, getSiteSettings, getTestimonials } from "@/lib/content";
+import { getPartners, getProjects, getService, getServices, getSiteSettings, getTestimonials } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
 import { serviceOptions } from "@/lib/lead-options";
@@ -14,6 +14,8 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { RelatedServices } from "@/components/sections/RelatedServices";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Gallery } from "@/components/gallery/Gallery";
 import { JsonLd } from "@/components/ui/JsonLd";
 
 
@@ -40,13 +42,16 @@ const formService: Record<string, (typeof serviceOptions)[number]> = {
   "commercial-roofing": "Commercial roofing",
   "gutter-installation-replacement": "Gutters",
   siding: "Siding",
+  skylights: "Skylights",
   "solar-panel-installation": "Solar installation",
 };
 
 export default async function ServicePage(props: PageProps<"/services/[slug]">) {
   const { slug } = await props.params;
-  const [service, services, settings, partners, testimonials] = await Promise.all([getService(slug), getServices(), getSiteSettings(), getPartners(), getTestimonials()]);
+  const [service, services, settings, partners, testimonials, projects] = await Promise.all([getService(slug), getServices(), getSiteSettings(), getPartners(), getTestimonials(), getProjects()]);
   if (!service) notFound();
+  // Real jobs tagged for this service (e.g. the Severna Park VELUX skylights on /services/skylights).
+  const featuredJobs = projects.filter((p) => p.service === slug);
 
   const roofing = service.category !== "exterior" && service.category !== "solar";
   const related =
@@ -95,6 +100,16 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
       {service.sections.map((b, i) => (
         <FeatureSection key={b.title} block={b} index={i} tone={i % 2 ? "mist" : "white"} />
       ))}
+      {featuredJobs.length ? (
+        <section id="projects" className="section bg-white">
+          <div className="container-x">
+            <SectionHeading eyebrow="Recent projects" heading={`Recent ${service.title.toLowerCase()} projects`} text="Real jobs from our crews. Tap a project to see every photo." />
+            <div className="mt-12">
+              <Gallery projects={featuredJobs} filters={false} />
+            </div>
+          </div>
+        </section>
+      ) : null}
       {roofing ? <LogoMarquee label="Brands we install" items={partners.brands} /> : null}
       <Testimonials items={testimonials} settings={settings} page={slug} />
       <FaqSection intro={{ eyebrow: "FAQ", heading: `${service.title} questions` }} items={service.faqs} tone="mist" />

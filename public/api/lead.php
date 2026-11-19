@@ -64,7 +64,7 @@ function text(array $in, string $key, int $max): string {
 // Keep in sync with lib/lead-options.ts.
 $services = [
     'Roof replacement', 'Roof repair', 'Emergency / leak repair', 'Storm damage / insurance claim',
-    'Free roof inspection', 'Commercial roofing', 'Gutters', 'Siding', 'Solar installation', 'Other',
+    'Free roof inspection', 'Commercial roofing', 'Gutters', 'Siding', 'Skylights', 'Solar installation', 'Other',
 ];
 $properties = ['Home', 'Commercial building', 'Rental / multifamily'];
 // Solar assessments (keep in sync with lib/lead-options.ts).

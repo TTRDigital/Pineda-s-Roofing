@@ -123,6 +123,8 @@ export type Project = {
   after?: Img;
   images: Img[];
   featured?: boolean;
+  /** Service page slug the project is also shown on (e.g. "skylights"). */
+  service?: string;
 };
 
 export type Testimonial = { quote: string; name: string; location?: string; rating: number; source?: string };

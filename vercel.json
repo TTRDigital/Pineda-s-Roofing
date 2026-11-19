@@ -117,6 +117,16 @@
       "source": "/service-area/northern-virginia/",
       "destination": "/service-area/",
       "permanent": true
+    },
+    {
+      "source": "/services/windows",
+      "destination": "/services/skylights/",
+      "permanent": true
+    },
+    {
+      "source": "/services/windows/",
+      "destination": "/services/skylights/",
+      "permanent": true
     }
   ]
 }

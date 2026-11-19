@@ -39,7 +39,7 @@ export const fallbackHome: HomeContent = {
     { icon: "wrench", title: "Roof & emergency repair", text: "Leaks, missing shingles and flashing, with 24/7 response to tarp and stop the water.", href: "/services/roof-repair" },
     { icon: "storm", title: "Storm restoration", text: "Hail, wind and fallen trees, with your insurance claim handled.", href: "/services/storm-restoration" },
     { icon: "sun", title: "Solar installation", text: "New: solar for Maryland and Washington, DC homes, planned by roofers.", href: "/services/solar-panel-installation" },
-    { icon: "rain", title: "Gutters & siding", text: "Gutters, guards, siding, windows, chimneys and masonry.", href: "/services" },
+    { icon: "rain", title: "Gutters & siding", text: "Gutters, guards, siding, skylights, chimneys and masonry.", href: "/services" },
   ],
   sections: [
     {
@@ -412,8 +412,7 @@ export const fallbackAbout: AboutContent = {
   },
   facts: [
     { label: "Founder", value: "German Pineda" },
-    { label: "Owner", value: "Fredy Pineda" },
-    { label: "Co-owner", value: "Roberto Pineda" },
+    { label: "Co-owners", value: "Roberto & Fredy Pineda" },
     { label: "Headquarters", value: "Silver Spring, MD" },
     { label: "License", value: "MHIC# 142024" },
   ],
@@ -448,33 +447,36 @@ export const fallbackAbout: AboutContent = {
   teamIntro: {
     eyebrow: "Meet the family",
     heading: "The Pinedas behind every roof",
-    text: "Pineda's Roofing is still run by the Pineda family. When you call us, you talk to the people who own the company.",
+    text: "Pineda's Roofing is run by father and son, Fredy and Roberto Pineda. When you call us, you talk to the people who own the company.",
   },
   teamPhoto: images.fredyRobertoTruck,
+  // Bios approved by Roberto ("Website revisions", Nov 10, 2026). Roberto first, as in his document.
   team: [
-    {
-      slug: "fredy-pineda",
-      name: "Fredy Pineda",
-      role: "Owner",
-      // Replace with the bio Roberto sends.
-      bio: [
-        "Fredy Pineda owns and leads Pineda's Roofing, the family company German Pineda founded more than 30 years ago.",
-        "He stands behind every estimate, every job and every warranty, and he's the person homeowners can call when they want to talk to the owner.",
-      ],
-      text: "Fredy owns and leads Pineda's Roofing today, carrying on the family company German Pineda founded more than 30 years ago. He stands behind every estimate, every crew and every warranty.",
-      image: images.freddyPineda,
-    },
     {
       slug: "roberto-pineda",
       name: "Roberto Pineda",
-      role: "Co-owner",
-      // Replace with the bio Roberto sends.
+      role: "Co-owner · Project Director & Roofing Specialist",
       bio: [
-        "Roberto Pineda co-owns Pineda's Roofing with Fredy and manages the company day to day.",
-        "He's focused on growing the family business across Maryland's main service areas and on its newest service, solar, while keeping it what it has always been: family-run, hands-on and honest with every homeowner.",
+        "Roberto Pineda helps homeowners understand their options and move forward with confidence. As co-owner of Pineda's Roofing, he handles estimates, project planning, material coordination, and customer communication. Whether a home needs a repair or a full replacement, his approach starts with understanding the problem and explaining the work clearly.",
+        "Working alongside his father, Fredy, Roberto is building on his family's construction background while helping the business grow. He brings a focus on detailed estimates, organized projects, and keeping customers informed from the first inspection through completion.",
+        "Roberto works with homeowners and property owners throughout Maryland, including Baltimore City, Baltimore County, Howard, Anne Arundel, and Prince George's County. He also helps coordinate roofing and solar inquiries across Maryland and Washington, DC.",
+        "His faith guides how he serves customers and leads the business. Through Pineda's Roofing, Roberto aims to provide honest recommendations, dependable communication, and work the family can stand behind.",
       ],
-      text: "Roberto co-owns Pineda's Roofing with Fredy. Together they keep the company what it has always been: family-run, hands-on and honest with every homeowner.",
+      text: "Roberto handles estimates, project planning, material coordination and customer communication, from the first inspection through completion.",
       image: images.robertoPineda,
+    },
+    {
+      slug: "fredy-pineda",
+      name: "Fredy Pineda",
+      role: "Co-owner · Project Supervisor",
+      bio: [
+        "Fredy Pineda brings hands-on construction experience and a practical eye for workmanship to Pineda's Roofing. As co-owner and project supervisor, he oversees field work, coordinates crews, and checks the details that help a project come together properly.",
+        "His role centers on execution—making sure the team understands the scope, addressing conditions uncovered during the work, and checking quality as the job progresses. From roofing and exterior repairs to larger replacements, Fredy approaches each project with care for the property and the people who depend on it.",
+        "Working alongside his son, Roberto, Fredy helps carry the family's construction background forward. Together, they serve homeowners and property owners across Maryland, including Baltimore City, Baltimore County, Howard, Anne Arundel, and Prince George's County.",
+        "Faith, family, and responsibility shape Fredy's approach to the business. He believes the quality of the work should reflect the promises made to the customer.",
+      ],
+      text: "Fredy oversees field work, coordinates crews and checks quality as each job progresses, so the work reflects the promises made to the customer.",
+      image: images.freddyPineda,
     },
   ],
   mascot: {

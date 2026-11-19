@@ -89,7 +89,7 @@ export const fallbackFaqs: Faq[] = [
     category: "General",
     question: "What roofing services do you offer?",
     answer:
-      "Roof replacement, roof repair, emergency repairs, storm restoration, maintenance and inspections for homes and commercial buildings. We also handle gutters, siding, windows, chimneys, masonry and hardscaping.",
+      "Roof replacement, roof repair, emergency repairs, storm restoration, maintenance and inspections for homes and commercial buildings. We also handle gutters, siding, skylights, chimneys, masonry and hardscaping.",
   },
   {
     category: "Roof replacement",

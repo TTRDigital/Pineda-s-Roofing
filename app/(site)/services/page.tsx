@@ -10,7 +10,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 const seo = {
   title: "Roofing & Exterior Services in Maryland | Pineda's Roofing",
-  description: "Roof replacement, repair, emergency and storm restoration, solar installation, plus gutters, siding, windows, chimneys, masonry and hardscaping in Maryland and DC.",
+  description: "Roof replacement, repair, emergency and storm restoration, solar installation, plus gutters, siding, skylights, chimneys, masonry and hardscaping in Maryland and DC.",
 };
 
 export const metadata: Metadata = pageMetadata(seo, "/services", images.rooferOnRidge);
@@ -24,7 +24,7 @@ export default async function ServicesPage() {
         hero={{
           eyebrow: "Services",
           heading: "Maryland exteriors, end to end",
-          text: "Roofing, solar, gutters, siding, windows and masonry from one family-owned company.",
+          text: "Roofing, solar, gutters, siding, skylights and masonry from one family-owned company.",
           image: images.rooferOnRidge,
         }}
         crumbs={[{ label: "Services", href: "/services" }]}

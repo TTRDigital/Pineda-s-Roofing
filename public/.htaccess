@@ -25,6 +25,8 @@ ErrorDocument 404 /404.html
   RewriteRule ^contact/?$ https://%{HTTP_HOST}/contact-us/ [R=301,L]
   RewriteRule ^roofing/?$ https://%{HTTP_HOST}/services/roofing/ [R=301,L]
   RewriteRule ^services/gutters/?$ https://%{HTTP_HOST}/services/gutter-installation-replacement/ [R=301,L]
+  # Windows became Skylights (Nov 2026).
+  RewriteRule ^services/windows/?$ https://%{HTTP_HOST}/services/skylights/ [R=301,L]
   # Northern Virginia is no longer a service area.
   RewriteRule ^service-area/northern-virginia/?$ https://%{HTTP_HOST}/service-area/ [R=301,L]
 
