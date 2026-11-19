@@ -658,7 +658,7 @@ export const fallbackServices: Service[] = [
     ],
     seo: {
       title: "24/7 Emergency Roof Repair in Maryland | Pineda's Roofing",
-      description: "24/7 emergency roof repair in Maryland and Washington, DC. We tarp leaks, secure storm and tree damage, and document it with photos for your adjuster. Call (301) 921-6333.",
+      description: "24/7 emergency roof repair in Maryland and Washington, DC. We tarp leaks, secure storm and tree damage, and document it with photos. Call (301) 921-6333.",
     },
   },
 

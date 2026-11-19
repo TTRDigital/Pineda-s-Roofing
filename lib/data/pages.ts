@@ -356,7 +356,7 @@ export const fallbackInsurance: InsuranceContent = {
   seo: {
     title: "Roof Storm Damage & Insurance in Maryland | Pineda's Roofing",
     description:
-      "Storm damage? Pineda's Roofing inspects your roof for free, documents the damage with photos and meets with your insurance adjuster at your home anywhere in Maryland.",
+      "Storm damage? Pineda's Roofing inspects your roof for free, documents the damage with photos and meets with your adjuster at your home in Maryland.",
   },
   hero: {
     eyebrow: "Storm & insurance",

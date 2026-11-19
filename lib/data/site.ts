@@ -151,7 +151,7 @@ export const fallbackFaqs: Faq[] = [
     category: "General",
     question: "What areas do you serve?",
     answer:
-      "Our main service areas are Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's County. We also serve Carroll, Frederick and Montgomery County, where our Silver Spring home base is, and Washington, D.C., mainly for solar.",
+      "Our main service areas are Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's County. We also serve Carroll, Frederick and Charles County and Montgomery County, where our Silver Spring home base is, and Washington, D.C., mainly for solar.",
   },
 ];
 

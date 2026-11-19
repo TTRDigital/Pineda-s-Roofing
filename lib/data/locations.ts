@@ -1,5 +1,6 @@
 import type { Location } from "../types";
 import { countyPages, localDetail, priorityCityPages } from "./locations-priority.ts";
+import { newCityCoords, newCityPages, newCountyPages } from "./locations-new.ts";
 
 /* Service area. `counties` drives the full area list; `fallbackLocations` are the city pages (array order = display order). */
 
@@ -17,11 +18,11 @@ export type County = {
 
 /* Ordered by priority: main focus areas first, then the second tier, then D.C. */
 export const counties: County[] = [
-  { name: "Baltimore County", state: "MD", tier: 1, page: "baltimore-county", fips: ["24005"], cities: ["Towson", "Catonsville", "Owings Mills", "Pikesville", "Parkville", "Perry Hall", "Dundalk"] },
+  { name: "Baltimore County", state: "MD", tier: 1, page: "baltimore-county", fips: ["24005"], cities: ["Towson", "Catonsville", "Owings Mills", "Pikesville", "Parkville", "Perry Hall", "Dundalk", "Halethorpe"] },
   { name: "Baltimore City", state: "MD", tier: 1, page: "baltimore-city", fips: ["24510"], cities: ["Baltimore"] },
-  { name: "Howard County", state: "MD", tier: 1, page: "howard-county", fips: ["24027"], cities: ["Columbia", "Ellicott City", "Elkridge", "Clarksville"] },
-  { name: "Anne Arundel County", state: "MD", tier: 1, page: "anne-arundel-county", fips: ["24003"], cities: ["Annapolis", "Glen Burnie", "Severna Park", "Crofton", "Odenton"] },
-  { name: "Prince George's County", state: "MD", tier: 1, page: "prince-georges-county", fips: ["24033"], cities: ["Bowie", "Laurel", "College Park", "Upper Marlboro", "Hyattsville", "Greenbelt"] },
+  { name: "Howard County", state: "MD", tier: 1, page: "howard-county", fips: ["24027"], cities: ["Columbia", "Ellicott City", "Elkridge", "Clarksville", "West Friendship"] },
+  { name: "Anne Arundel County", state: "MD", tier: 1, page: "anne-arundel-county", fips: ["24003"], cities: ["Annapolis", "Glen Burnie", "Severna Park", "Crofton", "Odenton", "Pasadena", "Edgewater"] },
+  { name: "Prince George's County", state: "MD", tier: 1, page: "prince-georges-county", fips: ["24033"], cities: ["Bowie", "Laurel", "College Park", "Upper Marlboro", "Hyattsville", "Greenbelt", "Clinton"] },
   { name: "Carroll County", state: "MD", tier: 2, page: "carroll-county", fips: ["24013"], cities: ["Westminster", "Eldersburg", "Sykesville"] },
   { name: "Frederick County", state: "MD", tier: 2, page: "frederick-county", fips: ["24021"], cities: ["Frederick", "Urbana", "Middletown", "New Market"] },
   {
@@ -32,6 +33,8 @@ export const counties: County[] = [
     fips: ["24031"],
     cities: ["Silver Spring", "Aspen Hill", "Wheaton", "Takoma Park", "Olney", "Rockville", "Bethesda", "Gaithersburg", "Germantown", "Potomac"],
   },
+  // Added Nov 2026 at Roberto's request, for the Waldorf jobs.
+  { name: "Charles County", state: "MD", tier: 2, page: "charles-county", fips: ["24017"], cities: ["Waldorf"] },
   { name: "Washington, D.C.", state: "DC", tier: 2, page: "washington-dc", fips: ["11001"], cities: ["Capitol Hill", "Georgetown", "Petworth", "Brookland", "Cleveland Park"] },
 ];
 
@@ -49,6 +52,7 @@ export const cityCoords: Record<string, [number, number]> = {
   "Capitol Hill": [-77.0003, 38.889], Georgetown: [-77.0628, 38.9052], Petworth: [-77.025, 38.9459],
   Brookland: [-76.9842, 38.9328], "Cleveland Park": [-77.0587, 38.9352],
   "Upper Marlboro": [-76.7497, 38.8159], Parkville: [-76.5397, 39.3773], "Perry Hall": [-76.4636, 39.4126], Dundalk: [-76.5205, 39.2507],
+  ...newCityCoords,
 };
 
 const cityPages: Location[] = [
@@ -132,7 +136,7 @@ const cityPages: Location[] = [
     neighborhoods: ["Twinbrook", "King Farm", "Fallsgrove", "Hungerford", "West End", "College Gardens"],
     seo: {
       title: "Roofing Contractor in Rockville, MD | Pineda's Roofing",
-      description: "Rockville roof repair and replacement from a family-owned Montgomery County roofer. Atlas Pinnacle Pristine shingles, storm damage documentation, free inspections.",
+      description: "Rockville roof repair and replacement from a family-owned Montgomery County roofer. Atlas Pinnacle Pristine shingles, storm damage photos, free inspections.",
     },
   },
   {
@@ -475,18 +479,19 @@ const cityPages: Location[] = [
 /* Display and page order: overview, then each priority county followed by its cities. */
 const order = [
   "roofing-service-maryland",
-  "baltimore-county", "towson", "catonsville",
+  "baltimore-county", "towson", "catonsville", "owings-mills", "pikesville", "parkville", "perry-hall", "dundalk", "halethorpe",
   "baltimore-city",
-  "howard-county", "columbia", "ellicott-city", "elkridge",
-  "anne-arundel-county", "annapolis", "glen-burnie", "severna-park",
-  "prince-georges-county", "bowie", "laurel", "college-park", "upper-marlboro",
-  "carroll-county", "westminster",
-  "frederick-county", "frederick",
-  "montgomery-county", "silver-spring", "wheaton", "rockville", "bethesda", "gaithersburg", "germantown", "potomac", "olney",
+  "howard-county", "columbia", "ellicott-city", "elkridge", "clarksville", "west-friendship",
+  "anne-arundel-county", "annapolis", "glen-burnie", "severna-park", "crofton", "odenton", "pasadena", "edgewater",
+  "prince-georges-county", "bowie", "laurel", "college-park", "upper-marlboro", "hyattsville", "greenbelt", "clinton",
+  "carroll-county", "westminster", "eldersburg", "sykesville",
+  "frederick-county", "frederick", "urbana", "middletown", "new-market",
+  "montgomery-county", "silver-spring", "wheaton", "rockville", "bethesda", "gaithersburg", "germantown", "potomac", "olney", "aspen-hill", "takoma-park",
+  "charles-county", "waldorf",
   "washington-dc",
 ];
 
-const all = [...countyPages, ...priorityCityPages, ...cityPages].map((l) => ({ ...l, ...localDetail[l.slug] }));
+const all = [...countyPages, ...newCountyPages, ...priorityCityPages, ...newCityPages, ...cityPages].map((l) => ({ ...l, ...localDetail[l.slug] }));
 
 export const fallbackLocations: Location[] = [
   ...order.map((slug) => all.find((l) => l.slug === slug)).filter((l): l is Location => !!l),

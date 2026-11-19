@@ -32,7 +32,7 @@ export function ServiceAreas({
         <SectionHeading
           eyebrow="Service area"
           heading="Maryland & Washington, DC, county by county"
-          text={`Our main service areas are Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's County. We also serve Carroll, Frederick and Montgomery County, where our Silver Spring home base is, plus Washington, D.C. for solar. Not sure if you're in our area? Call ${phone}.`}
+          text={`Our main service areas are Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's County. We also serve Carroll, Frederick and Charles County and Montgomery County, where our Silver Spring home base is, plus Washington, D.C. for solar. Not sure if you're in our area? Call ${phone}.`}
         />
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
           <div className="lg:sticky lg:top-28" data-reveal>

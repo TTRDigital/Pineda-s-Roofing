@@ -20,7 +20,6 @@ const HOME = "Silver Spring";
 /* Label placement: [dx, dy, text-anchor] from the dot, tuned so labels don't collide. */
 const LABEL_OFFSET: Record<string, [number, number, "start" | "end" | "middle"]> = {
   "Silver Spring": [0, -20, "middle"],
-  Wheaton: [-9, -5, "end"],
   Olney: [9, 4, "start"],
   Potomac: [-9, -3, "end"],
   Rockville: [-9, 4, "end"],
@@ -30,30 +29,28 @@ const LABEL_OFFSET: Record<string, [number, number, "start" | "end" | "middle"]>
   Bowie: [9, 4, "start"],
   Laurel: [9, 4, "start"],
   Columbia: [-9, -6, "end"],
-  "Ellicott City": [-9, -2, "end"],
+  "Ellicott City": [-6, 12, "end"],
   Frederick: [9, -6, "start"],
   Annapolis: [9, 4, "start"],
   Towson: [9, -4, "start"],
-  Baltimore: [9, 6, "start"],
+  Baltimore: [0, -13, "middle"],
   Westminster: [9, 4, "start"],
-  Catonsville: [9, 14, "start"],
   "Glen Burnie": [9, 4, "start"],
   "Severna Park": [9, 4, "start"],
   Elkridge: [9, 6, "start"],
-  "College Park": [9, -2, "start"],
   "Upper Marlboro": [9, 4, "start"],
   Waldorf: [9, 4, "start"],
 };
 
 /* Where each region's name sits, as [longitude, latitude]. */
 const COUNTY_LABEL: Record<string, [number, number]> = {
-  "Montgomery County": [-77.2, 39.24],
+  "Montgomery County": [-77.27, 39.23],
   "Prince George's County": [-76.76, 38.74],
-  "Howard County": [-76.94, 39.3],
+  "Howard County": [-76.98, 39.345],
   "Frederick County": [-77.4, 39.53],
   "Anne Arundel County": [-76.6, 38.92],
   "Baltimore County": [-76.62, 39.5],
-  "Baltimore City": [-76.44, 39.25],
+  "Baltimore City": [-76.36, 39.18],
   "Carroll County": [-77.03, 39.66],
   "Washington, D.C.": [-76.99, 38.85],
   "Charles County": [-76.98, 38.5],
