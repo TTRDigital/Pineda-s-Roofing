@@ -26,7 +26,7 @@ export const countyPages: Location[] = [
       "Free roof inspections in Baltimore County",
       "Shingle and flat roof replacement",
       "Rowhome and townhome roofing",
-      "Storm damage and insurance claim help",
+      "Storm damage inspections with photos",
       "Gutters and chimney flashing",
       "Solar installation",
     ],
@@ -49,7 +49,7 @@ export const countyPages: Location[] = [
       {
         heading: "Storm damage roof repair in Baltimore County",
         paragraphs: [
-          "Summer thunderstorms bring down limbs from the county's mature trees, and nor'easters drive wind-blown rain. After a storm we inspect for free, photograph the damage and work with your insurance adjuster on the claim.",
+          "Summer thunderstorms bring down limbs from the county's mature trees, and nor'easters drive wind-blown rain. After a storm we inspect for free, photograph the damage and meet with your insurance adjuster.",
         ],
       },
     ],
@@ -86,7 +86,7 @@ export const countyPages: Location[] = [
       "Rowhouse flat roof replacement",
       "Parapet, drain and scupper repair",
       "Roof deck and hatch flashing",
-      "Storm damage and insurance claim help",
+      "Storm damage photos for your adjuster",
       "Solar on flat rowhouse roofs",
     ],
     neighborhoods: ["Canton", "Fells Point", "Federal Hill", "Hampden", "Roland Park", "Charles Village", "Highlandtown", "Mount Vernon", "Locust Point", "Hamilton"],
@@ -143,7 +143,7 @@ export const countyPages: Location[] = [
       "Free roof inspections in Howard County",
       "Product details for HOA and village approvals",
       "Complex roofs with valleys and dormers",
-      "Storm damage and insurance claim help",
+      "Storm damage documentation with photos",
       "Gutters sized for heavy rain",
       "Solar installation",
     ],
@@ -191,7 +191,7 @@ export const countyPages: Location[] = [
       "Free roof inspections in Anne Arundel County",
       "Wind damage repair",
       "Algae-resistant Atlas shingles",
-      "Storm damage and insurance claim help",
+      "Storm damage inspections with photos",
       "Waterfront home roofing",
       "Solar installation",
     ],
@@ -207,7 +207,7 @@ export const countyPages: Location[] = [
       {
         heading: "Storm and wind damage roof repair in Anne Arundel County",
         paragraphs: [
-          "After a storm, missing or creased shingles and lifted flashing are the most common damage we find. We inspect for free, document everything with photos and work with your insurance company if there's a claim.",
+          "After a storm, missing or creased shingles and lifted flashing are the most common damage we find. We inspect for free, document everything with photos and meet with your adjuster if you file a claim.",
         ],
       },
     ],
@@ -238,7 +238,7 @@ export const countyPages: Location[] = [
       "Free roof inspections in Prince George's County",
       "Roof replacement for older and newer homes",
       "HOA shingle and color details",
-      "Storm damage and insurance claim help",
+      "Storm damage photos for your adjuster",
       "Gutters and gutter guards",
       "Solar installation",
     ],
@@ -254,7 +254,7 @@ export const countyPages: Location[] = [
       {
         heading: "Storm damage roof repair in Prince George's County",
         paragraphs: [
-          "Summer storms and falling limbs cause most of the damage we see here. We tarp and protect an open roof, photograph the damage and work with your insurance adjuster on the claim.",
+          "Summer storms and falling limbs cause most of the damage we see here. We tarp and protect an open roof, photograph the damage and meet with your insurance adjuster.",
         ],
       },
     ],
@@ -287,7 +287,7 @@ export const countyPages: Location[] = [
       "Free roof inspections in Carroll County",
       "Wind and ice dam damage repair",
       "Ice and water shield on every new roof",
-      "Storm damage and insurance claim help",
+      "Storm damage documentation with photos",
       "Gutters and chimney flashing",
     ],
     neighborhoods: ["Westminster", "Eldersburg", "Sykesville", "Hampstead", "Manchester", "Taneytown", "Mount Airy"],
@@ -320,7 +320,7 @@ export const countyPages: Location[] = [
       "Free roof inspections in Frederick County",
       "Ice dam prevention and repair",
       "Historic district chimney and masonry work",
-      "Storm damage and insurance claim help",
+      "Storm damage inspections with photos",
       "Atlas Pinnacle Pristine shingles",
     ],
     neighborhoods: ["Frederick", "Urbana", "Middletown", "New Market", "Walkersville", "Brunswick", "Thurmont"],
@@ -352,7 +352,7 @@ export const countyPages: Location[] = [
     highlights: [
       "Free roof inspections in Montgomery County",
       "Based in Silver Spring",
-      "Storm damage and insurance claim help",
+      "Storm damage photos for your adjuster",
       "Historic district experience",
       "Gutters, chimneys and siding",
       "Solar installation",
@@ -388,7 +388,7 @@ export const priorityCityPages: Location[] = [
       "Catonsville's older neighborhoods along Frederick Road have early 1900s homes with steep roofs, dormers and chimneys, while streets built after the war are full of Cape Cods and brick colonials on their third roof.",
       "Big old trees are part of what makes Catonsville feel like home, and they're also why we see so many clogged gutters, limb damage and shaded roofs with moss and algae.",
     ],
-    highlights: ["Free roof inspections in Catonsville", "Dormer and chimney flashing", "Storm damage and insurance claim help", "Gutters and gutter guards", "Atlas Pinnacle Pristine shingles"],
+    highlights: ["Free roof inspections in Catonsville", "Dormer and chimney flashing", "Storm damage documentation with photos", "Gutters and gutter guards", "Atlas Pinnacle Pristine shingles"],
     neighborhoods: ["Old Catonsville", "Oella", "Westview", "Paradise", "Hilltop"],
     sections: [
       {
@@ -406,7 +406,7 @@ export const priorityCityPages: Location[] = [
     ],
     seo: {
       title: "Roofing Contractor in Catonsville, MD | Pineda's Roofing",
-      description: "Roofing contractor in Catonsville: roof replacement and repair for older homes, chimney and dormer flashing, storm damage claims. Free inspections.",
+      description: "Roofing contractor in Catonsville: roof replacement and repair for older homes, chimney and dormer flashing, storm damage repair. Free inspections.",
     },
   },
   {
@@ -422,7 +422,7 @@ export const priorityCityPages: Location[] = [
       "Much of Glen Burnie was built in the 1950s through the 1970s. Many of those roofs have been re-shingled more than once, sometimes right over the old layer, which hides soft decking and traps heat.",
       "Being close to the Patapsco River and the Bay means wind-driven rain in storms. Flashing at chimneys and walls is often where a Glen Burnie leak begins.",
     ],
-    highlights: ["Free roof inspections in Glen Burnie", "Full tear-off, no layering over old roofs", "Deck and flashing repair", "Storm damage and insurance claim help", "Gutters and downspouts"],
+    highlights: ["Free roof inspections in Glen Burnie", "Full tear-off, no layering over old roofs", "Deck and flashing repair", "Storm damage inspections with photos", "Gutters and downspouts"],
     neighborhoods: ["Glen Burnie Park", "Harundale", "Point Pleasant", "Marley", "Ferndale"],
     sections: [
       {
@@ -434,7 +434,7 @@ export const priorityCityPages: Location[] = [
     ],
     seo: {
       title: "Roofing Contractor in Glen Burnie, MD | Pineda's Roofing",
-      description: "Roofing contractor in Glen Burnie: full tear-off roof replacement, leak repair and storm damage claims for Cape Cods and ranchers. Free inspections.",
+      description: "Roofing contractor in Glen Burnie: full tear-off roof replacement, leak repair and storm damage repair for Cape Cods and ranchers. Free inspections.",
     },
   },
   {
@@ -450,7 +450,7 @@ export const priorityCityPages: Location[] = [
       "Waterfront and wooded lots are what make Severna Park special, and they're hard on a roof. Wind off the rivers lifts shingles, and heavy shade keeps roofs damp long enough for algae and moss to grow.",
       "Larger homes here often have complex roofs with several valleys, dormers and skylights, each a place where flashing has to be right.",
     ],
-    highlights: ["Free roof inspections in Severna Park", "Wind damage repair", "Algae-resistant Atlas shingles", "Skylight and valley flashing", "Storm damage and insurance claim help"],
+    highlights: ["Free roof inspections in Severna Park", "Wind damage repair", "Algae-resistant Atlas shingles", "Skylight and valley flashing", "Storm damage photos for your adjuster"],
     neighborhoods: ["Cape St. Claire", "Round Bay", "Manhattan Beach", "Sunrise Beach", "Chartwell"],
     sections: [
       {
@@ -473,12 +473,12 @@ export const priorityCityPages: Location[] = [
     county: "Howard County",
     state: "MD",
     featured: true,
-    lead: "Pineda's Roofing is a roofing contractor in Elkridge for townhome and single-family roof replacement, repairs and storm damage claims.",
+    lead: "Pineda's Roofing is a roofing contractor in Elkridge for townhome and single-family roof replacement, repairs and storm damage inspections.",
     paragraphs: [
       "Elkridge is one of Maryland's oldest towns, but most of its homes are newer: townhome and single-family communities built from the 1980s on, many of them now due for their first roof replacement.",
       "Townhome roofs share edges with the neighbors, so we coordinate the tie-ins carefully. Many communities also have HOA rules on shingle color and style.",
     ],
-    highlights: ["Free roof inspections in Elkridge", "Townhome roof replacement", "HOA shingle and color details", "Storm damage and insurance claim help", "Gutters and gutter guards"],
+    highlights: ["Free roof inspections in Elkridge", "Townhome roof replacement", "HOA shingle and color details", "Storm damage documentation with photos", "Gutters and gutter guards"],
     neighborhoods: ["Elkridge Landing", "Rockburn", "Lawyers Hill", "Ilchester"],
     sections: [
       {
@@ -490,7 +490,7 @@ export const priorityCityPages: Location[] = [
     ],
     seo: {
       title: "Roofing Contractor in Elkridge, MD | Pineda's Roofing",
-      description: "Roofing contractor in Elkridge: townhome and single-family roof replacement, repairs and storm damage claims. HOA color details. Free inspections.",
+      description: "Roofing contractor in Elkridge: townhome and single-family roof replacement, repairs and storm damage inspections. HOA color details. Free inspections.",
     },
   },
   {
@@ -506,7 +506,7 @@ export const priorityCityPages: Location[] = [
       "College Park's neighborhoods around the University of Maryland are full of brick colonials, bungalows and Cape Cods from the 1920s through the 1950s. Many are rentals, where a small leak can go unnoticed until it's a big repair.",
       "Mature trees mean full gutters every fall. Water that spills over the gutter rots fascia and soaks foundations, so we check drainage on every visit.",
     ],
-    highlights: ["Free roof inspections in College Park", "Repairs for rental properties", "Older home decking and flashing", "Gutter cleaning and repair", "Storm damage and insurance claim help"],
+    highlights: ["Free roof inspections in College Park", "Repairs for rental properties", "Older home decking and flashing", "Gutter cleaning and repair", "Storm damage inspections with photos"],
     neighborhoods: ["Calvert Hills", "Berwyn", "Hollywood", "Lakeland", "Old Town College Park"],
     sections: [
       {
@@ -518,7 +518,7 @@ export const priorityCityPages: Location[] = [
     ],
     seo: {
       title: "Roofing Contractor in College Park, MD | Pineda's Roofing",
-      description: "Roofing contractor in College Park: roof repair and replacement for homeowners and landlords, gutters and storm damage claims. Free inspections.",
+      description: "Roofing contractor in College Park: roof repair and replacement for homeowners and landlords, gutters and storm damage repair. Free inspections.",
     },
   },
   {
@@ -534,7 +534,7 @@ export const priorityCityPages: Location[] = [
       "Many Upper Marlboro homes were built from the 1980s through the 2000s, and their original roofs are reaching the end of their life. Bigger homes mean bigger roofs, with more valleys and walls to flash correctly.",
       "Most communities here have HOAs with rules on shingle style and color, and we provide the details for approval.",
     ],
-    highlights: ["Free roof inspections in Upper Marlboro", "Roof replacement for larger homes", "HOA shingle and color details", "Storm damage and insurance claim help", "Solar installation"],
+    highlights: ["Free roof inspections in Upper Marlboro", "Roof replacement for larger homes", "HOA shingle and color details", "Storm damage photos for your adjuster", "Solar installation"],
     neighborhoods: ["Marlton", "Kettering", "Largo", "Beechtree", "Perrywood"],
     sections: [
       {
@@ -562,7 +562,7 @@ export const priorityCityPages: Location[] = [
       "Westminster's historic Main Street homes have steep roofs, chimneys and old flashing, while the subdivisions around town have roofs from the 1980s and 1990s that are now wearing out.",
       "Open ground means wind, and winters here bring more snow and ice than closer to the Bay. Ice and water shield and good ventilation are part of every roof we install.",
     ],
-    highlights: ["Free roof inspections in Westminster", "Wind and ice dam repair", "Chimney flashing", "Storm damage and insurance claim help", "Atlas Pinnacle Pristine shingles"],
+    highlights: ["Free roof inspections in Westminster", "Wind and ice dam repair", "Chimney flashing", "Storm damage documentation with photos", "Atlas Pinnacle Pristine shingles"],
     neighborhoods: ["Downtown Westminster", "Wakefield Valley", "Greenvale Mews", "Avondale"],
     seo: {
       title: "Roofing Contractor in Westminster, MD | Pineda's Roofing",
@@ -584,7 +584,7 @@ export const localDetail: Record<string, Partial<Location>> = {
     tier: 1,
     sections: [
       { heading: "Roof replacement in Bowie", paragraphs: ["Belair at Bowie was built by Levitt & Sons in the 1960s, and many of those homes are on their third roof. As a roofing contractor in Bowie, we tear off every layer, repair the decking and replace worn flashing before the new roof goes on."] },
-      { heading: "Storm damage roof repair in Bowie", paragraphs: ["Fallen limbs and wind-lifted shingles are the most common storm damage we see in Bowie. We photograph the damage and work with your insurance company on the claim."] },
+      { heading: "Storm damage roof repair in Bowie", paragraphs: ["Fallen limbs and wind-lifted shingles are the most common storm damage we see in Bowie. We photograph the damage and meet with your adjuster."] },
     ],
   },
   laurel: {
@@ -640,7 +640,7 @@ export const localDetail: Record<string, Partial<Location>> = {
   rockville: {
     sections: [
       { heading: "Roof replacement in Rockville", paragraphs: ["Rockville has 1950s ramblers in neighborhoods like Twinbrook and newer HOA communities like King Farm and Fallsgrove. As a roofing contractor in Rockville, we handle both: decking and ventilation upgrades on older homes, and HOA color and product details on newer ones."] },
-      { heading: "Storm damage roof repair in Rockville", paragraphs: ["After summer storms we inspect for wind-lifted shingles, hail hits and limb damage, photograph everything and work with your insurance company."] },
+      { heading: "Storm damage roof repair in Rockville", paragraphs: ["After summer storms we inspect for wind-lifted shingles, hail hits and limb damage, photograph everything and meet with your adjuster."] },
     ],
   },
   bethesda: {
@@ -683,7 +683,7 @@ export const localDetail: Record<string, Partial<Location>> = {
       "Roof check before every solar install",
       "Rowhouse flat roof replacement",
       "Parapet and drain repair",
-      "Storm damage and insurance claim help",
+      "Storm damage inspections with photos",
     ],
     sections: [
       {

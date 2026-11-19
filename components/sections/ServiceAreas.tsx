@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin } from "lucide-react";
+import { Images, MapPin } from "lucide-react";
 import type { Location, Project } from "@/lib/types";
 import { projectCountsByCity } from "@/lib/projects";
 import type { County } from "@/lib/data/locations";
@@ -21,7 +21,10 @@ export function ServiceAreas({
   tone?: "white" | "mist";
   phone: string;
 }) {
-  const pageFor = (city: string) => locations.find((l) => l.featured && l.name.toLowerCase() === city.toLowerCase());
+  // "Baltimore" is Baltimore City: a county with a single city uses the county's page.
+  const pageFor = (city: string) =>
+    locations.find((l) => l.featured && l.name.toLowerCase() === city.toLowerCase()) ??
+    locations.find((l) => l.featured && l.slug === counties.find((k) => k.cities.length === 1 && k.cities[0] === city)?.page);
   const projectCounts = projectCountsByCity(projects, locations);
   return (
     <section className={`section ${tone === "mist" ? "bg-mist" : "bg-white"}`}>
@@ -62,7 +65,13 @@ export function ServiceAreas({
                             className={`inline-flex min-h-9 items-center gap-1.5 rounded-full bg-cyan-50 px-3.5 text-sm font-semibold text-ink transition-colors hover:bg-cyan hover:ring-cyan ${projectCounts[city] ? "ring-2 ring-cyan" : "ring-1 ring-cyan-100"}`}
                           >
                             {city}
-                            {projectCounts[city] ? <span className="text-xs font-bold text-cyan-deep">· {projectCounts[city]} {projectCounts[city] === 1 ? "project" : "projects"}</span> : null}
+                            {projectCounts[city] ? (
+                              // Roberto asked for an image icon here instead of the number of projects.
+                              <>
+                                <Images className="h-4 w-4 text-cyan-deep" strokeWidth={2.25} aria-hidden="true" />
+                                <span className="sr-only">: see our projects</span>
+                              </>
+                            ) : null}
                           </Link>
                         ) : (
                           <span className="inline-flex min-h-9 items-center rounded-full bg-mist px-3.5 text-sm text-body">{city}</span>

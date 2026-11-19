@@ -24,16 +24,16 @@ export const fallbackServices: Service[] = [
       {
         anchor: "overview",
         icon: "users",
-        eyebrow: "Family owned since 1992",
+        eyebrow: "Founded in 1992",
         title: "Your home's roof, handled by one family",
-        lead: "For more than 30 years, Maryland homeowners have called Pineda's Roofing when the roof over their head needs attention.",
+        lead: "With more than 30 years of experience, Pineda's Roofing is who Maryland homeowners call when the roof over their head needs attention.",
         paragraphs: [
           "From the first inspection to the final walkthrough, your roof is managed by the same family business, and the owners stand behind the warranty.",
           "We inspect the whole roof, photograph what we find and tell you honestly whether you need a repair or a replacement.",
         ],
         highlightsLabel: "Why homeowners choose us",
         highlights: [
-          "Family owned and operated since 1992",
+          "Founded in 1992, family owned and operated",
           "Managed by the Pineda family",
           "Licensed, insured & bonded, MHIC# 142024",
           "Free inspections, no-obligation estimates",
@@ -66,8 +66,8 @@ export const fallbackServices: Service[] = [
       {
         anchor: "replacement",
         icon: "hammer",
-        title: "Roof replacement in two to three days",
-        lead: "When repairs stop making financial sense, a new roof is the better investment. Most residential replacements are finished in two to three days.",
+        title: "Roof replacement in 1–2 days",
+        lead: "When repairs stop making financial sense, a new roof is the better investment. Most residential replacements are finished in one to two days.",
         paragraphs: [
           "We remove the old roof, repair the deck where needed, correct the ventilation and install a complete new system. Then we clean up, sweep for nails and walk the finished roof with you.",
         ],
@@ -88,7 +88,7 @@ export const fallbackServices: Service[] = [
         title: "Honest repairs when a repair will do",
         lead: "Not every problem needs a new roof. Missing shingles, flashing failures, valley leaks and small punctures are often fixed in a single visit.",
         paragraphs: [
-          "If a repair will safely extend your roof's life, that's what we recommend. When storm damage is involved, we document it and work directly with your insurance company.",
+          "If a repair will safely extend your roof's life, that's what we recommend. When storm damage is involved, we document it with photos and meet with your adjuster.",
         ],
         highlightsLabel: "Common home repairs",
         highlights: [
@@ -126,7 +126,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "How long does a roof replacement take?",
-        answer: "Most residential replacements are finished in two to three days, depending on the size, pitch and access of the roof. Repairs are usually a single visit. You get a specific timeline with your quote.",
+        answer: "Most residential replacements are finished in one to two days, depending on the size, pitch and access of the roof. Repairs are usually a single visit. You get a specific timeline with your quote.",
       },
       {
         question: "Why do you use Atlas Pinnacle Pristine shingles?",
@@ -134,7 +134,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Will my insurance cover a new roof?",
-        answer: "Storm damage is often covered, while age and general wear usually are not. We document the damage and work directly with your insurance company so the claim reflects what is actually on the roof.",
+        answer: "That depends on your policy and is decided by your insurance company. We document the damage and meet with your adjuster, so they can see what is actually on the roof.",
       },
       {
         question: "What warranty do I get?",
@@ -147,7 +147,7 @@ export const fallbackServices: Service[] = [
     ],
     seo: {
       title: "Residential Roofing in Maryland | Pineda's Roofing",
-      description: "Family-owned residential roofing in Maryland since 1992. Shingle roof replacement and repair with Atlas Pinnacle Pristine shingles and free inspections.",
+      description: "Family-owned residential roofing in Maryland, founded in 1992. Shingle roof replacement and repair with Atlas Pinnacle Pristine shingles and free inspections.",
     },
   },
 
@@ -234,7 +234,7 @@ export const fallbackServices: Service[] = [
         lead: "Small problems on a flat roof spread fast. Regular inspections and quick repairs protect your building, your inventory and your tenants.",
         paragraphs: [
           "We find and fix leaks, failed seams, ponding water and damaged flashing around rooftop units. Scheduled maintenance catches problems early and keeps drains and gutters clear.",
-          "When storm damage is involved, we document everything with photos and work directly with your insurance company.",
+          "When storm damage is involved, we document everything with photos and meet with your insurance company's adjuster on site.",
         ],
         highlightsLabel: "What we offer",
         highlights: [
@@ -243,7 +243,7 @@ export const fallbackServices: Service[] = [
           "Drain and gutter cleaning",
           "Scheduled roof inspections",
           "24/7 emergency service",
-          "Storm damage insurance help",
+          "Storm damage photo documentation",
         ],
         image: images.flatRoofSkylight,
         ctas: estimateCta,
@@ -267,8 +267,8 @@ export const fallbackServices: Service[] = [
         answer: "Yes. We work closely with builders and contractors to install roofs on new projects on schedule, following all building codes and industry standards.",
       },
       {
-        question: "Can you help with an insurance claim on a commercial roof?",
-        answer: "Yes. We document storm damage with photos and reports, work directly with your insurance company and can meet the adjuster on site.",
+        question: "Do you document storm damage on commercial roofs?",
+        answer: "Yes. We document storm damage with photos and reports and can meet your insurance company's adjuster on site. You file and manage the claim with your insurance company.",
       },
     ],
     seo: {
@@ -284,11 +284,11 @@ export const fallbackServices: Service[] = [
     category: "residential",
     icon: "hammer",
     order: 3,
-    summary: "Full roof replacement for homes and businesses with premium materials and most homes finished in two to three days.",
+    summary: "Full roof replacement for homes and businesses with premium materials and most homes finished in one to two days.",
     hero: {
       eyebrow: "Roof Replacement",
       heading: "Roof replacement done right the first time",
-      text: "A new roof from Maryland's family-owned roofers. Premium materials, a family-managed job, and most homes finished in two to three days.",
+      text: "A new roof from Maryland's family-owned roofers. Premium materials, a family-managed job, and most homes finished in one to two days.",
       image: images.aerialNewShingleRoof,
     },
     sections: [
@@ -300,7 +300,7 @@ export const fallbackServices: Service[] = [
         lead: "When repairs stop making financial sense, a full replacement is the better investment. We handle residential, commercial and new construction roofs.",
         paragraphs: [
           "We remove the old roof, correct the deck and ventilation, and install a complete system built to last for decades.",
-          "When storm damage is involved, insurance often covers a full replacement rather than a patch. We document the damage and work directly with your insurance company.",
+          "When storm damage is involved, we document the damage and meet with your adjuster. Your insurance company decides what your policy covers.",
         ],
         highlightsLabel: "Signs you need a new roof",
         highlights: [
@@ -397,11 +397,11 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "How long does a roof replacement take?",
-        answer: "Most residential replacements are completed in two to three days. Larger or more complex projects can take longer, and we give you a detailed schedule during the consultation.",
+        answer: "Most residential replacements are completed in one to two days. Larger or more complex projects can take longer, and we give you a detailed schedule during the consultation.",
       },
       {
         question: "What does a roof replacement cost?",
-        answer: "Cost depends on the size of your roof, the materials and the complexity of the installation. When storm damage is involved, insurance often covers the replacement. We provide a detailed, no-obligation quote after the inspection.",
+        answer: "Cost depends on the size of your roof, the materials and the complexity of the installation. When storm damage is involved, we document it with photos and meet with your adjuster. We provide a detailed, no-obligation quote after the inspection.",
       },
       {
         question: "Will you clean up after the job?",
@@ -414,7 +414,7 @@ export const fallbackServices: Service[] = [
     ],
     seo: {
       title: "Roof Replacement in Maryland | Pineda's Roofing",
-      description: "Roof replacement in Maryland with Atlas Pinnacle Pristine shingles and a 10 year labor warranty. Most homes done in 2 to 3 days. Free estimates.",
+      description: "Roof replacement in Maryland with Atlas Pinnacle Pristine shingles and a 10 year labor warranty. Most homes done in 1–2 days. Free estimates.",
     },
   },
 
@@ -436,7 +436,7 @@ export const fallbackServices: Service[] = [
       {
         anchor: "overview",
         icon: "wrench",
-        eyebrow: "30+ years of repairs",
+        eyebrow: "30+ years of experience",
         title: "Repair first, when repair makes sense",
         lead: "Not every problem needs a new roof. Many leaks, flashing failures and missing shingles are fixed in a single visit.",
         paragraphs: [
@@ -450,7 +450,7 @@ export const fallbackServices: Service[] = [
           "Most repairs done in one visit",
           "Shingle, flat and metal roofs",
           "Final inspection when we finish",
-          "Insurance claim help for storm damage",
+          "Adjuster meetings for storm damage",
         ],
         image: images.rooferInspecting,
       },
@@ -523,7 +523,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Will my homeowner's insurance cover a roof repair?",
-        answer: "It depends on your policy and the cause of the damage. Storm damage is often covered. We help you through the claim and provide the photos and documentation your insurer needs.",
+        answer: "It depends on your policy and the cause of the damage, and the decision is your insurance company's. We provide photos and a written estimate of the damage, and we meet with your adjuster if you file a claim.",
       },
       {
         question: "What should I do if my roof is leaking right now?",
@@ -571,7 +571,7 @@ export const fallbackServices: Service[] = [
           "Tarping and temporary patching",
           "Over 30 years of experience",
           "Family owned and operated",
-          "Help with your insurance claim",
+          "Damage photos and adjuster meetings",
           "Permanent repairs with quality materials",
         ],
       },
@@ -600,7 +600,7 @@ export const fallbackServices: Service[] = [
         title: "Storm damage and fallen trees",
         lead: "High winds, hail and falling limbs can cause sudden, serious damage that needs immediate attention.",
         paragraphs: [
-          "A fallen tree can puncture the deck and weaken the structure. We clear the debris from the roof, secure the opening and document everything with photos for your insurance claim.",
+          "A fallen tree can puncture the deck and weaken the structure. We clear the debris from the roof, secure the opening and document everything with photos you can share with your insurance company.",
         ],
         highlightsLabel: "What we handle",
         highlights: [
@@ -649,7 +649,7 @@ export const fallbackServices: Service[] = [
       },
       {
         question: "Is emergency roof repair covered by insurance?",
-        answer: "Damage from storms and other sudden events is often covered by homeowner's insurance. We document the damage and help you through the claim.",
+        answer: "That depends on your policy and the cause of the damage, and your insurance company makes that decision. We document the damage with photos and meet with your adjuster.",
       },
       {
         question: "Do you warranty emergency repair work?",
@@ -658,7 +658,7 @@ export const fallbackServices: Service[] = [
     ],
     seo: {
       title: "24/7 Emergency Roof Repair in Maryland | Pineda's Roofing",
-      description: "24/7 emergency roof repair in Maryland and Washington, DC. We tarp leaks, secure storm and tree damage, and help with your insurance claim. Call (301) 921-6333.",
+      description: "24/7 emergency roof repair in Maryland and Washington, DC. We tarp leaks, secure storm and tree damage, and document it with photos for your adjuster. Call (301) 921-6333.",
     },
   },
 
@@ -774,7 +774,7 @@ export const fallbackServices: Service[] = [
     ],
     seo: {
       title: "Roof Maintenance in Maryland | Pineda's Roofing",
-      description: "Roof maintenance in Maryland: inspections with photos, roof and gutter cleaning, and small repairs that add years to your roof. Family owned for 30+ years.",
+      description: "Roof maintenance in Maryland: inspections with photos, roof and gutter cleaning, and small repairs that add years to your roof. 30+ years of experience.",
     },
   },
 
@@ -785,29 +785,29 @@ export const fallbackServices: Service[] = [
     category: "repair",
     icon: "storm",
     order: 7,
-    summary: "Hail, wind, water, ice and fallen-tree damage inspected, documented for your insurer and fully restored.",
+    summary: "Hail, wind, water, ice and fallen-tree damage inspected, documented with photos and fully restored.",
     hero: {
       eyebrow: "Storm Restoration",
       heading: "Storm damage restoration for Maryland homes",
-      text: "Hail, wind, rain, ice and fallen trees. We inspect, document the damage for your insurer and restore your roof with quality materials.",
+      text: "Hail, wind, rain, ice and fallen trees. We inspect your roof, document the damage and meet with your adjuster, then restore your roof with quality materials.",
       image: images.hailDamage,
     },
     sections: [
       {
         anchor: "overview",
         icon: "storm",
-        eyebrow: "30+ years of restoration",
+        eyebrow: "30+ years of experience",
         title: "Restoring your home after the storm",
         lead: "Storm damage is time-sensitive and often invisible from the ground. We find it, document it and repair it properly.",
         paragraphs: [
-          "Maryland gets its share of hail, straight-line winds and hurricane remnants. We inspect the full roof, photograph every finding and work directly with your insurance company. Many customers pay only their deductible.",
-          "Once the claim is approved, we repair or replace what's needed and walk the finished work with you.",
+          "Maryland gets its share of hail, straight-line winds and hurricane remnants. We inspect the full roof, photograph every finding, document the damage and meet with your adjuster at the property. You file and manage your claim with your insurance company.",
+          "We give you a detailed written estimate, repair or replace what's needed and walk the finished work with you.",
         ],
         highlightsLabel: "What we do for you",
         highlights: [
           "Free storm damage inspection",
-          "Photo documentation for your claim",
-          "We meet the adjuster on site",
+          "Detailed photo documentation",
+          "We meet with your adjuster on site",
           "Repairs or full replacement",
           "Roof and siding assessed together",
           "Final inspection and walkthrough",
@@ -894,8 +894,8 @@ export const fallbackServices: Service[] = [
         answer: "As soon as possible after the storm. Waiting can turn small damage into bigger, more costly repairs.",
       },
       {
-        question: "Will you help with my insurance claim?",
-        answer: "Yes. We document the damage with photos and reports, work directly with your insurance company and meet the adjuster on site. Many customers pay only their deductible.",
+        question: "Will you meet with my insurance adjuster?",
+        answer: "Yes. We document the damage and meet with your adjuster at the property, with photos and a written estimate of the damage. You file and manage your claim directly with your insurance company.",
       },
       {
         question: "How long does storm restoration take?",
@@ -1038,7 +1038,7 @@ export const fallbackServices: Service[] = [
     category: "exterior",
     icon: "layers",
     order: 9,
-    summary: "Siding replacement and repair with roofing-grade flashing, plus storm damage claims and trim, soffit and fascia.",
+    summary: "Siding replacement and repair with roofing-grade flashing, plus storm damage inspections and trim, soffit and fascia.",
     hero: {
       eyebrow: "Siding",
       heading: "Siding that keeps water out of your walls",
@@ -1059,7 +1059,7 @@ export const fallbackServices: Service[] = [
           "Roofing-grade flashing and details",
           "Roof and siding inspected together",
           "Licensed, insured & bonded, MHIC# 142024",
-          "Family owned for over 30 years",
+          "30+ years of experience",
         ],
         image: images.stormHome,
       },
@@ -1085,14 +1085,14 @@ export const fallbackServices: Service[] = [
         anchor: "storm-damage",
         icon: "storm",
         title: "Storm damage and siding repair",
-        lead: "Wind and hail damage siding as readily as roofing, and it's often covered under the same insurance claim.",
+        lead: "Wind and hail damage siding as readily as roofing, so after a storm we check both.",
         paragraphs: [
-          "We inspect the roof and siding together and document both for your insurance company. For a single failing section, we repair and blend where it makes sense, and tell you upfront if weathering makes an exact match impossible.",
+          "We inspect the roof and siding together, document both with photos and walk your adjuster through both. For a single failing section, we repair and blend where it makes sense, and tell you upfront if weathering makes an exact match impossible.",
         ],
         highlightsLabel: "What we offer",
         highlights: [
           "Roof and siding documented together",
-          "Photo documentation for your insurer",
+          "Photos you can share with your insurer",
           "Repair and blending of damaged areas",
           "Honest advice on repair or replace",
         ],
@@ -1119,7 +1119,7 @@ export const fallbackServices: Service[] = [
     faqs: [
       {
         question: "Is siding damage covered by insurance?",
-        answer: "Wind and hail damage siding as readily as roofing, and it is often covered under the same claim. We inspect and document the roof and siding together for your insurance company.",
+        answer: "That depends on your policy and is decided by your insurance company. Wind and hail damage siding as readily as roofing, so we inspect and photograph the roof and siding together and meet with your adjuster.",
       },
       {
         question: "Do I need full replacement, or can sections be repaired?",
@@ -1140,7 +1140,7 @@ export const fallbackServices: Service[] = [
     ],
     seo: {
       title: "Siding Installation & Repair in Maryland | Pineda's Roofing",
-      description: "Siding replacement and repair in Maryland: vinyl, fiber cement and wood, storm damage claims, and trim, soffit and fascia. Family-owned for 30+ years.",
+      description: "Siding replacement and repair in Maryland: vinyl, fiber cement and wood, storm damage repair, and trim, soffit and fascia. 30+ years of experience.",
     },
   },
 
@@ -1380,7 +1380,7 @@ export const fallbackServices: Service[] = [
         title: "Mortar is made to be replaced",
         lead: "Mortar is designed to fail before the brick does, so it can be replaced without touching the structure. The key is catching it in time.",
         paragraphs: [
-          "With 30+ years serving Maryland, we handle everything from repointing to full structural repair. We use materials and methods suited to the age of the building.",
+          "With 30+ years of experience, we handle everything from repointing to full structural repair. We use materials and methods suited to the age of the building.",
         ],
         highlightsLabel: "What we offer",
         highlights: [
@@ -1509,7 +1509,7 @@ export const fallbackServices: Service[] = [
           "Design consultation included",
           "Permits handled with your county",
           "Licensed, insured & bonded, MHIC# 142024",
-          "Family owned for over 30 years",
+          "30+ years of experience",
         ],
         image: images.paverInstall,
       },

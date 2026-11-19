@@ -30,16 +30,16 @@ export const driveProjects: Project[] = [
     problem: "Worn, weathered shingles with heavy granule loss",
     images: [{ src: "/images/projects/annapolis-roof-replacement-j01-1.jpg", alt: "Photo 1: roof replacement with Oyster Shell shingles in Annapolis by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/annapolis-roof-replacement-j01-2.jpg", alt: "Photo 2: roof replacement with Oyster Shell shingles in Annapolis by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/annapolis-roof-replacement-j01-3.jpg", alt: "Photo 3: roof replacement with Oyster Shell shingles in Annapolis by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/annapolis-roof-replacement-j01-4.jpg", alt: "Photo 4: roof replacement with Oyster Shell shingles in Annapolis by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/annapolis-roof-replacement-j01-5.jpg", alt: "Photo 5: roof replacement with Oyster Shell shingles in Annapolis by Pineda's Roofing", width: 1200, height: 900 }],
   },
-  // Anne Arundel County / Annapolis / Roof Replacement, Atlas Pinnacle Pristine Weathered Wood
+  // Anne Arundel County / Pasadena (Drive folder said Annapolis; Roberto confirmed Pasadena) / Atlas Pinnacle Pristine Weathered Wood
   {
-    id: "j02-roof-replacement-in-annapolis",
-    title: "Roof replacement in Annapolis (Weathered Wood)",
+    id: "j02-roof-replacement-in-pasadena",
+    title: "Roof replacement in Pasadena (Weathered Wood)",
     category: "residential",
-    location: "Annapolis",
+    location: "Pasadena",
     county: "Anne Arundel County",
-    area: "annapolis",
+    area: "pasadena",
     summary: "Full tear-off down to the deck, new Atlas Summit synthetic underlayment, and Atlas Pinnacle Pristine shingles in Weathered Wood.",
-    images: [{ src: "/images/projects/annapolis-roof-replacement-j02-1.jpg", alt: "Photo 1: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Annapolis by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/annapolis-roof-replacement-j02-2.jpg", alt: "Photo 2: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Annapolis by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/annapolis-roof-replacement-j02-3.jpg", alt: "Photo 3: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Annapolis by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/annapolis-roof-replacement-j02-4.jpg", alt: "Photo 4: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Annapolis by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/annapolis-roof-replacement-j02-5.jpg", alt: "Photo 5: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Annapolis by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/annapolis-roof-replacement-j02-6.jpg", alt: "Photo 6: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Annapolis by Pineda's Roofing", width: 900, height: 1200 }],
+    images: [{ src: "/images/projects/pasadena-roof-replacement-j02-1.jpg", alt: "Photo 1: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Pasadena by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/pasadena-roof-replacement-j02-2.jpg", alt: "Photo 2: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Pasadena by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/pasadena-roof-replacement-j02-3.jpg", alt: "Photo 3: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Pasadena by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/pasadena-roof-replacement-j02-4.jpg", alt: "Photo 4: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Pasadena by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/pasadena-roof-replacement-j02-5.jpg", alt: "Photo 5: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Pasadena by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/pasadena-roof-replacement-j02-6.jpg", alt: "Photo 6: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Pasadena by Pineda's Roofing", width: 900, height: 1200 }],
   },
   // Anne Arundel County / Edgewater / Roof Replacement / Atlas Pinnacle Pristine Black Shadow
   {
@@ -144,10 +144,11 @@ export const driveProjects: Project[] = [
   // Atlas Projects / Waldorf
   {
     id: "j13-atlas-pinnacle-roof-in-waldorf",
-    title: "Atlas Pinnacle roof in Waldorf",
+    title: "Atlas Pinnacle Pristine roof in Waldorf",
     category: "residential",
     location: "Waldorf",
     county: "Charles County",
+    area: "waldorf",
     summary: "New Atlas Pinnacle Pristine shingles in Weathered Wood on a brick townhome in Waldorf.",
     before: { src: "/images/projects/waldorf-roof-replacement-j13-before.jpg", alt: "Before: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Waldorf by Pineda's Roofing", width: 1200, height: 900 },
     after: { src: "/images/projects/waldorf-roof-replacement-j13-after.jpg", alt: "After: roof replacement with Atlas Pinnacle Pristine, Weathered Wood shingles in Waldorf by Pineda's Roofing", width: 1200, height: 900 },
@@ -452,6 +453,7 @@ export const driveProjects: Project[] = [
     category: "repair",
     location: "Waldorf",
     county: "Charles County",
+    area: "waldorf",
     summary: "Missing ridge cap shingles replaced over the ridge vent on a gray shingle roof.",
     problem: "Missing ridge cap shingles exposing the ridge vent",
     solution: "New ridge cap shingles installed over the ridge vent",
@@ -466,6 +468,7 @@ export const driveProjects: Project[] = [
     category: "residential",
     location: "Waldorf",
     county: "Charles County",
+    area: "waldorf",
     summary: "Tear-off on a townhome roof: old shingles stripped, new decking going down, and Atlas Pinnacle shingle bundles staged on the roof.",
     images: [{ src: "/images/projects/waldorf-roof-replacement-j40-2.jpg", alt: "Photo 2: roof replacement in Waldorf by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/waldorf-roof-replacement-j40-3.jpg", alt: "Photo 3: roof replacement in Waldorf by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/waldorf-roof-replacement-j40-4.jpg", alt: "Photo 4: roof replacement in Waldorf by Pineda's Roofing", width: 900, height: 1200 }],
   },
@@ -476,6 +479,7 @@ export const driveProjects: Project[] = [
     category: "repair",
     location: "Waldorf",
     county: "Charles County",
+    area: "waldorf",
     summary: "Roof inspection on a brick townhome, with individual shingles near the ridge marked in chalk.",
     images: [{ src: "/images/projects/waldorf-roof-inspection-j41-1.jpg", alt: "Photo 1: roof inspection in Waldorf by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/waldorf-roof-inspection-j41-2.jpg", alt: "Photo 2: roof inspection in Waldorf by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/waldorf-roof-inspection-j41-3.jpg", alt: "Photo 3: roof inspection in Waldorf by Pineda's Roofing", width: 900, height: 1200 }, { src: "/images/projects/waldorf-roof-inspection-j41-4.jpg", alt: "Photo 4: roof inspection in Waldorf by Pineda's Roofing", width: 1200, height: 900 }, { src: "/images/projects/waldorf-roof-inspection-j41-5.jpg", alt: "Photo 5: roof inspection in Waldorf by Pineda's Roofing", width: 900, height: 1200 }],
   },

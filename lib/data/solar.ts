@@ -39,7 +39,7 @@ export const solarMarkets: SolarMarket[] = [
     slug: "maryland",
     name: "Maryland",
     formMarket: "Maryland",
-    chooserText: "A Power Purchase Agreement (PPA), plus the Maryland Solar Access Program rebate of $750 per kW DC, up to $7,500, for qualifying homeowners.",
+    chooserText: "A Power Purchase Agreement (PPA), plus the Maryland Solar Access Program rebate of $750 per kW DC, up to $7,500, for income-qualified households.",
     hero: {
       eyebrow: "Solar · Maryland",
       heading: "Maryland solar with $0 down",
@@ -58,10 +58,11 @@ export const solarMarkets: SolarMarket[] = [
         heading: "Maryland Solar Access Program rebate",
         paragraphs: [
           "The Maryland Energy Administration's FY27 program specifies $750 per kW DC of installed solar capacity, up to $7,500. Eligible projects can use a Power Purchase Agreement (PPA).",
-          "Homeowners must meet the income requirements, work with a participating contractor, and obtain a rebate reservation before installation. The program allows payment to the homeowner or the participating contractor as designated in the application.",
+          "The rebate is only for income-qualified households: household income up to 150% of Maryland's state median income, based on household size. Funding is first-come, first-served.",
+          "The program requires an approved participating contractor and a rebate reservation before installation. Rebate projects are installed through our partner GoGreen Solutions, an approved program contractor.",
           "Eligibility and program rules are set by the Maryland Energy Administration. Read the official details below.",
         ],
-        highlights: ["$750 per kW DC", "Up to $7,500", "PPA projects can qualify", "Income requirements apply", "Reservation required before installation"],
+        highlights: ["$750 per kW DC, up to $7,500", "Income-qualified households only", "Up to 150% of state median income", "First-come, first-served", "Reservation required before installation", "Installed through GoGreen Solutions, an approved program contractor"],
         links: [
           { label: "Check Maryland solar rebate eligibility and apply", href: "https://energy.maryland.gov/Residential/Pages/incentives/Maryland-Solar-Access-Program.aspx" },
           {
@@ -85,7 +86,7 @@ export const solarMarkets: SolarMarket[] = [
       {
         question: "Who qualifies for the Maryland Solar Access Program rebate?",
         answer:
-          "The FY27 program is for homeowners who meet its income requirements, work with a participating contractor and obtain a rebate reservation before installation. Check your eligibility and the full rules on the Maryland Energy Administration's site.",
+          "The FY27 program is only for income-qualified households, with household income up to 150% of Maryland's state median income based on household size. Funding is first-come, first-served, and a rebate reservation is required before installation. Rebate projects are installed through our partner GoGreen Solutions, an approved program contractor. Check your eligibility and the full rules on the Maryland Energy Administration's site.",
       },
       {
         question: "What if my roof needs work?",
@@ -97,9 +98,8 @@ export const solarMarkets: SolarMarket[] = [
       },
     ],
     seo: {
-      title: "Maryland Solar with $0 Down | PPA & MSAP Rebate | Pineda's Roofing",
-      description:
-        "Explore $0-down solar in Maryland with a Power Purchase Agreement, and the Maryland Solar Access Program rebate of $750 per kW DC, up to $7,500, for qualifying homeowners.",
+      title: "Maryland Solar with $0 Down | PPA & MSAP | Pineda's Roofing",
+      description: "$0-down solar in Maryland with a Power Purchase Agreement, plus the MSAP rebate of $750 per kW DC, up to $7,500, for income-qualified households.",
     },
   },
   {
@@ -123,7 +123,8 @@ export const solarMarkets: SolarMarket[] = [
       {
         heading: "DC Solar for All",
         paragraphs: [
-          "The District's Solar for All program helps eligible households access rooftop or community solar. The District describes expected electricity bill savings of 50% over 15 years for participants.",
+          "The District's Solar for All program helps eligible households access rooftop or community solar. According to the DC Department of Energy & Environment (DOEE), Solar for All participants can expect 50% savings on their electricity bills over 15 years.",
+          "That is a benefit of the DC Solar for All program for eligible households, not a savings promise for every solar customer.",
           "Eligibility and program details are set by the District. Read them on the official site.",
         ],
         links: [
@@ -157,8 +158,8 @@ export const solarMarkets: SolarMarket[] = [
       },
     ],
     seo: {
-      title: "Solar in Washington, DC | Relief of Your Utility Bill | Pineda's Roofing",
-      description: "Solar for Washington, DC homes: a solar agreement with no upfront solar cost, no credit check and no monthly solar payment for qualifying homeowners. DC Solar for All.",
+      title: "DC Solar: Relief of Your Utility Bill | Pineda's Roofing",
+      description: "Solar for Washington, DC homes: no upfront solar cost, no credit check and no monthly solar payment for qualifying homeowners, plus DC Solar for All.",
     },
   },
 ];

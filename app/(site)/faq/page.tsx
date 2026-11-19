@@ -10,7 +10,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 
 const seo = {
   title: "Roofing FAQ | Pineda's Roofing",
-  description: "Answers about roof replacement, repairs, insurance claims, warranties, timelines and service areas from Pineda's Roofing in Silver Spring, MD.",
+  description: "Answers about roof replacement, repairs, storm damage and insurance, warranties, timelines and service areas from Pineda's Roofing in Silver Spring, MD.",
 };
 
 export const metadata: Metadata = pageMetadata(seo, "/faq", images.rooferOnRidge);

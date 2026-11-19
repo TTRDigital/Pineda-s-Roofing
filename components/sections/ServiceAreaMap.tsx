@@ -42,6 +42,7 @@ const LABEL_OFFSET: Record<string, [number, number, "start" | "end" | "middle"]>
   Elkridge: [9, 6, "start"],
   "College Park": [9, -2, "start"],
   "Upper Marlboro": [9, 4, "start"],
+  Waldorf: [9, 4, "start"],
 };
 
 /* Where each region's name sits, as [longitude, latitude]. */
@@ -55,6 +56,7 @@ const COUNTY_LABEL: Record<string, [number, number]> = {
   "Baltimore City": [-76.44, 39.25],
   "Carroll County": [-77.03, 39.66],
   "Washington, D.C.": [-76.99, 38.85],
+  "Charles County": [-76.98, 38.5],
 };
 
 type Counties = Topology<{ counties: GeometryCollection; states: GeometryCollection }>;
@@ -84,7 +86,10 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
   });
   const stateLines = path(mesh(topo, topo.objects.states, (a, b) => a !== b)) ?? "";
 
-  const pageFor = (city: string) => locations.find((l) => l.featured && l.name.toLowerCase() === city.toLowerCase());
+  // "Baltimore" is Baltimore City: a county with a single city uses the county's page.
+  const pageFor = (city: string) =>
+    locations.find((l) => l.featured && l.name.toLowerCase() === city.toLowerCase()) ??
+    locations.find((l) => l.featured && l.slug === counties.find((k) => k.cities.length === 1 && k.cities[0] === city)?.page);
   const cities = counties.flatMap((c) => c.cities.map((name) => ({ name, county: c.name, at: cityCoords[name] }))).filter((c) => c.at);
   const xy = (lonLat: [number, number]) => projection(lonLat) ?? [0, 0];
 
@@ -135,7 +140,7 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
           const jobs = projectCounts[c.name] ?? 0;
           const dot = (
             <g>
-              <title>{`${c.name}, ${c.county}${jobs ? `: ${jobs} past ${jobs === 1 ? "project" : "projects"}` : ""}`}</title>
+              <title>{`${c.name}, ${c.county}${jobs ? ": see our projects" : ""}`}</title>
               {/* Cities with past projects to show get a cyan ring. */}
               {jobs ? (
                 <>
@@ -168,7 +173,7 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
           );
           const href = page ? `/service-area/${page.slug}/${jobs ? "#past-projects" : ""}` : countyPage ? `/service-area/${countyPage}/#past-projects` : undefined;
           return href ? (
-            <a key={c.name} href={href} aria-label={jobs ? `Past roofing projects in ${c.name}` : `Roofing in ${c.name}`}>
+            <a key={c.name} href={href} aria-label={jobs ? `Check out Pineda's Roofing projects in ${c.name}` : `Roofing in ${c.name}`}>
               {dot}
             </a>
           ) : (
@@ -200,7 +205,7 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
         {Object.keys(projectCounts).length ? (
           <span className="inline-flex items-center gap-2">
             <span aria-hidden="true" className="h-3.5 w-3.5 rounded-full border-[3px] border-[#0b7fa8] bg-white ring-2 ring-white" />
-            Past projects (tap to see them)
+            Our projects (tap to see them)
           </span>
         ) : null}
       </figcaption>

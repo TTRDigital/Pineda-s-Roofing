@@ -37,7 +37,7 @@ for await (const file of walk(SRC)) {
     await sharp(file)
       .rotate()
       .resize({ width: Math.min(w, meta.width ?? w), withoutEnlargement: true })
-      .webp({ quality: 74, effort: 5 })
+      .webp({ quality: 82, effort: 5 })
       .toFile(target);
     made++;
   }

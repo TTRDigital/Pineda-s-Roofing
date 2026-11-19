@@ -19,7 +19,7 @@ export default async function PrivacyPage() {
       <h2>Text messages</h2>
       <p>If you provide your phone number and consent, we may send text messages about your request and project. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. We do not sell or share your mobile number or SMS consent with third parties for their marketing.</p>
       <h2>Sharing</h2>
-      <p>We do not sell your personal information. We share it only with service providers who help us run our business (such as our CRM and website hosting), with your insurance company when you ask us to help with a claim, or when required by law.</p>
+      <p>We do not sell your personal information. We share it only with service providers who help us run our business (such as our CRM and website hosting), with your insurance company when you ask us to share our photos and estimate with them, or when required by law.</p>
       <h2>Your choices</h2>
       <p>
         You can ask us to update or delete your information at any time by emailing <a href={`mailto:${s.email}`}>{s.email}</a> or calling <a href={s.phoneHref}>{s.phone}</a>.

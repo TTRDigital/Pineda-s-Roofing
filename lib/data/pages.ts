@@ -10,7 +10,7 @@ const estimate = { label: "Get a free estimate", href: "/contact-us" };
 
 export const fallbackHome: HomeContent = {
   seo: {
-    title: "Pineda's Roofing | Maryland Roofing Contractor Since 1992",
+    title: "Pineda's Roofing | Family-Owned Maryland Roofing Contractor",
     description:
       "Family-owned roofing contractor serving Baltimore, Howard, Anne Arundel and Prince George's County, MD. Roof replacement, repair, storm restoration and solar. MHIC# 142024.",
   },
@@ -19,11 +19,11 @@ export const fallbackHome: HomeContent = {
     heading: "Maryland's family-owned roofing contractor",
     text: "Residential and commercial roofing, repairs and storm restoration. One family business, a 10 year labor warranty and a limited lifetime manufacturer warranty.",
     image: images.aerialNewShingleRoof,
-    badges: ["Family owned since 1992", "Licensed, insured & bonded", "MHIC# 142024", "24/7 emergency service"],
+    badges: ["Founded in 1992", "Licensed, insured & bonded · MHIC# 142024", "24/7 emergency service"],
     verse: { text: "Unless the Lord builds the house, the builders labor in vain.", reference: "Psalm 127:1" },
   },
   stats: [
-    { value: "30+", label: "Years in business" },
+    { value: "30+", label: "Years of experience" },
     { value: "10 Year", label: "Labor warranty" },
     { value: "Lifetime", label: "Limited manufacturer warranty" },
     { value: "24/7", label: "Emergency service" },
@@ -37,7 +37,7 @@ export const fallbackHome: HomeContent = {
     { icon: "house", title: "Residential roofing", text: "New roofs, replacements and repairs for Maryland homes.", href: "/services/residential-roofing" },
     { icon: "building", title: "Commercial roofing", text: "Flat and low-slope systems, scheduled around your business.", href: "/services/commercial-roofing" },
     { icon: "wrench", title: "Roof & emergency repair", text: "Leaks, missing shingles and flashing, with 24/7 response to tarp and stop the water.", href: "/services/roof-repair" },
-    { icon: "storm", title: "Storm restoration", text: "Hail, wind and fallen trees, with your insurance claim handled.", href: "/services/storm-restoration" },
+    { icon: "storm", title: "Storm restoration", text: "Hail, wind and fallen trees. We document the damage and meet with your adjuster.", href: "/services/storm-restoration" },
     { icon: "sun", title: "Solar installation", text: "New: solar for Maryland and Washington, DC homes, planned by roofers.", href: "/services/solar-panel-installation" },
     { icon: "rain", title: "Gutters & siding", text: "Gutters, guards, siding, skylights, chimneys and masonry.", href: "/services" },
   ],
@@ -49,11 +49,11 @@ export const fallbackHome: HomeContent = {
       title: "A roofer that takes your roof seriously",
       lead: "We don't just fix roofs. We protect property, preserve legacies and deliver peace of mind.",
       paragraphs: [
-        "German Pineda started the company over three decades ago. Today Fredy and Roberto Pineda run it with the same standards and the same phone number.",
+        "German Pineda founded the company in 1992 as Pineda's Construction LLC, and it reopened in 2018. Today father and son Fredy and Roberto Pineda run it with the same family standards.",
         "From the first inspection to the final walkthrough, your project is managed by one family business, and the owners stand behind the warranty.",
       ],
       highlightsLabel: "The Pineda's difference",
-      highlights: ["Family owned since 1992", "Managed by the Pineda family", "Free inspections with photo reports", "10 year labor warranty"],
+      highlights: ["Founded in 1992 by German Pineda", "Managed by the Pineda family", "Free inspections with photo reports", "10 year labor warranty"],
       image: images.crew,
       ctas: [{ label: "More about Pineda's", href: "/about-us" }],
     },
@@ -91,21 +91,21 @@ export const fallbackHome: HomeContent = {
   ],
   whyIntro: { eyebrow: "Why Pineda's", heading: "Why Maryland homeowners choose us" },
   why: [
-    { icon: "users", title: "Family owned for 30+ years", text: "Same family, same standards and the same phone number when you need us." },
+    { icon: "users", title: "30+ years of experience", text: "A family business: the same family and the same standards on every job." },
     { icon: "award", title: "Premium materials as standard", text: "Atlas Pinnacle Pristine shingles on every installation, not an upsell." },
     { icon: "shield-check", title: "10 year labor warranty", text: "Our workmanship is covered for 10 years, plus a limited lifetime manufacturer warranty on the shingles." },
-    { icon: "file-check", title: "Insurance expertise", text: "We meet your adjuster and provide the documentation carriers need." },
+    { icon: "file-check", title: "Storm damage documentation", text: "We document the damage with photos and meet with your adjuster at your home." },
     { icon: "badge-check", title: "Licensed, insured & bonded", text: "MHIC# 142024. Fully covered on every job we take." },
     { icon: "clipboard", title: "Free, no-obligation estimates", text: "Written scope and transparent pricing before you commit." },
   ],
   processIntro: {
     eyebrow: "How it works",
     heading: "Four steps from damage to done",
-    text: "From the first inspection to the final walkthrough, the Pineda family manages every step, including the insurance paperwork.",
+    text: "From the first inspection to the final walkthrough, the Pineda family manages every step of your roofing project.",
   },
   process: [
     { title: "Free inspection", text: "We inspect the full roof, photograph what we find and tell you honestly: repair or replace." },
-    { title: "Insurance claim", text: "We document damage the way adjusters need it and work directly with your carrier." },
+    { title: "Adjuster meeting", text: "If you file a storm claim with your insurance company, we document the damage and meet with your adjuster." },
     { title: "Material selection", text: "We walk you through Atlas Pinnacle Pristine colors and the right system for your home." },
     { title: "Installation", text: "Done on schedule, site cleaned, magnet sweep for nails and a walkthrough together." },
   ],
@@ -117,12 +117,12 @@ export const fallbackRoofing: RoofingContent = {
   seo: {
     title: "Roofing Services in Maryland | Pineda's Roofing",
     description:
-      "Residential and commercial roofing in Maryland: shingle roofs, flat and low-slope systems, repairs and storm restoration. Family owned since 1992.",
+      "Residential and commercial roofing in Maryland: shingle roofs, flat and low-slope systems, repairs and storm restoration. Founded in 1992.",
   },
   hero: {
     eyebrow: "Roofing",
     heading: "Residential and commercial roofing",
-    text: "For more than 30 years, Maryland homeowners and business owners have called Pineda's when the roof over their head needs attention.",
+    text: "With more than 30 years of experience, Pineda's is who Maryland homeowners and business owners call when the roof over their head needs attention.",
     image: images.rooferOnRidge,
   },
   sections: [
@@ -134,7 +134,7 @@ export const fallbackRoofing: RoofingContent = {
       lead: "Your home deserves a roof that protects it and makes it look its best. We install, replace and repair roofs on Maryland homes of every style.",
       paragraphs: [
         "Every new roof gets Atlas Pinnacle Pristine shingles with 3M Scotchgard Protector, which fights the dark algae streaks common in our humid summers.",
-        "Most replacements are finished in two to three days, with a full cleanup and magnet sweep before we leave.",
+        "Most replacements are finished in one to two days, with a full cleanup and magnet sweep before we leave.",
       ],
       highlightsLabel: "What we offer",
       highlights: [
@@ -194,14 +194,14 @@ export const fallbackRoofing: RoofingContent = {
       lead: "A tree limb through the deck at 9 PM doesn't wait for business hours, and neither do we.",
       paragraphs: [
         "We respond fast, tarp and secure the opening, then return for the permanent repair once conditions allow.",
-        "Storm damage is often invisible from the ground. We document it properly and work with your insurer; many customers pay only their deductible.",
+        "Storm damage is often invisible from the ground. We document the damage with photos and meet with your adjuster at the property.",
       ],
       highlightsLabel: "What we handle",
-      highlights: ["24/7 emergency tarping", "Hail and wind damage", "Fallen trees and debris", "Insurance claims and adjuster meetings"],
+      highlights: ["24/7 emergency tarping", "Hail and wind damage", "Fallen trees and debris", "Damage photos and adjuster meetings"],
       image: images.fallenTreeHouse,
       ctas: [
         { label: "Emergency roof repair", href: "/services/emergency-roof-repair" },
-        { label: "Insurance claims", href: "/roofing-insurance" },
+        { label: "Storm & insurance", href: "/roofing-insurance" },
       ],
     },
   ],
@@ -354,38 +354,38 @@ export const fallbackAtlas: AtlasContent = {
 
 export const fallbackInsurance: InsuranceContent = {
   seo: {
-    title: "Roof Insurance Claims in Maryland | Pineda's Roofing",
+    title: "Roof Storm Damage & Insurance in Maryland | Pineda's Roofing",
     description:
-      "Storm damage? Pineda's Roofing inspects for free, documents the damage, meets your adjuster and handles your roof insurance claim with any carrier in Maryland.",
+      "Storm damage? Pineda's Roofing inspects your roof for free, documents the damage with photos and meets with your insurance adjuster at your home anywhere in Maryland.",
   },
   hero: {
-    eyebrow: "Insurance claims",
-    heading: "We handle your storm damage claim",
-    text: "Roof damage from a storm is stressful. Filing the insurance claim doesn't have to be. We work with every insurance company.",
+    eyebrow: "Storm & insurance",
+    heading: "We document the damage and meet with your adjuster",
+    text: "Roof damage from a storm is stressful. We inspect your roof for free and photograph what we find. You file your claim with your insurance company, and we walk your adjuster through the damage at your home.",
     image: images.hailDamage,
   },
   sections: [
     {
       anchor: "claims",
       icon: "file-check",
-      eyebrow: "Claim help",
+      eyebrow: "Storm damage",
       title: "Your storm damage experts",
-      lead: "We document the damage the way adjusters need it, meet them on your roof and stay with you until the work is done.",
+      lead: "We document the damage and meet with your adjuster at your property, then do the repair or replacement and stay with you until the work is done.",
       paragraphs: [
-        "Storm damage is often invisible from the ground. Our free assessment tells you whether a claim is worth filing before you call your carrier.",
-        "Storm damage is often covered; age and general wear usually are not. Many customers pay only their deductible.",
+        "Storm damage is often invisible from the ground. Our free inspection shows you what is there, with photos, before you decide whether to contact your insurance company.",
+        "You file and manage your claim directly with your insurance company, and they decide what your policy covers. We give you a detailed written estimate of the damage we documented.",
       ],
       highlightsLabel: "What we do for you",
-      highlights: ["Free storm damage assessment", "Detailed photo documentation", "We meet your adjuster on site", "Help with supplements and denials"],
+      highlights: ["Free storm damage inspection", "Detailed photo documentation", "We meet with your adjuster on site", "Detailed written estimate of the damage"],
       image: images.rooferInspecting,
     },
   ],
-  stepsIntro: { eyebrow: "Step by step", heading: "How the claim process works" },
+  stepsIntro: { eyebrow: "Step by step", heading: "How it works after a storm" },
   steps: [
-    { title: "Free damage assessment", text: "A full inspection with photos to see if your roof qualifies for a claim." },
-    { title: "Claim filing help", text: "We provide the documentation and evidence your claim needs." },
-    { title: "Adjuster meeting", text: "We meet the adjuster on site so every bit of damage is counted." },
-    { title: "Project start", text: "Once approved, we schedule quickly and help you choose materials." },
+    { title: "Free storm damage inspection", text: "A full inspection of your roof, with photos of the damage we find." },
+    { title: "You file your claim", text: "You contact your insurance company and file your claim. You manage it directly with them." },
+    { title: "Adjuster meeting", text: "We meet with your adjuster at the property and walk them through the damage we documented." },
+    { title: "Estimate and repair", text: "We give you a detailed written estimate, help you choose materials and do the repair or replacement." },
     { title: "Final walkthrough", text: "We walk the finished job with you and finalize your warranty." },
   ],
   signsIntro: { eyebrow: "After a storm", heading: "Signs your roof may have storm damage" },
@@ -400,18 +400,19 @@ export const fallbackInsurance: InsuranceContent = {
 
 export const fallbackAbout: AboutContent = {
   seo: {
-    title: "About Pineda's Roofing | Family Owned Since 1992",
+    title: "About Pineda's Roofing | Founded in 1992",
     description:
       "Meet Pineda's Roofing: a family-owned Maryland roofing company founded by German Pineda and run by Fredy and Roberto Pineda. MHIC# 142024.",
   },
   hero: {
     eyebrow: "About us",
     heading: "Built on family and craftsmanship",
-    text: "Family owned since 1992. Serving Maryland and Washington, DC for over 30 years.",
+    text: "Founded in 1992 as Pineda's Construction LLC by German Pineda, and reopened in 2018. 30+ years of experience serving Maryland and Washington, DC.",
     image: images.crew,
   },
   facts: [
     { label: "Founder", value: "German Pineda" },
+    { label: "Founded", value: "1992, reopened 2018" },
     { label: "Co-owners", value: "Roberto & Fredy Pineda" },
     { label: "Headquarters", value: "Silver Spring, MD" },
     { label: "License", value: "MHIC# 142024" },
@@ -422,7 +423,7 @@ export const fallbackAbout: AboutContent = {
       icon: "users",
       eyebrow: "Our story",
       title: "Roofing the way it should be done",
-      lead: "German Pineda founded Pineda's over three decades ago with one commitment: exceptional roofing for our Maryland community.",
+      lead: "German Pineda founded the company in 1992 as Pineda's Construction LLC with one commitment: exceptional roofing for our Maryland community. It reopened in 2018.",
       paragraphs: [
         "We've grown into a trusted name in Maryland roofing, but our values haven't changed: quality, integrity and family-first service.",
         "Your home is your sanctuary. We treat every project with the care we'd give our own family's home.",

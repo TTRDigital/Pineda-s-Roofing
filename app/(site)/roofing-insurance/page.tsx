@@ -21,7 +21,7 @@ export default async function InsurancePage() {
     <>
       <PageHero
         hero={page.hero}
-        crumbs={[{ label: "Insurance claims", href: "/roofing-insurance" }]}
+        crumbs={[{ label: "Storm & insurance", href: "/roofing-insurance" }]}
         ctas={[
           { label: "Free damage assessment", href: "#estimate" },
           { label: settings.phone, href: settings.phoneHref },
@@ -34,7 +34,7 @@ export default async function InsurancePage() {
       <CardGrid intro={page.stepsIntro} cards={page.steps} numbered columns={3} />
       <CardGrid intro={page.signsIntro} cards={page.signs} tone="dark" columns={4} />
       <Testimonials items={testimonials} settings={settings} page="roofing-insurance" />
-      <FaqSection intro={{ eyebrow: "FAQ", heading: "Insurance claim questions" }} items={page.faqs} />
+      <FaqSection intro={{ eyebrow: "FAQ", heading: "Storm damage and insurance questions" }} items={page.faqs} />
       <ContactSection settings={settings} heading="Think you have storm damage?" defaultService="Storm damage / insurance claim" />
     </>
   );

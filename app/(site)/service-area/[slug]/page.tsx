@@ -126,8 +126,8 @@ export default async function LocationPage(props: PageProps<"/service-area/[slug
         <section id="past-projects" className="section bg-white">
           <div className="container-x">
             <SectionHeading
-              eyebrow="Past projects"
-              heading={`Past roofing projects in ${loc.name}`}
+              eyebrow="Our projects"
+              heading={`Check out Pineda's Roofing projects in ${loc.name}`}
               text={`Real jobs we've completed in ${loc.name}: what the problem was and what we did. Tap a project to see every photo.`}
             />
             <div className="mt-12">

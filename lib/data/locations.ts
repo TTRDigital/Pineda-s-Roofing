@@ -58,15 +58,15 @@ const cityPages: Location[] = [
     kind: "region",
     state: "MD",
     featured: true,
-    lead: "For over 30 years, Pineda's Roofing has repaired, maintained and replaced roofs and gutters for Maryland homes and businesses.",
+    lead: "With 30+ years of experience, Pineda's Roofing repairs, maintains and replaces roofs and gutters for Maryland homes and businesses.",
     paragraphs: [
       "Maryland's seasons are tough on a roof. Humid summers bring thunderstorms, wind and hail, and winters bring snow, ice dams and freeze-thaw cycles that open up small weaknesses.",
-      "From Baltimore and Annapolis to Montgomery County, our family business handles shingle and flat roofs, storm damage and seamless gutters, with free inspections and help with your insurance claim.",
+      "From Baltimore and Annapolis to Montgomery County, our family business handles shingle and flat roofs, storm damage and seamless gutters, with free inspections and storm damage photos for your adjuster.",
     ],
     highlights: [
       "Free roof inspections across Maryland",
       "Atlas Pinnacle Pristine shingles",
-      "Storm and insurance claim help",
+      "Storm damage inspections with photos",
       "24/7 emergency roof repair",
       "Licensed, insured & bonded, MHIC# 142024",
       "10 year labor warranty",
@@ -83,7 +83,7 @@ const cityPages: Location[] = [
     ],
     seo: {
       title: "Roofing Services in Maryland | Pineda's Roofing",
-      description: "Family-owned Maryland roofer since 1992. Roof repair, replacement, maintenance and gutters for homes and businesses. Free inspections, MHIC# 142024.",
+      description: "Family-owned Maryland roofer, founded in 1992. Roof repair, replacement, maintenance and gutters for homes and businesses. Free inspections, MHIC# 142024.",
     },
   },
   {
@@ -100,7 +100,7 @@ const cityPages: Location[] = [
     highlights: [
       "Free roof inspections in Silver Spring",
       "Based right here in Silver Spring",
-      "Storm and insurance claim help",
+      "Storm damage photos for your adjuster",
       "24/7 emergency roof repair",
       "Atlas Pinnacle Pristine shingles",
       "Gutters, siding and chimneys too",
@@ -108,7 +108,7 @@ const cityPages: Location[] = [
     neighborhoods: ["Aspen Hill", "Downtown Silver Spring", "Four Corners", "Woodside", "Kemp Mill", "Colesville"],
     seo: {
       title: "Roofing Contractor in Silver Spring, MD | Pineda's Roofing",
-      description: "Family-owned Silver Spring roofer. Roof repair and replacement, storm damage and gutters from a family-owned team since 1992. Free inspections.",
+      description: "Family-owned Silver Spring roofer. Roof repair and replacement, storm damage and gutters, with 30+ years of experience. Free inspections.",
     },
   },
   {
@@ -124,7 +124,7 @@ const cityPages: Location[] = [
     ],
     highlights: [
       "Free roof inspections in Rockville",
-      "Storm and insurance claim help",
+      "Storm damage documentation with photos",
       "Atlas Pinnacle Pristine shingles",
       "Photo documentation of every finding",
       "24/7 emergency roof repair",
@@ -132,7 +132,7 @@ const cityPages: Location[] = [
     neighborhoods: ["Twinbrook", "King Farm", "Fallsgrove", "Hungerford", "West End", "College Gardens"],
     seo: {
       title: "Roofing Contractor in Rockville, MD | Pineda's Roofing",
-      description: "Rockville roof repair and replacement from a family-owned Montgomery County roofer. Atlas Pinnacle Pristine shingles, storm claim help, free inspections.",
+      description: "Rockville roof repair and replacement from a family-owned Montgomery County roofer. Atlas Pinnacle Pristine shingles, storm damage documentation, free inspections.",
     },
   },
   {
@@ -151,7 +151,7 @@ const cityPages: Location[] = [
       "Chimney and flashing expertise",
       "Atlas Pinnacle Pristine shingles",
       "Algae-resistant 3M Scotchgard Protector",
-      "Storm and insurance claim help",
+      "Storm damage inspections with photos",
     ],
     neighborhoods: ["Edgemoor", "Kenwood", "Bradley Hills", "Wyngate", "Burning Tree"],
     seo: {
@@ -168,19 +168,19 @@ const cityPages: Location[] = [
     lead: "From Olde Towne to the Kentlands, Gaithersburg homeowners trust Pineda's Roofing for straight answers and roofs built to last.",
     paragraphs: [
       "Gaithersburg grew fast from the 1970s on, and many roofs from those decades have reached the end of their life. Townhome rows and HOA communities often need coordinated replacements that match the neighbors.",
-      "Open exposure and summer thunderstorms bring wind and hail damage. We inspect, photograph what we find and work directly with your insurance company.",
+      "Open exposure and summer thunderstorms bring wind and hail damage. We inspect, photograph what we find and meet with your adjuster.",
     ],
     highlights: [
       "Free roof inspections in Gaithersburg",
       "Townhome and HOA roof replacements",
-      "Storm and insurance claim help",
+      "Storm damage photos for your adjuster",
       "Atlas Pinnacle Pristine shingles",
       "Seamless gutters and gutter guards",
     ],
     neighborhoods: ["Kentlands", "Lakelands", "Olde Towne", "Montgomery Village"],
     seo: {
       title: "Roofing Contractor in Gaithersburg, MD | Pineda's Roofing",
-      description: "Gaithersburg roofing for homes and townhomes: repairs, replacements and storm damage claims from a family-owned Maryland roofer. Free inspections.",
+      description: "Gaithersburg roofing for homes and townhomes: repairs, replacements and storm damage inspections from a family-owned Maryland roofer. Free inspections.",
     },
   },
   {
@@ -198,13 +198,13 @@ const cityPages: Location[] = [
       "Free roof inspections in Germantown",
       "Townhome and HOA roof replacements",
       "Ice & water shield on every roof",
-      "Storm and insurance claim help",
+      "Storm damage documentation with photos",
       "24/7 emergency roof repair",
     ],
     neighborhoods: ["Kingsview Village", "Churchill Village", "Clopper's Mill", "Middlebrook", "Gunners Lake"],
     seo: {
       title: "Roofing Contractor in Germantown, MD | Pineda's Roofing",
-      description: "Germantown roof replacement and repair for homes and townhomes. Family-owned since 1992, storm claim help and Atlas Pinnacle Pristine shingles.",
+      description: "Germantown roof replacement and repair for homes and townhomes. Family-owned, with storm damage inspections and Atlas Pinnacle Pristine shingles.",
     },
   },
   {
@@ -247,7 +247,7 @@ const cityPages: Location[] = [
       "Minutes from our Silver Spring base",
       "Cape Cod and dormer roof repairs",
       "Ventilation checked on every job",
-      "Storm and insurance claim help",
+      "Storm damage inspections with photos",
     ],
     neighborhoods: ["Wheaton Hills", "Glenmont", "Kemp Mill"],
     seo: {
@@ -270,13 +270,13 @@ const cityPages: Location[] = [
       "Free roof inspections in Olney",
       "Wind and hail damage repair",
       "Ice & water shield on every roof",
-      "Storm and insurance claim help",
+      "Storm damage photos for your adjuster",
       "Atlas Pinnacle Pristine shingles",
     ],
     neighborhoods: ["Olney Mill", "Hallowell", "Sandy Spring", "Brookeville"],
     seo: {
       title: "Roofing Contractor in Olney, MD | Pineda's Roofing",
-      description: "Olney roof repair and replacement, including wind and hail damage claims, from a family-owned Montgomery County roofer. Free, no-obligation estimates.",
+      description: "Olney roof repair and replacement, including wind and hail damage repair, from a family-owned Montgomery County roofer. Free, no-obligation estimates.",
     },
   },
   {
@@ -288,19 +288,19 @@ const cityPages: Location[] = [
     lead: "Bowie homeowners get honest roof inspections, quality repairs and full replacements from a family-owned Maryland company.",
     paragraphs: [
       "Many Bowie homes date to the 1960s and 1970s, including the original Belair at Bowie neighborhoods. After several roof cycles, the decking and flashing underneath often need attention.",
-      "Summer storms and fallen limbs are the most common causes of damage here. We document storm damage with photos and work directly with your insurance company.",
+      "Summer storms and fallen limbs are the most common causes of damage here. We document storm damage with photos and meet with your adjuster.",
     ],
     highlights: [
       "Free roof inspections in Bowie",
       "Deck and flashing repairs",
-      "Storm and insurance claim help",
+      "Storm damage documentation with photos",
       "Atlas Pinnacle Pristine shingles",
       "Seamless gutters and gutter guards",
     ],
     neighborhoods: ["Belair at Bowie", "Old Town Bowie", "Fairwood", "Pointer Ridge"],
     seo: {
       title: "Roofing Contractor in Bowie, MD | Pineda's Roofing",
-      description: "Bowie roof repair and replacement from a family-owned Maryland roofer. Storm damage claims, gutters and Atlas Pinnacle Pristine shingles. Free inspections.",
+      description: "Bowie roof repair and replacement from a family-owned Maryland roofer. Storm damage repair, gutters and Atlas Pinnacle Pristine shingles. Free inspections.",
     },
   },
   {
@@ -318,13 +318,13 @@ const cityPages: Location[] = [
       "Free roof inspections in Laurel",
       "Chimney and flashing repairs",
       "Gutter installation and repair",
-      "Storm and insurance claim help",
+      "Storm damage inspections with photos",
       "24/7 emergency roof repair",
     ],
     neighborhoods: ["Old Town Laurel", "Montpelier", "West Laurel", "South Laurel"],
     seo: {
       title: "Roofing Contractor in Laurel, MD | Pineda's Roofing",
-      description: "Laurel roof repair, replacement and gutters from a family-owned Maryland roofer with 30+ years of experience. Storm claim help and free inspections.",
+      description: "Laurel roof repair, replacement and gutters from a family-owned Maryland roofer with 30+ years of experience. Storm damage inspections and free estimates.",
     },
   },
   {
@@ -343,12 +343,12 @@ const cityPages: Location[] = [
       "Product details for village approvals",
       "Townhome and single-family roofs",
       "Atlas Pinnacle Pristine shingles",
-      "Storm and insurance claim help",
+      "Storm damage photos for your adjuster",
     ],
     neighborhoods: ["Wilde Lake", "Oakland Mills", "Harper's Choice", "Long Reach", "River Hill", "Hickory Ridge"],
     seo: {
       title: "Roofing Contractor in Columbia, MD | Pineda's Roofing",
-      description: "Columbia, MD roof replacement and repair for homes and townhomes. Help with village approval details, storm claims and free, no-obligation inspections.",
+      description: "Columbia, MD roof replacement and repair for homes and townhomes. Help with village approval details, storm damage repair and free, no-obligation inspections.",
     },
   },
   {
@@ -366,13 +366,13 @@ const cityPages: Location[] = [
       "Free roof inspections in Ellicott City",
       "Gutters sized for heavy rain",
       "Chimney and masonry repair",
-      "Storm and insurance claim help",
+      "Storm damage documentation with photos",
       "Atlas Pinnacle Pristine shingles",
     ],
     neighborhoods: ["Historic Ellicott City", "Turf Valley", "Dunloggin", "Valley Mede"],
     seo: {
       title: "Roofing Contractor in Ellicott City, MD | Pineda's Roofing",
-      description: "Ellicott City roof repair, replacement, gutters and chimney work from a family-owned Maryland roofer. Storm damage claim help and free inspections.",
+      description: "Ellicott City roof repair, replacement, gutters and chimney work from a family-owned Maryland roofer. Storm damage documentation and free inspections.",
     },
   },
   {
@@ -390,7 +390,7 @@ const cityPages: Location[] = [
       "Free roof inspections in Frederick",
       "Ice dam prevention and repair",
       "Historic district masonry experience",
-      "Storm and insurance claim help",
+      "Storm damage inspections with photos",
       "Atlas Pinnacle Pristine shingles",
     ],
     neighborhoods: ["Downtown Frederick", "Ballenger Creek", "Lake Linganore", "Clover Hill"],
@@ -414,13 +414,13 @@ const cityPages: Location[] = [
       "Free roof inspections in Annapolis",
       "Wind damage repair",
       "Algae-resistant Atlas shingles",
-      "Storm and insurance claim help",
+      "Storm damage photos for your adjuster",
       "24/7 emergency roof repair",
     ],
     neighborhoods: ["Downtown Annapolis", "Eastport", "West Annapolis", "Wardour", "Admiral Heights"],
     seo: {
       title: "Roofing Contractor in Annapolis, MD | Pineda's Roofing",
-      description: "Annapolis roof repair and replacement built for Bay wind and storms. Algae-resistant Atlas shingles, storm claim help and free inspections.",
+      description: "Annapolis roof repair and replacement built for Bay wind and storms. Algae-resistant Atlas shingles, storm damage repair and free inspections.",
     },
   },
   {
@@ -438,13 +438,13 @@ const cityPages: Location[] = [
       "Free roof inspections in Towson",
       "Rowhome and flat roof repairs",
       "Chimney flashing and masonry",
-      "Storm and insurance claim help",
+      "Storm damage documentation with photos",
       "Atlas Pinnacle Pristine shingles",
     ],
     neighborhoods: ["Rodgers Forge", "Stoneleigh", "West Towson", "Ruxton", "Idlewylde"],
     seo: {
       title: "Roofing Contractor in Towson, MD | Pineda's Roofing",
-      description: "Towson roof repair and replacement for rowhomes and single-family homes, including flat roofs and chimneys. Family-owned since 1992. Free inspections.",
+      description: "Towson roof repair and replacement for rowhomes and single-family homes, including flat roofs and chimneys. Founded in 1992. Free inspections.",
     },
   },
   {
@@ -461,13 +461,13 @@ const cityPages: Location[] = [
       "Free roof inspections in D.C.",
       "Rowhouse flat roof replacement",
       "Chimney and flashing repair",
-      "Storm and insurance claim help",
+      "Storm damage inspections with photos",
       "Photo documentation of every finding",
     ],
     neighborhoods: ["Capitol Hill", "Georgetown", "Petworth", "Brookland", "Cleveland Park"],
     seo: {
       title: "Roofing Contractor in Washington, D.C. | Pineda's Roofing",
-      description: "Roof repair and flat roof replacement for Washington, D.C. rowhouses and homes, from Capitol Hill to Georgetown. Family owned since 1992.",
+      description: "Roof repair and flat roof replacement for Washington, D.C. rowhouses and homes, from Capitol Hill to Georgetown. Founded in 1992.",
     },
   },
 ];

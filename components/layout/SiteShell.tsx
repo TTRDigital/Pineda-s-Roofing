@@ -48,7 +48,7 @@ function buildNav(services: Service[]): NavItem[] {
         ]
       : []),
     { label: "Atlas", href: "/atlas-roofing" },
-    { label: "Insurance Claims", href: "/roofing-insurance" },
+    { label: "Storm & Insurance", href: "/roofing-insurance" },
     { label: "Gallery", href: "/gallery" },
     {
       label: "About",

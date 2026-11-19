@@ -54,15 +54,16 @@ export const fallbackPartners: Partners = {
     { name: "Stinger" },
     { name: "Paslode" },
   ],
-  insuranceHeading: "We work with all insurance companies",
-  insuranceText: "We meet your adjuster, document the damage with photos and handle the paperwork, whoever your carrier is.",
+  insuranceHeading: "We meet with adjusters from all major insurance companies",
+  insuranceText: "Whoever your insurance company is, we document the damage and meet with your adjuster. You file and manage your claim directly with your insurance company.",
   insurers: [{ name: "State Farm" }, { name: "Allstate" }, { name: "USAA" }, { name: "Progressive" }, { name: "Farmers Insurance" }],
 };
 
 export const fallbackTestimonials: Testimonial[] = [
   {
     quote:
-      "We are so please with Pineda's! They walked us through the entire process and worked hand and hand with my insurance company to make the process go quickly and smoothly…",
+      // Shortened with "…" so the review does not read as us handling the insurance claim (Roberto, Nov 2026).
+      "We are so please with Pineda's! They walked us through the entire process…",
     name: "Joseph Besler",
     rating: 5,
     source: "Google",
@@ -107,7 +108,7 @@ export const fallbackFaqs: Faq[] = [
     category: "Roof replacement",
     question: "How long will the work take?",
     answer:
-      "Most residential replacements take two to three days. Repairs are usually a single visit. You get a specific timeline with your quote, and we tell you right away if anything changes.",
+      "Most residential replacements take one to two days. Repairs are usually a single visit. You get a specific timeline with your quote, and we tell you right away if anything changes.",
   },
   { category: "General", question: "What warranty do I get?", answer: "A 10 year labor warranty from Pineda's on the installation, plus the limited lifetime manufacturer warranty on the shingles. You get both in writing." },
   { category: "General", question: "Are you licensed and insured?", answer: "Yes. Fully licensed, insured and bonded in Maryland, MHIC# 142024." },
@@ -120,19 +121,19 @@ export const fallbackFaqs: Faq[] = [
     category: "Insurance",
     question: "Will my insurance cover a new roof?",
     answer:
-      "Storm damage is often covered; age and general wear usually are not. We document the damage and work directly with your carrier so the claim reflects what is actually on the roof. Many customers pay only their deductible.",
+      "That depends on your policy, and the decision is your insurance company's. You file and manage the claim with them. We document the damage and meet with your adjuster, so they can see what is actually on the roof.",
   },
   {
     category: "Insurance",
     question: "What should I do if I think my roof has storm damage?",
     answer:
-      "Look from the ground for missing shingles, dents in gutters or debris, but stay off the roof. Then call us for a free damage assessment. We will tell you whether the damage is worth a claim before you file.",
+      "Look from the ground for missing shingles, dents in gutters or debris, but stay off the roof. Then call us for a free damage inspection. We will show you what we find, with photos, so you can decide whether to contact your insurance company.",
   },
   {
     category: "Insurance",
     question: "What if my insurance claim is denied?",
     answer:
-      "We review the adjuster's report with you and advise on next steps. Claims are sometimes denied for missing documentation, which can often be fixed with more evidence.",
+      "Claim decisions are made by your insurance company, so questions about a denial go to them. We can give you copies of our photos and written estimate of the damage, and meet with the adjuster again if your insurance company schedules a re-inspection.",
   },
   {
     category: "Repairs",
@@ -195,7 +196,7 @@ const earlierProjects: Project[] = [
   { id: "underlayment", title: "Synthetic underlayment going down", category: "residential", images: [images.underlaymentInstall], featured: true },
   { id: "flat", title: "Flat roof membrane", category: "commercial", images: [images.flatRoofMembrane] },
   { id: "flat-skylight", title: "Flat roof with a new skylight", category: "commercial", images: [images.flatRoofSkylight] },
-  { id: "hail", title: "Hail damage inspection", category: "repair", summary: "Hail hits marked and photographed for the insurance claim.", images: [images.hailDamage] },
+  { id: "hail", title: "Hail damage inspection", category: "repair", summary: "Hail hits marked and photographed to show the adjuster.", images: [images.hailDamage] },
   { id: "repair-patch", title: "Shingle repair", category: "repair", images: [images.shingleRepairPatch] },
   { id: "vents", title: "New shingles going on", category: "residential", images: [images.roofReplacementColonial] },
 ];

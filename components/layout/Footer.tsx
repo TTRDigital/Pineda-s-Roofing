@@ -8,7 +8,7 @@ import { BbbBadge } from "@/components/ui/BbbBadge";
 const company = [
   { label: "About us", href: "/about-us" },
   { label: "Atlas roofing", href: "/atlas-roofing" },
-  { label: "Insurance claims", href: "/roofing-insurance" },
+  { label: "Storm & Insurance", href: "/roofing-insurance" },
   { label: "Gallery", href: "/gallery" },
   { label: "Service areas", href: "/service-area" },
   { label: "Blog", href: "/blog" },
@@ -32,7 +32,7 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
         <div>
           <Logo className="h-14 w-auto" dark />
           <p className="mt-6 max-w-sm text-[0.95rem]">
-            Family-owned roofing contractor based in {settings.city}, {settings.region}, serving Baltimore, Howard, Anne Arundel and Prince George&apos;s County, plus Carroll, Frederick, Montgomery and Washington, DC. Roofing, repairs and storm restoration for over three decades, and now solar.
+            Family-owned roofing contractor based in {settings.city}, {settings.region}, serving Baltimore, Howard, Anne Arundel and Prince George&apos;s County, plus Carroll, Frederick, Montgomery and Charles County and Washington, DC. 30+ years of experience in roofing, repairs and storm restoration, and now solar.
           </p>
           <p className="mt-5 text-sm font-semibold text-white">
             Licensed, insured &amp; bonded <span className="text-cyan">·</span> {settings.license}
