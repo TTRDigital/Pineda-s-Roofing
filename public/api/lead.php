@@ -4,14 +4,12 @@
  * Validates the lead like the form does, filters spam and posts it to the
  * GoHighLevel inbound webhook below.
  *
- * To use a different webhook without a code change, add lead-config.php next
- * to public_html or in this folder (blocked from the web by .htaccess)
- * returning ['webhook_url' => 'https://...']. The deploy workflow writes it
- * when the GHL_WEBHOOK_URL secret is set.
+ * The webhook address is set only here (and in app/api/lead/route.vercel.ts
+ * for Vercel). No config file or secret overrides it.
  */
 
 // Pineda's Roofing GoHighLevel workflow: "Inbound Webhook" trigger.
-const DEFAULT_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/SuOTFAexav5kBEKVFFst/webhook-trigger/6a3bbfe5-1c38-4a6b-805b-02f99058ab20';
+const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/SuOTFAexav5kBEKVFFst/webhook-trigger/6a3bbfe5-1c38-4a6b-805b-02f99058ab20';
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
@@ -111,20 +109,7 @@ if ($trapFilled && $tooFast) {
 }
 $spamCheck = $trapFilled ? 'suspect: hidden field filled' : ($tooFast ? "suspect: sent in {$elapsed} ms" : 'ok');
 
-// Settings
-$config = [];
-foreach ([dirname(__DIR__, 2) . '/lead-config.php', __DIR__ . '/lead-config.php'] as $file) {
-    if (is_file($file)) {
-        $config = (array) include $file;
-        break;
-    }
-}
-$webhook = trim((string) ($config['webhook_url'] ?? ''), " \t\n\r\0\x0B\"'");
-if ($webhook === '') $webhook = DEFAULT_WEBHOOK;
-if (!preg_match('#^https://#', $webhook)) {
-    error_log('[lead] GHL webhook URL is not https: lead accepted but NOT sent. Check lead-config.php.');
-    reply(200, ['ok' => true, 'delivered' => false]);
-}
+$webhook = WEBHOOK;
 
 /** E.164 for US numbers. */
 $digits = preg_replace('/\D/', '', $lead['phone']);
