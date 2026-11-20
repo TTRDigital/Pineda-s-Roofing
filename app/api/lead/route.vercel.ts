@@ -12,7 +12,7 @@ import { attributionKeys, MIN_FILL_MS, propertyOptions, roofingNeedOptions, serv
 export const dynamic = "force-dynamic";
 
 // Pineda's Roofing GoHighLevel workflow: "Inbound Webhook" trigger (same as lead.php).
-const DEFAULT_WEBHOOK = "https://services.leadconnectorhq.com/hooks/SuOTFAexav5kBEKVFFst/webhook-trigger/IuYTKRe2MHqpU3qHc2v8";
+const DEFAULT_WEBHOOK = "https://services.leadconnectorhq.com/hooks/SuOTFAexav5kBEKVFFst/webhook-trigger/6a3bbfe5-1c38-4a6b-805b-02f99058ab20";
 
 const json = (status: number, body: Record<string, unknown>) =>
   Response.json(body, { status, headers: { "Cache-Control": "no-store", "X-Robots-Tag": "noindex" } });
