@@ -24,7 +24,10 @@ export const fallbackSettings: SiteSettings = {
   googleRating: "5.0",
   // Leave empty unless kept current: Roberto says "22" is out of date. With no count, the site says "Reviews on Google".
   reviewCount: undefined,
-  reviewsUrl: "https://g.co/kgs/FDvaBcB",
+  // Roberto's managed Business Profile (not the unclaimed duplicate at North Gate Drive, which has 0 reviews).
+  googlePlaceId: "ChIJMbWhTry5AqoRJ2pGGFIwDsk",
+  reviewsUrl: "https://www.google.com/maps/place/?q=place_id:ChIJMbWhTry5AqoRJ2pGGFIwDsk",
+  writeReviewUrl: "https://g.page/r/CSdqRhhSMA7JEAE/review",
   bbb: {
     url: "https://www.bbb.org/us/md/silver-spring/profile/roofing-contractors/pinedas-construction-llc-0241-236064536",
     rating: "A+",
@@ -33,7 +36,7 @@ export const fallbackSettings: SiteSettings = {
   social: [
     { network: "facebook", href: "https://www.facebook.com/pinedasroofing" },
     { network: "instagram", href: "https://www.instagram.com/pinedasroofing/" },
-    { network: "google", href: "https://g.co/kgs/WMp9yQk" },
+    { network: "google", href: "https://www.google.com/maps/place/?q=place_id:ChIJMbWhTry5AqoRJ2pGGFIwDsk" },
   ],
   headerCta: { label: "Free Estimate", href: "/contact-us" },
   verse: { text: "Serve wholeheartedly, as if you were serving the Lord, not people.", reference: "Ephesians 6:7" },

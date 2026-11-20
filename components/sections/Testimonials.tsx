@@ -69,14 +69,23 @@ export function Testimonials({ items, settings, page }: { items: Testimonial[]; 
                 <Stars n={t.rating} />
                 <blockquote className="mt-4 flex-1 text-[1.0625rem] leading-relaxed text-white">“{t.quote}”</blockquote>
                 <p className="mt-5 text-sm font-bold uppercase tracking-[0.12em] text-cyan">
-                  {t.name}
+                  {/* Google reviews link the reviewer's name to their Google profile, as Google requires. */}
+                  {t.authorUrl ? (
+                    <a href={t.authorUrl} target="_blank" rel="noopener nofollow" className="hover:underline">
+                      {t.name}
+                    </a>
+                  ) : (
+                    t.name
+                  )}
                   {t.location ? <span className="font-semibold normal-case tracking-normal text-on-dark-meta"> · {t.location}</span> : null}
                   {t.source ? <span className="font-semibold normal-case tracking-normal text-on-dark-meta"> · {t.source}</span> : null}
+                  {t.date ? <span className="font-semibold normal-case tracking-normal text-on-dark-meta"> · {t.date}</span> : null}
                 </p>
               </li>
             ))}
           </ul>
         )}
+        {!settings.reviewsWidget && shown.some((t) => t.authorUrl) ? <p className="mt-4 text-xs text-on-dark-meta">Reviews from Google</p> : null}
         <div className="mt-10 flex flex-col gap-5 rounded-[var(--radius-card)] border border-cyan/40 bg-ink-2 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap gap-3">
             {googleUrl ? (

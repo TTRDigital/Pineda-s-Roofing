@@ -46,6 +46,8 @@ export type SiteSettings = {
   googleRating?: string;
   reviewCount?: string;
   reviewsUrl?: string;
+  /** Google Place ID of the Business Profile; with GOOGLE_PLACES_API_KEY set, the build reads the live rating, count and newest reviews. */
+  googlePlaceId?: string;
   /** Google "write a review" link from the Business Profile. */
   writeReviewUrl?: string;
   /** Embed code for a live Google reviews widget (e.g. from GoHighLevel Reputation). Replaces the static review cards. */
@@ -127,7 +129,16 @@ export type Project = {
   service?: string;
 };
 
-export type Testimonial = { quote: string; name: string; location?: string; rating: number; source?: string };
+export type Testimonial = {
+  quote: string;
+  name: string;
+  location?: string;
+  rating: number;
+  source?: string;
+  /** Google reviews: "2 weeks ago" and the reviewer's profile link (Google requires both name and link). */
+  date?: string;
+  authorUrl?: string;
+};
 
 export type HomeContent = {
   seo: Seo;

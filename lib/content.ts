@@ -2,6 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { sanityFetch } from "@/lib/sanity/fetch";
 import { merge } from "@/lib/merge";
+import { getGoogleReviews } from "@/lib/google-reviews";
 import { fallbackFaqs, fallbackPartners, fallbackProjects, fallbackSettings, fallbackTestimonials } from "@/lib/data/site";
 import { fallbackAbout, fallbackAtlas, fallbackHome, fallbackInsurance, fallbackRoofing } from "@/lib/data/pages";
 import { fallbackServices } from "@/lib/data/services";
@@ -48,11 +49,16 @@ const FEATURE = `{ "anchor": anchor.current, icon, eyebrow, title, lead, paragra
 
 export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
   const cms = await sanityFetch<Partial<SiteSettings>>(
-    `*[_id == "siteSettings"][0]{ name, legalName, phone, email, license, city, region, hours[]{ label, value }, emergencyText, foundedYear, googleRating, reviewCount, reviewsUrl, writeReviewUrl, reviewsWidget, bbb{ url, rating, accreditedSince }, social[]{ network, href }, headerCta{ label, href }, verse{ text, reference }, "logo": logo${LOGO} }`,
+    `*[_id == "siteSettings"][0]{ name, legalName, phone, email, license, city, region, hours[]{ label, value }, emergencyText, foundedYear, googleRating, reviewCount, googlePlaceId, reviewsUrl, writeReviewUrl, reviewsWidget, bbb{ url, rating, accreditedSince }, social[]{ network, href }, headerCta{ label, href }, verse{ text, reference }, "logo": logo${LOGO} }`,
     {},
     ["siteSettings"],
   );
   const s = merge(fallbackSettings, cms);
+  // Live rating, review count and Business Profile link from Google, when the build has the key.
+  const google = await getGoogleReviews(s.googlePlaceId);
+  if (google?.rating) s.googleRating = google.rating;
+  if (google?.count) s.reviewCount = google.count;
+  if (google?.mapsUrl) s.reviewsUrl = google.mapsUrl;
   // tel: link always follows the displayed phone number.
   const digits = s.phone.replace(/\D/g, "");
   return { ...s, phoneHref: `tel:+${digits.length === 10 ? `1${digits}` : digits}` };
@@ -121,7 +127,12 @@ export const getProjects = cache(async (): Promise<Project[]> => {
 
 export const getTestimonials = cache(async (): Promise<Testimonial[]> => {
   const cms = await sanityFetch<Testimonial[]>(`*[_type == "testimonial"] | order(_createdAt asc){ quote, name, location, rating, source }`, {}, ["testimonial"]);
-  return cms?.length ? cms.map((t) => ({ ...t, rating: t.rating ?? 5 })) : fallbackTestimonials;
+  const saved = cms?.length ? cms.map((t) => ({ ...t, rating: t.rating ?? 5 })) : fallbackTestimonials;
+  // Newest Google reviews first (live, when the build has the key), then the saved ones they don't repeat.
+  const settings = await getSiteSettings();
+  const google = (await getGoogleReviews(settings.googlePlaceId))?.reviews ?? [];
+  const seen = new Set(google.map((t) => t.name.trim().toLowerCase()));
+  return [...google, ...saved.filter((t) => !seen.has(t.name.trim().toLowerCase()))];
 });
 
 export const getFaqs = cache(async (): Promise<(Faq & { onHome?: boolean })[]> => {

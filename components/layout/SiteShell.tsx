@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { getLocations, getServices, getSiteSettings, getTestimonials } from "@/lib/content";
+import { getLocations, getServices, getSiteSettings } from "@/lib/content";
 import { businessSchema } from "@/lib/schema";
 import { revealScript } from "@/lib/reveal-script";
 import type { Service } from "@/lib/types";
@@ -68,10 +68,10 @@ function buildNav(services: Service[]): NavItem[] {
 
 /** Header, footer and site-wide behaviors. Used by the site layout and the 404 page. */
 export async function SiteShell({ children }: { children: ReactNode }) {
-  const [settings, services, testimonials, locations] = await Promise.all([getSiteSettings(), getServices(), getTestimonials(), getLocations()]);
+  const [settings, services, locations] = await Promise.all([getSiteSettings(), getServices(), getLocations()]);
   return (
     <>
-      <JsonLd data={businessSchema(settings, testimonials, locations.map((l) => l.name))} />
+      <JsonLd data={businessSchema(settings, locations.map((l) => l.name))} />
       <a href="#main" className="sr-only z-[100] rounded-lg bg-cyan px-5 py-3 font-bold text-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
         Skip to content
       </a>
