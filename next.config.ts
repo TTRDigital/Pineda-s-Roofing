@@ -12,8 +12,22 @@ import type { NextConfig } from "next";
  * - CMS updates: rebuild and upload (.github/workflows/deploy-siteground.yml),
  *   started by a push, a Sanity webhook or the "Run workflow" button
  */
+// Vercel (the current domain host) can't run lead.php, so there the site is a
+// normal Next.js build with one server route for the estimate form
+// (app/api/lead/route.vercel.ts). Everywhere else it stays a static export.
+const onVercel = !!process.env.VERCEL;
+
 const nextConfig: NextConfig = {
-  output: "export",
+  ...(onVercel
+    ? {
+        pageExtensions: ["tsx", "ts", "jsx", "js", "vercel.ts"],
+        // The form posts to /api/lead.php on every host; on Vercel that is the route above
+        // (beforeFiles also stops Vercel serving the PHP file's source).
+        async rewrites() {
+          return { beforeFiles: [{ source: "/api/lead.php", destination: "/api/lead" }], afterFiles: [], fallback: [] };
+        },
+      }
+    : { output: "export" as const }),
   // /about-us/ -> about-us/index.html, which Apache serves as is
   // (and matches the old WordPress URLs).
   trailingSlash: true,
