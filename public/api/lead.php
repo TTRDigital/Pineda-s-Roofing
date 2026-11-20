@@ -11,7 +11,7 @@
  */
 
 // Pineda's Roofing GoHighLevel workflow: "Inbound Webhook" trigger.
-const DEFAULT_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/SuOTFAexav5kBEKVFFst/webhook-trigger/IuYTKRe2MHqpU3qHc2v8';
+const DEFAULT_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/SuOTFAexav5kBEKVFFst/webhook-trigger/6a3bbfe5-1c38-4a6b-805b-02f99058ab20';
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
