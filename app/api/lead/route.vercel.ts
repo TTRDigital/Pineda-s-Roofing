@@ -12,7 +12,8 @@ import { attributionKeys, MIN_FILL_MS, propertyOptions, roofingNeedOptions, serv
 export const dynamic = "force-dynamic";
 
 // Pineda's Roofing GoHighLevel workflow: "Inbound Webhook" trigger (same as lead.php).
-const DEFAULT_WEBHOOK = "https://services.leadconnectorhq.com/hooks/SuOTFAexav5kBEKVFFst/webhook-trigger/6a3bbfe5-1c38-4a6b-805b-02f99058ab20";
+// Set only here and in lead.php: no environment variable or config file overrides it.
+const WEBHOOK = "https://services.leadconnectorhq.com/hooks/SuOTFAexav5kBEKVFFst/webhook-trigger/6a3bbfe5-1c38-4a6b-805b-02f99058ab20";
 
 const json = (status: number, body: Record<string, unknown>) =>
   Response.json(body, { status, headers: { "Cache-Control": "no-store", "X-Robots-Tag": "noindex" } });
@@ -100,11 +101,7 @@ export async function POST(req: Request) {
   if (trapFilled && tooFast) return json(200, { ok: true });
   const spamCheck = trapFilled ? "suspect: hidden field filled" : tooFast ? `suspect: sent in ${elapsed} ms` : "ok";
 
-  const webhook = (process.env.GHL_WEBHOOK_URL ?? "").trim() || DEFAULT_WEBHOOK;
-  if (!webhook.startsWith("https://")) {
-    console.error("[lead] GHL webhook URL is not https: lead accepted but NOT sent.");
-    return json(200, { ok: true, delivered: false });
-  }
+  const webhook = WEBHOOK;
 
   // E.164 for US numbers.
   const digits = lead.phone.replace(/\D/g, "");
