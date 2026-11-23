@@ -17,6 +17,7 @@ import type {
   Location,
   Partners,
   Post,
+  PostSection,
   Project,
   RoofingContent,
   Service,
@@ -193,10 +194,43 @@ export const getAboutPage = cache(async (): Promise<AboutContent> => {
 
 const POST = `{ "slug": slug.current, title, excerpt, date, "areas": areas[]->slug.current, "service": service->slug.current, "image": image${IMG}, sections[]{ heading, paragraphs }, ${SEO} }`;
 
+/** Text of one paragraph: a plain string, or a Portable Text block (its spans joined). Anything else is dropped. */
+function paragraphText(p: unknown): string {
+  if (typeof p === "string") return p;
+  if (p && typeof p === "object" && Array.isArray((p as { children?: unknown }).children)) {
+    return ((p as { children: unknown[] }).children)
+      .map((c) => (c && typeof c === "object" && typeof (c as { text?: unknown }).text === "string" ? (c as { text: string }).text : ""))
+      .join("");
+  }
+  return "";
+}
+
+/**
+ * Post sections as the template expects them, whatever a draft holds: a section
+ * with no paragraphs (or null) gets an empty list, Portable Text blocks become
+ * plain text, and a section with neither heading nor text is dropped. Published
+ * posts already have this shape, so visitors see no change; it keeps a half-written
+ * draft's preview from crashing (TTR-2912).
+ */
+function postSections(raw: unknown): PostSection[] {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((sec) => {
+      const s = (sec && typeof sec === "object" ? sec : {}) as { heading?: unknown; paragraphs?: unknown };
+      const heading = typeof s.heading === "string" ? s.heading : "";
+      const paragraphs = (Array.isArray(s.paragraphs) ? s.paragraphs : []).map(paragraphText).filter((t) => t.trim());
+      return { heading, paragraphs };
+    })
+    .filter((sec) => sec.heading.trim() || sec.paragraphs.length);
+}
+
 export const getPosts = cache(async (): Promise<Post[]> => {
   const cms = await sanityFetch<Partial<Post>[]>(`*[_type == "post" && defined(slug.current)] | order(date desc) ${POST}`, {}, ["post"]);
   const bySlug = new Map(fallbackPosts.map((p) => [p.slug, p]));
-  const fromCms = (cms ?? []).map((c) => merge(bySlug.get(c.slug ?? "") ?? { slug: c.slug ?? "", title: "", excerpt: "", date: "", sections: [] }, c));
+  const fromCms = (cms ?? []).map((c) => {
+    const post = merge(bySlug.get(c.slug ?? "") ?? { slug: c.slug ?? "", title: "", excerpt: "", date: "", sections: [] }, c);
+    return { ...post, sections: postSections(post.sections) };
+  });
   const missing = fallbackPosts.filter((f) => !fromCms.some((c) => c.slug === f.slug));
   return [...fromCms, ...missing].filter((p) => p.title).sort((a, b) => b.date.localeCompare(a.date));
 });
