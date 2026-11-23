@@ -11,7 +11,7 @@ export function Hero({ hero, stats, settings }: { hero: HomeContent["hero"]; sta
   return (
     <section className="on-dark relative isolate overflow-hidden bg-ink">
       <div className="absolute inset-0 -z-20">
-        <Photo image={hero.image} sizes="100vw" priority className="opacity-60" />
+        <Photo image={hero.image} sizes="100vw" priority hero className="opacity-60" />
       </div>
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#0b0d10_0%,rgb(11_13_16/0.9)_42%,rgb(11_13_16/0.35)_100%)]" />
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-ink to-transparent" />
