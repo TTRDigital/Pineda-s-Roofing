@@ -219,5 +219,7 @@ export type Post = {
   service?: string;
   image?: Img;
   sections: PostSection[];
+  /** Optional questions and answers under the post (with FAQPage markup). */
+  faqs?: Faq[];
   seo?: Seo;
 };
