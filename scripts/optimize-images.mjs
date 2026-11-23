@@ -10,6 +10,10 @@ import sharp from "sharp";
 
 // deviceSizes + imageSizes from next.config.ts.
 const WIDTHS = [96, 256, 384, 640, 828, 1200, 1920];
+// Page heroes on phones (lib/image-loader.ts, HERO_QUALITY): extra copies at these widths, slightly
+// smaller. Made for every photo so any hero picked later already has its copies.
+const HERO_WIDTHS = [640, 828];
+const HERO_QUALITY = 60;
 const SRC = path.resolve("public/images");
 const OUT = path.resolve("public/_img/images");
 
@@ -29,15 +33,15 @@ for await (const file of walk(SRC)) {
   const srcTime = (await stat(file)).mtimeMs;
   const meta = await sharp(file).metadata();
   await mkdir(path.dirname(path.join(OUT, rel)), { recursive: true });
-  for (const w of WIDTHS) {
-    const target = path.join(OUT, `${rel}-${w}.webp`);
+  const jobs = [...WIDTHS.map((w) => ({ w, q: 74, target: path.join(OUT, `${rel}-${w}.webp`) })), ...HERO_WIDTHS.map((w) => ({ w, q: HERO_QUALITY, target: path.join(OUT, `${rel}-${w}-q${HERO_QUALITY}.webp`) }))];
+  for (const { w, q, target } of jobs) {
     const existing = await stat(target).catch(() => null);
     if (existing && existing.mtimeMs >= srcTime) continue;
     // Never upscale: widths above the original get the original size.
     await sharp(file)
       .rotate()
       .resize({ width: Math.min(w, meta.width ?? w), withoutEnlargement: true })
-      .webp({ quality: 74, effort: 5 })
+      .webp({ quality: q, effort: 5 })
       .toFile(target);
     made++;
   }

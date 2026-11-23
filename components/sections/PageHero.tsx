@@ -10,7 +10,7 @@ export function PageHero({ hero, crumbs, ctas, children }: { hero: Hero; crumbs?
       {hero.image ? (
         <>
           <div className="absolute inset-0 -z-20">
-            <Photo image={hero.image} sizes="100vw" priority />
+            <Photo image={hero.image} sizes="100vw" priority hero />
           </div>
           <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(11_13_16/0.94)_0%,rgb(11_13_16/0.82)_45%,rgb(11_13_16/0.45)_100%)]" />
         </>

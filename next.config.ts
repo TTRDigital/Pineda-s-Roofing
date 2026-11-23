@@ -38,6 +38,8 @@ const nextConfig: NextConfig = {
     // Keep in sync with WIDTHS in scripts/optimize-images.mjs.
     deviceSizes: [640, 828, 1200, 1920],
     imageSizes: [96, 256, 384],
+    // 75 for every photo; 60 only for page heroes' phone-size copies (lib/image-loader.ts).
+    qualities: [60, 75],
   },
 };
 
