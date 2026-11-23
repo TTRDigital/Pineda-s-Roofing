@@ -28,7 +28,7 @@ export async function generateMetadata(props: PageProps<"/about-us/[person]">): 
   return pageMetadata(
     {
       title: `${p.name}, ${p.role} | Pineda's Roofing`,
-      description: `Meet ${p.name}, ${p.role.toLowerCase()} of Pineda's Roofing, the family-owned Maryland roofing contractor.`,
+      description: `Meet ${p.name}, ${p.role.toLowerCase()} of Pineda's Roofing, the family-owned Maryland roofing contractor founded in 1992. MHIC# 142024.`,
       image: p.image,
       noIndex: p.noIndex,
     },
