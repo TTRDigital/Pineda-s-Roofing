@@ -192,7 +192,7 @@ export const getAboutPage = cache(async (): Promise<AboutContent> => {
 
 /* ---------- Blog ---------- */
 
-const POST = `{ "slug": slug.current, title, excerpt, date, "areas": areas[]->slug.current, "service": service->slug.current, "image": image${IMG}, sections[]{ heading, paragraphs }, ${SEO} }`;
+const POST = `{ "slug": slug.current, title, excerpt, date, "areas": areas[]->slug.current, "service": service->slug.current, "image": image${IMG}, sections[]{ heading, paragraphs }, faqs[]${FAQ}, ${SEO} }`;
 
 /** Text of one paragraph: a plain string, or a Portable Text block (its spans joined). Anything else is dropped. */
 function paragraphText(p: unknown): string {
@@ -229,7 +229,9 @@ export const getPosts = cache(async (): Promise<Post[]> => {
   const bySlug = new Map(fallbackPosts.map((p) => [p.slug, p]));
   const fromCms = (cms ?? []).map((c) => {
     const post = merge(bySlug.get(c.slug ?? "") ?? { slug: c.slug ?? "", title: "", excerpt: "", date: "", sections: [] }, c);
-    return { ...post, sections: postSections(post.sections) };
+    // A half-written FAQ (no question or no answer) is left out, so the page and its markup stay valid.
+    const faqs = (post.faqs ?? []).filter((f) => f?.question?.trim() && f?.answer?.trim());
+    return { ...post, sections: postSections(post.sections), faqs };
   });
   const missing = fallbackPosts.filter((f) => !fromCms.some((c) => c.slug === f.slug));
   return [...fromCms, ...missing].filter((p) => p.title).sort((a, b) => b.date.localeCompare(a.date));

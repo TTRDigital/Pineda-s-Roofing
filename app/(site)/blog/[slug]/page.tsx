@@ -9,6 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 import { absoluteUrl, siteUrl } from "@/lib/site";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { FaqSection } from "@/components/sections/FaqSection";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { formatDate } from "@/lib/text";
 
@@ -94,6 +95,7 @@ export default async function PostPage(props: PageProps<"/blog/[slug]">) {
           </div>
         </div>
       </article>
+      {post.faqs?.length ? <FaqSection intro={{ eyebrow: "FAQ", heading: "Common questions" }} items={post.faqs} /> : null}
       <ContactSection settings={settings} defaultService={post.service === "solar-panel-installation" ? "Solar installation" : undefined} />
       <JsonLd
         data={{
