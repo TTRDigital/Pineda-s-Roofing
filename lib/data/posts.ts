@@ -53,7 +53,7 @@ export const fallbackPosts: Post[] = [
       },
     ],
     seo: {
-      title: "Roof Replacement in Baltimore County: What to Expect | Pineda's Roofing",
+      title: "Baltimore County Roof Replacement: What to Expect | Pineda's Roofing",
       description: "How a roof replacement in Baltimore County works, from free inspection to cleanup, plus what to ask a roofing contractor before you sign. MHIC# 142024.",
     },
   },

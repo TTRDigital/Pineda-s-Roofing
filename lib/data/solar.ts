@@ -157,7 +157,7 @@ export const solarMarkets: SolarMarket[] = [
       },
     ],
     seo: {
-      title: "Solar in Washington, DC | Relief of Your Utility Bill | Pineda's Roofing",
+      title: "Solar in Washington, DC | Utility Bill Relief | Pineda's Roofing",
       description: "Solar for Washington, DC homes: a solar agreement with no upfront solar cost, no credit check and no monthly solar payment for qualifying homeowners. DC Solar for All.",
     },
   },

@@ -11,7 +11,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const seo = {
   title: "Service Area: Maryland & Washington, D.C. | Pineda's Roofing",
-  description: "Roofing contractor serving Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's County, plus Carroll, Frederick, Montgomery and Washington, D.C. solar.",
+  description: "Roofing contractor serving Baltimore County, Baltimore City, Howard, Anne Arundel and Prince George's County, plus Carroll, Frederick, Montgomery and D.C. solar.",
 };
 
 export const metadata: Metadata = pageMetadata(seo, "/service-area", images.homeNewRoofAerial);
