@@ -32,6 +32,12 @@ const nextConfig: NextConfig = {
   // (and matches the old WordPress URLs).
   trailingSlash: true,
   poweredByHeader: false,
+  experimental: {
+    // The site's CSS (Tailwind, about 11 KB compressed) arrives inside the HTML instead of as two
+    // render-blocking files, so a phone paints the first screen without a second round trip
+    // (TTR-2880, speed_lcp). Same styles, same look.
+    inlineCss: true,
+  },
   images: {
     loader: "custom",
     loaderFile: "./lib/image-loader.ts",
