@@ -16,29 +16,49 @@ function filled(v: unknown): boolean {
   return true;
 }
 
-/** Drops empty images and empty values inside CMS arrays (e.g. a feature section without a photo). */
-export function clean<T>(v: T): T {
-  if (Array.isArray(v)) return v.filter((x) => x !== null && x !== undefined).map(clean) as T;
+/** Site name: the alt text of last resort for a CMS photo with no alt and no titled parent. */
+const SITE_ALT = "Pineda's Roofing";
+
+/** The nearest words that name what a photo shows: its parent's title, name or heading. */
+function label(v: Obj, ctx: string): string {
+  for (const k of ["title", "name", "heading"]) {
+    const x = v[k];
+    if (typeof x === "string" && x.trim()) return x.trim();
+  }
+  return ctx;
+}
+
+/**
+ * Drops empty images and empty values inside CMS arrays (e.g. a feature section without a photo).
+ * A CMS photo saved without alt text gets its parent's title, name or heading as alt (TTR-2880:
+ * every image carries alt text, even when the editor left the field blank). Nothing visible changes.
+ */
+export function clean<T>(v: T, ctx: string = SITE_ALT): T {
+  if (Array.isArray(v)) return v.filter((x) => x !== null && x !== undefined).map((x) => clean(x, ctx)) as T;
   if (isObj(v)) {
+    const here = label(v, ctx);
     const out: Obj = {};
     for (const [k, x] of Object.entries(v)) {
       if (!filled(x)) continue;
-      out[k] = clean(x);
+      out[k] = clean(x, here);
     }
+    if (typeof out.src === "string" && !filled(out.alt)) out.alt = here;
     return out as T;
   }
   return v;
 }
 
-export function merge<T>(fallback: T, cms: unknown): T {
+export function merge<T>(fallback: T, cms: unknown, ctx: string = SITE_ALT): T {
   if (!filled(cms)) return fallback;
-  if (Array.isArray(fallback) || Array.isArray(cms)) return clean(cms) as T;
+  if (Array.isArray(fallback) || Array.isArray(cms)) return clean(cms, ctx) as T;
   if (isObj(fallback) && isObj(cms)) {
+    const here = label(cms, label(fallback, ctx));
     const out: Obj = { ...fallback };
     for (const [k, v] of Object.entries(cms)) {
-      out[k] = k in fallback ? merge((fallback as Obj)[k], v) : filled(v) ? clean(v) : undefined;
+      out[k] = k in fallback ? merge((fallback as Obj)[k], v, here) : filled(v) ? clean(v, here) : undefined;
     }
+    if (typeof out.src === "string" && !filled(out.alt)) out.alt = here;
     return out as T;
   }
-  return cms as T;
+  return (isObj(cms) ? clean(cms, ctx) : cms) as T;
 }
