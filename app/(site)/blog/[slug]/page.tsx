@@ -47,11 +47,11 @@ export default async function PostPage(props: PageProps<"/blog/[slug]">) {
               <Image src={post.image.src} alt={post.image.alt} fill sizes="(min-width: 768px) 48rem, 100vw" className="object-cover" priority />
             </div>
           ) : null}
-          {post.sections.map((sec) => (
-            <section key={sec.heading} className="mt-10 first:mt-0">
-              <h2 className="text-h3 uppercase text-ink">{sec.heading}</h2>
-              {sec.paragraphs.map((t) => (
-                <p key={t} className="mt-4 text-lg leading-relaxed text-body">
+          {post.sections.map((sec, i) => (
+            <section key={`${i}-${sec.heading}`} className="mt-10 first:mt-0">
+              {sec.heading ? <h2 className="text-h3 uppercase text-ink">{sec.heading}</h2> : null}
+              {sec.paragraphs.map((t, j) => (
+                <p key={j} className="mt-4 text-lg leading-relaxed text-body">
                   {t}
                 </p>
               ))}

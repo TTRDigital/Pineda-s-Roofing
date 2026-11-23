@@ -35,7 +35,10 @@ export async function sanityFetch<T>(
   for (const [key, value] of Object.entries(params)) {
     search.set(`$${key}`, JSON.stringify(value));
   }
-  const url = `https://${projectId}.${token ? "api" : "apicdn"}.sanity.io/v${apiVersion}/data/query/${dataset}?${search}`;
+  // SANITY_API_URL points the build at another API host (used to test the
+  // queries against a local mock); normally unset.
+  const host = process.env.SANITY_API_URL?.replace(/\/$/, "") || `https://${projectId}.${token ? "api" : "apicdn"}.sanity.io`;
+  const url = `${host}/v${apiVersion}/data/query/${dataset}?${search}`;
 
   try {
     const res = token
