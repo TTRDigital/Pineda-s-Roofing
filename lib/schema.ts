@@ -1,4 +1,4 @@
-import type { Service, SiteSettings, Testimonial } from "@/lib/types";
+import type { Service, SiteSettings } from "@/lib/types";
 import { absoluteUrl, siteUrl } from "@/lib/site";
 import { images } from "@/lib/data/images";
 
@@ -17,7 +17,7 @@ function to24h(t: string) {
 }
 
 /** RoofingContractor (a LocalBusiness) for the whole site. */
-export function businessSchema(s: SiteSettings, testimonials: Testimonial[] = [], areas: string[] = []) {
+export function businessSchema(s: SiteSettings, areas: string[] = []) {
   const hours = s.hours
     .map((h) => {
       const days = dayMap[h.label.toLowerCase()];
@@ -43,13 +43,7 @@ export function businessSchema(s: SiteSettings, testimonials: Testimonial[] = []
     openingHoursSpecification: hours,
     areaServed: areas.map((name) => ({ "@type": "Place", name })),
     sameAs: [...s.social.map((x) => x.href), ...(s.bbb?.url ? [s.bbb.url] : [])],
-    ...(s.googleRating && s.reviewCount ? { aggregateRating: { "@type": "AggregateRating", ratingValue: s.googleRating, reviewCount: s.reviewCount, bestRating: "5" } } : {}),
-    review: testimonials.slice(0, 4).map((t) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: t.name },
-      reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: 5 },
-      reviewBody: t.quote,
-    })),
+    // No AggregateRating, Review or Rating here (TTR hard rule, SOP on-page-seo step 7): the testimonials stay visible on the page only.
   };
 }
 
