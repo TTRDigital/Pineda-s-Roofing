@@ -63,7 +63,7 @@ export function Hero({ hero, stats, settings }: { hero: HomeContent["hero"]; sta
           ) : null}
         </div>
         <div className="relative mx-auto hidden w-full max-w-[330px] self-end lg:block">
-          <Image src={images.eagleArmsCrossed.src} alt={images.eagleArmsCrossed.alt} width={images.eagleArmsCrossed.width} height={images.eagleArmsCrossed.height} priority sizes="330px" className="h-auto w-full drop-shadow-[0_30px_40px_rgb(0_0_0/0.6)]" />
+          <Image src={images.eagleArmsCrossed.src} alt={images.eagleArmsCrossed.alt} width={images.eagleArmsCrossed.width} height={images.eagleArmsCrossed.height} sizes="330px" className="h-auto w-full drop-shadow-[0_30px_40px_rgb(0_0_0/0.6)]" />
         </div>
       </div>
 
