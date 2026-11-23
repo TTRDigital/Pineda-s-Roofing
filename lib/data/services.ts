@@ -1678,7 +1678,7 @@ export const fallbackServices: Service[] = [
       },
     ],
     seo: {
-      title: "Solar Panel Installation in Maryland & Washington, DC | Pineda's Roofing",
+      title: "Solar Panel Installation in Maryland & DC | Pineda's Roofing",
       description: "Solar installation planned by roofers: free solar assessment, roof check before every install and sealed mounts. Maryland and Washington, DC homes.",
     },
   },

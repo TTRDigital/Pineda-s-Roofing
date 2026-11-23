@@ -12,7 +12,7 @@ export const fallbackHome: HomeContent = {
   seo: {
     title: "Maryland Roofing Contractor Since 1992 | Pineda's Roofing",
     description:
-      "Family-owned roofing contractor serving Baltimore, Howard, Anne Arundel and Prince George's County, MD. Roof replacement, repair, storm restoration and solar. MHIC# 142024.",
+      "Family-owned roofing contractor serving Baltimore, Howard, Anne Arundel and Prince George's County, MD. Roof replacement, repair, storm damage and solar. MHIC# 142024.",
   },
   hero: {
     eyebrow: "Baltimore City & County · Howard · Anne Arundel · Prince George's",
