@@ -68,8 +68,8 @@ export function ContactSection({
             </li>
           </ul>
           <p className="mt-8 text-sm font-semibold text-white">{settings.license} · Licensed, insured &amp; bonded</p>
-          <div className="relative -mb-10 mt-6 hidden h-64 self-end lg:block" aria-hidden="true">
-            <Image src={images.eagleThumbsUp.src} alt="" width={images.eagleThumbsUp.width} height={images.eagleThumbsUp.height} sizes="200px" className="h-full w-auto" />
+          <div className="relative -mb-10 mt-6 hidden h-64 self-end lg:block">
+            <Image src={images.eagleThumbsUp.src} alt={images.eagleThumbsUp.alt} width={images.eagleThumbsUp.width} height={images.eagleThumbsUp.height} sizes="200px" className="h-full w-auto" />
           </div>
         </div>
         <div className="rounded-[var(--radius-card)] border border-line bg-white p-7 shadow-[var(--shadow-card)] sm:p-10">

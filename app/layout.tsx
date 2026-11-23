@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-int
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Pineda's Roofing | Maryland Roofing Contractor", template: "%s | Pineda's Roofing" },
+  title: { default: "Maryland Roofing Contractor | Pineda's Roofing", template: "%s | Pineda's Roofing" },
   description: "Family-owned roofing contractor serving Baltimore, Howard, Anne Arundel and Prince George's County, MD. Roof replacement, repair, storm restoration and solar.",
   // Google Search Console ownership check (Settings > Ownership verification > HTML tag), set at build time.
   ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION ? { verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } } : {}),

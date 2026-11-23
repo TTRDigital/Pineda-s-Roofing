@@ -66,7 +66,7 @@ export function LogoMarquee({ label, items }: { label: string; items: Partner[] 
               <li key={`${p.name}-${i}`} aria-hidden={i >= items.length ? true : undefined} className="flex h-12 shrink-0 items-center">
                 {p.logo ? (
                   <span className="relative block h-10 w-32">
-                    <Image src={p.logo.src} alt={i >= items.length ? "" : p.name} fill sizes="128px" className="object-contain grayscale transition hover:grayscale-0" />
+                    <Image src={p.logo.src} alt={p.name} fill sizes="128px" className="object-contain grayscale transition hover:grayscale-0" />
                   </span>
                 ) : (
                   <span className="whitespace-nowrap font-display text-xl font-bold uppercase tracking-[0.06em] text-meta">{p.name}</span>
