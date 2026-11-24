@@ -102,7 +102,7 @@ export function Header({
       <header className={`sticky top-0 z-50 border-b bg-white/95 backdrop-blur-md transition-shadow duration-300 ${scrolled ? "border-transparent shadow-[0_8px_30px_-12px_rgb(11_13_16/0.25)]" : "border-line"}`}>
         <div className="container-x flex h-[76px] items-center justify-between gap-4 lg:h-[88px]">
           <Link href="/" aria-label="Pineda's Roofing home" className="shrink-0">
-            <Logo className="h-11 w-auto lg:h-13" />
+            <Logo className="h-11 w-auto lg:h-13" priority />
           </Link>
 
           <nav aria-label="Main" className="hidden xl:block">

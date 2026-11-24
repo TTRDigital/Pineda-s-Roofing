@@ -123,7 +123,7 @@ export const countyPages: Location[] = [
       },
     ],
     seo: {
-      title: "Roofing Contractor in Baltimore, MD | Flat Roofs & Rowhouses | Pineda's Roofing",
+      title: "Roofing Contractor in Baltimore, MD | Flat Roofs | Pineda's Roofing",
       description: "Roofing contractor in Baltimore City: rowhouse flat roof replacement, leak repair, roof decks and solar. Family-owned, MHIC# 142024. Free inspections.",
     },
   },

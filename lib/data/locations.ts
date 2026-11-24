@@ -111,7 +111,7 @@ const cityPages: Location[] = [
     ],
     neighborhoods: ["Aspen Hill", "Downtown Silver Spring", "Four Corners", "Woodside", "Kemp Mill", "Colesville"],
     seo: {
-      title: "Roofing Contractor in Silver Spring, MD | Pineda's Roofing",
+      title: "Roofing Company in Silver Spring, MD | Pineda's Roofing",
       description: "Family-owned Silver Spring roofer. Roof repair and replacement, storm damage and gutters, with 30+ years of experience. Free inspections.",
     },
   },

@@ -43,8 +43,8 @@ export function businessSchema(s: SiteSettings, areas: string[] = []) {
     openingHoursSpecification: hours,
     areaServed: areas.map((name) => ({ "@type": "Place", name })),
     sameAs: [...s.social.map((x) => x.href), ...(s.bbb?.url ? [s.bbb.url] : [])],
-    // No aggregateRating or review markup: the ratings come from Google, and Google's rules don't allow
-    // marking up reviews collected on another site as the business's own.
+    // No AggregateRating, Review or Rating here (TTR hard rule, SOP on-page-seo step 7): the testimonials stay visible on the page only.
+    // The Google rating and reviews shown on the site come from Google, which also rules out marking them up as our own.
   };
 }
 

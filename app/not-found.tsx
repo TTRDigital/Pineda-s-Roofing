@@ -22,7 +22,7 @@ export default function NotFound() {
             </Button>
           </div>
         </div>
-        <Image src={images.eagleTapeMeasure.src} alt="" width={images.eagleTapeMeasure.width} height={images.eagleTapeMeasure.height} sizes="320px" className="mx-auto h-auto w-full max-w-[300px]" />
+        <Image src={images.eagleTapeMeasure.src} alt={images.eagleTapeMeasure.alt} width={images.eagleTapeMeasure.width} height={images.eagleTapeMeasure.height} sizes="320px" className="mx-auto h-auto w-full max-w-[300px]" />
       </div>
     </section>
     </SiteShell>

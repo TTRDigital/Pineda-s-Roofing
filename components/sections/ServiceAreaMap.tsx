@@ -71,7 +71,8 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
     ],
     { type: "FeatureCollection", features: served },
   );
-  const path = geoPath(projection);
+  // One decimal (0.1 of 800 units, under a pixel) keeps the page light: the map ships in the HTML and the page data.
+  const path = geoPath(projection).digits(1);
 
   // Neighbouring counties that fall inside the frame (keeps the page light).
   const [[west, south], [east, north]] = geoBounds({ type: "FeatureCollection", features: served });
@@ -88,7 +89,10 @@ export function ServiceAreaMap({ counties, locations, projectCounts = {} }: { co
     locations.find((l) => l.featured && l.name.toLowerCase() === city.toLowerCase()) ??
     locations.find((l) => l.featured && l.slug === counties.find((k) => k.cities.length === 1 && k.cities[0] === city)?.page);
   const cities = counties.flatMap((c) => c.cities.map((name) => ({ name, county: c.name, at: cityCoords[name] }))).filter((c) => c.at);
-  const xy = (lonLat: [number, number]) => projection(lonLat) ?? [0, 0];
+  const xy = (lonLat: [number, number]): [number, number] => {
+    const [x, y] = projection(lonLat) ?? [0, 0];
+    return [Math.round(x * 10) / 10, Math.round(y * 10) / 10];
+  };
 
   return (
     <figure className="overflow-hidden rounded-[var(--radius-card)] border border-line bg-[#e8f6fd]">
