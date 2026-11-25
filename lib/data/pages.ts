@@ -31,7 +31,7 @@ export const fallbackHome: HomeContent = {
   servicesIntro: {
     eyebrow: "What we do",
     heading: "The exterior, handled",
-    text: "Every roof we install uses Atlas Pinnacle Pristine shingles and comes with a 10 year labor warranty and a limited lifetime manufacturer warranty.",
+    text: "Atlas Pinnacle Pristine is our preferred shingle, and every roof comes with a 10 year labor warranty and a limited lifetime manufacturer warranty.",
   },
   serviceCards: [
     { icon: "house", title: "Residential roofing", text: "New roofs, replacements and repairs for Maryland homes.", href: "/services/residential-roofing" },
@@ -133,7 +133,7 @@ export const fallbackRoofing: RoofingContent = {
       title: "Residential roofing",
       lead: "Your home deserves a roof that protects it and makes it look its best. We install, replace and repair roofs on Maryland homes of every style.",
       paragraphs: [
-        "Every new roof gets Atlas Pinnacle Pristine shingles with 3M Scotchgard Protector, which fights the dark algae streaks common in our humid summers.",
+        "Our preferred shingle is Atlas Pinnacle Pristine with 3M Scotchgard Protector, which fights the dark algae streaks common in our humid summers.",
         "Most replacements are finished in one to two days, with a full cleanup and magnet sweep before we leave.",
       ],
       highlightsLabel: "What we offer",
@@ -216,12 +216,12 @@ export const fallbackAtlas: AtlasContent = {
   seo: {
     title: "Atlas Roofing Shingles in Maryland | Pineda's Roofing",
     description:
-      "Pineda's Roofing installs Atlas Pinnacle Pristine shingles with 3M Scotchgard Protector on every roof. See Atlas shingle lines and warranty options in Maryland.",
+      "Atlas Pinnacle Pristine with 3M Scotchgard Protector is Pineda's Roofing's preferred shingle. See Atlas shingle lines and warranty options in Maryland.",
   },
   hero: {
     eyebrow: "Atlas Roofing",
-    heading: "Atlas shingles on every roof we install",
-    text: "Every shingle roof we build uses Atlas Pinnacle Pristine, a shingle made to stand up to Maryland storms and stay clean in our humid summers.",
+    heading: "Atlas shingles, our preferred roofing brand",
+    text: "Atlas Pinnacle Pristine is our go-to shingle for Maryland homes, made to stand up to storms and stay clean in our humid summers.",
     image: images.aerialNewShingleRoof,
   },
   sections: [
@@ -232,7 +232,7 @@ export const fallbackAtlas: AtlasContent = {
       title: "Why we chose Atlas",
       lead: "Atlas gives our customers the mix we care about most: good looks, storm performance and a strong manufacturer warranty.",
       paragraphs: [
-        "Atlas Pinnacle Pristine is our standard shingle, not an upgrade. It carries 3M Scotchgard Protector, which keeps the black algae streaks you see on older Maryland roofs from taking hold.",
+        "Atlas Pinnacle Pristine is our preferred shingle, not an upgrade. It carries 3M Scotchgard Protector, which keeps the black algae streaks you see on older Maryland roofs from taking hold.",
         "We pair the shingles with matching starter and ridge cap, synthetic underlayment, ice & water shield and proper ventilation, so the whole roof works together.",
       ],
       highlightsLabel: "What you get",
